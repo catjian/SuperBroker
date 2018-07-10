@@ -90,7 +90,7 @@
 {
     static NSString *cellIdentifier = @"CELLIDENTIFIER";
     RootViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-    NSString *contentTitle = m_ContentArr[indexPath.section][indexPath.row];
+    NSString *contentTitle = m_ContentArr[indexPath.row];
     [cell.titleLab setText:contentTitle];
     [cell.imageView setImage:[UIImage imageNamed:contentTitle]];
     return cell;
@@ -112,7 +112,7 @@
             adView = [[CommonADAutoView alloc] initWithFrame:CGRectMake(0, 0, DIF_SCREEN_WIDTH, DIF_PX(150))];
             [adView setTag:1000];
             [reusableview addSubview:adView];
-        }        
+        }
     }
     return reusableview;
 }

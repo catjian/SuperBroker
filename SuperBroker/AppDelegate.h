@@ -18,8 +18,6 @@
 
 - (void)loadLoginViewController;
 
-- (void)getHaveNewGridEventByTimer;
-
 
 @end
 
