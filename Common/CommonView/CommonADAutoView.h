@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CommonADAutoView.h
 //  SuperBroker
 //
 //  Created by zhang_jian on 2018/7/10.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface CommonADAutoView : UIView
 
+@property (nonatomic, strong) NSArray *picArr;
 
 @end
-

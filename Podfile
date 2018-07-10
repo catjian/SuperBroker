@@ -22,6 +22,7 @@ pod 'UMCShare/UI'
 pod 'UMCShare/Social/ReducedWeChat'
 pod 'UMCShare/Social/ReducedQQ'
 pod 'UMCShare/Social/ReducedSina'
+pod 'ReactiveObjC'
 
 end
 

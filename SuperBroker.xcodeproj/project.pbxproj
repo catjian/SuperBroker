@@ -9,11 +9,23 @@
 /* Begin PBXBuildFile section */
 		34745B192016EAE172B49D04 /* libPods-SuperBroker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC4304B8C64092964146D15 /* libPods-SuperBroker.a */; };
 		8257C7AA20F4E1DA00FA550D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8257C7A920F4E1DA00FA550D /* AppDelegate.m */; };
-		8257C7AD20F4E1DA00FA550D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8257C7AC20F4E1DA00FA550D /* ViewController.m */; };
-		8257C7B020F4E1DA00FA550D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8257C7AE20F4E1DA00FA550D /* Main.storyboard */; };
 		8257C7B220F4E1DC00FA550D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8257C7B120F4E1DC00FA550D /* Assets.xcassets */; };
 		8257C7B520F4E1DC00FA550D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8257C7B320F4E1DC00FA550D /* LaunchScreen.storyboard */; };
 		8257C7B820F4E1DC00FA550D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8257C7B720F4E1DC00FA550D /* main.m */; };
+		82731BBF20F4E7B7002EF5FE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BBE20F4E7B7002EF5FE /* RootViewController.m */; };
+		82731BC720F4EB10002EF5FE /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BC620F4EB10002EF5FE /* MyViewController.m */; };
+		82731BCA20F4EB17002EF5FE /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BC920F4EB17002EF5FE /* MessageViewController.m */; };
+		82731BCD20F4EB21002EF5FE /* SpecialNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BCC20F4EB21002EF5FE /* SpecialNewsViewController.m */; };
+		82BBED3220F4F48F00BAEEBE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED3020F4F48F00BAEEBE /* LoginViewController.m */; };
+		82BBED3320F4F48F00BAEEBE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82BBED3120F4F48F00BAEEBE /* LoginViewController.xib */; };
+		82BBED3720F4F7BB00BAEEBE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED3520F4F7BB00BAEEBE /* RegisterViewController.m */; };
+		82BBED3820F4F7BB00BAEEBE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82BBED3620F4F7BB00BAEEBE /* RegisterViewController.xib */; };
+		82BBED3D20F4FB9A00BAEEBE /* EditPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED3B20F4FB9A00BAEEBE /* EditPasswordViewController.m */; };
+		82BBED3E20F4FB9A00BAEEBE /* EditPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82BBED3C20F4FB9A00BAEEBE /* EditPasswordViewController.xib */; };
+		82BBED4120F4FFAD00BAEEBE /* RootBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED4020F4FFAD00BAEEBE /* RootBaseView.m */; };
+		82BBED4420F5002400BAEEBE /* RootViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED4320F5002400BAEEBE /* RootViewCell.m */; };
+		82BBED4720F501D500BAEEBE /* BaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED4620F501D500BAEEBE /* BaseCollectionView.m */; };
+		82BBED4A20F503F100BAEEBE /* CommonADAutoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED4920F503F100BAEEBE /* CommonADAutoView.m */; };
 		82C0770720F4E67C0080E37F /* UIImage+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C0766920F4E67B0080E37F /* UIImage+CornerRadius.m */; };
 		82C0770820F4E67C0080E37F /* UIImage+ConvertBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C0766B20F4E67B0080E37F /* UIImage+ConvertBase64.m */; };
 		82C0770920F4E67C0080E37F /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C0767120F4E67B0080E37F /* UIColor+Hex.m */; };
@@ -96,13 +108,36 @@
 		8257C7A520F4E1DA00FA550D /* SuperBroker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperBroker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8257C7A820F4E1DA00FA550D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8257C7A920F4E1DA00FA550D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8257C7AB20F4E1DA00FA550D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8257C7AC20F4E1DA00FA550D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8257C7AF20F4E1DA00FA550D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8257C7B120F4E1DC00FA550D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8257C7B420F4E1DC00FA550D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8257C7B620F4E1DC00FA550D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8257C7B720F4E1DC00FA550D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		82731BBD20F4E7B7002EF5FE /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		82731BBE20F4E7B7002EF5FE /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		82731BC120F4E7E8002EF5FE /* SuperBrokerPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperBrokerPrefixHeader.pch; sourceTree = "<group>"; };
+		82731BC520F4EB10002EF5FE /* MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		82731BC620F4EB10002EF5FE /* MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		82731BC820F4EB17002EF5FE /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		82731BC920F4EB17002EF5FE /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		82731BCB20F4EB21002EF5FE /* SpecialNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialNewsViewController.h; sourceTree = "<group>"; };
+		82731BCC20F4EB21002EF5FE /* SpecialNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialNewsViewController.m; sourceTree = "<group>"; };
+		82BBED2F20F4F48F00BAEEBE /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		82BBED3020F4F48F00BAEEBE /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		82BBED3120F4F48F00BAEEBE /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		82BBED3420F4F7BB00BAEEBE /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		82BBED3520F4F7BB00BAEEBE /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		82BBED3620F4F7BB00BAEEBE /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		82BBED3A20F4FB9A00BAEEBE /* EditPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditPasswordViewController.h; sourceTree = "<group>"; };
+		82BBED3B20F4FB9A00BAEEBE /* EditPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditPasswordViewController.m; sourceTree = "<group>"; };
+		82BBED3C20F4FB9A00BAEEBE /* EditPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPasswordViewController.xib; sourceTree = "<group>"; };
+		82BBED3F20F4FFAD00BAEEBE /* RootBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootBaseView.h; sourceTree = "<group>"; };
+		82BBED4020F4FFAD00BAEEBE /* RootBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootBaseView.m; sourceTree = "<group>"; };
+		82BBED4220F5002400BAEEBE /* RootViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewCell.h; sourceTree = "<group>"; };
+		82BBED4320F5002400BAEEBE /* RootViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewCell.m; sourceTree = "<group>"; };
+		82BBED4520F501D500BAEEBE /* BaseCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseCollectionView.h; sourceTree = "<group>"; };
+		82BBED4620F501D500BAEEBE /* BaseCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionView.m; sourceTree = "<group>"; };
+		82BBED4820F503F100BAEEBE /* CommonADAutoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonADAutoView.h; sourceTree = "<group>"; };
+		82BBED4920F503F100BAEEBE /* CommonADAutoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonADAutoView.m; sourceTree = "<group>"; };
 		82C0766820F4E67B0080E37F /* NSString+Attributed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Attributed.h"; sourceTree = "<group>"; };
 		82C0766920F4E67B0080E37F /* UIImage+CornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CornerRadius.m"; sourceTree = "<group>"; };
 		82C0766A20F4E67B0080E37F /* UIAlertController+CustomAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+CustomAlert.h"; sourceTree = "<group>"; };
@@ -287,6 +322,7 @@
 		8257C79C20F4E1DA00FA550D = {
 			isa = PBXGroup;
 			children = (
+				82731BBA20F4E781002EF5FE /* ProgramClass */,
 				82C076FA20F4E67B0080E37F /* BaseClass */,
 				82C0766720F4E67B0080E37F /* Category */,
 				82C076A420F4E67B0080E37F /* Common */,
@@ -310,15 +346,121 @@
 			children = (
 				8257C7A820F4E1DA00FA550D /* AppDelegate.h */,
 				8257C7A920F4E1DA00FA550D /* AppDelegate.m */,
-				8257C7AB20F4E1DA00FA550D /* ViewController.h */,
-				8257C7AC20F4E1DA00FA550D /* ViewController.m */,
-				8257C7AE20F4E1DA00FA550D /* Main.storyboard */,
 				8257C7B120F4E1DC00FA550D /* Assets.xcassets */,
 				8257C7B320F4E1DC00FA550D /* LaunchScreen.storyboard */,
 				8257C7B620F4E1DC00FA550D /* Info.plist */,
 				8257C7B720F4E1DC00FA550D /* main.m */,
+				82731BC120F4E7E8002EF5FE /* SuperBrokerPrefixHeader.pch */,
 			);
 			path = SuperBroker;
+			sourceTree = "<group>";
+		};
+		82731BBA20F4E781002EF5FE /* ProgramClass */ = {
+			isa = PBXGroup;
+			children = (
+				82731BC420F4EB05002EF5FE /* My */,
+				82731BC320F4EAFF002EF5FE /* Message */,
+				82731BC220F4EADA002EF5FE /* SpecialNews */,
+				82731BBC20F4E7A5002EF5FE /* LoginRegister */,
+				82731BBB20F4E78F002EF5FE /* Root */,
+			);
+			path = ProgramClass;
+			sourceTree = "<group>";
+		};
+		82731BBB20F4E78F002EF5FE /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				82BBED2C20F4F44300BAEEBE /* Model */,
+				82BBED2B20F4F43C00BAEEBE /* View */,
+				82731BBD20F4E7B7002EF5FE /* RootViewController.h */,
+				82731BBE20F4E7B7002EF5FE /* RootViewController.m */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		82731BBC20F4E7A5002EF5FE /* LoginRegister */ = {
+			isa = PBXGroup;
+			children = (
+				82BBED3920F4FB8100BAEEBE /* EditPassword */,
+				82BBED2E20F4F47800BAEEBE /* Register */,
+				82BBED2D20F4F46E00BAEEBE /* Login */,
+			);
+			path = LoginRegister;
+			sourceTree = "<group>";
+		};
+		82731BC220F4EADA002EF5FE /* SpecialNews */ = {
+			isa = PBXGroup;
+			children = (
+				82731BCB20F4EB21002EF5FE /* SpecialNewsViewController.h */,
+				82731BCC20F4EB21002EF5FE /* SpecialNewsViewController.m */,
+			);
+			path = SpecialNews;
+			sourceTree = "<group>";
+		};
+		82731BC320F4EAFF002EF5FE /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				82731BC820F4EB17002EF5FE /* MessageViewController.h */,
+				82731BC920F4EB17002EF5FE /* MessageViewController.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		82731BC420F4EB05002EF5FE /* My */ = {
+			isa = PBXGroup;
+			children = (
+				82731BC520F4EB10002EF5FE /* MyViewController.h */,
+				82731BC620F4EB10002EF5FE /* MyViewController.m */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		82BBED2B20F4F43C00BAEEBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82BBED3F20F4FFAD00BAEEBE /* RootBaseView.h */,
+				82BBED4020F4FFAD00BAEEBE /* RootBaseView.m */,
+				82BBED4220F5002400BAEEBE /* RootViewCell.h */,
+				82BBED4320F5002400BAEEBE /* RootViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82BBED2C20F4F44300BAEEBE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82BBED2D20F4F46E00BAEEBE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				82BBED2F20F4F48F00BAEEBE /* LoginViewController.h */,
+				82BBED3020F4F48F00BAEEBE /* LoginViewController.m */,
+				82BBED3120F4F48F00BAEEBE /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		82BBED2E20F4F47800BAEEBE /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				82BBED3420F4F7BB00BAEEBE /* RegisterViewController.h */,
+				82BBED3520F4F7BB00BAEEBE /* RegisterViewController.m */,
+				82BBED3620F4F7BB00BAEEBE /* RegisterViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		82BBED3920F4FB8100BAEEBE /* EditPassword */ = {
+			isa = PBXGroup;
+			children = (
+				82BBED3A20F4FB9A00BAEEBE /* EditPasswordViewController.h */,
+				82BBED3B20F4FB9A00BAEEBE /* EditPasswordViewController.m */,
+				82BBED3C20F4FB9A00BAEEBE /* EditPasswordViewController.xib */,
+			);
+			path = EditPassword;
 			sourceTree = "<group>";
 		};
 		82C0766720F4E67B0080E37F /* Category */ = {
@@ -442,6 +584,8 @@
 				82C076BF20F4E67B0080E37F /* CustomNumberKeyboard */,
 				82C076BC20F4E67B0080E37F /* CustomRoundButton.h */,
 				82C076AB20F4E67B0080E37F /* CustomRoundButton.m */,
+				82BBED4820F503F100BAEEBE /* CommonADAutoView.h */,
+				82BBED4920F503F100BAEEBE /* CommonADAutoView.m */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -546,18 +690,20 @@
 		82C076FA20F4E67B0080E37F /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				82C0770220F4E67C0080E37F /* BaseLable.h */,
 				82C076FB20F4E67B0080E37F /* BaseLable.m */,
-				82C076FC20F4E67B0080E37F /* BaseTableViewCell.m */,
-				82C076FD20F4E67C0080E37F /* BaseViewController.m */,
-				82C076FE20F4E67C0080E37F /* BaseTabBarController.h */,
 				82C076FF20F4E67C0080E37F /* BaseNavigationViewController.h */,
+				82C0770320F4E67C0080E37F /* BaseNavigationViewController.m */,
+				82C076FE20F4E67C0080E37F /* BaseTabBarController.h */,
+				82C0770420F4E67C0080E37F /* BaseTabBarController.m */,
+				82C0770620F4E67C0080E37F /* BaseTableView.h */,
 				82C0770020F4E67C0080E37F /* BaseTableView.m */,
 				82C0770120F4E67C0080E37F /* BaseTableViewCell.h */,
-				82C0770220F4E67C0080E37F /* BaseLable.h */,
-				82C0770320F4E67C0080E37F /* BaseNavigationViewController.m */,
-				82C0770420F4E67C0080E37F /* BaseTabBarController.m */,
+				82C076FC20F4E67B0080E37F /* BaseTableViewCell.m */,
 				82C0770520F4E67C0080E37F /* BaseViewController.h */,
-				82C0770620F4E67C0080E37F /* BaseTableView.h */,
+				82C076FD20F4E67C0080E37F /* BaseViewController.m */,
+				82BBED4520F501D500BAEEBE /* BaseCollectionView.h */,
+				82BBED4620F501D500BAEEBE /* BaseCollectionView.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -623,10 +769,12 @@
 			files = (
 				82C0773020F4E67C0080E37F /* del_btn@3x.png in Resources */,
 				8257C7B520F4E1DC00FA550D /* LaunchScreen.storyboard in Resources */,
+				82BBED3820F4F7BB00BAEEBE /* RegisterViewController.xib in Resources */,
+				82BBED3320F4F48F00BAEEBE /* LoginViewController.xib in Resources */,
 				8257C7B220F4E1DC00FA550D /* Assets.xcassets in Resources */,
-				8257C7B020F4E1DA00FA550D /* Main.storyboard in Resources */,
 				82C0773220F4E67C0080E37F /* del_btn@2x.png in Resources */,
 				82C0773A20F4E67C0080E37F /* plane.gif in Resources */,
+				82BBED3E20F4FB9A00BAEEBE /* EditPasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,12 +833,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				82C0773C20F4E67C0080E37F /* CommonHttpAdapter.m in Sources */,
+				82BBED4120F4FFAD00BAEEBE /* RootBaseView.m in Sources */,
 				82C0774E20F4E67C0080E37F /* BaseViewController.m in Sources */,
 				82C0772820F4E67C0080E37F /* CommonShowControlPictureCollectionView.m in Sources */,
 				82C0771220F4E67C0080E37F /* UIButton+CircleImage.m in Sources */,
 				82C0772020F4E67C0080E37F /* NSString+GetWeekDay.m in Sources */,
-				8257C7AD20F4E1DA00FA550D /* ViewController.m in Sources */,
 				82C0773B20F4E67C0080E37F /* CommonTool.m in Sources */,
+				82BBED3220F4F48F00BAEEBE /* LoginViewController.m in Sources */,
 				82C0772920F4E67C0080E37F /* CommonTopShowLineView.m in Sources */,
 				82C0772B20F4E67C0080E37F /* CommonPopShareView.m in Sources */,
 				82C0773820F4E67C0080E37F /* CommonAchieveModelValue.m in Sources */,
@@ -699,17 +848,21 @@
 				82C0774220F4E67C0080E37F /* CommonDate.m in Sources */,
 				82C0774920F4E67C0080E37F /* AJPhotoZoomingScrollView.m in Sources */,
 				82C0773E20F4E67C0080E37F /* NotificationTool.m in Sources */,
+				82731BBF20F4E7B7002EF5FE /* RootViewController.m in Sources */,
 				82C0773420F4E67C0080E37F /* CommonPopListView.m in Sources */,
 				82C0774120F4E67C0080E37F /* CommonVerify.m in Sources */,
 				82C0772220F4E67C0080E37F /* UILabel+CallPhoneExtension.m in Sources */,
+				82731BC720F4EB10002EF5FE /* MyViewController.m in Sources */,
 				82C0773520F4E67C0080E37F /* CommonPopWarnView.m in Sources */,
 				82C0774D20F4E67C0080E37F /* BaseTableViewCell.m in Sources */,
 				82C0770E20F4E67C0080E37F /* NSArray+Null.m in Sources */,
+				82BBED4A20F503F100BAEEBE /* CommonADAutoView.m in Sources */,
 				82C0770920F4E67C0080E37F /* UIColor+Hex.m in Sources */,
 				82C0774420F4E67C0080E37F /* CommonAlertView.m in Sources */,
 				82C0771B20F4E67C0080E37F /* UIImageView+CornerRadius.m in Sources */,
 				82C0773F20F4E67C0080E37F /* RSAEncryptor.m in Sources */,
 				82C0771820F4E67C0080E37F /* NSString+Extension_NSString.m in Sources */,
+				82BBED3D20F4FB9A00BAEEBE /* EditPasswordViewController.m in Sources */,
 				82C0772A20F4E67C0080E37F /* CommonMoreColumnsPickerView.m in Sources */,
 				82C0772720F4E67C0080E37F /* CustomRoundButton.m in Sources */,
 				82C0771E20F4E67C0080E37F /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
@@ -717,8 +870,10 @@
 				82C0771F20F4E67C0080E37F /* UIView+BackHexColor.m in Sources */,
 				82C0774F20F4E67C0080E37F /* BaseTableView.m in Sources */,
 				82C0770B20F4E67C0080E37F /* NSDictionary+Null.m in Sources */,
+				82731BCA20F4EB17002EF5FE /* MessageViewController.m in Sources */,
 				82C0772D20F4E67C0080E37F /* CommonContentSubView.m in Sources */,
 				82C0773620F4E67C0080E37F /* CommonBottomPopView.m in Sources */,
+				82731BCD20F4EB21002EF5FE /* SpecialNewsViewController.m in Sources */,
 				8257C7B820F4E1DC00FA550D /* main.m in Sources */,
 				82C0773920F4E67C0080E37F /* CommonHUD.m in Sources */,
 				82C0774320F4E67C0080E37F /* CommonPictureSelect.m in Sources */,
@@ -726,6 +881,7 @@
 				82C0770820F4E67C0080E37F /* UIImage+ConvertBase64.m in Sources */,
 				82C0775120F4E67C0080E37F /* BaseTabBarController.m in Sources */,
 				82C0771320F4E67C0080E37F /* NSObject+Null.m in Sources */,
+				82BBED4420F5002400BAEEBE /* RootViewCell.m in Sources */,
 				82C0772620F4E67C0080E37F /* CommonMemonyCache.m in Sources */,
 				82C0772320F4E67C0080E37F /* NSString+TransformToPinYin.m in Sources */,
 				82C0773320F4E67C0080E37F /* CommonPageControlView.m in Sources */,
@@ -735,6 +891,7 @@
 				82C0773D20F4E67C0080E37F /* CommonImage.m in Sources */,
 				82C0770F20F4E67C0080E37F /* NSString+ No2hz.m in Sources */,
 				82C0771C20F4E67C0080E37F /* UIButton+ImageTitleStyle.m in Sources */,
+				82BBED3720F4F7BB00BAEEBE /* RegisterViewController.m in Sources */,
 				82C0772C20F4E67C0080E37F /* CommonPickerView.m in Sources */,
 				82C0775020F4E67C0080E37F /* BaseNavigationViewController.m in Sources */,
 				82C0772E20F4E67C0080E37F /* CommonCommitButton.m in Sources */,
@@ -757,6 +914,7 @@
 				82C0771120F4E67C0080E37F /* NSString+ConvertHex.m in Sources */,
 				82C0774A20F4E67C0080E37F /* AJTapDetectingView.m in Sources */,
 				82C0771420F4E67C0080E37F /* UIAlertController+CustomAlert.m in Sources */,
+				82BBED4720F501D500BAEEBE /* BaseCollectionView.m in Sources */,
 				82C0772520F4E67C0080E37F /* CommonCurrentUser.m in Sources */,
 				82C0774C20F4E67C0080E37F /* BaseLable.m in Sources */,
 			);
@@ -765,14 +923,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8257C7AE20F4E1DA00FA550D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8257C7AF20F4E1DA00FA550D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8257C7B320F4E1DC00FA550D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -835,7 +985,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -887,7 +1037,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -901,7 +1051,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SuperBroker/SuperBrokerPrefixHeader.pch";
 				INFOPLIST_FILE = SuperBroker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -919,7 +1071,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SuperBroker/SuperBrokerPrefixHeader.pch";
 				INFOPLIST_FILE = SuperBroker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

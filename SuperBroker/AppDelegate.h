@@ -12,6 +12,14 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, strong) BaseTabBarController *baseTB;
+
++ (AppDelegate *)sharedAppDelegate;
+
+- (void)loadLoginViewController;
+
+- (void)getHaveNewGridEventByTimer;
+
 
 @end
 

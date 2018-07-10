@@ -1,0 +1,75 @@
+//
+//  CommonADAutoView.m
+//  SuperBroker
+//
+//  Created by zhang_jian on 2018/7/10.
+//  Copyright © 2018年 zhangjian. All rights reserved.
+//
+
+#import "CommonADAutoView.h"
+
+@implementation CommonADAutoView
+{
+    UIScrollView *m_BaseView;
+    UIPageControl *m_PageCon;
+    BOOL m_Auto;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        m_BaseView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height)];
+        [self addSubview:m_BaseView];
+        m_PageCon = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.height-40, self.width, 30)];
+        [self addSubview:m_PageCon];
+    }
+    return self;
+}
+
+- (void)setPicArr:(NSArray *)picArr
+{
+    m_Auto = NO;
+    _picArr = picArr;
+    [self createContentView];
+    [m_PageCon setNumberOfPages:picArr.count];
+    [m_PageCon setCurrentPage:0];
+}
+
+- (void)createContentView
+{
+    for(UIView *subView in m_BaseView.subviews)
+    {
+        [subView removeFromSuperview];
+    }
+    for(int i = 0; i < self.picArr.count; i++)
+    {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i*self.width, 0, self.width, self.height)];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:self.picArr[i]] placeholderImage:nil];
+        [m_BaseView addSubview:imageView];
+    }
+    [m_BaseView setContentSize:CGSizeMake(self.width*self.picArr.count, self.height)];
+    m_Auto = YES;
+    [self performSelector:@selector(autoChangePage) withObject:nil afterDelay:2];
+}
+
+- (void)autoChangePage
+{
+    if (!m_Auto) return;
+    NSInteger nowPage = m_PageCon.currentPage;
+    nowPage++;
+    if (nowPage >= self.picArr.count)
+    {
+        [m_PageCon setCurrentPage:0];
+        [m_BaseView setContentOffset:CGPointMake(0, 0)];
+    }
+    else
+    {
+        [m_PageCon setCurrentPage:nowPage];
+        [m_BaseView setContentOffset:CGPointMake(nowPage*self.width, 0)];
+    }
+    [self performSelector:@selector(autoChangePage) withObject:nil afterDelay:2];
+}
+
+@end

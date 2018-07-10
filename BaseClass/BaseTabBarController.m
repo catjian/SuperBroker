@@ -89,7 +89,7 @@ const CGFloat tabbar_Hegith = 50;
 
 - (void)initViewContent
 {
-    __block NSArray *btnImages = @[@"新工单",@"已接工单",@"公告", @"全部"];
+    __block NSArray *btnImages = @[@"首页",@"专题",@"消息", @"我的"];
     CGFloat offset_Width = m_BaseView.width/self.viewControllers.count;
     DIF_WeakSelf(self)
     [self.viewControllers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

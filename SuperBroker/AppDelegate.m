@@ -15,8 +15,28 @@
 @implementation AppDelegate
 
 
+
++ (AppDelegate *)sharedAppDelegate
+{
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [UMConfigure setLogEnabled:YES];//此处在初始化函数前面是为了打印初始化的日志
+    [MobClick setCrashReportEnabled:YES];
+    [UMConfigure initWithAppkey:@"5b44b282a40fa3138b000155" channel:@"App Store"];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window setBackgroundColor:[UIColor whiteColor]];
+    
+    [self loadWindowRootTabbarViewController];
+//    [self performSelector:@selector(loadLoginViewController) withObject:nil afterDelay:.5];
+    
+    [self.window makeKeyAndVisible];
+    
+    
+    [[IQKeyboardManager sharedManager] setToolbarDoneBarButtonItemText:@"完成"];
     return YES;
 }
 
@@ -47,5 +67,31 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - Custom Function
+
+- (void)loadWindowRootTabbarViewController
+{
+    RootViewController *rootVC = [[RootViewController alloc] init];
+    BaseNavigationViewController *nav1 = [[BaseNavigationViewController alloc] initWithRootViewController:rootVC];
+    
+    SpecialNewsViewController *snVC = [[SpecialNewsViewController alloc] init];
+    BaseNavigationViewController *nav2 = [[BaseNavigationViewController alloc] initWithRootViewController:snVC];
+    
+    MessageViewController *msgVC = [[MessageViewController alloc] init];
+    BaseNavigationViewController *nav3 = [[BaseNavigationViewController alloc] initWithRootViewController:msgVC];
+    
+    MyViewController *myVC = [[MyViewController alloc] init];
+    BaseNavigationViewController *nav4 = [[BaseNavigationViewController alloc] initWithRootViewController:myVC];
+    
+    self.baseTB = [[BaseTabBarController alloc] initWithViewControllers:@[nav1,nav2,nav3,nav4]];
+    [self.window setRootViewController:self.baseTB];
+}
+
+- (void)loadLoginViewController
+{
+    LoginViewController *vc = [[LoginViewController alloc] init];
+    BaseNavigationViewController *navc = [[BaseNavigationViewController alloc] initWithRootViewController:vc];
+    [self.window.rootViewController presentViewController:navc animated:YES completion:nil];
+}
 
 @end
