@@ -14,7 +14,7 @@ typedef void(^tableViewTouchMoveEventBlock)(UITableView *tableView, NSSet *touch
 typedef void(^tableViewTouchCancelEventBlock)(UITableView *tableView, NSSet *touches, UIEvent *event);
 typedef void(^tableViewScrollEventlock)(UITableView *tableView, UIScrollView *scrollView);
 
-typedef void(^SelectRowAtIndexPathBlock)(NSIndexPath *indexPath, id model);
+typedef void(^tableViewSelectRowAtIndexPathBlock)(NSIndexPath *indexPath, id model);
 
 typedef void(^tableViewHeaderRefreshBlock)(void);
 typedef void(^tableViewLoadMoreBlock)(NSInteger page);
@@ -29,7 +29,7 @@ typedef void(^tableViewLoadMoreBlock)(NSInteger page);
 @property (nonatomic, copy, readwrite) tableViewTouchCancelEventBlock touchCancelBlock;
 @property (nonatomic, copy, readwrite) tableViewScrollEventlock scrollBlock;
 
-@property (nonatomic, copy, readwrite) SelectRowAtIndexPathBlock selectBlock;
+@property (nonatomic, copy, readwrite) tableViewSelectRowAtIndexPathBlock selectBlock;
 
 @property (nonatomic, copy, readwrite) tableViewHeaderRefreshBlock refreshBlock;
 @property (nonatomic, copy, readwrite) tableViewLoadMoreBlock loadMoreBlock;

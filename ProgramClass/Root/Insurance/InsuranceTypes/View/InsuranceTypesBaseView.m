@@ -1,19 +1,19 @@
 //
-//  RootBaseView.m
+//  InsuranceTypesBaseView.m
 //  SuperBroker
 //
-//  Created by zhang_jian on 2018/7/10.
+//  Created by zhang_jian on 2018/7/11.
 //  Copyright © 2018年 zhangjian. All rights reserved.
 //
 
-#import "RootBaseView.h"
-#import "RootViewCell.h"
+#import "InsuranceTypesBaseView.h"
+#import "InsuranceTypesViewCell.h"
 
-@interface RootBaseView() <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface InsuranceTypesBaseView() <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @end
 
-@implementation RootBaseView
+@implementation InsuranceTypesBaseView
 {
     UILabel *m_NoticeLab;
     BaseCollectionView *m_ContentView;
@@ -25,60 +25,55 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        m_ContentArr = @[@"保险",@"车险",@"信用卡",@"贷款",@"违章代缴",@"add"];
-        UIView *topView = [self createTopView];
-        [self createCollectionViewWithTopView:topView];
+        m_ContentArr = @[@"保险",@"车险车险车险",@"信用卡",@"贷款"];
+        [self createCollectionView];
+        [self createBottomButtonsView];
     }
     return self;
 }
 
-- (UILabel *)noticeLab
-{
-    if (!m_NoticeLab)
-    {
-        m_NoticeLab = [[UILabel alloc] initWithFrame:CGRectMake(DIF_PX(14), DIF_PX(12), self.width-DIF_PX(14*2), DIF_PX(18))];
-        [m_NoticeLab setBackgroundColor:DIF_HEXCOLOR(@"")];
-        [m_NoticeLab setFont:DIF_DIFONTOFSIZE(12)];
-        [m_NoticeLab setTextColor:DIF_HEXCOLOR(@"4a4a4a")];
-    }
-    return m_NoticeLab;
-}
-
-- (void)refreshUserInfo
-{
-    if(m_NoticeLab)
-    {
-        [m_NoticeLab setText:[NSString stringWithFormat:@"姓名：%@   部门：%@  工号：%@",DIF_CommonCurrentUser.userName,DIF_CommonCurrentUser.wareaName,DIF_CommonCurrentUser.staffId]];
-    }
-}
-
-- (UIView *)createTopView
-{
-    UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, DIF_PX(40))];
-    [topView setBackgroundColor:DIF_HEXCOLOR(@"")];
-    [topView addSubview:[self noticeLab]];
-    [self addSubview:topView];
-    return topView;
-}
-
-- (void)createCollectionViewWithTopView:(UIView *)topView
+- (void)createCollectionView
 {
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    m_ContentView = [[BaseCollectionView alloc] initWithFrame:CGRectMake(0, topView.bottom, self.width, self.height)
-                                       ScrollDirection:UICollectionViewScrollDirectionVertical
-                                                CellClassName:@"RootViewCell"];
+    m_ContentView = [[BaseCollectionView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height-50)
+                                              ScrollDirection:UICollectionViewScrollDirectionVertical
+                                                CellClassName:@"InsuranceTypesViewCell"];
     [m_ContentView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
     [self addSubview:m_ContentView];
     [m_ContentView setDelegate:self];
     [m_ContentView setDataSource:self];
+    [m_ContentView setBackgroundColor:[UIColor lightGrayColor]];
+}
+
+- (void)createBottomButtonsView
+{
+    UIView *botView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height-50, self.width, 50)];
+    [botView setBackgroundColor:[UIColor lightGrayColor]];
+    [self addSubview:botView];
+    
+    UIButton *successBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [successBtn setFrame:CGRectMake(0, 5, 80, 40)];
+    [successBtn setRight:10];
+    [successBtn setTitle:@"确定" forState:UIControlStateNormal];
+    [successBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [successBtn setBackgroundColor:[UIColor blueColor]];
+    [botView addSubview:successBtn];
+    
+    UIButton *cleanBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [cleanBtn setFrame:CGRectMake(0, 5, 80, 40)];
+    [cleanBtn setRight:successBtn.left-10];
+    [cleanBtn setTitle:@"清空" forState:UIControlStateNormal];
+    [cleanBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [cleanBtn setBackgroundColor:[UIColor whiteColor]];
+    [botView addSubview:cleanBtn];
 }
 
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 1;
+    return 5;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -89,10 +84,10 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"CELLIDENTIFIER";
-    RootViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+    InsuranceTypesViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     NSString *contentTitle = m_ContentArr[indexPath.row];
     [cell.titleLab setText:contentTitle];
-    [cell.imageView setImage:[UIImage imageNamed:contentTitle]];
+    [cell setBackgroundColor:[UIColor whiteColor]];
     return cell;
 }
 
@@ -102,17 +97,11 @@
     if (kind == UICollectionElementKindSectionHeader)
     {
         reusableview = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
-        CommonADAutoView *adView;
-        if ([reusableview viewWithTag:1000])
-        {
-            adView = (CommonADAutoView *)[reusableview viewWithTag:1000];
-        }
-        else
-        {
-            adView = [[CommonADAutoView alloc] initWithFrame:CGRectMake(0, 0, DIF_SCREEN_WIDTH, DIF_PX(150))];
-            [adView setTag:1000];
-            [reusableview addSubview:adView];
-        }
+        UILabel *subTitle = [[UILabel alloc] initWithFrame:CGRectMake(DIF_PX(14), DIF_PX(16), DIF_PX(100), DIF_PX(24))];
+        [subTitle setTextColor:DIF_HEXCOLOR(@"#000000")];
+        [subTitle setFont:DIF_DIFONTOFSIZE(17)];
+        [reusableview addSubview:subTitle];
+        [subTitle setText:@"信息"];
     }
     return reusableview;
 }
@@ -121,21 +110,6 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.row)
-    {
-        case 0:
-        {
-            if (self.selectBlock)
-            {
-                self.selectBlock(indexPath, nil);
-            }
-        }
-            break;
-        default:
-            [CommonAlertView showAlertViewOneBtnWithTitle:@"提示" Message:@"敬请期待！"
-                                              ButtonTitle:nil];
-            break;
-    }
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -143,7 +117,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat widht = (DIF_SCREEN_WIDTH-4*DIF_PX(30))/3;
-    return CGSizeMake(widht, DIF_PX(60));
+    return CGSizeMake(widht, DIF_PX(30));
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
@@ -163,7 +137,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
-    return CGSizeMake(DIF_SCREEN_WIDTH, DIF_PX(150));
+    return CGSizeMake(DIF_SCREEN_WIDTH, DIF_PX(50));
 }
 
 @end

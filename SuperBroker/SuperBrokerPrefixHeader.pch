@@ -98,6 +98,7 @@
 #import "CommonMoreColumnsPickerView.h"
 #import "NotificationTool.h"
 #import "CommonADAutoView.h"
+#import "CommonPageControlView.h"
 
 #import "AppDelegate.h"
 #import "DefineHeader.h"

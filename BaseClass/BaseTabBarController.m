@@ -117,6 +117,11 @@ const CGFloat tabbar_Hegith = 50;
 - (void)SelectButtonAction:(UIButton *)btn
 {
     self.selectedIndex = btn.tag-100;
+    if (self.selectedIndex == 0)
+    {
+        BaseNavigationViewController *nv1 = self.viewControllers[0];
+        [nv1 popToRootViewControllerAnimated:YES];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context

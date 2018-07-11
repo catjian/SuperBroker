@@ -18,6 +18,12 @@
     RootBaseView *m_BaseView;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    DIF_ShowTabBarAnimation(YES);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -29,6 +35,14 @@
     [super viewDidAppear:animated];
     m_BaseView = [[RootBaseView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:m_BaseView];
+    DIF_WeakSelf(self)
+    [m_BaseView setSelectBlock:^(NSIndexPath *indexPath, id model) {
+        DIF_StrongSelf
+        if (indexPath.row == 0)
+        {
+            [strongSelf loadViewController:@"InsuranceViewController" hidesBottomBarWhenPushed:NO];
+        }
+    }];
 }
 
 @end

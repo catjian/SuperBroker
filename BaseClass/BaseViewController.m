@@ -136,7 +136,10 @@ UIKIT_STATIC_INLINE UIImage *imageWithColor(UIColor *color)
     {
         return nil;
     }
-    DIF_HideTabBarAnimation(ishide)
+    if (ishide)
+    {
+        DIF_HideTabBarAnimation(ishide)
+    }
     [self.tabBarController.tabBar setHidden:ishide];
     if (isPush)
     {

@@ -10,4 +10,6 @@
 
 @interface RootBaseView : UIView
 
+@property (nonatomic, copy) tableViewSelectRowAtIndexPathBlock selectBlock;
+
 @end

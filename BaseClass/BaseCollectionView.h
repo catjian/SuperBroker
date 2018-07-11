@@ -14,7 +14,7 @@ typedef void(^collectionViewTouchMoveEventBlock)(UICollectionView *collectionVie
 typedef void(^collectionViewTouchCancelEventBlock)(UICollectionView *collectionView, NSSet *touches, UIEvent *event);
 typedef void(^collectionViewScrollEventlock)(UICollectionView *collectionView, UIScrollView *scrollView);
 
-typedef void(^SelectRowAtIndexPathBlock)(NSIndexPath *indexPath, id model);
+typedef void(^collectionViewSelectRowAtIndexPathBlock)(NSIndexPath *indexPath, id model);
 
 typedef void(^collectionViewHeaderRefreshBlock)(void);
 typedef void(^collectionViewLoadMoreBlock)(NSInteger page);
@@ -29,7 +29,7 @@ typedef void(^collectionViewLoadMoreBlock)(NSInteger page);
 @property (nonatomic, copy, readwrite) collectionViewTouchCancelEventBlock touchCancelBlock;
 @property (nonatomic, copy, readwrite) collectionViewScrollEventlock scrollBlock;
 
-@property (nonatomic, copy, readwrite) SelectRowAtIndexPathBlock selectBlock;
+@property (nonatomic, copy, readwrite) collectionViewSelectRowAtIndexPathBlock selectBlock;
 
 @property (nonatomic, copy, readwrite) collectionViewHeaderRefreshBlock refreshBlock;
 @property (nonatomic, copy, readwrite) collectionViewLoadMoreBlock loadMoreBlock;
