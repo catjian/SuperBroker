@@ -7,31 +7,34 @@
 //
 
 #import "MyViewController.h"
+#import "MyBaseView.h"
 
 @interface MyViewController ()
 
 @end
 
 @implementation MyViewController
+{
+    MyBaseView *m_BaseView;
+}
 
-- (void)viewDidLoad {
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    DIF_ShowTabBarAnimation(YES);
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setNavTarBarTitle:@"易保金服"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    m_BaseView = [[MyBaseView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:m_BaseView];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

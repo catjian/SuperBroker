@@ -126,7 +126,80 @@ static CommonHttpAdapter *comHttp = nil;
     return paramString;
 }
 
-#pragma mark Get请求
+#pragma mark 获取请求对象
+- (NSMutableURLRequest *)reWrteCreateHttpRequstWithMethod:(NSString *)model
+                                                URLString:(NSString *)URLString
+                                               parameters:(id)parameters
+                                                  failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure
+{
+    NSError *serializationError = nil;
+    NSMutableURLRequest *request =
+    [httpSessionManager.requestSerializer requestWithMethod:model
+                                                  URLString:[[NSURL URLWithString:URLString relativeToURL:httpSessionManager.baseURL] absoluteString]
+                                                 parameters:parameters
+                                                      error:&serializationError];
+    if (serializationError)
+    {
+        if (failure)
+        {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+            dispatch_async(httpSessionManager.completionQueue ?: dispatch_get_main_queue(), ^{
+                failure(nil, serializationError);
+            });
+#pragma clang diagnostic pop
+        }
+        return nil;
+    }
+    
+    [request setValue:@"ch" forHTTPHeaderField:@"X-Requester"];
+    if (self.access_token && self.access_token.length > 0)
+    {
+        NSString *token = [@"Bearer " stringByAppendingString:self.access_token];
+        [request setValue:token forHTTPHeaderField:@"X-Authorization"];
+    }
+    if ([URLString rangeOfString:@"auth/refresh"].location != NSNotFound)
+    {
+        NSString *token = [@"Bearer " stringByAppendingString:self.refresh_token];
+        [request setValue:token forHTTPHeaderField:@"X-Authorization"];
+    }
+    return request;
+}
+
+#pragma mark 获取请求事件并执行
+- (NSURLSessionDataTask *)httpRequest:(NSURLRequest *)request
+                             progress:(void (^)(NSProgress * _Nonnull))uploadProgress
+                              success:(void (^)(NSURLSessionDataTask * _Nonnull, id _Nullable))success
+                              failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure
+{
+    __block NSURLSessionDataTask *dataTask = nil;
+    dataTask = [httpSessionManager dataTaskWithRequest:request
+                                        uploadProgress:uploadProgress
+                                      downloadProgress:nil
+                                     completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+                                         if (error &&
+                                             (!responseObject ||
+                                              ([responseObject[@"httpStatus"] integerValue] != 401 &&
+                                               [responseObject[@"httpStatus"] integerValue] != 405)))
+                                         {
+                                             if (failure)
+                                             {
+                                                 failure(dataTask, error);
+                                             }
+                                         }
+                                         else
+                                         {
+                                             if (success)
+                                             {
+                                                 success(dataTask, responseObject);
+                                             }
+                                         }
+                                     }];
+    [dataTask resume];
+    return dataTask;
+}
+
+#pragma mark 0- Get请求
 - (void)HttpGetRequestWithCommand:(NSString *)command
                        parameters:(NSDictionary *)parms
                     ResponseBlock:(CommonHttpResponseBlock)block
@@ -142,35 +215,133 @@ static CommonHttpAdapter *comHttp = nil;
         block?block(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_REQUEST_PARMS_NULL):nil;
         return;
     }
-    NSString *urlPara = command;
-    DebugLog(@"command = %@",command);
-    if (![command isEqualToString:@"loginByMobile.action"])
-    {
-        urlPara = [command stringByAppendingFormat:@";jsessionid=%@",sessionString];
-    }
     if (parms)
     {
-        urlPara = [urlPara stringByAppendingFormat:@"?%@",[self parametersToString:parms]];
+        command = [command stringByAppendingFormat:@"?%@",[self parametersToString:parms]];
     }
-//    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-//    NSString *retStr = [[NSString alloc] initWithData:urlPara.UTF8String encoding:enc];
-    [httpSessionManager GET:[urlPara stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]
-                 parameters:nil
-                   progress:nil
-                    success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                        DebugLog(@"responseObject = %@",responseObject);
-                        if (block)
-                        {
-                            block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS,responseObject);
-                        }
-                    }
-                    failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                        DebugLog(@"error = %@",error);
-                        if (failedBlock)
-                        {
-                            failedBlock(error);
-                        }
-                    }];
+    DebugLog(@"command = %@",command);
+    NSMutableURLRequest *request =
+    [self reWrteCreateHttpRequstWithMethod:@"GET"
+                                 URLString:[command stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]
+                                parameters:nil
+                                   failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                       DebugLog(@"error = %@",error);
+                                       if (failedBlock)
+                                       {
+                                           failedBlock(error);
+                                       }
+                                   }];
+    
+    [self httpRequest:request
+             progress:nil
+              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                  DebugLog(@"responseObject = %@",responseObject);
+                  if (block)
+                  {
+                      block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS,responseObject);
+                  }
+              }
+              failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                  DebugLog(@"error = %@",error);
+                  if (failedBlock)
+                  {
+                      failedBlock(error);
+                  }
+              }];
+}
+
+#pragma mark - Post请求
+- (void)HttpPostRequestWithCommand:(NSString *)command
+                        parameters:(NSDictionary *)parms
+                     ResponseBlock:(CommonHttpResponseBlock)block
+                       FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    if (![self connectedToNetwork])
+    {
+        block?block(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_NOT_HAVE_NETWORK):nil;
+        return;
+    }
+    if (!command)
+    {
+        block?block(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_REQUEST_PARMS_NULL):nil;
+        return;
+    }
+    DebugLog(@"command = %@",command);
+    NSMutableURLRequest *request =
+    [self reWrteCreateHttpRequstWithMethod:@"POST"
+                                 URLString:[command stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]
+                                parameters:parms
+                                   failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                       DebugLog(@"error = %@",error);
+                                       if (failedBlock)
+                                       {
+                                           failedBlock(error);
+                                       }
+                                   }];
+    
+    [self httpRequest:request
+             progress:nil
+              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                  DebugLog(@"responseObject = %@",responseObject);
+                  if (block)
+                  {
+                      block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS,responseObject);
+                  }
+              }
+              failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                  DebugLog(@"error = %@",error);
+                  if (failedBlock)
+                  {
+                      failedBlock(error);
+                  }
+              }];
+}
+
+#pragma mark - Put请求
+- (void)HttpPutRequestWithCommand:(NSString *)command
+                        parameters:(NSDictionary *)parms
+                     ResponseBlock:(CommonHttpResponseBlock)block
+                       FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    if (![self connectedToNetwork])
+    {
+        block?block(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_NOT_HAVE_NETWORK):nil;
+        return;
+    }
+    if (!command)
+    {
+        block?block(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_REQUEST_PARMS_NULL):nil;
+        return;
+    }
+    DebugLog(@"command = %@",command);
+    NSMutableURLRequest *request =
+    [self reWrteCreateHttpRequstWithMethod:@"PUT"
+                                 URLString:[command stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]
+                                parameters:parms
+                                   failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                                       DebugLog(@"error = %@",error);
+                                       if (failedBlock)
+                                       {
+                                           failedBlock(error);
+                                       }
+                                   }];
+    
+    [self httpRequest:request
+             progress:nil
+              success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                  DebugLog(@"responseObject = %@",responseObject);
+                  if (block)
+                  {
+                      block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS,responseObject);
+                  }
+              }
+              failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                  DebugLog(@"error = %@",error);
+                  if (failedBlock)
+                  {
+                      failedBlock(error);
+                  }
+              }];
 }
 
 #pragma mark - 用户登录
@@ -212,180 +383,6 @@ static CommonHttpAdapter *comHttp = nil;
                           }
                       }
                          FailedBlcok:failedBlock];
-}
-
-#pragma mark - 用户退出
-- (void)httpRequestPostLogoutWithParameters:(NSDictionary *)parms
-                              ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    if (!parms)
-    {
-        successBlock?successBlock(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_REQUEST_PARMS_NULL):nil;
-        return;
-    }
-    __weak typeof(self) weakSelf = self;
-    [self HttpGetRequestWithCommand:@"logoutByMobile.action"
-                          parameters:parms
-                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
-                          [weakSelf initAFNSession];
-                      } FailedBlcok:^(NSError *error) {
-                          [weakSelf initAFNSession];
-                      }];
-}
-
-#pragma mark - 获取工单列表
-- (void)httpRequestGetGridListWithParameters:(NSDictionary *)parms
-                               ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                 FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"getService4MobileGrid.action"
-                          parameters:parms
-                       ResponseBlock:successBlock
-                         FailedBlcok:failedBlock];
-}
-
-#pragma mark - 添加工单处理人员
-- (void)httpRequestAddExecStaffByMobileWithParameters:(NSDictionary *)parms
-                                        ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                          FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"addExecStaffByMobile.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
-}
-
-#pragma mark - 删除工单处理人员
-- (void)httpRequestDelExecStaffByMobileWithParameters:(NSDictionary *)parms
-                                        ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                          FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"delExecStaffByMobile.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
-}
-
-#pragma mark - 获取工区列表
-- (void)httpRequestGetWareaJsonForSearchByMobileWithParameters:(NSDictionary *)parms
-                                                 ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                                   FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"getWareaJsonForSearchByMobile.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
-}
-
-#pragma mark - 获取考核数据信息
-- (void)httpRequestGetKaoheDataByMobileWithParameters:(NSDictionary *)parms
-                                        ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                          FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"getKaoheDataByMobile.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
-}
-
-#pragma mark - 获取下级工单原因
-- (void)httpRequestGetWaReasonOptionsListByMobileWithParameters:(NSDictionary *)parms
-                                                  ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                                    FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"getWaReasonOptionsListByMobile.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
-}
-
-#pragma mark - 工单接收前的前期准备数据
-- (void)httpRequestReceiveRfWithParameters:(NSDictionary *)parms
-                             ResponseBlock:(CommonHttpResponseBlock)successBlock
-                               FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"receiveRf.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
-}
-
-#pragma mark - 接收工单/处理返单/工单错返
-- (void)httpRequestSubmitServiceResultForGridWithParameters:(NSDictionary *)parms
-                                              ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                                FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"submitServiceResultForGrid.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
-}
-
-#pragma mark - 工单申请延时
-- (void)httpRequestSubmitRfDelayWithParameters:(NSDictionary *)parms
-                                 ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                   FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"submitRfDelay.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
-}
-
-#pragma mark - 修改密码/转派部门
-- (void)httpRequestModPassByMobileWithParameters:(NSDictionary *)parms
-                                   ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                     FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"modPassByMobile.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
-}
-
-#pragma mark - 获取转派部门信息列表
-- (void)httpRequestGetWareaJsonByMobileWithParameters:(NSDictionary *)parms
-                                        ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                          FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"getWareaJsonByMobile.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
-}
-
-#pragma mark - 获取新工单数据(用于消息提醒)
-- (void)httpRequestCheckNewByMobileWithParameters:(NSDictionary *)parms
-                                        ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                          FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"checkNewByMobile.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
-}
-
-#pragma mark - 获取公告列表
-- (void)httpRequestgetAfficheMessagesByMobileWithParameters:(NSDictionary *)parms
-                                              ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                                FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"getAfficheMessagesByMobile.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
-}
-
-#pragma mark - 获取公告列表
-- (void)httpRequestAfficheInfoByMobileWithParameters:(NSDictionary *)parms
-                                       ResponseBlock:(CommonHttpResponseBlock)successBlock
-                                         FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    [self HttpGetRequestWithCommand:@"afficheInfoByMobile.action"
-                         parameters:parms
-                      ResponseBlock:successBlock
-                        FailedBlcok:failedBlock];
 }
 
 #pragma mark - 取得公告附件下载路径
@@ -445,7 +442,6 @@ static CommonHttpAdapter *comHttp = nil;
                                     return url;
                                 }
                           completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
-                              //                                                                           [m_AllTask removeObject:dataTask];
                               if (successBlock)
                               {
                                   if (error == nil)

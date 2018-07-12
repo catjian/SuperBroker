@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		34745B192016EAE172B49D04 /* libPods-SuperBroker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC4304B8C64092964146D15 /* libPods-SuperBroker.a */; };
+		8221285120F78E51008E8FFB /* MyBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285020F78E51008E8FFB /* MyBaseView.m */; };
+		8221285420F7919D008E8FFB /* MyBaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285320F7919D008E8FFB /* MyBaseViewCell.m */; };
+		8221285820F7BC36008E8FFB /* RootNoticeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285720F7BC36008E8FFB /* RootNoticeDetailModel.m */; };
+		8221285B20F7BCAF008E8FFB /* RootNoticeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285A20F7BCAF008E8FFB /* RootNoticeListModel.m */; };
+		8221285E20F7BD60008E8FFB /* RootMovePictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285D20F7BD60008E8FFB /* RootMovePictureModel.m */; };
+		8221286520F7BE1D008E8FFB /* ArticleclassifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286420F7BE1D008E8FFB /* ArticleclassifyModel.m */; };
+		8221286820F7BE7A008E8FFB /* InsuranceCompanyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286720F7BE7A008E8FFB /* InsuranceCompanyModel.m */; };
+		8221286B20F7BF91008E8FFB /* InsuranceSpeciesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286A20F7BF91008E8FFB /* InsuranceSpeciesModel.m */; };
+		8221286E20F7C092008E8FFB /* InsuranceProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286D20F7C092008E8FFB /* InsuranceProductModel.m */; };
+		8221287320F7C209008E8FFB /* CarInsuranceListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221287220F7C209008E8FFB /* CarInsuranceListModel.m */; };
 		824BD56020F6325D00924E61 /* InsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BD55F20F6325D00924E61 /* InsuranceViewController.m */; };
 		824BD56520F6327500924E61 /* InsuranceBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BD56420F6327500924E61 /* InsuranceBaseView.m */; };
 		824BD56920F6365C00924E61 /* InsuranceViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BD56820F6365C00924E61 /* InsuranceViewCellTableViewCell.m */; };
@@ -123,6 +133,26 @@
 
 /* Begin PBXFileReference section */
 		6ED643B51BAE23F246EF6152 /* Pods-SuperBroker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperBroker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperBroker/Pods-SuperBroker.debug.xcconfig"; sourceTree = "<group>"; };
+		8221284F20F78E51008E8FFB /* MyBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyBaseView.h; path = ProgramClass/My/View/MyBaseView.h; sourceTree = SOURCE_ROOT; };
+		8221285020F78E51008E8FFB /* MyBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyBaseView.m; path = ProgramClass/My/View/MyBaseView.m; sourceTree = SOURCE_ROOT; };
+		8221285220F7919D008E8FFB /* MyBaseViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MyBaseViewCell.h; path = ProgramClass/My/View/MyBaseViewCell.h; sourceTree = SOURCE_ROOT; };
+		8221285320F7919D008E8FFB /* MyBaseViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MyBaseViewCell.m; path = ProgramClass/My/View/MyBaseViewCell.m; sourceTree = SOURCE_ROOT; };
+		8221285620F7BC36008E8FFB /* RootNoticeDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNoticeDetailModel.h; sourceTree = "<group>"; };
+		8221285720F7BC36008E8FFB /* RootNoticeDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootNoticeDetailModel.m; sourceTree = "<group>"; };
+		8221285920F7BCAF008E8FFB /* RootNoticeListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNoticeListModel.h; sourceTree = "<group>"; };
+		8221285A20F7BCAF008E8FFB /* RootNoticeListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootNoticeListModel.m; sourceTree = "<group>"; };
+		8221285C20F7BD60008E8FFB /* RootMovePictureModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootMovePictureModel.h; sourceTree = "<group>"; };
+		8221285D20F7BD60008E8FFB /* RootMovePictureModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootMovePictureModel.m; sourceTree = "<group>"; };
+		8221286320F7BE1D008E8FFB /* ArticleclassifyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ArticleclassifyModel.h; path = ProgramClass/SpecialNews/Model/ArticleclassifyModel.h; sourceTree = SOURCE_ROOT; };
+		8221286420F7BE1D008E8FFB /* ArticleclassifyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ArticleclassifyModel.m; path = ProgramClass/SpecialNews/Model/ArticleclassifyModel.m; sourceTree = SOURCE_ROOT; };
+		8221286620F7BE7A008E8FFB /* InsuranceCompanyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsuranceCompanyModel.h; sourceTree = "<group>"; };
+		8221286720F7BE7A008E8FFB /* InsuranceCompanyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsuranceCompanyModel.m; sourceTree = "<group>"; };
+		8221286920F7BF91008E8FFB /* InsuranceSpeciesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsuranceSpeciesModel.h; sourceTree = "<group>"; };
+		8221286A20F7BF91008E8FFB /* InsuranceSpeciesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsuranceSpeciesModel.m; sourceTree = "<group>"; };
+		8221286C20F7C092008E8FFB /* InsuranceProductModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsuranceProductModel.h; sourceTree = "<group>"; };
+		8221286D20F7C092008E8FFB /* InsuranceProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsuranceProductModel.m; sourceTree = "<group>"; };
+		8221287120F7C209008E8FFB /* CarInsuranceListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceListModel.h; sourceTree = "<group>"; };
+		8221287220F7C209008E8FFB /* CarInsuranceListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceListModel.m; sourceTree = "<group>"; };
 		824BD55E20F6325D00924E61 /* InsuranceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsuranceViewController.h; sourceTree = "<group>"; };
 		824BD55F20F6325D00924E61 /* InsuranceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsuranceViewController.m; sourceTree = "<group>"; };
 		824BD56320F6327500924E61 /* InsuranceBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsuranceBaseView.h; sourceTree = "<group>"; };
@@ -370,6 +400,52 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8221284A20F78E0B008E8FFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8221284F20F78E51008E8FFB /* MyBaseView.h */,
+				8221285020F78E51008E8FFB /* MyBaseView.m */,
+				8221285220F7919D008E8FFB /* MyBaseViewCell.h */,
+				8221285320F7919D008E8FFB /* MyBaseViewCell.m */,
+			);
+			name = View;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		8221284B20F78E26008E8FFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8221285F20F7BDCE008E8FFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8221286320F7BE1D008E8FFB /* ArticleclassifyModel.h */,
+				8221286420F7BE1D008E8FFB /* ArticleclassifyModel.m */,
+			);
+			name = Model;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		8221286F20F7C148008E8FFB /* CarInsurance */ = {
+			isa = PBXGroup;
+			children = (
+				8221287020F7C1D9008E8FFB /* Model */,
+			);
+			path = CarInsurance;
+			sourceTree = "<group>";
+		};
+		8221287020F7C1D9008E8FFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8221287120F7C209008E8FFB /* CarInsuranceListModel.h */,
+				8221287220F7C209008E8FFB /* CarInsuranceListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		824BD55D20F631E000924E61 /* Insurance */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +477,8 @@
 		824BD56220F6326700924E61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8221286C20F7C092008E8FFB /* InsuranceProductModel.h */,
+				8221286D20F7C092008E8FFB /* InsuranceProductModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -468,6 +546,8 @@
 		824BD58620F659BF00924E61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8221286920F7BF91008E8FFB /* InsuranceSpeciesModel.h */,
+				8221286A20F7BF91008E8FFB /* InsuranceSpeciesModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -497,6 +577,8 @@
 		824BD58F20F6615800924E61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8221286620F7BE7A008E8FFB /* InsuranceCompanyModel.h */,
+				8221286720F7BE7A008E8FFB /* InsuranceCompanyModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -581,6 +663,7 @@
 		82731BBB20F4E78F002EF5FE /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				8221286F20F7C148008E8FFB /* CarInsurance */,
 				824BD55D20F631E000924E61 /* Insurance */,
 				82BBED2C20F4F44300BAEEBE /* Model */,
 				82BBED2B20F4F43C00BAEEBE /* View */,
@@ -603,6 +686,7 @@
 		82731BC220F4EADA002EF5FE /* SpecialNews */ = {
 			isa = PBXGroup;
 			children = (
+				8221285F20F7BDCE008E8FFB /* Model */,
 				82731BCB20F4EB21002EF5FE /* SpecialNewsViewController.h */,
 				82731BCC20F4EB21002EF5FE /* SpecialNewsViewController.m */,
 			);
@@ -621,6 +705,8 @@
 		82731BC420F4EB05002EF5FE /* My */ = {
 			isa = PBXGroup;
 			children = (
+				8221284B20F78E26008E8FFB /* Model */,
+				8221284A20F78E0B008E8FFB /* View */,
 				82731BC520F4EB10002EF5FE /* MyViewController.h */,
 				82731BC620F4EB10002EF5FE /* MyViewController.m */,
 			);
@@ -641,6 +727,12 @@
 		82BBED2C20F4F44300BAEEBE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8221285620F7BC36008E8FFB /* RootNoticeDetailModel.h */,
+				8221285720F7BC36008E8FFB /* RootNoticeDetailModel.m */,
+				8221285920F7BCAF008E8FFB /* RootNoticeListModel.h */,
+				8221285A20F7BCAF008E8FFB /* RootNoticeListModel.m */,
+				8221285C20F7BD60008E8FFB /* RootMovePictureModel.h */,
+				8221285D20F7BD60008E8FFB /* RootMovePictureModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -678,66 +770,66 @@
 		82C0766720F4E67B0080E37F /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				82C0766820F4E67B0080E37F /* NSString+Attributed.h */,
-				82C0766920F4E67B0080E37F /* UIImage+CornerRadius.m */,
-				82C0766A20F4E67B0080E37F /* UIAlertController+CustomAlert.h */,
-				82C0766B20F4E67B0080E37F /* UIImage+ConvertBase64.m */,
-				82C0766C20F4E67B0080E37F /* NSObject+Null.h */,
-				82C0766D20F4E67B0080E37F /* NSDictionary+Property.h */,
-				82C0766E20F4E67B0080E37F /* PlaceTextView.h */,
-				82C0766F20F4E67B0080E37F /* NSString+Extension_NSString.h */,
-				82C0767020F4E67B0080E37F /* NSString+Null.h */,
-				82C0767120F4E67B0080E37F /* UIColor+Hex.m */,
-				82C0767220F4E67B0080E37F /* NSNumber+AppendingString.h */,
-				82C0767320F4E67B0080E37F /* NSString+GetWeekDay.h */,
-				82C0767420F4E67B0080E37F /* UIView+SDAutoLayout.m */,
-				82C0767520F4E67B0080E37F /* NSDictionary+Null.m */,
-				82C0767620F4E67B0080E37F /* UIView+BackHexColor.h */,
-				82C0767720F4E67B0080E37F /* UITableView+SDAutoTableViewCellHeight.h */,
-				82C0767820F4E67B0080E37F /* NSString+MD5.h */,
-				82C0767920F4E67B0080E37F /* UIImage+Extension.m */,
-				82C0767A20F4E67B0080E37F /* UIButton+ImageTitleStyle.h */,
-				82C0767B20F4E67B0080E37F /* UIImageView+CornerRadius.h */,
-				82C0767C20F4E67B0080E37F /* NSString+AppendingString.m */,
-				82C0767D20F4E67B0080E37F /* NSString+GBK.h */,
-				82C0767E20F4E67B0080E37F /* NSArray+Null.m */,
-				82C0767F20F4E67B0080E37F /* NSString+TransformToPinYin.h */,
-				82C0768020F4E67B0080E37F /* UIImageView+CircleImage.h */,
-				82C0768120F4E67B0080E37F /* UILabel+CallPhoneExtension.h */,
-				82C0768220F4E67B0080E37F /* NSString+ No2hz.m */,
-				82C0768320F4E67B0080E37F /* UIViewExt.m */,
-				82C0768420F4E67B0080E37F /* NSString+ConvertHex.m */,
-				82C0768520F4E67B0080E37F /* UIButton+CircleImage.m */,
-				82C0768620F4E67B0080E37F /* NSObject+Null.m */,
-				82C0768720F4E67B0080E37F /* UIImage+ConvertBase64.h */,
-				82C0768820F4E67B0080E37F /* UIAlertController+CustomAlert.m */,
-				82C0768920F4E67B0080E37F /* UIImage+CornerRadius.h */,
-				82C0768A20F4E67B0080E37F /* NSString+Attributed.m */,
-				82C0768B20F4E67B0080E37F /* NSNumber+AppendingString.m */,
-				82C0768C20F4E67B0080E37F /* UIColor+Hex.h */,
-				82C0768D20F4E67B0080E37F /* NSString+Null.m */,
-				82C0768E20F4E67B0080E37F /* NSString+Extension_NSString.m */,
-				82C0768F20F4E67B0080E37F /* PlaceTextView.m */,
-				82C0769020F4E67B0080E37F /* NSDictionary+Property.m */,
-				82C0769120F4E67B0080E37F /* NSString+AppendingString.h */,
-				82C0769220F4E67B0080E37F /* UIImageView+CornerRadius.m */,
-				82C0769320F4E67B0080E37F /* UIButton+ImageTitleStyle.m */,
-				82C0769420F4E67B0080E37F /* UIImage+Extension.h */,
-				82C0769520F4E67B0080E37F /* NSString+MD5.m */,
-				82C0769620F4E67B0080E37F /* UITableView+SDAutoTableViewCellHeight.m */,
-				82C0769720F4E67B0080E37F /* UIView+BackHexColor.m */,
-				82C0769820F4E67B0080E37F /* NSDictionary+Null.h */,
-				82C0769920F4E67B0080E37F /* UIView+SDAutoLayout.h */,
-				82C0769A20F4E67B0080E37F /* NSString+GetWeekDay.m */,
-				82C0769B20F4E67B0080E37F /* UIButton+CircleImage.h */,
-				82C0769C20F4E67B0080E37F /* NSString+ConvertHex.h */,
-				82C0769D20F4E67B0080E37F /* UIViewExt.h */,
-				82C0769E20F4E67B0080E37F /* NSString+ No2hz.h */,
-				82C0769F20F4E67B0080E37F /* UIImageView+CircleImage.m */,
-				82C076A020F4E67B0080E37F /* UILabel+CallPhoneExtension.m */,
-				82C076A120F4E67B0080E37F /* NSString+TransformToPinYin.m */,
 				82C076A220F4E67B0080E37F /* NSArray+Null.h */,
+				82C0767E20F4E67B0080E37F /* NSArray+Null.m */,
+				82C0769820F4E67B0080E37F /* NSDictionary+Null.h */,
+				82C0767520F4E67B0080E37F /* NSDictionary+Null.m */,
+				82C0766D20F4E67B0080E37F /* NSDictionary+Property.h */,
+				82C0769020F4E67B0080E37F /* NSDictionary+Property.m */,
+				82C0767220F4E67B0080E37F /* NSNumber+AppendingString.h */,
+				82C0768B20F4E67B0080E37F /* NSNumber+AppendingString.m */,
+				82C0766C20F4E67B0080E37F /* NSObject+Null.h */,
+				82C0768620F4E67B0080E37F /* NSObject+Null.m */,
+				82C0769E20F4E67B0080E37F /* NSString+ No2hz.h */,
+				82C0768220F4E67B0080E37F /* NSString+ No2hz.m */,
+				82C0769120F4E67B0080E37F /* NSString+AppendingString.h */,
+				82C0767C20F4E67B0080E37F /* NSString+AppendingString.m */,
+				82C0766820F4E67B0080E37F /* NSString+Attributed.h */,
+				82C0768A20F4E67B0080E37F /* NSString+Attributed.m */,
+				82C0769C20F4E67B0080E37F /* NSString+ConvertHex.h */,
+				82C0768420F4E67B0080E37F /* NSString+ConvertHex.m */,
+				82C0766F20F4E67B0080E37F /* NSString+Extension_NSString.h */,
+				82C0768E20F4E67B0080E37F /* NSString+Extension_NSString.m */,
+				82C0767D20F4E67B0080E37F /* NSString+GBK.h */,
 				82C076A320F4E67B0080E37F /* NSString+GBK.m */,
+				82C0767320F4E67B0080E37F /* NSString+GetWeekDay.h */,
+				82C0769A20F4E67B0080E37F /* NSString+GetWeekDay.m */,
+				82C0767820F4E67B0080E37F /* NSString+MD5.h */,
+				82C0769520F4E67B0080E37F /* NSString+MD5.m */,
+				82C0767020F4E67B0080E37F /* NSString+Null.h */,
+				82C0768D20F4E67B0080E37F /* NSString+Null.m */,
+				82C0767F20F4E67B0080E37F /* NSString+TransformToPinYin.h */,
+				82C076A120F4E67B0080E37F /* NSString+TransformToPinYin.m */,
+				82C0766E20F4E67B0080E37F /* PlaceTextView.h */,
+				82C0768F20F4E67B0080E37F /* PlaceTextView.m */,
+				82C0766A20F4E67B0080E37F /* UIAlertController+CustomAlert.h */,
+				82C0768820F4E67B0080E37F /* UIAlertController+CustomAlert.m */,
+				82C0769B20F4E67B0080E37F /* UIButton+CircleImage.h */,
+				82C0768520F4E67B0080E37F /* UIButton+CircleImage.m */,
+				82C0767A20F4E67B0080E37F /* UIButton+ImageTitleStyle.h */,
+				82C0769320F4E67B0080E37F /* UIButton+ImageTitleStyle.m */,
+				82C0768C20F4E67B0080E37F /* UIColor+Hex.h */,
+				82C0767120F4E67B0080E37F /* UIColor+Hex.m */,
+				82C0768720F4E67B0080E37F /* UIImage+ConvertBase64.h */,
+				82C0766B20F4E67B0080E37F /* UIImage+ConvertBase64.m */,
+				82C0768920F4E67B0080E37F /* UIImage+CornerRadius.h */,
+				82C0766920F4E67B0080E37F /* UIImage+CornerRadius.m */,
+				82C0769420F4E67B0080E37F /* UIImage+Extension.h */,
+				82C0767920F4E67B0080E37F /* UIImage+Extension.m */,
+				82C0768020F4E67B0080E37F /* UIImageView+CircleImage.h */,
+				82C0769F20F4E67B0080E37F /* UIImageView+CircleImage.m */,
+				82C0767B20F4E67B0080E37F /* UIImageView+CornerRadius.h */,
+				82C0769220F4E67B0080E37F /* UIImageView+CornerRadius.m */,
+				82C0768120F4E67B0080E37F /* UILabel+CallPhoneExtension.h */,
+				82C076A020F4E67B0080E37F /* UILabel+CallPhoneExtension.m */,
+				82C0767720F4E67B0080E37F /* UITableView+SDAutoTableViewCellHeight.h */,
+				82C0769620F4E67B0080E37F /* UITableView+SDAutoTableViewCellHeight.m */,
+				82C0767620F4E67B0080E37F /* UIView+BackHexColor.h */,
+				82C0769720F4E67B0080E37F /* UIView+BackHexColor.m */,
+				82C0769920F4E67B0080E37F /* UIView+SDAutoLayout.h */,
+				82C0767420F4E67B0080E37F /* UIView+SDAutoLayout.m */,
+				82C0769D20F4E67B0080E37F /* UIViewExt.h */,
+				82C0768320F4E67B0080E37F /* UIViewExt.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -816,31 +908,31 @@
 		82C076CC20F4E67B0080E37F /* CommonTool */ = {
 			isa = PBXGroup;
 			children = (
-				82C076CD20F4E67B0080E37F /* RSAEncryptor.h */,
-				82C076CE20F4E67B0080E37F /* CommonAchieveModelValue.m */,
-				82C076CF20F4E67B0080E37F /* CommonHUD */,
-				82C076D320F4E67B0080E37F /* CommonVerify.h */,
-				82C076D420F4E67B0080E37F /* CommonTool.m */,
-				82C076D520F4E67B0080E37F /* CommonHttpAdapter.m */,
-				82C076D620F4E67B0080E37F /* CommonImage.m */,
-				82C076D720F4E67B0080E37F /* CommonGetIPAddress.h */,
-				82C076D820F4E67B0080E37F /* NotificationTool */,
-				82C076DB20F4E67B0080E37F /* CommonDate.h */,
-				82C076DC20F4E67B0080E37F /* CommonAnimation.h */,
-				82C076DD20F4E67B0080E37F /* CommonAlertView.h */,
-				82C076DE20F4E67B0080E37F /* CommonPictureSelect.h */,
-				82C076DF20F4E67B0080E37F /* DefineHeader.h */,
 				82C076E020F4E67B0080E37F /* CommonAchieveModelValue.h */,
-				82C076E120F4E67B0080E37F /* RSAEncryptor.m */,
-				82C076E220F4E67B0080E37F /* CommonGetIPAddress.m */,
-				82C076E320F4E67B0080E37F /* CommonImage.h */,
-				82C076E420F4E67B0080E37F /* CommonHttpAdapter.h */,
-				82C076E520F4E67B0080E37F /* CommonTool.h */,
-				82C076E620F4E67B0080E37F /* CommonVerify.m */,
-				82C076E720F4E67B0080E37F /* CommonDate.m */,
-				82C076E820F4E67B0080E37F /* CommonPictureSelect.m */,
+				82C076CE20F4E67B0080E37F /* CommonAchieveModelValue.m */,
+				82C076DD20F4E67B0080E37F /* CommonAlertView.h */,
 				82C076E920F4E67B0080E37F /* CommonAlertView.m */,
+				82C076DC20F4E67B0080E37F /* CommonAnimation.h */,
 				82C076EA20F4E67B0080E37F /* CommonAnimation.m */,
+				82C076DB20F4E67B0080E37F /* CommonDate.h */,
+				82C076E720F4E67B0080E37F /* CommonDate.m */,
+				82C076D720F4E67B0080E37F /* CommonGetIPAddress.h */,
+				82C076E220F4E67B0080E37F /* CommonGetIPAddress.m */,
+				82C076E420F4E67B0080E37F /* CommonHttpAdapter.h */,
+				82C076D520F4E67B0080E37F /* CommonHttpAdapter.m */,
+				82C076CF20F4E67B0080E37F /* CommonHUD */,
+				82C076E320F4E67B0080E37F /* CommonImage.h */,
+				82C076D620F4E67B0080E37F /* CommonImage.m */,
+				82C076DE20F4E67B0080E37F /* CommonPictureSelect.h */,
+				82C076E820F4E67B0080E37F /* CommonPictureSelect.m */,
+				82C076E520F4E67B0080E37F /* CommonTool.h */,
+				82C076D420F4E67B0080E37F /* CommonTool.m */,
+				82C076D320F4E67B0080E37F /* CommonVerify.h */,
+				82C076E620F4E67B0080E37F /* CommonVerify.m */,
+				82C076DF20F4E67B0080E37F /* DefineHeader.h */,
+				82C076D820F4E67B0080E37F /* NotificationTool */,
+				82C076CD20F4E67B0080E37F /* RSAEncryptor.h */,
+				82C076E120F4E67B0080E37F /* RSAEncryptor.m */,
 			);
 			path = CommonTool;
 			sourceTree = "<group>";
@@ -1047,6 +1139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8221285120F78E51008E8FFB /* MyBaseView.m in Sources */,
 				82C0773C20F4E67C0080E37F /* CommonHttpAdapter.m in Sources */,
 				82BBED4120F4FFAD00BAEEBE /* RootBaseView.m in Sources */,
 				82C0774E20F4E67C0080E37F /* BaseViewController.m in Sources */,
@@ -1064,6 +1157,8 @@
 				82C0774220F4E67C0080E37F /* CommonDate.m in Sources */,
 				82C0774920F4E67C0080E37F /* AJPhotoZoomingScrollView.m in Sources */,
 				82C0773E20F4E67C0080E37F /* NotificationTool.m in Sources */,
+				8221286520F7BE1D008E8FFB /* ArticleclassifyModel.m in Sources */,
+				8221286B20F7BF91008E8FFB /* InsuranceSpeciesModel.m in Sources */,
 				82731BBF20F4E7B7002EF5FE /* RootViewController.m in Sources */,
 				82C0773420F4E67C0080E37F /* CommonPopListView.m in Sources */,
 				82C0774120F4E67C0080E37F /* CommonVerify.m in Sources */,
@@ -1074,6 +1169,7 @@
 				82C0770E20F4E67C0080E37F /* NSArray+Null.m in Sources */,
 				824BD58420F659B600924E61 /* InsuranceTypesViewController.m in Sources */,
 				82BBED4A20F503F100BAEEBE /* CommonADAutoView.m in Sources */,
+				8221286E20F7C092008E8FFB /* InsuranceProductModel.m in Sources */,
 				824BD56920F6365C00924E61 /* InsuranceViewCellTableViewCell.m in Sources */,
 				82C0770920F4E67C0080E37F /* UIColor+Hex.m in Sources */,
 				824BD58920F659EC00924E61 /* InsuranceTypesBaseView.m in Sources */,
@@ -1083,6 +1179,8 @@
 				82C0771820F4E67C0080E37F /* NSString+Extension_NSString.m in Sources */,
 				824BD5A120F662BD00924E61 /* InsuranceAgeBaseView.m in Sources */,
 				82BBED3D20F4FB9A00BAEEBE /* EditPasswordViewController.m in Sources */,
+				8221286820F7BE7A008E8FFB /* InsuranceCompanyModel.m in Sources */,
+				8221285820F7BC36008E8FFB /* RootNoticeDetailModel.m in Sources */,
 				82C0772A20F4E67C0080E37F /* CommonMoreColumnsPickerView.m in Sources */,
 				82C0772720F4E67C0080E37F /* CustomRoundButton.m in Sources */,
 				82C0771E20F4E67C0080E37F /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
@@ -1096,6 +1194,8 @@
 				82C0773620F4E67C0080E37F /* CommonBottomPopView.m in Sources */,
 				82731BCD20F4EB21002EF5FE /* SpecialNewsViewController.m in Sources */,
 				8257C7B820F4E1DC00FA550D /* main.m in Sources */,
+				8221287320F7C209008E8FFB /* CarInsuranceListModel.m in Sources */,
+				8221285B20F7BCAF008E8FFB /* RootNoticeListModel.m in Sources */,
 				82C0773920F4E67C0080E37F /* CommonHUD.m in Sources */,
 				82C0774320F4E67C0080E37F /* CommonPictureSelect.m in Sources */,
 				82C0774520F4E67C0080E37F /* CommonAnimation.m in Sources */,
@@ -1121,6 +1221,7 @@
 				82C0771020F4E67C0080E37F /* UIViewExt.m in Sources */,
 				82C0771620F4E67C0080E37F /* NSNumber+AppendingString.m in Sources */,
 				824BD5A520F662E100924E61 /* InsuranceAgeViewCell.m in Sources */,
+				8221285420F7919D008E8FFB /* MyBaseViewCell.m in Sources */,
 				82C0774620F4E67C0080E37F /* CommonSelectOneLineViewController.m in Sources */,
 				82C0774020F4E67C0080E37F /* CommonGetIPAddress.m in Sources */,
 				82C0774820F4E67C0080E37F /* AJPhotoBrowserViewController.m in Sources */,
@@ -1134,6 +1235,7 @@
 				824BD59820F6619E00924E61 /* InsuranceCompanyViewCell.m in Sources */,
 				82C0773120F4E67C0080E37F /* CommonNumberKeyboardView.m in Sources */,
 				82C0773720F4E67C0080E37F /* CommonRightPopView.m in Sources */,
+				8221285E20F7BD60008E8FFB /* RootMovePictureModel.m in Sources */,
 				82C0770720F4E67C0080E37F /* UIImage+CornerRadius.m in Sources */,
 				82C0771720F4E67C0080E37F /* NSString+Null.m in Sources */,
 				8257C7AA20F4E1DA00FA550D /* AppDelegate.m in Sources */,

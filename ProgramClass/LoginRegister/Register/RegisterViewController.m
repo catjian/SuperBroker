@@ -10,28 +10,52 @@
 
 @interface RegisterViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *phoneTF;
+@property (weak, nonatomic) IBOutlet UITextField *verifyCodeTF;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTF;
+@property (weak, nonatomic) IBOutlet UITextField *inviteCodeTF;
+@property (weak, nonatomic) IBOutlet UIButton *openSecureBtn;
+
 @end
 
 @implementation RegisterViewController
 
-- (void)viewDidLoad {
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Button Event
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)getVerifyCodeButtonEvent:(id)sender
+{
 }
-*/
 
+- (IBAction)openPasswordSecureButtonEvent:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    [sender setTitle:sender.selected?@"开":@"关" forState:UIControlStateNormal];
+    [self.passwordTF setSecureTextEntry:sender.selected];
+}
+
+- (IBAction)registerButtonEvent:(id)sender
+{
+}
+
+- (IBAction)gotoLoginButtonEvent:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end
