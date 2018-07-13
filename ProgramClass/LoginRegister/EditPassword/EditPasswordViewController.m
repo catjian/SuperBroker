@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.view setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
     [self setNavTarBarTitle:@"修改密码"];
 }
 
@@ -42,6 +43,12 @@
 }
 
 - (IBAction)editPasswordButtonEvent:(id)sender {
+}
+
+- (IBAction)openPasswordSecureButtonEvent:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    [self.passwordTF setSecureTextEntry:sender.selected];
 }
 
 @end

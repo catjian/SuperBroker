@@ -67,8 +67,8 @@ UIKIT_STATIC_INLINE UIImage *imageWithColor(UIColor *color)
     
     if (self.ShowBackButton)
     {
-//        [self setBackItem];
-        [self setLeftItemWithContentName:@"" imageName:@"ic_back"];
+        [self setBackItem];
+//        [self setLeftItemWithContentName:@"" imageName:@"返回箭头-黑"];
     }
 }
 
@@ -151,7 +151,7 @@ UIKIT_STATIC_INLINE UIImage *imageWithColor(UIColor *color)
 
 -(void)setBackItem
 {
-    UIImage *btnImage = [UIImage imageNamed:@"bottom_left"];
+    UIImage *btnImage = [UIImage imageNamed:@"返回箭头-黑"];
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [leftBtn setFrame:CGRectMake(0, 0, btnImage.size.width, btnImage.size.height)];
     [leftBtn setImage:[btnImage stretchableImageWithLeftCapWidth:2 topCapHeight:2] forState:UIControlStateNormal];

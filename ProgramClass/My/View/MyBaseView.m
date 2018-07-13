@@ -8,6 +8,7 @@
 
 #import "MyBaseView.h"
 #import "MyBaseViewCell.h"
+#import "MyViewDataModel.h"
 
 @implementation MyBaseView
 {
@@ -15,8 +16,10 @@
     UIView *m_TopView;
     UIImageView *m_CustomIcon;
     UILabel *m_CustomName;
-    UIButton *m_CustomLive;
+    UILabel *m_CustomLive;
     NSArray *m_TitleArr;
+    UILabel *m_CustomCoupon;
+    UILabel *m_CustomIncome;
 }
 
 - (instancetype) initWithFrame:(CGRect)frame
@@ -35,40 +38,84 @@
 - (void)createBackView
 {
     UIImageView *backView = [[UIImageView alloc] initWithFrame:self.bounds];
-    [backView setBackgroundColor:[UIColor greenColor]];
+    [backView setBackgroundColor:[UIColor blueColor]];
     [self addSubview:backView];
 }
 
 - (void)createTopView
 {
-    m_TopView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height)];
+    m_TopView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, self.width, self.height)];
     [m_TopView setBackgroundColor:[UIColor clearColor]];
     [self addSubview:m_TopView];
     
-    UIView *roundView = [[UIView alloc] initWithFrame:CGRectMake(0, DIF_PX(100), DIF_SCREEN_WIDTH*2, DIF_SCREEN_WIDTH*2)];
-    [roundView setCenterX:m_TopView.width/2];
-    [roundView setBackgroundColor:[UIColor whiteColor]];
-    [roundView.layer setCornerRadius:DIF_SCREEN_WIDTH];
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBtn setFrame:CGRectMake(0, DIF_PX(11), DIF_PX(22), DIF_PX(22))];
+    [rightBtn setRight:DIF_SCREEN_WIDTH-DIF_PX(12)];
+    [rightBtn setImage:[UIImage imageNamed:@"客服"] forState:UIControlStateNormal];
+    [m_TopView addSubview:rightBtn];
+    
+    UIView *roundView = [[UIView alloc] initWithFrame:CGRectMake(DIF_PX(12), DIF_PX(56), DIF_SCREEN_WIDTH-DIF_PX(24), DIF_SCREEN_HEIGHT)];
+    [roundView setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
+    [roundView.layer setCornerRadius:5];
     [m_TopView addSubview:roundView];
     
-    UIView *spaceView = [[UIView alloc] initWithFrame:CGRectMake(0, DIF_PX(160), DIF_SCREEN_WIDTH, DIF_SCREEN_HEIGHT*2)];
+    UIView *spaceView = [[UIView alloc] initWithFrame:CGRectMake(0, roundView.top+DIF_PX(194), DIF_SCREEN_WIDTH, DIF_SCREEN_HEIGHT*2)];
     [spaceView setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
     [m_TopView addSubview:spaceView];
     
-    m_CustomIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, DIF_PX(80), DIF_PX(80))];
+    m_CustomIcon = [[UIImageView alloc] initWithFrame:CGRectMake(DIF_PX(34), DIF_PX(31), DIF_PX(80), DIF_PX(80))];
     [m_CustomIcon setBackgroundColor:[UIColor yellowColor]];
-    [m_CustomIcon setCenterX:m_TopView.width/2];
-    [m_CustomIcon setCenterY:roundView.top];
-    [m_TopView addSubview:m_CustomIcon];
+    [roundView addSubview:m_CustomIcon];
     
-    m_CustomName = [[UILabel alloc] initWithFrame:CGRectMake(DIF_PX(40), m_CustomIcon.bottom+DIF_PX(6), m_TopView.width-DIF_PX(40*2), DIF_PX(40))];
-    [m_CustomName setTextAlignment:NSTextAlignmentCenter];
-    [m_TopView addSubview:m_CustomName];
+    m_CustomName = [[UILabel alloc] initWithFrame:CGRectMake(m_CustomIcon.right+DIF_PX(12), DIF_PX(52), 0, DIF_PX(30))];
+    [m_CustomName setWidth:spaceView.width-m_CustomName.left];
+    [m_CustomName setTextColor:DIF_HEXCOLOR(@"333333")];
+    [m_CustomName setFont:DIF_UIFONTOFSIZE(18)];
+    [m_CustomName setText:@"用户名"];
+    [roundView addSubview:m_CustomName];
     
-    m_CustomLive = [UIButton buttonWithType:UIButtonTypeCustom];
-    [m_CustomLive setFrame:CGRectMake(m_CustomName.left, m_CustomName.bottom+DIF_PX(6), m_CustomName.width, DIF_PX(60))];
-    [m_CustomLive.titleLabel setTextAlignment:NSTextAlignmentCenter];
-    [m_TopView addSubview:m_CustomLive];
+    m_CustomLive = [[UILabel alloc] initWithFrame:CGRectMake(m_CustomName.left, m_CustomName.bottom, m_CustomName.width, DIF_PX(30))];
+    [m_CustomLive setText:@"高级会员"];
+    [m_CustomLive setTextColor:DIF_HEXCOLOR(@"ff5000")];
+    [m_CustomLive setFont:DIF_UIFONTOFSIZE(13)];
+    [roundView addSubview:m_CustomLive];
+    
+    m_CustomCoupon = [[UILabel alloc] initWithFrame:CGRectMake(0, m_CustomIcon.bottom+DIF_PX(30), DIF_PX(140), DIF_PX(14))];
+    [m_CustomCoupon setText:@"88.00"];
+    [m_CustomCoupon setTextColor:DIF_HEXCOLOR(@"333333")];
+    [m_CustomCoupon setFont:DIF_UIFONTOFSIZE(18)];
+    [m_CustomCoupon setTextAlignment:NSTextAlignmentCenter];
+    [roundView addSubview:m_CustomCoupon];
+    
+    UILabel *couponTitle = [[UILabel alloc] initWithFrame:CGRectMake(m_CustomCoupon.left, m_CustomCoupon.bottom+DIF_PX(12), m_CustomCoupon.width, DIF_PX(14))];
+    [couponTitle setText:@"我的消费券"];
+    [couponTitle setTextColor:DIF_HEXCOLOR(@"999999")];
+    [couponTitle setFont:DIF_UIFONTOFSIZE(13)];
+    [couponTitle setTextAlignment:NSTextAlignmentCenter];
+    [roundView addSubview:couponTitle];
+    
+    UIView *lineH = [[UIView alloc] initWithFrame:CGRectMake(m_CustomCoupon.right, m_CustomCoupon.top, 1, DIF_PX(35))];
+    [lineH setBackgroundColor:DIF_HEXCOLOR(@"dedede")];
+    [roundView addSubview:lineH];
+    
+    UIButton *withdraw = [UIButton buttonWithType:UIButtonTypeCustom];
+    [withdraw setFrame:CGRectMake(0, m_CustomCoupon.top, DIF_PX(46), DIF_PX(17))];
+    [withdraw setRight:roundView.width-DIF_PX(40)];
+    [withdraw setImage:[UIImage imageNamed:@"提现"] forState:UIControlStateNormal];
+    [roundView addSubview:withdraw];
+    
+    m_CustomIncome = [[UILabel alloc] initWithFrame:CGRectMake(lineH.right, m_CustomCoupon.top, withdraw.left-lineH.right-DIF_PX(10), m_CustomCoupon.height)];
+    [m_CustomIncome setText:@"230.00 元"];
+    [m_CustomIncome setTextColor:DIF_HEXCOLOR(@"333333")];
+    [m_CustomIncome setFont:DIF_UIFONTOFSIZE(18)];
+    [m_CustomIncome setTextAlignment:NSTextAlignmentRight];
+    [roundView addSubview:m_CustomIncome];
+    
+    UILabel *incomeTitle = [[UILabel alloc] initWithFrame:CGRectMake(lineH.right+DIF_PX(45), couponTitle.top, roundView.right-lineH.right, DIF_PX(14))];
+    [incomeTitle setText:@"我的收益"];
+    [incomeTitle setTextColor:DIF_HEXCOLOR(@"999999")];
+    [incomeTitle setFont:DIF_UIFONTOFSIZE(13)];
+    [roundView addSubview:incomeTitle];
 }
 
 - (void)createTableView
@@ -78,37 +125,47 @@
     [m_TableView setBackgroundView:nil];
     [m_TableView setDelegate:self];
     [m_TableView setDataSource:self];
+    [m_TableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self addSubview:m_TableView];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    [m_TopView setTop:-scrollView.contentOffset.y];
+    [m_TopView setTop:20-scrollView.contentOffset.y];
 }
 
 #pragma mark - UITalbeView Delegate & DataSource
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [MyViewDataModel getDataModel].count;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return [[MyViewDataModel getDataModel] objectAtIndex:section].count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return DIF_PX(220);
+    return section == 0 ?DIF_PX(270):DIF_PX(10);
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 45;
+    return 50;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MyBaseViewCell *cell = [BaseTableViewCell cellClassName:@"MyBaseViewCell"
                                                 InTableView:tableView
-                                            forContenteMode:nil];
-    [cell.textLabel setText:m_TitleArr[indexPath.row]];
+                                            forContenteMode:[MyViewDataModel getDataModel][indexPath.section][indexPath.row]];
     return cell;
 }
 
@@ -119,13 +176,43 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DIF_SCREEN_WIDTH, DIF_PX(220))];
-    [view setBackgroundColor:[UIColor clearColor]];
-    
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, view.height-1, view.width, 1)];
-    [line setBackgroundColor:DIF_HEXCOLOR(@"999999")];
-    [view addSubview:line];
-    
+    if (section == 0)
+    {
+        UIView *backview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DIF_SCREEN_WIDTH, DIF_PX(270))];
+        [backview setBackgroundColor:[UIColor clearColor]];
+        
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, backview.height-DIF_PX(10), DIF_SCREEN_WIDTH, DIF_PX(10))];
+        [view setBackgroundColor:DIF_HEXCOLOR(@"f4f4f4")];
+        [backview addSubview:view];
+        UIView *lineT = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.width, 1)];
+        [lineT setBackgroundColor:DIF_HEXCOLOR(@"dedede")];
+        [view addSubview:lineT];
+        UIView *lineB = [[UIView alloc] initWithFrame:CGRectMake(0, view.height-1, view.width, 1)];
+        [lineB setBackgroundColor:DIF_HEXCOLOR(@"dedede")];
+        [view addSubview:lineB];
+        
+        return backview;
+    }
+    else
+    {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DIF_SCREEN_WIDTH, DIF_PX(10))];
+        [view setBackgroundColor:DIF_HEXCOLOR(@"f4f4f4")];
+        
+        UIView *lineT = [[UIView alloc] initWithFrame:CGRectMake(0, 0, view.width, 1)];
+        [lineT setBackgroundColor:DIF_HEXCOLOR(@"dedede")];
+        [view addSubview:lineT];
+        UIView *lineB = [[UIView alloc] initWithFrame:CGRectMake(0, view.height-1, view.width, 1)];
+        [lineB setBackgroundColor:DIF_HEXCOLOR(@"dedede")];
+        [view addSubview:lineB];
+        
+        return view;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DIF_SCREEN_WIDTH, 0.1)];
+    [view setBackgroundColor:DIF_HEXCOLOR(@"dedede")];
     return view;
 }
 

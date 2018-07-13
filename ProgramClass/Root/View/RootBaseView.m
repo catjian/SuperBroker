@@ -25,7 +25,7 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        m_ContentArr = @[@"保险",@"车险",@"信用卡",@"贷款",@"违章代缴",@"add"];
+        m_ContentArr = @[@"保险",@"车险",@"信用卡",@"贷款",@"违章代缴",@"更多"];
         UIView *topView = [self createTopView];
         [self createCollectionViewWithTopView:topView];
     }

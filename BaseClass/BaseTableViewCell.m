@@ -45,7 +45,7 @@
         [path moveToPoint:CGPointMake(self.width-self.showLineWidht, self.cellHeight-DIF_PX(.5))];
         [path addLineToPoint:CGPointMake(self.width, self.cellHeight-DIF_PX(.5))];
         path.lineWidth = 0.5;
-        [[CommonTool colorWithHexString:DIF_CELL_SEPARATOR_COLOR Alpha:1] setStroke];
+        [[CommonTool colorWithHexString:@"dedede" Alpha:1] setStroke];
         [path stroke];
     }
 }

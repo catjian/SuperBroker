@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;
 @property (weak, nonatomic) IBOutlet UITextField *inviteCodeTF;
 @property (weak, nonatomic) IBOutlet UIButton *openSecureBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *isRead;
+@property (weak, nonatomic) IBOutlet UIButton *registerBtn;
 
 @end
 
@@ -30,6 +32,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.view setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -46,7 +49,6 @@
 - (IBAction)openPasswordSecureButtonEvent:(UIButton *)sender
 {
     sender.selected = !sender.selected;
-    [sender setTitle:sender.selected?@"开":@"关" forState:UIControlStateNormal];
     [self.passwordTF setSecureTextEntry:sender.selected];
 }
 
@@ -56,6 +58,13 @@
 
 - (IBAction)gotoLoginButtonEvent:(id)sender
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
+- (IBAction)readButtonEvent:(UIButton *)sender
+{
+    self.registerBtn.selected = !self.registerBtn.selected;
+    [self.isRead setImage:[UIImage imageNamed:(self.registerBtn.selected?@"已阅":@"未阅")]];
+}
+
 @end

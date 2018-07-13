@@ -26,8 +26,10 @@
 
 - (void)viewDidLoad
 {
+    self.ShowBackButton = NO;
     [super viewDidLoad];
     [self setNavTarBarTitle:@"易保金服"];
+    [self setRightItemWithContentName:@"客服"];
 }
 
 - (void)viewDidAppear:(BOOL)animated

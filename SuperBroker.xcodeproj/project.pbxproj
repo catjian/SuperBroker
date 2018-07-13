@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		34745B192016EAE172B49D04 /* libPods-SuperBroker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC4304B8C64092964146D15 /* libPods-SuperBroker.a */; };
-		8221285120F78E51008E8FFB /* MyBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285020F78E51008E8FFB /* MyBaseView.m */; };
-		8221285420F7919D008E8FFB /* MyBaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285320F7919D008E8FFB /* MyBaseViewCell.m */; };
 		8221285820F7BC36008E8FFB /* RootNoticeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285720F7BC36008E8FFB /* RootNoticeDetailModel.m */; };
 		8221285B20F7BCAF008E8FFB /* RootNoticeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285A20F7BCAF008E8FFB /* RootNoticeListModel.m */; };
 		8221285E20F7BD60008E8FFB /* RootMovePictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285D20F7BD60008E8FFB /* RootMovePictureModel.m */; };
@@ -18,6 +16,10 @@
 		8221286B20F7BF91008E8FFB /* InsuranceSpeciesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286A20F7BF91008E8FFB /* InsuranceSpeciesModel.m */; };
 		8221286E20F7C092008E8FFB /* InsuranceProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286D20F7C092008E8FFB /* InsuranceProductModel.m */; };
 		8221287320F7C209008E8FFB /* CarInsuranceListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221287220F7C209008E8FFB /* CarInsuranceListModel.m */; };
+		824BC71620F8D05A00BF3DD7 /* MyBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BC71220F8D05900BF3DD7 /* MyBaseView.m */; };
+		824BC71720F8D05A00BF3DD7 /* MyBaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BC71320F8D05900BF3DD7 /* MyBaseViewCell.m */; };
+		824BC71C20F8D75500BF3DD7 /* SMSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BC71A20F8D75500BF3DD7 /* SMSLoginViewController.m */; };
+		824BC71D20F8D75500BF3DD7 /* SMSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 824BC71B20F8D75500BF3DD7 /* SMSLoginViewController.xib */; };
 		824BD56020F6325D00924E61 /* InsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BD55F20F6325D00924E61 /* InsuranceViewController.m */; };
 		824BD56520F6327500924E61 /* InsuranceBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BD56420F6327500924E61 /* InsuranceBaseView.m */; };
 		824BD56920F6365C00924E61 /* InsuranceViewCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BD56820F6365C00924E61 /* InsuranceViewCellTableViewCell.m */; };
@@ -44,6 +46,7 @@
 		82731BC720F4EB10002EF5FE /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BC620F4EB10002EF5FE /* MyViewController.m */; };
 		82731BCA20F4EB17002EF5FE /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BC920F4EB17002EF5FE /* MessageViewController.m */; };
 		82731BCD20F4EB21002EF5FE /* SpecialNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BCC20F4EB21002EF5FE /* SpecialNewsViewController.m */; };
+		82B5462B20F8ED9C00B0F6EE /* MyViewDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B5462A20F8ED9C00B0F6EE /* MyViewDataModel.m */; };
 		82BBED3220F4F48F00BAEEBE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED3020F4F48F00BAEEBE /* LoginViewController.m */; };
 		82BBED3320F4F48F00BAEEBE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82BBED3120F4F48F00BAEEBE /* LoginViewController.xib */; };
 		82BBED3720F4F7BB00BAEEBE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED3520F4F7BB00BAEEBE /* RegisterViewController.m */; };
@@ -133,10 +136,6 @@
 
 /* Begin PBXFileReference section */
 		6ED643B51BAE23F246EF6152 /* Pods-SuperBroker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperBroker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperBroker/Pods-SuperBroker.debug.xcconfig"; sourceTree = "<group>"; };
-		8221284F20F78E51008E8FFB /* MyBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyBaseView.h; path = ProgramClass/My/View/MyBaseView.h; sourceTree = SOURCE_ROOT; };
-		8221285020F78E51008E8FFB /* MyBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyBaseView.m; path = ProgramClass/My/View/MyBaseView.m; sourceTree = SOURCE_ROOT; };
-		8221285220F7919D008E8FFB /* MyBaseViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MyBaseViewCell.h; path = ProgramClass/My/View/MyBaseViewCell.h; sourceTree = SOURCE_ROOT; };
-		8221285320F7919D008E8FFB /* MyBaseViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MyBaseViewCell.m; path = ProgramClass/My/View/MyBaseViewCell.m; sourceTree = SOURCE_ROOT; };
 		8221285620F7BC36008E8FFB /* RootNoticeDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNoticeDetailModel.h; sourceTree = "<group>"; };
 		8221285720F7BC36008E8FFB /* RootNoticeDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootNoticeDetailModel.m; sourceTree = "<group>"; };
 		8221285920F7BCAF008E8FFB /* RootNoticeListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNoticeListModel.h; sourceTree = "<group>"; };
@@ -153,6 +152,13 @@
 		8221286D20F7C092008E8FFB /* InsuranceProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsuranceProductModel.m; sourceTree = "<group>"; };
 		8221287120F7C209008E8FFB /* CarInsuranceListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceListModel.h; sourceTree = "<group>"; };
 		8221287220F7C209008E8FFB /* CarInsuranceListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceListModel.m; sourceTree = "<group>"; };
+		824BC71220F8D05900BF3DD7 /* MyBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBaseView.m; sourceTree = "<group>"; };
+		824BC71320F8D05900BF3DD7 /* MyBaseViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBaseViewCell.m; sourceTree = "<group>"; };
+		824BC71420F8D05900BF3DD7 /* MyBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBaseView.h; sourceTree = "<group>"; };
+		824BC71520F8D05900BF3DD7 /* MyBaseViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBaseViewCell.h; sourceTree = "<group>"; };
+		824BC71920F8D75500BF3DD7 /* SMSLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMSLoginViewController.h; sourceTree = "<group>"; };
+		824BC71A20F8D75500BF3DD7 /* SMSLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMSLoginViewController.m; sourceTree = "<group>"; };
+		824BC71B20F8D75500BF3DD7 /* SMSLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SMSLoginViewController.xib; sourceTree = "<group>"; };
 		824BD55E20F6325D00924E61 /* InsuranceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsuranceViewController.h; sourceTree = "<group>"; };
 		824BD55F20F6325D00924E61 /* InsuranceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsuranceViewController.m; sourceTree = "<group>"; };
 		824BD56320F6327500924E61 /* InsuranceBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsuranceBaseView.h; sourceTree = "<group>"; };
@@ -202,6 +208,8 @@
 		82731BC920F4EB17002EF5FE /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		82731BCB20F4EB21002EF5FE /* SpecialNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialNewsViewController.h; sourceTree = "<group>"; };
 		82731BCC20F4EB21002EF5FE /* SpecialNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialNewsViewController.m; sourceTree = "<group>"; };
+		82B5462920F8ED9C00B0F6EE /* MyViewDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewDataModel.h; sourceTree = "<group>"; };
+		82B5462A20F8ED9C00B0F6EE /* MyViewDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewDataModel.m; sourceTree = "<group>"; };
 		82BBED2F20F4F48F00BAEEBE /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		82BBED3020F4F48F00BAEEBE /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		82BBED3120F4F48F00BAEEBE /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -400,21 +408,11 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		8221284A20F78E0B008E8FFB /* View */ = {
-			isa = PBXGroup;
-			children = (
-				8221284F20F78E51008E8FFB /* MyBaseView.h */,
-				8221285020F78E51008E8FFB /* MyBaseView.m */,
-				8221285220F7919D008E8FFB /* MyBaseViewCell.h */,
-				8221285320F7919D008E8FFB /* MyBaseViewCell.m */,
-			);
-			name = View;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		8221284B20F78E26008E8FFB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				82B5462920F8ED9C00B0F6EE /* MyViewDataModel.h */,
+				82B5462A20F8ED9C00B0F6EE /* MyViewDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -444,6 +442,27 @@
 				8221287220F7C209008E8FFB /* CarInsuranceListModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		824BC71120F8D05900BF3DD7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				824BC71420F8D05900BF3DD7 /* MyBaseView.h */,
+				824BC71220F8D05900BF3DD7 /* MyBaseView.m */,
+				824BC71520F8D05900BF3DD7 /* MyBaseViewCell.h */,
+				824BC71320F8D05900BF3DD7 /* MyBaseViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		824BC71820F8D74000BF3DD7 /* SMSLogin */ = {
+			isa = PBXGroup;
+			children = (
+				824BC71920F8D75500BF3DD7 /* SMSLoginViewController.h */,
+				824BC71A20F8D75500BF3DD7 /* SMSLoginViewController.m */,
+				824BC71B20F8D75500BF3DD7 /* SMSLoginViewController.xib */,
+			);
+			path = SMSLogin;
 			sourceTree = "<group>";
 		};
 		824BD55D20F631E000924E61 /* Insurance */ = {
@@ -676,6 +695,7 @@
 		82731BBC20F4E7A5002EF5FE /* LoginRegister */ = {
 			isa = PBXGroup;
 			children = (
+				824BC71820F8D74000BF3DD7 /* SMSLogin */,
 				82BBED3920F4FB8100BAEEBE /* EditPassword */,
 				82BBED2E20F4F47800BAEEBE /* Register */,
 				82BBED2D20F4F46E00BAEEBE /* Login */,
@@ -706,7 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				8221284B20F78E26008E8FFB /* Model */,
-				8221284A20F78E0B008E8FFB /* View */,
+				824BC71120F8D05900BF3DD7 /* View */,
 				82731BC520F4EB10002EF5FE /* MyViewController.h */,
 				82731BC620F4EB10002EF5FE /* MyViewController.m */,
 			);
@@ -1081,6 +1101,7 @@
 				824BD58020F6531700924E61 /* InsuranceCommitViewController.xib in Resources */,
 				824BD57420F63E0100924E61 /* InsuranceInformationViewController.xib in Resources */,
 				82C0773A20F4E67C0080E37F /* plane.gif in Resources */,
+				824BC71D20F8D75500BF3DD7 /* SMSLoginViewController.xib in Resources */,
 				82BBED3E20F4FB9A00BAEEBE /* EditPasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1139,15 +1160,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8221285120F78E51008E8FFB /* MyBaseView.m in Sources */,
 				82C0773C20F4E67C0080E37F /* CommonHttpAdapter.m in Sources */,
 				82BBED4120F4FFAD00BAEEBE /* RootBaseView.m in Sources */,
 				82C0774E20F4E67C0080E37F /* BaseViewController.m in Sources */,
 				82C0772820F4E67C0080E37F /* CommonShowControlPictureCollectionView.m in Sources */,
 				82C0771220F4E67C0080E37F /* UIButton+CircleImage.m in Sources */,
 				82C0772020F4E67C0080E37F /* NSString+GetWeekDay.m in Sources */,
+				824BC71720F8D05A00BF3DD7 /* MyBaseViewCell.m in Sources */,
 				82C0773B20F4E67C0080E37F /* CommonTool.m in Sources */,
+				82B5462B20F8ED9C00B0F6EE /* MyViewDataModel.m in Sources */,
 				82BBED3220F4F48F00BAEEBE /* LoginViewController.m in Sources */,
+				824BC71C20F8D75500BF3DD7 /* SMSLoginViewController.m in Sources */,
 				82C0772920F4E67C0080E37F /* CommonTopShowLineView.m in Sources */,
 				824BD56020F6325D00924E61 /* InsuranceViewController.m in Sources */,
 				82C0772B20F4E67C0080E37F /* CommonPopShareView.m in Sources */,
@@ -1221,7 +1244,7 @@
 				82C0771020F4E67C0080E37F /* UIViewExt.m in Sources */,
 				82C0771620F4E67C0080E37F /* NSNumber+AppendingString.m in Sources */,
 				824BD5A520F662E100924E61 /* InsuranceAgeViewCell.m in Sources */,
-				8221285420F7919D008E8FFB /* MyBaseViewCell.m in Sources */,
+				824BC71620F8D05A00BF3DD7 /* MyBaseView.m in Sources */,
 				82C0774620F4E67C0080E37F /* CommonSelectOneLineViewController.m in Sources */,
 				82C0774020F4E67C0080E37F /* CommonGetIPAddress.m in Sources */,
 				82C0774820F4E67C0080E37F /* AJPhotoBrowserViewController.m in Sources */,

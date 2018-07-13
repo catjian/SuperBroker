@@ -22,12 +22,12 @@
 {
     [super viewWillAppear:animated];
     DIF_ShowTabBarAnimation(YES);
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setNavTarBarTitle:@"易保金服"];
 }
 
 - (void)viewDidAppear:(BOOL)animated

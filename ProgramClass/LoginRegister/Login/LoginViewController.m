@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    [self.view setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -39,12 +39,12 @@
 #pragma mark - Button Event
 - (IBAction)loginButtonEvent:(id)sender
 {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)openPasswordSecureButtonEvent:(UIButton *)sender
 {
     sender.selected = !sender.selected;
-    [sender setTitle:sender.selected?@"开":@"关" forState:UIControlStateNormal];
     [self.password setSecureTextEntry:sender.selected];
 }
 
@@ -60,6 +60,7 @@
 
 - (IBAction)gotoVerifyCodeLoginButtonEvent:(id)sender
 {
+    [self loadViewController:@"SMSLoginViewController"];
 }
 
 @end

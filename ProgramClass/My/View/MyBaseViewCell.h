@@ -8,6 +8,10 @@
 
 #import "BaseTableViewCell.h"
 
+typedef void(^MyBaseViewCellCopyBlock)(void);
+
 @interface MyBaseViewCell : BaseTableViewCell
+
+@property (nonatomic, copy) MyBaseViewCellCopyBlock copyBlock;
 
 @end

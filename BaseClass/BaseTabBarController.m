@@ -97,18 +97,18 @@ const CGFloat tabbar_Hegith = 50;
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setFrame:CGRectMake(idx*(offset_Width+0), 0, offset_Width, tabbar_Hegith)];
         [btn setTag:idx+100];
-        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@tb",btnImages[idx]]]
+        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-选中",btnImages[idx]]]
              forState:UIControlStateSelected];
-        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@tb",btnImages[idx]]]
+        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-选中",btnImages[idx]]]
              forState:UIControlStateHighlighted];
-        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@tb_normal",btnImages[idx]]] forState:UIControlStateNormal];
+        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-未选中",btnImages[idx]]] forState:UIControlStateNormal];
         [btn setSelected:NO];
         [btn addTarget:self action:@selector(SelectButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [btn setTitle:btnImages[idx] forState:UIControlStateNormal];
         [btn.titleLabel setFont:DIF_DIFONTOFSIZE(11)];
-        [btn setTitleColor:[CommonTool colorWithHexString:@"#9B9B9B" Alpha:1] forState:UIControlStateNormal];
-        [btn setTitleColor:[CommonTool colorWithHexString:@"#4DA9EA" Alpha:1] forState:UIControlStateHighlighted];
-        [btn setTitleColor:[CommonTool colorWithHexString:@"#4DA9EA" Alpha:1] forState:UIControlStateSelected];
+        [btn setTitleColor:[CommonTool colorWithHexString:@"#A9A9A9" Alpha:1] forState:UIControlStateNormal];
+        [btn setTitleColor:[CommonTool colorWithHexString:@"#2D7AFF" Alpha:1] forState:UIControlStateHighlighted];
+        [btn setTitleColor:[CommonTool colorWithHexString:@"#2D7AFF" Alpha:1] forState:UIControlStateSelected];
         [btn setButtonImageTitleStyle:ENUM_ButtonImageTitleStyleTop padding:3];
         [strongSelf->m_BaseView addSubview:btn];
     }];
