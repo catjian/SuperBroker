@@ -80,7 +80,7 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [self setNavTarBarTitle:@"个人信息"];
+    [self setNavTarBarTitle:@"个人信息修改"];
     [textField setTextAlignment:NSTextAlignmentLeft];
     [textField setTextColor:DIF_HEXCOLOR(@"000000")];
 }
