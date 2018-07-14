@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		34745B192016EAE172B49D04 /* libPods-SuperBroker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC4304B8C64092964146D15 /* libPods-SuperBroker.a */; };
+		8204415420FA439C00BDB343 /* BuyMemeberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204415220FA439C00BDB343 /* BuyMemeberViewController.m */; };
+		8204415520FA439C00BDB343 /* BuyMemeberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8204415320FA439C00BDB343 /* BuyMemeberViewController.xib */; };
+		8204415A20FA48E500BDB343 /* BuyMemberSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204415820FA48E500BDB343 /* BuyMemberSuccessViewController.m */; };
+		8204415B20FA48E500BDB343 /* BuyMemberSuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8204415920FA48E500BDB343 /* BuyMemberSuccessViewController.xib */; };
+		8204416020FA4B0800BDB343 /* BuyMemberPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204415E20FA4B0800BDB343 /* BuyMemberPayViewController.m */; };
+		8204416120FA4B0800BDB343 /* BuyMemberPayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8204415F20FA4B0800BDB343 /* BuyMemberPayViewController.xib */; };
+		8204416620FA4D5200BDB343 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204416420FA4D5200BDB343 /* UserInfoViewController.m */; };
+		8204416720FA4D5200BDB343 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8204416520FA4D5200BDB343 /* UserInfoViewController.xib */; };
+		8204416B20FA56AE00BDB343 /* EditPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204416920FA56AE00BDB343 /* EditPhoneViewController.m */; };
+		8204416C20FA56AE00BDB343 /* EditPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8204416A20FA56AE00BDB343 /* EditPhoneViewController.xib */; };
 		8221285820F7BC36008E8FFB /* RootNoticeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285720F7BC36008E8FFB /* RootNoticeDetailModel.m */; };
 		8221285B20F7BCAF008E8FFB /* RootNoticeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285A20F7BCAF008E8FFB /* RootNoticeListModel.m */; };
 		8221285E20F7BD60008E8FFB /* RootMovePictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285D20F7BD60008E8FFB /* RootMovePictureModel.m */; };
@@ -136,6 +146,21 @@
 
 /* Begin PBXFileReference section */
 		6ED643B51BAE23F246EF6152 /* Pods-SuperBroker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperBroker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperBroker/Pods-SuperBroker.debug.xcconfig"; sourceTree = "<group>"; };
+		8204415120FA439C00BDB343 /* BuyMemeberViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyMemeberViewController.h; sourceTree = "<group>"; };
+		8204415220FA439C00BDB343 /* BuyMemeberViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyMemeberViewController.m; sourceTree = "<group>"; };
+		8204415320FA439C00BDB343 /* BuyMemeberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyMemeberViewController.xib; sourceTree = "<group>"; };
+		8204415720FA48E500BDB343 /* BuyMemberSuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyMemberSuccessViewController.h; sourceTree = "<group>"; };
+		8204415820FA48E500BDB343 /* BuyMemberSuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyMemberSuccessViewController.m; sourceTree = "<group>"; };
+		8204415920FA48E500BDB343 /* BuyMemberSuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyMemberSuccessViewController.xib; sourceTree = "<group>"; };
+		8204415D20FA4B0800BDB343 /* BuyMemberPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyMemberPayViewController.h; sourceTree = "<group>"; };
+		8204415E20FA4B0800BDB343 /* BuyMemberPayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyMemberPayViewController.m; sourceTree = "<group>"; };
+		8204415F20FA4B0800BDB343 /* BuyMemberPayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyMemberPayViewController.xib; sourceTree = "<group>"; };
+		8204416320FA4D5200BDB343 /* UserInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		8204416420FA4D5200BDB343 /* UserInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		8204416520FA4D5200BDB343 /* UserInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
+		8204416820FA56AE00BDB343 /* EditPhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditPhoneViewController.h; sourceTree = "<group>"; };
+		8204416920FA56AE00BDB343 /* EditPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditPhoneViewController.m; sourceTree = "<group>"; };
+		8204416A20FA56AE00BDB343 /* EditPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPhoneViewController.xib; sourceTree = "<group>"; };
 		8221285620F7BC36008E8FFB /* RootNoticeDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNoticeDetailModel.h; sourceTree = "<group>"; };
 		8221285720F7BC36008E8FFB /* RootNoticeDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootNoticeDetailModel.m; sourceTree = "<group>"; };
 		8221285920F7BCAF008E8FFB /* RootNoticeListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNoticeListModel.h; sourceTree = "<group>"; };
@@ -406,6 +431,51 @@
 				F56BEEE8B60432AE26266913 /* Pods-SuperBroker.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8204415020FA438800BDB343 /* BuyMember */ = {
+			isa = PBXGroup;
+			children = (
+				8204415C20FA4AED00BDB343 /* BuyMemberPay */,
+				8204415620FA48C500BDB343 /* BuyMemberSuccess */,
+				8204415120FA439C00BDB343 /* BuyMemeberViewController.h */,
+				8204415220FA439C00BDB343 /* BuyMemeberViewController.m */,
+				8204415320FA439C00BDB343 /* BuyMemeberViewController.xib */,
+			);
+			path = BuyMember;
+			sourceTree = "<group>";
+		};
+		8204415620FA48C500BDB343 /* BuyMemberSuccess */ = {
+			isa = PBXGroup;
+			children = (
+				8204415720FA48E500BDB343 /* BuyMemberSuccessViewController.h */,
+				8204415820FA48E500BDB343 /* BuyMemberSuccessViewController.m */,
+				8204415920FA48E500BDB343 /* BuyMemberSuccessViewController.xib */,
+			);
+			path = BuyMemberSuccess;
+			sourceTree = "<group>";
+		};
+		8204415C20FA4AED00BDB343 /* BuyMemberPay */ = {
+			isa = PBXGroup;
+			children = (
+				8204415D20FA4B0800BDB343 /* BuyMemberPayViewController.h */,
+				8204415E20FA4B0800BDB343 /* BuyMemberPayViewController.m */,
+				8204415F20FA4B0800BDB343 /* BuyMemberPayViewController.xib */,
+			);
+			path = BuyMemberPay;
+			sourceTree = "<group>";
+		};
+		8204416220FA4D2800BDB343 /* UserInformation */ = {
+			isa = PBXGroup;
+			children = (
+				8204416320FA4D5200BDB343 /* UserInfoViewController.h */,
+				8204416420FA4D5200BDB343 /* UserInfoViewController.m */,
+				8204416520FA4D5200BDB343 /* UserInfoViewController.xib */,
+				8204416820FA56AE00BDB343 /* EditPhoneViewController.h */,
+				8204416920FA56AE00BDB343 /* EditPhoneViewController.m */,
+				8204416A20FA56AE00BDB343 /* EditPhoneViewController.xib */,
+			);
+			path = UserInformation;
 			sourceTree = "<group>";
 		};
 		8221284B20F78E26008E8FFB /* Model */ = {
@@ -725,6 +795,8 @@
 		82731BC420F4EB05002EF5FE /* My */ = {
 			isa = PBXGroup;
 			children = (
+				8204416220FA4D2800BDB343 /* UserInformation */,
+				8204415020FA438800BDB343 /* BuyMember */,
 				8221284B20F78E26008E8FFB /* Model */,
 				824BC71120F8D05900BF3DD7 /* View */,
 				82731BC520F4EB10002EF5FE /* MyViewController.h */,
@@ -1093,10 +1165,15 @@
 			files = (
 				824BD57A20F64DFC00924E61 /* InsuranceDetailViewController.xib in Resources */,
 				82C0773020F4E67C0080E37F /* del_btn@3x.png in Resources */,
+				8204416120FA4B0800BDB343 /* BuyMemberPayViewController.xib in Resources */,
 				8257C7B520F4E1DC00FA550D /* LaunchScreen.storyboard in Resources */,
 				82BBED3820F4F7BB00BAEEBE /* RegisterViewController.xib in Resources */,
+				8204416720FA4D5200BDB343 /* UserInfoViewController.xib in Resources */,
+				8204415520FA439C00BDB343 /* BuyMemeberViewController.xib in Resources */,
 				82BBED3320F4F48F00BAEEBE /* LoginViewController.xib in Resources */,
 				8257C7B220F4E1DC00FA550D /* Assets.xcassets in Resources */,
+				8204415B20FA48E500BDB343 /* BuyMemberSuccessViewController.xib in Resources */,
+				8204416C20FA56AE00BDB343 /* EditPhoneViewController.xib in Resources */,
 				82C0773220F4E67C0080E37F /* del_btn@2x.png in Resources */,
 				824BD58020F6531700924E61 /* InsuranceCommitViewController.xib in Resources */,
 				824BD57420F63E0100924E61 /* InsuranceInformationViewController.xib in Resources */,
@@ -1175,6 +1252,7 @@
 				824BD56020F6325D00924E61 /* InsuranceViewController.m in Sources */,
 				82C0772B20F4E67C0080E37F /* CommonPopShareView.m in Sources */,
 				82C0773820F4E67C0080E37F /* CommonAchieveModelValue.m in Sources */,
+				8204415420FA439C00BDB343 /* BuyMemeberViewController.m in Sources */,
 				82C0770A20F4E67C0080E37F /* UIView+SDAutoLayout.m in Sources */,
 				82C0774B20F4E67C0080E37F /* AJPhotoTapDetectingImageView.m in Sources */,
 				82C0774220F4E67C0080E37F /* CommonDate.m in Sources */,
@@ -1221,6 +1299,7 @@
 				8221285B20F7BCAF008E8FFB /* RootNoticeListModel.m in Sources */,
 				82C0773920F4E67C0080E37F /* CommonHUD.m in Sources */,
 				82C0774320F4E67C0080E37F /* CommonPictureSelect.m in Sources */,
+				8204415A20FA48E500BDB343 /* BuyMemberSuccessViewController.m in Sources */,
 				82C0774520F4E67C0080E37F /* CommonAnimation.m in Sources */,
 				82C0770820F4E67C0080E37F /* UIImage+ConvertBase64.m in Sources */,
 				82C0775120F4E67C0080E37F /* BaseTabBarController.m in Sources */,
@@ -1253,7 +1332,9 @@
 				82C0772120F4E67C0080E37F /* UIImageView+CircleImage.m in Sources */,
 				824BD56520F6327500924E61 /* InsuranceBaseView.m in Sources */,
 				82C0772F20F4E67C0080E37F /* CommonCustomButtonView.m in Sources */,
+				8204416020FA4B0800BDB343 /* BuyMemberPayViewController.m in Sources */,
 				82C0770D20F4E67C0080E37F /* NSString+AppendingString.m in Sources */,
+				8204416B20FA56AE00BDB343 /* EditPhoneViewController.m in Sources */,
 				82C0771D20F4E67C0080E37F /* NSString+MD5.m in Sources */,
 				824BD59820F6619E00924E61 /* InsuranceCompanyViewCell.m in Sources */,
 				82C0773120F4E67C0080E37F /* CommonNumberKeyboardView.m in Sources */,
@@ -1270,6 +1351,7 @@
 				824BD57F20F6531700924E61 /* InsuranceCommitViewController.m in Sources */,
 				82C0771420F4E67C0080E37F /* UIAlertController+CustomAlert.m in Sources */,
 				82BBED4720F501D500BAEEBE /* BaseCollectionView.m in Sources */,
+				8204416620FA4D5200BDB343 /* UserInfoViewController.m in Sources */,
 				82C0772520F4E67C0080E37F /* CommonCurrentUser.m in Sources */,
 				82C0774C20F4E67C0080E37F /* BaseLable.m in Sources */,
 			);

@@ -9,11 +9,11 @@
 #import "CommonPictureSelect.h"
 
 #ifndef DIF_PictureSelect_BtnTitles
-#define DIF_PictureSelect_BtnTitles @[@"拍照", @"从相册选择", @"取消"]
+#define DIF_PictureSelect_BtnTitles @[@"从相册中选择", @"拍照", @"取消"]
 #endif
 
 CommonPictureSelect *picSel = nil;
-const CGFloat btnBackView_height = 150;
+const CGFloat btnBackView_height = 160;
 
 @interface CommonPictureSelect () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -23,6 +23,7 @@ const CGFloat btnBackView_height = 150;
 {
     BOOL isShowController;
     UIViewController *m_VC;
+    UIView *m_BtnView;
     
     CommonPictureSelectResponse m_Block;
 }
@@ -51,27 +52,33 @@ const CGFloat btnBackView_height = 150;
 
 - (void)initSelectView
 {
-    __weak typeof(self) weakSelf = self;
-    UIView *view = [UIView new];
-    [view setBackgroundColor:[UIColor clearColor]];
-    [self addSubview:view];
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_offset(btnBackView_height);
-        make.left.equalTo(weakSelf);
-        make.right.equalTo(weakSelf);
-        make.bottom.equalTo(weakSelf).offset(is_iPHONE_X?-39:0);
-    }];
+    DIF_WeakSelf(self);
+    m_BtnView = [[UIView alloc] initWithFrame:CGRectMake(0, DIF_SCREEN_HEIGHT+(is_iPHONE_X?39:0), DIF_SCREEN_WIDTH, btnBackView_height)];
+    [m_BtnView setBackgroundColor:DIF_HEXCOLOR(@"f4f4f4")];
+    [self addSubview:m_BtnView];
+//    [m_BtnView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_offset(btnBackView_height);
+//        make.left.equalTo(weakSelf);
+//        make.right.equalTo(weakSelf);
+//        make.top.equalTo(weakSelf.mas_bottom).offset(is_iPHONE_X?39:0);
+////        make.bottom.equalTo(weakSelf).offset(is_iPHONE_X?-39:0);
+//    }];
     
     [DIF_PictureSelect_BtnTitles enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        DIF_StrongSelf
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setFrame:CGRectMake(5, 10+idx*(45), DIF_SCREEN_WIDTH-10, 40)];
-        [btn.layer setCornerRadius:5];
+        [btn setFrame:CGRectMake(0, idx*(50)+(idx == 2?10:0), DIF_SCREEN_WIDTH, 50)];
         [btn setTitle:obj forState:UIControlStateNormal];
-        [btn setBackgroundColor:(idx == 2?[UIColor colorWithRed:0.9889 green:0.3876 blue:0.0315 alpha:1.0] : DIF_HEXCOLOR(DIF_BACK_BLUE_COLOR))];
-        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
+        [btn setTitleColor:DIF_HEXCOLOR(@"333333") forState:UIControlStateNormal];
+        [btn.titleLabel setFont:DIF_UIFONTOFSIZE(18)];
         [btn setTag:idx+100];
         [btn addTarget:weakSelf action:@selector(SelectButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [view addSubview:btn];
+        [strongSelf->m_BtnView addSubview:btn];
+        
+        UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, (idx == 2?(idx*(50)+10):(idx+1)*(49.5)), DIF_SCREEN_WIDTH, 1)];
+        [line setBackgroundColor:DIF_HEXCOLOR(@"dedede")];
+        [strongSelf->m_BtnView addSubview:line];
     }];
 }
 
@@ -80,17 +87,21 @@ const CGFloat btnBackView_height = 150;
     m_VC = vc;
     m_Block = block;
     [DIF_APPDELEGATE.window addSubview:self];
-    __weak typeof(self) weakSelf = self;
+    DIF_WeakSelf(self);
     [UIView animateWithDuration:0.5 animations:^{
+        DIF_StrongSelf
         [weakSelf setAlpha:1];
+        [strongSelf->m_BtnView setTop:strongSelf.bottom-btnBackView_height-(is_iPHONE_X?39:0)];
     }];
 }
 
 - (void)hide
 {
     m_VC = nil;
-    __weak typeof(self) weakSelf = self;
+    DIF_WeakSelf(self);
     [UIView animateWithDuration:0.5 animations:^{
+        DIF_StrongSelf
+        [strongSelf->m_BtnView setTop:DIF_SCREEN_HEIGHT+(is_iPHONE_X?39:0)];
         [weakSelf setAlpha:0];
     } completion:^(BOOL finished) {
         DIF_StrongSelf
@@ -106,12 +117,12 @@ const CGFloat btnBackView_height = 150;
     isShowController = YES;
     switch (btn.tag-100)
     {
-        case 0:
+        case 1:
         {
             [self showCameraController];
         }
             break;
-        case 1:
+        case 0:
         {
             [self showPhotoLibraryController];
         }

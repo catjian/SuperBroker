@@ -10,4 +10,6 @@
 
 @interface MyBaseView : UIView <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
+@property (nonatomic, copy) tableViewSelectRowAtIndexPathBlock selectBlock;
+
 @end

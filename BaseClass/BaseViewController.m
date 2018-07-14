@@ -39,6 +39,11 @@ UIKIT_STATIC_INLINE UIImage *imageWithColor(UIColor *color)
     return self;
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
 
 - (void)viewDidLoad
 {
@@ -121,7 +126,7 @@ UIKIT_STATIC_INLINE UIImage *imageWithColor(UIColor *color)
 
 -(id)loadViewController:(NSString *)viewController
 {
-    return [self loadViewController:viewController hidesBottomBarWhenPushed:NO];
+    return [self loadViewController:viewController hidesBottomBarWhenPushed:YES];
 }
 
 -(id)loadViewController:(NSString *)viewController hidesBottomBarWhenPushed:(BOOL)ishide

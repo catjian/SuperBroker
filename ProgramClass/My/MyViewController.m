@@ -8,6 +8,7 @@
 
 #import "MyViewController.h"
 #import "MyBaseView.h"
+#import "UserInfoViewController.h"
 
 @interface MyViewController ()
 
@@ -35,6 +36,29 @@
     [super viewDidAppear:animated];
     m_BaseView = [[MyBaseView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:m_BaseView];
+    DIF_WeakSelf(self);
+    [m_BaseView setSelectBlock:^(NSIndexPath *indexPath, id model) {
+        DIF_StrongSelf
+        NSInteger index = indexPath.section*10+indexPath.row;
+        switch (index)
+        {
+            case 0:
+                break;
+            case 10:
+                [strongSelf loadViewController:@"UserInfoViewController" hidesBottomBarWhenPushed:YES];
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+            case 13:
+                break;
+            case 21:
+                break;
+            default:
+                break;
+        }
+    }];
 }
 
 @end
