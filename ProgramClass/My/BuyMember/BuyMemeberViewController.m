@@ -24,6 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self setNavTarBarTitle:@"开通会员"];
+    [self setRightItemWithContentName:@"客服"];
 }
 
+- (IBAction)buyMemeberButtonEvent:(UIButton *)sender
+{
+    [self loadViewController:@"BuyMemberPayViewController"];
+}
 @end

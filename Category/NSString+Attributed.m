@@ -151,4 +151,17 @@
     return self;
 }
 
+- (NSMutableAttributedString *)attatchImage:(UIImage *)image imageFrame:(CGRect)frame Range:(NSRange)range
+{
+    NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+    attach.image = image;
+    attach.bounds = frame;
+    NSAttributedString *imageString = [NSAttributedString attributedStringWithAttachment:attach];
+//    [self appendAttributedString:imageString];
+    [self insertAttributedString:imageString atIndex:range.location+range.length];
+    
+    return self;
+    
+}
+
 @end

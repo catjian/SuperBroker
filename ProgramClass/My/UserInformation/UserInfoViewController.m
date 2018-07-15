@@ -49,24 +49,11 @@
 }
 
 - (IBAction)chooseSexButtonEvent:(UIButton *)sender
-{
-    [self.view endEditing:YES];
-    __block UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *editAction = [UIAlertAction actionWithTitle:@"男"
-                                                         style:UIAlertActionStyleDefault
-                                                       handler:^(UIAlertAction * _Nonnull action) {
-                                                       }];
-    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"女"
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction * _Nonnull action) {
-                                                         }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:nil];
-    [alertCon addAction:editAction];
-    [alertCon addAction:deleteAction];
-    [alertCon addAction:cancelAction];
-    [self presentViewController:alertCon animated:YES completion:nil];
+{    
+    [[CommonSheetView alloc] initWithSheetTitle:@[@"男",@"女",@"取消"]
+                                  ResponseBlock:^(NSInteger tag) {
+                                      
+                                  }];
 }
 
 - (IBAction)editPhoneButtonEvent:(id)sender

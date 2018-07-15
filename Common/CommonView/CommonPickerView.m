@@ -69,7 +69,7 @@
     
     UIButton *sucessBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [sucessBtn setTitle:@"确定" forState:UIControlStateNormal];
-    [sucessBtn setTitleColor:DIF_HEXCOLOR(@"4DA9EA") forState:UIControlStateNormal];
+    [sucessBtn setTitleColor:DIF_HEXCOLOR(@"017aff") forState:UIControlStateNormal];
     [sucessBtn.titleLabel setFont:DIF_DIFONTOFSIZE((is_iPhone5AndEarly)?12:15)];
     [sucessBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 40, 0, 0)];
     [[sucessBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -124,7 +124,7 @@
         [contentLab setTextAlignment:NSTextAlignmentCenter];
         [contentLab setText:self.pickerDatas[row]];
     }
-    [contentLab setTextColor:DIF_HEXCOLOR((m_SelectRow == row?@"4DA9EA":@"A3A3A3"))];
+    [contentLab setTextColor:DIF_HEXCOLOR((m_SelectRow == row?@"333333":@"999999"))];
     [contentLab setFont:DIF_DIFONTOFSIZE((m_SelectRow == row?18:15))];
     return contentLab;
 }

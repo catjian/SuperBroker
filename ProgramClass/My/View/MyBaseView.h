@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^MyBaseViewTopButtonEventBlock)(NSInteger tag);
+
 @interface MyBaseView : UIView <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property (nonatomic, copy) tableViewSelectRowAtIndexPathBlock selectBlock;
+@property (nonatomic, copy) MyBaseViewTopButtonEventBlock topBtnBlock;
 
 @end

@@ -10,28 +10,39 @@
 
 @interface BuyMemberPayViewController ()
 
+@property (weak, nonatomic) IBOutlet UIButton *selectALPay;
+@property (weak, nonatomic) IBOutlet UIButton *selectUB;
+
 @end
 
 @implementation BuyMemberPayViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self setNavTarBarTitle:@"开通会员"];
+    [self setRightItemWithContentName:@"客服"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)selectPayTypeButtonEvent:(UIButton *)sender
+{
+    if (!sender.selected)
+    {
+        sender.selected = YES;
+        if ([sender isEqual:self.selectUB])
+        {
+            self.selectALPay.selected = NO;
+        }
+        else
+        {
+            self.selectUB.selected = NO;
+        }
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)successPayMoneyButtonEvent:(id)sender
+{
+    [self loadViewController:@"BuyMemberSuccessViewController"];
 }
-*/
-
 @end

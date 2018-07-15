@@ -36,13 +36,16 @@
                                                 <constraint firstAttribute="height" constant="127" id="34A-CE-HAo"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdG-Dh-fi5">
+                                        <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AdG-Dh-fi5">
                                             <rect key="frame" x="110" y="157" width="155" height="23"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="23" id="IKh-hF-S4I"/>
                                                 <constraint firstAttribute="width" constant="155" id="iiL-88-guW"/>
                                             </constraints>
                                             <state key="normal" image="购买会员"/>
+                                            <connections>
+                                                <action selector="buyMemeberButtonEvent:" destination="-1" eventType="touchUpInside" id="PZF-cK-lRV"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,13 +67,16 @@
                                                 <constraint firstAttribute="height" constant="127" id="SO4-pv-sti"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJ6-IW-ri5">
+                                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJ6-IW-ri5">
                                             <rect key="frame" x="110.5" y="157" width="155" height="23"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="155" id="E5R-eR-kza"/>
                                                 <constraint firstAttribute="height" constant="23" id="kKM-9T-iq1"/>
                                             </constraints>
                                             <state key="normal" image="购买会员"/>
+                                            <connections>
+                                                <action selector="buyMemeberButtonEvent:" destination="-1" eventType="touchUpInside" id="t2o-38-FRu"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -87,17 +93,21 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7L-1M-YJm">
                                             <rect key="frame" x="72" y="15" width="231" height="127"/>
+                                            <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="127" id="CqQ-yS-rat"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IT9-gq-Tws">
+                                        <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IT9-gq-Tws">
                                             <rect key="frame" x="110" y="157" width="155" height="23"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="155" id="IqB-Ap-HlD"/>
                                                 <constraint firstAttribute="height" constant="23" id="jVg-2z-tmD"/>
                                             </constraints>
                                             <state key="normal" image="购买会员"/>
+                                            <connections>
+                                                <action selector="buyMemeberButtonEvent:" destination="-1" eventType="touchUpInside" id="1hA-j8-z6Z"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -134,7 +144,7 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Zj6-74-ScY" secondAttribute="bottom" id="wCf-dG-acL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="-190.5" y="23.5"/>
+            <point key="canvasLocation" x="-374" y="12"/>
         </view>
     </objects>
     <resources>

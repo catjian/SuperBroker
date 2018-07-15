@@ -24,6 +24,9 @@
 
 - (void)setPlaceholder:(NSString *)placeholder
 {
+    [self setDelegate:self];
+    [self setBackgroundColor:[UIColor whiteColor]];
+    [self setEditable:YES];
     _placeholder = [placeholder copy];
     [self setText:self.placeholder];
 }

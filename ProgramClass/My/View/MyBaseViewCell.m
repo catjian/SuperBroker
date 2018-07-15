@@ -21,8 +21,7 @@
 {
     self =[super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
-    {
-        
+    {        
         self.cellHeight = 50;
         self.showLine = YES;
         [self setShowLineWidht:DIF_SCREEN_WIDTH];

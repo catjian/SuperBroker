@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PresentEventResponseViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="等待处理" translatesAutoresizingMaskIntoConstraints="NO" id="pmc-Gq-lUO">
+                    <rect key="frame" x="154" y="65" width="67" height="67"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="67" id="WmF-Kc-Quz"/>
+                        <constraint firstAttribute="height" constant="67" id="wQG-Ce-7Hf"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="等待处理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMN-IV-gfH">
+                    <rect key="frame" x="17" y="149" width="341" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="TZd-YG-bhS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已提交申请，等待平台处理" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGw-KH-Xg2">
+                    <rect key="frame" x="17" y="192" width="341" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="e7A-Jz-QeZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="TMN-IV-gfH" secondAttribute="trailing" constant="17" id="1an-v1-Nb5"/>
+                <constraint firstItem="pmc-Gq-lUO" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="45" id="KUf-lX-aSU"/>
+                <constraint firstItem="uGw-KH-Xg2" firstAttribute="top" secondItem="TMN-IV-gfH" secondAttribute="bottom" constant="25" id="Nou-py-TXQ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="uGw-KH-Xg2" secondAttribute="trailing" constant="17" id="Yea-og-TBS"/>
+                <constraint firstItem="TMN-IV-gfH" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="17" id="hIa-df-Ycb"/>
+                <constraint firstItem="pmc-Gq-lUO" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="hah-xX-NTw"/>
+                <constraint firstItem="TMN-IV-gfH" firstAttribute="top" secondItem="pmc-Gq-lUO" secondAttribute="bottom" constant="17" id="sTT-wl-8YW"/>
+                <constraint firstItem="uGw-KH-Xg2" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="17" id="uzp-GM-DuW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-81" y="30"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="等待处理" width="67" height="67"/>
+    </resources>
+</document>

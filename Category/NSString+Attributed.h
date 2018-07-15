@@ -59,4 +59,6 @@
 
 - (NSMutableAttributedString *)ParagraphStyleAttributeNameWithStyle:(NSParagraphStyle *)style Range:(NSRange)range;
 
+- (NSMutableAttributedString *)attatchImage:(UIImage *)image imageFrame:(CGRect)frame Range:(NSRange)range;
+
 @end

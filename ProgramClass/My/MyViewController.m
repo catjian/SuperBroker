@@ -9,6 +9,9 @@
 #import "MyViewController.h"
 #import "MyBaseView.h"
 #import "UserInfoViewController.h"
+#import "PresentAccountViewController.h"
+#import "IncomeListViewController.h"
+#import "PaymentListViewController.h"
 
 @interface MyViewController ()
 
@@ -37,6 +40,24 @@
     m_BaseView = [[MyBaseView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:m_BaseView];
     DIF_WeakSelf(self);
+    [m_BaseView setTopBtnBlock:^(NSInteger tag) {
+        DIF_StrongSelf
+        switch (tag) {
+            case 9900:
+                [strongSelf loadViewController:@"BuyMemeberViewController" hidesBottomBarWhenPushed:YES];                
+                break;
+            case 9901:                
+                [strongSelf loadViewController:@"PaymentListViewController" hidesBottomBarWhenPushed:YES];
+                break;
+            case 9902:
+                [strongSelf loadViewController:@"PresentEventViewController" hidesBottomBarWhenPushed:YES];
+                break;
+            default:
+                break;
+        }
+        
+    }];
+    
     [m_BaseView setSelectBlock:^(NSIndexPath *indexPath, id model) {
         DIF_StrongSelf
         NSInteger index = indexPath.section*10+indexPath.row;
@@ -48,12 +69,16 @@
                 [strongSelf loadViewController:@"UserInfoViewController" hidesBottomBarWhenPushed:YES];
                 break;
             case 11:
+                [strongSelf loadViewController:@"PresentAccountViewController" hidesBottomBarWhenPushed:YES];
                 break;
             case 12:
+                [strongSelf loadViewController:@"IncomeListViewController" hidesBottomBarWhenPushed:YES];
                 break;
             case 13:
+                [strongSelf loadViewController:@"InviteListViewController" hidesBottomBarWhenPushed:YES];
                 break;
-            case 21:
+            case 20:
+                [strongSelf loadViewController:@"SetViewController" hidesBottomBarWhenPushed:YES];
                 break;
             default:
                 break;

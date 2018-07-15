@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BuyMemberPayViewController">
             <connections>
+                <outlet property="selectALPay" destination="8kJ-id-Y7I" id="ftH-nx-ia1"/>
+                <outlet property="selectUB" destination="BJI-eK-iiV" id="iU4-vF-bGa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -66,7 +68,7 @@
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJI-eK-iiV">
+                        <button opaque="NO" tag="5000" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJI-eK-iiV">
                             <rect key="frame" x="318" y="253" width="16" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="7lz-v4-pFY"/>
@@ -74,6 +76,9 @@
                             </constraints>
                             <state key="normal" title="Button" image="未选中"/>
                             <state key="selected" image="选中"/>
+                            <connections>
+                                <action selector="selectPayTypeButtonEvent:" destination="-1" eventType="touchUpInside" id="c7R-Lc-Mkb"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="支付宝" translatesAutoresizingMaskIntoConstraints="NO" id="efs-tY-aeh">
                             <rect key="frame" x="41" y="301" width="22" height="22"/>
@@ -82,13 +87,13 @@
                                 <constraint firstAttribute="width" constant="22" id="q1B-Uw-ewP"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银联支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40V-EW-NYk">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40V-EW-NYk">
                             <rect key="frame" x="76" y="301" width="286" height="22"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kJ-id-Y7I">
+                        <button opaque="NO" tag="5001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kJ-id-Y7I">
                             <rect key="frame" x="318" y="304" width="16" height="16"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="16" id="d9B-ZJ-yzP"/>
@@ -96,6 +101,9 @@
                             </constraints>
                             <state key="normal" title="Button" image="未选中"/>
                             <state key="selected" image="选中"/>
+                            <connections>
+                                <action selector="selectPayTypeButtonEvent:" destination="-1" eventType="touchUpInside" id="Z7B-ph-EPK"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zcj-ym-e39">
                             <rect key="frame" x="40.5" y="395" width="293" height="45"/>
@@ -104,6 +112,9 @@
                                 <constraint firstAttribute="width" constant="293" id="h2i-Zv-5i2"/>
                             </constraints>
                             <state key="normal" image="确认支付6999"/>
+                            <connections>
+                                <action selector="successPayMoneyButtonEvent:" destination="-1" eventType="touchUpInside" id="LFf-Ar-cnY"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

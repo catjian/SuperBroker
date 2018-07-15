@@ -56,6 +56,38 @@
 		82731BC720F4EB10002EF5FE /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BC620F4EB10002EF5FE /* MyViewController.m */; };
 		82731BCA20F4EB17002EF5FE /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BC920F4EB17002EF5FE /* MessageViewController.m */; };
 		82731BCD20F4EB21002EF5FE /* SpecialNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BCC20F4EB21002EF5FE /* SpecialNewsViewController.m */; };
+		8281B4A120FB1655006691D4 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B49F20FB1655006691D4 /* SetViewController.m */; };
+		8281B4A220FB1655006691D4 /* SetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8281B4A020FB1655006691D4 /* SetViewController.xib */; };
+		8281B4A620FB1916006691D4 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4A420FB1916006691D4 /* FeedBackViewController.m */; };
+		8281B4A720FB1916006691D4 /* FeedBackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8281B4A520FB1916006691D4 /* FeedBackViewController.xib */; };
+		8281B4AB20FB1B51006691D4 /* FeedBackResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4A920FB1B51006691D4 /* FeedBackResponseViewController.m */; };
+		8281B4AC20FB1B51006691D4 /* FeedBackResponseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8281B4AA20FB1B51006691D4 /* FeedBackResponseViewController.xib */; };
+		8281B4B220FB414E006691D4 /* PresentAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4B120FB414E006691D4 /* PresentAccountViewController.m */; };
+		8281B4B520FB4286006691D4 /* PresentAccountBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4B420FB4286006691D4 /* PresentAccountBaseView.m */; };
+		8281B4B820FB4294006691D4 /* PresentAccountViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4B720FB4294006691D4 /* PresentAccountViewCell.m */; };
+		8281B4BB20FB45DF006691D4 /* PresentAccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4BA20FB45DF006691D4 /* PresentAccountModel.m */; };
+		8281B4C020FB482E006691D4 /* AddBankAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4BE20FB482E006691D4 /* AddBankAccountViewController.m */; };
+		8281B4C120FB482E006691D4 /* AddBankAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8281B4BF20FB482E006691D4 /* AddBankAccountViewController.xib */; };
+		8281B4C620FB80BD006691D4 /* IncomeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4C420FB80BD006691D4 /* IncomeListViewController.m */; };
+		8281B4C720FB80BD006691D4 /* IncomeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8281B4C520FB80BD006691D4 /* IncomeListViewController.xib */; };
+		8281B4CE20FB8504006691D4 /* IncomeListBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4CD20FB8504006691D4 /* IncomeListBaseView.m */; };
+		8281B4D120FB851F006691D4 /* IncomeListBaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4D020FB851F006691D4 /* IncomeListBaseViewCell.m */; };
+		8281B4D420FB87C0006691D4 /* IncomeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4D320FB87C0006691D4 /* IncomeListModel.m */; };
+		8281B4D920FB93CD006691D4 /* PaymentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4D720FB93CD006691D4 /* PaymentListViewController.m */; };
+		8281B4DA20FB93CD006691D4 /* PaymentListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8281B4D820FB93CD006691D4 /* PaymentListViewController.xib */; };
+		8281B4DF20FB96E3006691D4 /* PaymentListBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4DE20FB96E3006691D4 /* PaymentListBaseView.m */; };
+		8281B4E220FB9704006691D4 /* PaymentListBaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4E120FB9704006691D4 /* PaymentListBaseViewCell.m */; };
+		8281B4E520FB97CF006691D4 /* PaymentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4E420FB97CF006691D4 /* PaymentListModel.m */; };
+		8281B4E820FB9D54006691D4 /* OnlyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4E720FB9D54006691D4 /* OnlyWebViewController.m */; };
+		8281B4ED20FBA95F006691D4 /* PresentEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4EB20FBA95F006691D4 /* PresentEventViewController.m */; };
+		8281B4EE20FBA95F006691D4 /* PresentEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8281B4EC20FBA95F006691D4 /* PresentEventViewController.xib */; };
+		8281B4F220FBAF47006691D4 /* PresentEventResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4F020FBAF47006691D4 /* PresentEventResponseViewController.m */; };
+		8281B4F320FBAF47006691D4 /* PresentEventResponseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8281B4F120FBAF47006691D4 /* PresentEventResponseViewController.xib */; };
+		8281B4F620FBB083006691D4 /* CommonSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4F520FBB083006691D4 /* CommonSheetView.m */; };
+		8281B4FA20FBB6B4006691D4 /* InviteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4F920FBB6B4006691D4 /* InviteListViewController.m */; };
+		8281B4FF20FBB6E7006691D4 /* InviteListBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4FE20FBB6E7006691D4 /* InviteListBaseView.m */; };
+		8281B50220FBB6F8006691D4 /* InviteListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B50120FBB6F8006691D4 /* InviteListViewCell.m */; };
+		8281B50520FBB7C2006691D4 /* InviteListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B50420FBB7C2006691D4 /* InviteListModel.m */; };
 		82B5462B20F8ED9C00B0F6EE /* MyViewDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B5462A20F8ED9C00B0F6EE /* MyViewDataModel.m */; };
 		82BBED3220F4F48F00BAEEBE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED3020F4F48F00BAEEBE /* LoginViewController.m */; };
 		82BBED3320F4F48F00BAEEBE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82BBED3120F4F48F00BAEEBE /* LoginViewController.xib */; };
@@ -233,6 +265,62 @@
 		82731BC920F4EB17002EF5FE /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		82731BCB20F4EB21002EF5FE /* SpecialNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialNewsViewController.h; sourceTree = "<group>"; };
 		82731BCC20F4EB21002EF5FE /* SpecialNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialNewsViewController.m; sourceTree = "<group>"; };
+		8281B49E20FB1655006691D4 /* SetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
+		8281B49F20FB1655006691D4 /* SetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
+		8281B4A020FB1655006691D4 /* SetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetViewController.xib; sourceTree = "<group>"; };
+		8281B4A320FB1916006691D4 /* FeedBackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
+		8281B4A420FB1916006691D4 /* FeedBackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
+		8281B4A520FB1916006691D4 /* FeedBackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedBackViewController.xib; sourceTree = "<group>"; };
+		8281B4A820FB1B51006691D4 /* FeedBackResponseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedBackResponseViewController.h; sourceTree = "<group>"; };
+		8281B4A920FB1B51006691D4 /* FeedBackResponseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedBackResponseViewController.m; sourceTree = "<group>"; };
+		8281B4AA20FB1B51006691D4 /* FeedBackResponseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedBackResponseViewController.xib; sourceTree = "<group>"; };
+		8281B4B020FB414E006691D4 /* PresentAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentAccountViewController.h; sourceTree = "<group>"; };
+		8281B4B120FB414E006691D4 /* PresentAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentAccountViewController.m; sourceTree = "<group>"; };
+		8281B4B320FB4286006691D4 /* PresentAccountBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentAccountBaseView.h; sourceTree = "<group>"; };
+		8281B4B420FB4286006691D4 /* PresentAccountBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentAccountBaseView.m; sourceTree = "<group>"; };
+		8281B4B620FB4294006691D4 /* PresentAccountViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentAccountViewCell.h; sourceTree = "<group>"; };
+		8281B4B720FB4294006691D4 /* PresentAccountViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentAccountViewCell.m; sourceTree = "<group>"; };
+		8281B4B920FB45DF006691D4 /* PresentAccountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentAccountModel.h; sourceTree = "<group>"; };
+		8281B4BA20FB45DF006691D4 /* PresentAccountModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentAccountModel.m; sourceTree = "<group>"; };
+		8281B4BD20FB482E006691D4 /* AddBankAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddBankAccountViewController.h; sourceTree = "<group>"; };
+		8281B4BE20FB482E006691D4 /* AddBankAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddBankAccountViewController.m; sourceTree = "<group>"; };
+		8281B4BF20FB482E006691D4 /* AddBankAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddBankAccountViewController.xib; sourceTree = "<group>"; };
+		8281B4C320FB80BD006691D4 /* IncomeListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncomeListViewController.h; sourceTree = "<group>"; };
+		8281B4C420FB80BD006691D4 /* IncomeListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IncomeListViewController.m; sourceTree = "<group>"; };
+		8281B4C520FB80BD006691D4 /* IncomeListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeListViewController.xib; sourceTree = "<group>"; };
+		8281B4CC20FB8504006691D4 /* IncomeListBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncomeListBaseView.h; sourceTree = "<group>"; };
+		8281B4CD20FB8504006691D4 /* IncomeListBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IncomeListBaseView.m; sourceTree = "<group>"; };
+		8281B4CF20FB851F006691D4 /* IncomeListBaseViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncomeListBaseViewCell.h; sourceTree = "<group>"; };
+		8281B4D020FB851F006691D4 /* IncomeListBaseViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IncomeListBaseViewCell.m; sourceTree = "<group>"; };
+		8281B4D220FB87C0006691D4 /* IncomeListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IncomeListModel.h; sourceTree = "<group>"; };
+		8281B4D320FB87C0006691D4 /* IncomeListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IncomeListModel.m; sourceTree = "<group>"; };
+		8281B4D620FB93CD006691D4 /* PaymentListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentListViewController.h; sourceTree = "<group>"; };
+		8281B4D720FB93CD006691D4 /* PaymentListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentListViewController.m; sourceTree = "<group>"; };
+		8281B4D820FB93CD006691D4 /* PaymentListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentListViewController.xib; sourceTree = "<group>"; };
+		8281B4DD20FB96E3006691D4 /* PaymentListBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentListBaseView.h; sourceTree = "<group>"; };
+		8281B4DE20FB96E3006691D4 /* PaymentListBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentListBaseView.m; sourceTree = "<group>"; };
+		8281B4E020FB9704006691D4 /* PaymentListBaseViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentListBaseViewCell.h; sourceTree = "<group>"; };
+		8281B4E120FB9704006691D4 /* PaymentListBaseViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentListBaseViewCell.m; sourceTree = "<group>"; };
+		8281B4E320FB97CF006691D4 /* PaymentListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentListModel.h; sourceTree = "<group>"; };
+		8281B4E420FB97CF006691D4 /* PaymentListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaymentListModel.m; sourceTree = "<group>"; };
+		8281B4E620FB9D54006691D4 /* OnlyWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OnlyWebViewController.h; sourceTree = "<group>"; };
+		8281B4E720FB9D54006691D4 /* OnlyWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OnlyWebViewController.m; sourceTree = "<group>"; };
+		8281B4EA20FBA95F006691D4 /* PresentEventViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentEventViewController.h; sourceTree = "<group>"; };
+		8281B4EB20FBA95F006691D4 /* PresentEventViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentEventViewController.m; sourceTree = "<group>"; };
+		8281B4EC20FBA95F006691D4 /* PresentEventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentEventViewController.xib; sourceTree = "<group>"; };
+		8281B4EF20FBAF47006691D4 /* PresentEventResponseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentEventResponseViewController.h; sourceTree = "<group>"; };
+		8281B4F020FBAF47006691D4 /* PresentEventResponseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentEventResponseViewController.m; sourceTree = "<group>"; };
+		8281B4F120FBAF47006691D4 /* PresentEventResponseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PresentEventResponseViewController.xib; sourceTree = "<group>"; };
+		8281B4F420FBB083006691D4 /* CommonSheetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonSheetView.h; sourceTree = "<group>"; };
+		8281B4F520FBB083006691D4 /* CommonSheetView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonSheetView.m; sourceTree = "<group>"; };
+		8281B4F820FBB6B4006691D4 /* InviteListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteListViewController.h; sourceTree = "<group>"; };
+		8281B4F920FBB6B4006691D4 /* InviteListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteListViewController.m; sourceTree = "<group>"; };
+		8281B4FD20FBB6E7006691D4 /* InviteListBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteListBaseView.h; sourceTree = "<group>"; };
+		8281B4FE20FBB6E7006691D4 /* InviteListBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteListBaseView.m; sourceTree = "<group>"; };
+		8281B50020FBB6F8006691D4 /* InviteListViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteListViewCell.h; sourceTree = "<group>"; };
+		8281B50120FBB6F8006691D4 /* InviteListViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteListViewCell.m; sourceTree = "<group>"; };
+		8281B50320FBB7C2006691D4 /* InviteListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteListModel.h; sourceTree = "<group>"; };
+		8281B50420FBB7C2006691D4 /* InviteListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteListModel.m; sourceTree = "<group>"; };
 		82B5462920F8ED9C00B0F6EE /* MyViewDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewDataModel.h; sourceTree = "<group>"; };
 		82B5462A20F8ED9C00B0F6EE /* MyViewDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewDataModel.m; sourceTree = "<group>"; };
 		82BBED2F20F4F48F00BAEEBE /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -745,6 +833,8 @@
 				82731BC220F4EADA002EF5FE /* SpecialNews */,
 				82731BBC20F4E7A5002EF5FE /* LoginRegister */,
 				82731BBB20F4E78F002EF5FE /* Root */,
+				8281B4E620FB9D54006691D4 /* OnlyWebViewController.h */,
+				8281B4E720FB9D54006691D4 /* OnlyWebViewController.m */,
 			);
 			path = ProgramClass;
 			sourceTree = "<group>";
@@ -795,6 +885,11 @@
 		82731BC420F4EB05002EF5FE /* My */ = {
 			isa = PBXGroup;
 			children = (
+				8281B4F720FBB69E006691D4 /* InviteList */,
+				8281B4E920FBA937006691D4 /* PresentEvent */,
+				8281B4C220FB8018006691D4 /* MoneyList */,
+				8281B4AD20FB4121006691D4 /* PresentAccount */,
+				8281B49D20FB1641006691D4 /* Set */,
 				8204416220FA4D2800BDB343 /* UserInformation */,
 				8204415020FA438800BDB343 /* BuyMember */,
 				8221284B20F78E26008E8FFB /* Model */,
@@ -803,6 +898,181 @@
 				82731BC620F4EB10002EF5FE /* MyViewController.m */,
 			);
 			path = My;
+			sourceTree = "<group>";
+		};
+		8281B49D20FB1641006691D4 /* Set */ = {
+			isa = PBXGroup;
+			children = (
+				8281B49E20FB1655006691D4 /* SetViewController.h */,
+				8281B49F20FB1655006691D4 /* SetViewController.m */,
+				8281B4A020FB1655006691D4 /* SetViewController.xib */,
+				8281B4A320FB1916006691D4 /* FeedBackViewController.h */,
+				8281B4A420FB1916006691D4 /* FeedBackViewController.m */,
+				8281B4A520FB1916006691D4 /* FeedBackViewController.xib */,
+				8281B4A820FB1B51006691D4 /* FeedBackResponseViewController.h */,
+				8281B4A920FB1B51006691D4 /* FeedBackResponseViewController.m */,
+				8281B4AA20FB1B51006691D4 /* FeedBackResponseViewController.xib */,
+			);
+			path = Set;
+			sourceTree = "<group>";
+		};
+		8281B4AD20FB4121006691D4 /* PresentAccount */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4BC20FB47F9006691D4 /* FollowViewControllers */,
+				8281B4AF20FB4136006691D4 /* Model */,
+				8281B4AE20FB4132006691D4 /* View */,
+				8281B4B020FB414E006691D4 /* PresentAccountViewController.h */,
+				8281B4B120FB414E006691D4 /* PresentAccountViewController.m */,
+			);
+			path = PresentAccount;
+			sourceTree = "<group>";
+		};
+		8281B4AE20FB4132006691D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4B320FB4286006691D4 /* PresentAccountBaseView.h */,
+				8281B4B420FB4286006691D4 /* PresentAccountBaseView.m */,
+				8281B4B620FB4294006691D4 /* PresentAccountViewCell.h */,
+				8281B4B720FB4294006691D4 /* PresentAccountViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8281B4AF20FB4136006691D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4B920FB45DF006691D4 /* PresentAccountModel.h */,
+				8281B4BA20FB45DF006691D4 /* PresentAccountModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8281B4BC20FB47F9006691D4 /* FollowViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4BD20FB482E006691D4 /* AddBankAccountViewController.h */,
+				8281B4BE20FB482E006691D4 /* AddBankAccountViewController.m */,
+				8281B4BF20FB482E006691D4 /* AddBankAccountViewController.xib */,
+			);
+			path = FollowViewControllers;
+			sourceTree = "<group>";
+		};
+		8281B4C220FB8018006691D4 /* MoneyList */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4D520FB93B9006691D4 /* PaymentList */,
+				8281B4C820FB80C3006691D4 /* IncomeList */,
+			);
+			path = MoneyList;
+			sourceTree = "<group>";
+		};
+		8281B4C820FB80C3006691D4 /* IncomeList */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4CA20FB84E3006691D4 /* Model */,
+				8281B4C920FB84D6006691D4 /* View */,
+				8281B4C320FB80BD006691D4 /* IncomeListViewController.h */,
+				8281B4C420FB80BD006691D4 /* IncomeListViewController.m */,
+				8281B4C520FB80BD006691D4 /* IncomeListViewController.xib */,
+			);
+			path = IncomeList;
+			sourceTree = "<group>";
+		};
+		8281B4C920FB84D6006691D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4CC20FB8504006691D4 /* IncomeListBaseView.h */,
+				8281B4CD20FB8504006691D4 /* IncomeListBaseView.m */,
+				8281B4CF20FB851F006691D4 /* IncomeListBaseViewCell.h */,
+				8281B4D020FB851F006691D4 /* IncomeListBaseViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8281B4CA20FB84E3006691D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4D220FB87C0006691D4 /* IncomeListModel.h */,
+				8281B4D320FB87C0006691D4 /* IncomeListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8281B4D520FB93B9006691D4 /* PaymentList */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4DC20FB9616006691D4 /* Model */,
+				8281B4DB20FB9612006691D4 /* View */,
+				8281B4D620FB93CD006691D4 /* PaymentListViewController.h */,
+				8281B4D720FB93CD006691D4 /* PaymentListViewController.m */,
+				8281B4D820FB93CD006691D4 /* PaymentListViewController.xib */,
+			);
+			path = PaymentList;
+			sourceTree = "<group>";
+		};
+		8281B4DB20FB9612006691D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4DD20FB96E3006691D4 /* PaymentListBaseView.h */,
+				8281B4DE20FB96E3006691D4 /* PaymentListBaseView.m */,
+				8281B4E020FB9704006691D4 /* PaymentListBaseViewCell.h */,
+				8281B4E120FB9704006691D4 /* PaymentListBaseViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8281B4DC20FB9616006691D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4E320FB97CF006691D4 /* PaymentListModel.h */,
+				8281B4E420FB97CF006691D4 /* PaymentListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8281B4E920FBA937006691D4 /* PresentEvent */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4EA20FBA95F006691D4 /* PresentEventViewController.h */,
+				8281B4EB20FBA95F006691D4 /* PresentEventViewController.m */,
+				8281B4EC20FBA95F006691D4 /* PresentEventViewController.xib */,
+				8281B4EF20FBAF47006691D4 /* PresentEventResponseViewController.h */,
+				8281B4F020FBAF47006691D4 /* PresentEventResponseViewController.m */,
+				8281B4F120FBAF47006691D4 /* PresentEventResponseViewController.xib */,
+			);
+			path = PresentEvent;
+			sourceTree = "<group>";
+		};
+		8281B4F720FBB69E006691D4 /* InviteList */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4FC20FBB6C9006691D4 /* Model */,
+				8281B4FB20FBB6C4006691D4 /* View */,
+				8281B4F820FBB6B4006691D4 /* InviteListViewController.h */,
+				8281B4F920FBB6B4006691D4 /* InviteListViewController.m */,
+			);
+			path = InviteList;
+			sourceTree = "<group>";
+		};
+		8281B4FB20FBB6C4006691D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8281B4FD20FBB6E7006691D4 /* InviteListBaseView.h */,
+				8281B4FE20FBB6E7006691D4 /* InviteListBaseView.m */,
+				8281B50020FBB6F8006691D4 /* InviteListViewCell.h */,
+				8281B50120FBB6F8006691D4 /* InviteListViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8281B4FC20FBB6C9006691D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8281B50320FBB7C2006691D4 /* InviteListModel.h */,
+				8281B50420FBB7C2006691D4 /* InviteListModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		82BBED2B20F4F43C00BAEEBE /* View */ = {
@@ -982,6 +1252,8 @@
 				82C076AB20F4E67B0080E37F /* CustomRoundButton.m */,
 				82BBED4820F503F100BAEEBE /* CommonADAutoView.h */,
 				82BBED4920F503F100BAEEBE /* CommonADAutoView.m */,
+				8281B4F420FBB083006691D4 /* CommonSheetView.h */,
+				8281B4F520FBB083006691D4 /* CommonSheetView.m */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -1166,20 +1438,28 @@
 				824BD57A20F64DFC00924E61 /* InsuranceDetailViewController.xib in Resources */,
 				82C0773020F4E67C0080E37F /* del_btn@3x.png in Resources */,
 				8204416120FA4B0800BDB343 /* BuyMemberPayViewController.xib in Resources */,
+				8281B4F320FBAF47006691D4 /* PresentEventResponseViewController.xib in Resources */,
 				8257C7B520F4E1DC00FA550D /* LaunchScreen.storyboard in Resources */,
 				82BBED3820F4F7BB00BAEEBE /* RegisterViewController.xib in Resources */,
 				8204416720FA4D5200BDB343 /* UserInfoViewController.xib in Resources */,
 				8204415520FA439C00BDB343 /* BuyMemeberViewController.xib in Resources */,
 				82BBED3320F4F48F00BAEEBE /* LoginViewController.xib in Resources */,
 				8257C7B220F4E1DC00FA550D /* Assets.xcassets in Resources */,
+				8281B4EE20FBA95F006691D4 /* PresentEventViewController.xib in Resources */,
 				8204415B20FA48E500BDB343 /* BuyMemberSuccessViewController.xib in Resources */,
 				8204416C20FA56AE00BDB343 /* EditPhoneViewController.xib in Resources */,
 				82C0773220F4E67C0080E37F /* del_btn@2x.png in Resources */,
 				824BD58020F6531700924E61 /* InsuranceCommitViewController.xib in Resources */,
 				824BD57420F63E0100924E61 /* InsuranceInformationViewController.xib in Resources */,
+				8281B4C120FB482E006691D4 /* AddBankAccountViewController.xib in Resources */,
+				8281B4C720FB80BD006691D4 /* IncomeListViewController.xib in Resources */,
 				82C0773A20F4E67C0080E37F /* plane.gif in Resources */,
 				824BC71D20F8D75500BF3DD7 /* SMSLoginViewController.xib in Resources */,
+				8281B4A720FB1916006691D4 /* FeedBackViewController.xib in Resources */,
+				8281B4DA20FB93CD006691D4 /* PaymentListViewController.xib in Resources */,
 				82BBED3E20F4FB9A00BAEEBE /* EditPasswordViewController.xib in Resources */,
+				8281B4AC20FB1B51006691D4 /* FeedBackResponseViewController.xib in Resources */,
+				8281B4A220FB1655006691D4 /* SetViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1237,6 +1517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8281B4F220FBAF47006691D4 /* PresentEventResponseViewController.m in Sources */,
 				82C0773C20F4E67C0080E37F /* CommonHttpAdapter.m in Sources */,
 				82BBED4120F4FFAD00BAEEBE /* RootBaseView.m in Sources */,
 				82C0774E20F4E67C0080E37F /* BaseViewController.m in Sources */,
@@ -1248,6 +1529,7 @@
 				82B5462B20F8ED9C00B0F6EE /* MyViewDataModel.m in Sources */,
 				82BBED3220F4F48F00BAEEBE /* LoginViewController.m in Sources */,
 				824BC71C20F8D75500BF3DD7 /* SMSLoginViewController.m in Sources */,
+				8281B4C020FB482E006691D4 /* AddBankAccountViewController.m in Sources */,
 				82C0772920F4E67C0080E37F /* CommonTopShowLineView.m in Sources */,
 				824BD56020F6325D00924E61 /* InsuranceViewController.m in Sources */,
 				82C0772B20F4E67C0080E37F /* CommonPopShareView.m in Sources */,
@@ -1265,6 +1547,7 @@
 				82C0774120F4E67C0080E37F /* CommonVerify.m in Sources */,
 				82C0772220F4E67C0080E37F /* UILabel+CallPhoneExtension.m in Sources */,
 				82731BC720F4EB10002EF5FE /* MyViewController.m in Sources */,
+				8281B4E520FB97CF006691D4 /* PaymentListModel.m in Sources */,
 				82C0773520F4E67C0080E37F /* CommonPopWarnView.m in Sources */,
 				82C0774D20F4E67C0080E37F /* BaseTableViewCell.m in Sources */,
 				82C0770E20F4E67C0080E37F /* NSArray+Null.m in Sources */,
@@ -1272,38 +1555,51 @@
 				82BBED4A20F503F100BAEEBE /* CommonADAutoView.m in Sources */,
 				8221286E20F7C092008E8FFB /* InsuranceProductModel.m in Sources */,
 				824BD56920F6365C00924E61 /* InsuranceViewCellTableViewCell.m in Sources */,
+				8281B4E220FB9704006691D4 /* PaymentListBaseViewCell.m in Sources */,
 				82C0770920F4E67C0080E37F /* UIColor+Hex.m in Sources */,
 				824BD58920F659EC00924E61 /* InsuranceTypesBaseView.m in Sources */,
 				82C0774420F4E67C0080E37F /* CommonAlertView.m in Sources */,
+				8281B4D420FB87C0006691D4 /* IncomeListModel.m in Sources */,
 				82C0771B20F4E67C0080E37F /* UIImageView+CornerRadius.m in Sources */,
 				82C0773F20F4E67C0080E37F /* RSAEncryptor.m in Sources */,
 				82C0771820F4E67C0080E37F /* NSString+Extension_NSString.m in Sources */,
 				824BD5A120F662BD00924E61 /* InsuranceAgeBaseView.m in Sources */,
 				82BBED3D20F4FB9A00BAEEBE /* EditPasswordViewController.m in Sources */,
 				8221286820F7BE7A008E8FFB /* InsuranceCompanyModel.m in Sources */,
+				8281B4F620FBB083006691D4 /* CommonSheetView.m in Sources */,
 				8221285820F7BC36008E8FFB /* RootNoticeDetailModel.m in Sources */,
 				82C0772A20F4E67C0080E37F /* CommonMoreColumnsPickerView.m in Sources */,
 				82C0772720F4E67C0080E37F /* CustomRoundButton.m in Sources */,
+				8281B4E820FB9D54006691D4 /* OnlyWebViewController.m in Sources */,
 				82C0771E20F4E67C0080E37F /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				824BD57320F63E0100924E61 /* InsuranceInformationViewController.m in Sources */,
 				82C0771520F4E67C0080E37F /* NSString+Attributed.m in Sources */,
 				82C0771F20F4E67C0080E37F /* UIView+BackHexColor.m in Sources */,
+				8281B4D920FB93CD006691D4 /* PaymentListViewController.m in Sources */,
 				82C0774F20F4E67C0080E37F /* BaseTableView.m in Sources */,
 				82C0770B20F4E67C0080E37F /* NSDictionary+Null.m in Sources */,
 				82731BCA20F4EB17002EF5FE /* MessageViewController.m in Sources */,
+				8281B4CE20FB8504006691D4 /* IncomeListBaseView.m in Sources */,
 				82C0772D20F4E67C0080E37F /* CommonContentSubView.m in Sources */,
 				82C0773620F4E67C0080E37F /* CommonBottomPopView.m in Sources */,
 				82731BCD20F4EB21002EF5FE /* SpecialNewsViewController.m in Sources */,
+				8281B4B220FB414E006691D4 /* PresentAccountViewController.m in Sources */,
 				8257C7B820F4E1DC00FA550D /* main.m in Sources */,
+				8281B4BB20FB45DF006691D4 /* PresentAccountModel.m in Sources */,
 				8221287320F7C209008E8FFB /* CarInsuranceListModel.m in Sources */,
 				8221285B20F7BCAF008E8FFB /* RootNoticeListModel.m in Sources */,
+				8281B4D120FB851F006691D4 /* IncomeListBaseViewCell.m in Sources */,
+				8281B4B820FB4294006691D4 /* PresentAccountViewCell.m in Sources */,
 				82C0773920F4E67C0080E37F /* CommonHUD.m in Sources */,
+				8281B4FF20FBB6E7006691D4 /* InviteListBaseView.m in Sources */,
 				82C0774320F4E67C0080E37F /* CommonPictureSelect.m in Sources */,
 				8204415A20FA48E500BDB343 /* BuyMemberSuccessViewController.m in Sources */,
+				8281B4A620FB1916006691D4 /* FeedBackViewController.m in Sources */,
 				82C0774520F4E67C0080E37F /* CommonAnimation.m in Sources */,
 				82C0770820F4E67C0080E37F /* UIImage+ConvertBase64.m in Sources */,
 				82C0775120F4E67C0080E37F /* BaseTabBarController.m in Sources */,
 				82C0771320F4E67C0080E37F /* NSObject+Null.m in Sources */,
+				8281B4AB20FB1B51006691D4 /* FeedBackResponseViewController.m in Sources */,
 				82BBED4420F5002400BAEEBE /* RootViewCell.m in Sources */,
 				82C0772620F4E67C0080E37F /* CommonMemonyCache.m in Sources */,
 				82C0772320F4E67C0080E37F /* NSString+TransformToPinYin.m in Sources */,
@@ -1314,14 +1610,17 @@
 				82C0771A20F4E67C0080E37F /* NSDictionary+Property.m in Sources */,
 				82C0770C20F4E67C0080E37F /* UIImage+Extension.m in Sources */,
 				82C0773D20F4E67C0080E37F /* CommonImage.m in Sources */,
+				8281B4A120FB1655006691D4 /* SetViewController.m in Sources */,
 				82C0770F20F4E67C0080E37F /* NSString+ No2hz.m in Sources */,
 				82C0771C20F4E67C0080E37F /* UIButton+ImageTitleStyle.m in Sources */,
 				82BBED3720F4F7BB00BAEEBE /* RegisterViewController.m in Sources */,
 				82C0772C20F4E67C0080E37F /* CommonPickerView.m in Sources */,
 				82C0775020F4E67C0080E37F /* BaseNavigationViewController.m in Sources */,
 				82C0772E20F4E67C0080E37F /* CommonCommitButton.m in Sources */,
+				8281B50520FBB7C2006691D4 /* InviteListModel.m in Sources */,
 				82C0771020F4E67C0080E37F /* UIViewExt.m in Sources */,
 				82C0771620F4E67C0080E37F /* NSNumber+AppendingString.m in Sources */,
+				8281B4DF20FB96E3006691D4 /* PaymentListBaseView.m in Sources */,
 				824BD5A520F662E100924E61 /* InsuranceAgeViewCell.m in Sources */,
 				824BC71620F8D05A00BF3DD7 /* MyBaseView.m in Sources */,
 				82C0774620F4E67C0080E37F /* CommonSelectOneLineViewController.m in Sources */,
@@ -1331,10 +1630,12 @@
 				82C0771920F4E67C0080E37F /* PlaceTextView.m in Sources */,
 				82C0772120F4E67C0080E37F /* UIImageView+CircleImage.m in Sources */,
 				824BD56520F6327500924E61 /* InsuranceBaseView.m in Sources */,
+				8281B4FA20FBB6B4006691D4 /* InviteListViewController.m in Sources */,
 				82C0772F20F4E67C0080E37F /* CommonCustomButtonView.m in Sources */,
 				8204416020FA4B0800BDB343 /* BuyMemberPayViewController.m in Sources */,
 				82C0770D20F4E67C0080E37F /* NSString+AppendingString.m in Sources */,
 				8204416B20FA56AE00BDB343 /* EditPhoneViewController.m in Sources */,
+				8281B50220FBB6F8006691D4 /* InviteListViewCell.m in Sources */,
 				82C0771D20F4E67C0080E37F /* NSString+MD5.m in Sources */,
 				824BD59820F6619E00924E61 /* InsuranceCompanyViewCell.m in Sources */,
 				82C0773120F4E67C0080E37F /* CommonNumberKeyboardView.m in Sources */,
@@ -1345,7 +1646,9 @@
 				8257C7AA20F4E1DA00FA550D /* AppDelegate.m in Sources */,
 				82C0772420F4E67C0080E37F /* NSString+GBK.m in Sources */,
 				824BD58C20F65A5C00924E61 /* InsuranceTypesViewCell.m in Sources */,
+				8281B4C620FB80BD006691D4 /* IncomeListViewController.m in Sources */,
 				82C0771120F4E67C0080E37F /* NSString+ConvertHex.m in Sources */,
+				8281B4ED20FBA95F006691D4 /* PresentEventViewController.m in Sources */,
 				824BD57920F64DFC00924E61 /* InsuranceDetailViewController.m in Sources */,
 				82C0774A20F4E67C0080E37F /* AJTapDetectingView.m in Sources */,
 				824BD57F20F6531700924E61 /* InsuranceCommitViewController.m in Sources */,
@@ -1354,6 +1657,7 @@
 				8204416620FA4D5200BDB343 /* UserInfoViewController.m in Sources */,
 				82C0772520F4E67C0080E37F /* CommonCurrentUser.m in Sources */,
 				82C0774C20F4E67C0080E37F /* BaseLable.m in Sources */,
+				8281B4B520FB4286006691D4 /* PresentAccountBaseView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
