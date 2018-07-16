@@ -52,6 +52,8 @@
 		8257C7B220F4E1DC00FA550D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8257C7B120F4E1DC00FA550D /* Assets.xcassets */; };
 		8257C7B520F4E1DC00FA550D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8257C7B320F4E1DC00FA550D /* LaunchScreen.storyboard */; };
 		8257C7B820F4E1DC00FA550D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8257C7B720F4E1DC00FA550D /* main.m */; };
+		8260265F20FD041E00EBBB2B /* RootViewHotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8260265E20FD041E00EBBB2B /* RootViewHotCell.m */; };
+		8260266220FD043300EBBB2B /* RooViewNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8260266120FD043300EBBB2B /* RooViewNewsCell.m */; };
 		82731BBF20F4E7B7002EF5FE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BBE20F4E7B7002EF5FE /* RootViewController.m */; };
 		82731BC720F4EB10002EF5FE /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BC620F4EB10002EF5FE /* MyViewController.m */; };
 		82731BCA20F4EB17002EF5FE /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BC920F4EB17002EF5FE /* MessageViewController.m */; };
@@ -256,6 +258,10 @@
 		8257C7B420F4E1DC00FA550D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8257C7B620F4E1DC00FA550D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8257C7B720F4E1DC00FA550D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8260265D20FD041E00EBBB2B /* RootViewHotCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewHotCell.h; sourceTree = "<group>"; };
+		8260265E20FD041E00EBBB2B /* RootViewHotCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewHotCell.m; sourceTree = "<group>"; };
+		8260266020FD043300EBBB2B /* RooViewNewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RooViewNewsCell.h; sourceTree = "<group>"; };
+		8260266120FD043300EBBB2B /* RooViewNewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RooViewNewsCell.m; sourceTree = "<group>"; };
 		82731BBD20F4E7B7002EF5FE /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		82731BBE20F4E7B7002EF5FE /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		82731BC120F4E7E8002EF5FE /* SuperBrokerPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperBrokerPrefixHeader.pch; sourceTree = "<group>"; };
@@ -1082,6 +1088,10 @@
 				82BBED4020F4FFAD00BAEEBE /* RootBaseView.m */,
 				82BBED4220F5002400BAEEBE /* RootViewCell.h */,
 				82BBED4320F5002400BAEEBE /* RootViewCell.m */,
+				8260265D20FD041E00EBBB2B /* RootViewHotCell.h */,
+				8260265E20FD041E00EBBB2B /* RootViewHotCell.m */,
+				8260266020FD043300EBBB2B /* RooViewNewsCell.h */,
+				8260266120FD043300EBBB2B /* RooViewNewsCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1525,6 +1535,7 @@
 				82C0771220F4E67C0080E37F /* UIButton+CircleImage.m in Sources */,
 				82C0772020F4E67C0080E37F /* NSString+GetWeekDay.m in Sources */,
 				824BC71720F8D05A00BF3DD7 /* MyBaseViewCell.m in Sources */,
+				8260265F20FD041E00EBBB2B /* RootViewHotCell.m in Sources */,
 				82C0773B20F4E67C0080E37F /* CommonTool.m in Sources */,
 				82B5462B20F8ED9C00B0F6EE /* MyViewDataModel.m in Sources */,
 				82BBED3220F4F48F00BAEEBE /* LoginViewController.m in Sources */,
@@ -1585,6 +1596,7 @@
 				82731BCD20F4EB21002EF5FE /* SpecialNewsViewController.m in Sources */,
 				8281B4B220FB414E006691D4 /* PresentAccountViewController.m in Sources */,
 				8257C7B820F4E1DC00FA550D /* main.m in Sources */,
+				8260266220FD043300EBBB2B /* RooViewNewsCell.m in Sources */,
 				8281B4BB20FB45DF006691D4 /* PresentAccountModel.m in Sources */,
 				8221287320F7C209008E8FFB /* CarInsuranceListModel.m in Sources */,
 				8221285B20F7BCAF008E8FFB /* RootNoticeListModel.m in Sources */,

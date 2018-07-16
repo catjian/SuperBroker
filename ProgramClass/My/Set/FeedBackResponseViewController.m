@@ -19,6 +19,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setNavTarBarTitle:@"设置"];
-    [self setRightItemWithContentName:@"客服"];
+    [self setRightItemWithContentName:@"客服-黑"];
 }
 @end

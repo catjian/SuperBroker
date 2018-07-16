@@ -7,6 +7,7 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "InsuranceProductModel.h"
 
 @interface InsuranceViewCellTableViewCell : BaseTableViewCell
 

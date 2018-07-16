@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setNavTarBarTitle:@"我的提现"];
-    [self setRightItemWithContentName:@"客服"];
+    [self setRightItemWithContentName:@"客服-黑"];
 }
 
 #pragma mark - Button Events

@@ -54,4 +54,5 @@
 
 @property (nonatomic, strong) NSString *speciesId;
 
+- (NSArray *)getInsuranceProductModel;
 @end

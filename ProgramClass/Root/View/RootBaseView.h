@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RootViewCell.h"
+#import "RootViewHotCell.h"
+#import "RooViewNewsCell.h"
 
 @interface RootBaseView : UIView
 

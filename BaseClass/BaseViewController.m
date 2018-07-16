@@ -203,6 +203,10 @@ UIKIT_STATIC_INLINE UIImage *imageWithColor(UIColor *color)
         [rightBut setFrame:CGRectMake(0, 0, btnImage.size.width<DIF_PX(60)?DIF_PX(60):btnImage.size.width, btnImage.size.height)];
         [rightBut setImage:btnImage forState:UIControlStateNormal];
         [rightBut setImageEdgeInsets:UIEdgeInsetsMake(0,  (rightBut.frame.size.width - btnImage.size.width), 0, 0)];
+        if ([name isEqualToString:@"客服-黑"])
+        {
+            [rightBut setImage:[UIImage imageNamed:@"客服-白色"] forState:UIControlStateHighlighted];
+        }
     }
     else
     {

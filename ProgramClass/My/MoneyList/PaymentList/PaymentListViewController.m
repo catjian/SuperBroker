@@ -35,7 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setNavTarBarTitle:@"我的消费券"];
-    [self setRightItemWithContentName:@"客服"];
+    [self setRightItemWithContentName:@"客服-黑"];
     m_ListModel = [PaymentListModel new];
     m_BaseView = [[PaymentListBaseView alloc] initWithFrame:self.contentBG.bounds style:UITableViewStylePlain];
     m_BaseView.listModel = m_ListModel;

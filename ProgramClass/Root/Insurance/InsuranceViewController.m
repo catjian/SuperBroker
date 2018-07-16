@@ -18,6 +18,7 @@
     InsuranceBaseView *m_BaseView;
     UITextField *m_SearchTextField;
     UIView *m_SearchView;
+    InsuranceProductModel *m_DataModel;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -30,7 +31,7 @@
 {
     [super viewDidLoad];
     DIF_ShowTabBarAnimation(YES);
-    [self setRightItemWithContentName:@"搜索"];
+    [self setRightItemWithContentName:@" 搜索"];
     [self createSearchView];
     [self.navigationItem setTitleView:m_SearchView];
 }
@@ -38,9 +39,15 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    m_DataModel = [InsuranceProductModel new];
     m_BaseView = [[InsuranceBaseView alloc] initWithFrame:self.view.bounds];
+    [m_BaseView setInsuranceDataArray:m_DataModel.getInsuranceProductModel];
     [self.view addSubview:m_BaseView];
-    DIF_WeakSelf(self)
+    DIF_WeakSelf(self);
+    [m_BaseView setScrollBlock:^(UITableView *tableView, UIScrollView *scrollView) {
+        DIF_StrongSelf
+        [strongSelf->m_SearchView endEditing:YES];
+    }];
     [m_BaseView setTopSelectBlock:^(NSInteger index) {
         DIF_StrongSelf
         switch (index) {
@@ -66,12 +73,12 @@
 
 - (void)createSearchView
 {
-    m_SearchView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width-60*3, self.navigationItem.titleView.height)];
+    m_SearchView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width-90, 29)];
     [m_SearchView setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
     
     UIView *backView = [[UIView alloc] initWithFrame:m_SearchView.frame];
     [backView setBackgroundColor:DIF_HEXCOLOR(@"f2f2f3")];
-    [backView.layer setCornerRadius:self.navigationItem.titleView.height/2];
+    [backView.layer setCornerRadius:5];
     [backView.layer setMasksToBounds:YES];
     [m_SearchView addSubview:backView];
     

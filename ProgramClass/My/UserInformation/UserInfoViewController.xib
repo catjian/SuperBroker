@@ -44,9 +44,9 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBg-m3-49w">
                             <rect key="frame" x="0.0" y="12" width="375" height="80"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lnq-ch-TAf">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="头像" translatesAutoresizingMaskIntoConstraints="NO" id="lnq-ch-TAf">
                                     <rect key="frame" x="12" y="10" width="60" height="60"/>
-                                    <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="59g-n2-LZS"/>
                                         <constraint firstAttribute="width" constant="60" id="FdY-24-Gul"/>
@@ -363,5 +363,6 @@
     </objects>
     <resources>
         <image name="右括号" width="9" height="16"/>
+        <image name="头像" width="60" height="60"/>
     </resources>
 </document>

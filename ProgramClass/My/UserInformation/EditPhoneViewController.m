@@ -29,7 +29,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setNavTarBarTitle:@"手机号修改"];
-    [self setRightItemWithContentName:@"客服"];
+    [self setRightItemWithContentName:@"客服-黑"];
 }
 
 - (IBAction)getVerfifyEditPhoneButtonEvent:(UIButton *)sender

@@ -25,7 +25,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setNavTarBarTitle:@"开通会员"];
-    [self setRightItemWithContentName:@"客服"];
+    [self setRightItemWithContentName:@"客服-黑"];
 }
 
 - (IBAction)buyMemeberButtonEvent:(UIButton *)sender

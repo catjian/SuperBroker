@@ -32,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.view setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
 }
 
 - (void)viewDidAppear:(BOOL)animated

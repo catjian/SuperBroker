@@ -21,7 +21,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setRightItemWithContentName:@"客服"];
+    [self setRightItemWithContentName:@"客服-黑"];
 }
 
 - (void)viewDidAppear:(BOOL)animated

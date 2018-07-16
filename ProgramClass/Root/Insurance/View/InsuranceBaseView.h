@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InsuranceViewCellTableViewCell.h"
 
 @interface InsuranceBaseView : UIView <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 

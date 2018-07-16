@@ -37,7 +37,7 @@
 
 - (void)createBackView
 {
-    UIImageView *backView = [[UIImageView alloc] initWithFrame:self.bounds];
+    UIImageView *backView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"个人中心背景"]];
     [backView setBackgroundColor:[UIColor blueColor]];
     [self addSubview:backView];
 }
@@ -51,7 +51,8 @@
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [rightBtn setFrame:CGRectMake(0, DIF_PX(11), DIF_PX(22), DIF_PX(22))];
     [rightBtn setRight:DIF_SCREEN_WIDTH-DIF_PX(12)];
-    [rightBtn setImage:[UIImage imageNamed:@"客服"] forState:UIControlStateNormal];
+    [rightBtn setImage:[UIImage imageNamed:@"客服-黑"] forState:UIControlStateNormal];
+    [rightBtn setImage:[UIImage imageNamed:@"客服-白色"] forState:UIControlStateHighlighted];
     [m_TopView addSubview:rightBtn];
 }
 
@@ -179,10 +180,12 @@
 //    [m_TopView addSubview:spaceView];
     
     m_CustomIcon = [[UIImageView alloc] initWithFrame:CGRectMake(DIF_PX(34), DIF_PX(31), DIF_PX(80), DIF_PX(80))];
-    [m_CustomIcon setBackgroundColor:[UIColor yellowColor]];
+    [m_CustomIcon sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"头像"]];
+    [m_CustomIcon.layer setCornerRadius:40];
+    [m_CustomIcon.layer setMasksToBounds:YES];
     [roundView addSubview:m_CustomIcon];
     
-    m_CustomName = [[UILabel alloc] initWithFrame:CGRectMake(m_CustomIcon.right+DIF_PX(12), DIF_PX(52), 0, DIF_PX(30))];
+    m_CustomName = [[UILabel alloc] initWithFrame:CGRectMake(m_CustomIcon.right+DIF_PX(12), DIF_PX(42), 0, DIF_PX(30))];
     [m_CustomName setWidth:roundView.width-m_CustomName.left];
     [m_CustomName setTextColor:DIF_HEXCOLOR(@"333333")];
     [m_CustomName setFont:DIF_UIFONTOFSIZE(18)];
@@ -199,7 +202,7 @@
     [m_CustomLive addTarget:self action:@selector(topButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
     [roundView addSubview:m_CustomLive];
     
-    m_CustomCoupon = [[UILabel alloc] initWithFrame:CGRectMake(0, m_CustomIcon.bottom+DIF_PX(30), DIF_PX(140), DIF_PX(14))];
+    m_CustomCoupon = [[UILabel alloc] initWithFrame:CGRectMake(0, m_CustomIcon.bottom+DIF_PX(20), DIF_PX(140), DIF_PX(14))];
     [m_CustomCoupon setText:@"88.00"];
     [m_CustomCoupon setTextColor:DIF_HEXCOLOR(@"333333")];
     [m_CustomCoupon setFont:DIF_UIFONTOFSIZE(18)];

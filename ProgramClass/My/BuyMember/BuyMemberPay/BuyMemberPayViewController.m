@@ -10,6 +10,10 @@
 
 @interface BuyMemberPayViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *cardTitle;
+@property (weak, nonatomic) IBOutlet UILabel *cardMoney;
+@property (weak, nonatomic) IBOutlet UITextView *cardDetail;
+@property (weak, nonatomic) IBOutlet UIImageView *cardBack;
 @property (weak, nonatomic) IBOutlet UIButton *selectALPay;
 @property (weak, nonatomic) IBOutlet UIButton *selectUB;
 
@@ -22,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setNavTarBarTitle:@"开通会员"];
-    [self setRightItemWithContentName:@"客服"];
+    [self setRightItemWithContentName:@"客服-黑"];
 }
 
 - (IBAction)selectPayTypeButtonEvent:(UIButton *)sender

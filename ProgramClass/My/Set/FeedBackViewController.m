@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setNavTarBarTitle:@"设置"];
-    [self setRightItemWithContentName:@"客服"];
+    [self setRightItemWithContentName:@"客服-黑"];
     [self.contentTV setPlaceholder:@"请输入详细内容描述"];
     [self.contentTV setPlaceColor:DIF_HEXCOLOR(@"CCCCCC")];
     [self.contentTV setMaxLength:240];

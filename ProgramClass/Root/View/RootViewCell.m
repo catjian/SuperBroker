@@ -15,13 +15,13 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.width-DIF_PX(48))/2, 0,
-                                                                       DIF_PX(48), DIF_PX(48))];
+        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.width-DIF_PX(67))/2, 24,
+                                                                       DIF_PX(67), DIF_PX(67))];
         [self.contentView addSubview:self.imageView];
         
-        self.titleLab = [[UILabel alloc] initWithFrame:CGRectMake(-DIF_PX(4), self.imageView.bottom+DIF_PX(6), self.width+DIF_PX(8), DIF_PX(24))];
-        [self.titleLab setTextColor:DIF_HEXCOLOR(@"#000000")];
-        [self.titleLab setFont:DIF_DIFONTOFSIZE(is_iPhone5AndEarly?10:12)];
+        self.titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, self.imageView.bottom+DIF_PX(6), self.width, DIF_PX(24))];
+        [self.titleLab setTextColor:DIF_HEXCOLOR(@"#333333")];
+        [self.titleLab setFont:DIF_DIFONTOFSIZE(is_iPhone5AndEarly?12:15)];
         [self.titleLab setTextAlignment:NSTextAlignmentCenter];
         [self.contentView addSubview:self.titleLab];
     }
