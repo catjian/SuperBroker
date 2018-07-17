@@ -57,7 +57,7 @@
 
 - (NSMutableAttributedString *)LinkAttributeNameWithUrl:(NSURL *)url Range:(NSRange)range;
 
-- (NSMutableAttributedString *)ParagraphStyleAttributeNameWithStyle:(NSParagraphStyle *)style Range:(NSRange)range;
+- (NSMutableAttributedString *)ParagraphStyleAttributeNameWithStyle:(NSTextAlignment)textAlignment Range:(NSRange)range;
 
 - (NSMutableAttributedString *)attatchImage:(UIImage *)image imageFrame:(CGRect)frame Range:(NSRange)range;
 

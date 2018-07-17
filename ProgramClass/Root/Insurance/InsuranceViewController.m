@@ -31,6 +31,7 @@
 {
     [super viewDidLoad];
     DIF_ShowTabBarAnimation(YES);
+    m_DataModel = [InsuranceProductModel new];
     [self setRightItemWithContentName:@" 搜索"];
     [self createSearchView];
     [self.navigationItem setTitleView:m_SearchView];
@@ -39,29 +40,34 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    m_DataModel = [InsuranceProductModel new];
-    m_BaseView = [[InsuranceBaseView alloc] initWithFrame:self.view.bounds];
-    [m_BaseView setInsuranceDataArray:m_DataModel.getInsuranceProductModel];
-    [self.view addSubview:m_BaseView];
-    DIF_WeakSelf(self);
-    [m_BaseView setScrollBlock:^(UITableView *tableView, UIScrollView *scrollView) {
-        DIF_StrongSelf
-        [strongSelf->m_SearchView endEditing:YES];
-    }];
-    [m_BaseView setTopSelectBlock:^(NSInteger index) {
-        DIF_StrongSelf
-        switch (index) {
-            case 0:
-                [strongSelf loadViewController:@"InsuranceTypesViewController"];
-                break;
-            case 1:
-                [strongSelf loadViewController:@"InsuranceCompanyViewController"];
-                break;
-            default:
-                [strongSelf loadViewController:@"InsuranceAgeViewController"];
-                break;
-        }
-    }];
+    if (!m_BaseView)
+    {
+        m_BaseView = [[InsuranceBaseView alloc] initWithFrame:self.view.bounds];
+        [m_BaseView setInsuranceDataArray:m_DataModel.getInsuranceProductModel];
+        [self.view addSubview:m_BaseView];
+        DIF_WeakSelf(self);
+        [m_BaseView setScrollBlock:^(UITableView *tableView, UIScrollView *scrollView) {
+            DIF_StrongSelf
+            [strongSelf->m_SearchView endEditing:YES];
+        }];
+        [m_BaseView setTopSelectBlock:^(NSInteger index) {
+            DIF_StrongSelf
+            switch (index) {
+                case 0:
+                    [strongSelf loadViewController:@"InsuranceTypesViewController"];
+                    break;
+                case 1:
+                    [strongSelf loadViewController:@"InsuranceCompanyViewController"];
+                    break;
+                case 2:
+                    [strongSelf loadViewController:@"InsuranceAgeViewController"];
+                    break;
+                default:
+                    [strongSelf loadViewController:@"ScreenViewController"];
+                    break;
+            }
+        }];
+    }
 }
 
 - (void)rightBarButtonItemAction:(UIButton *)btn
@@ -82,10 +88,18 @@
     [backView.layer setMasksToBounds:YES];
     [m_SearchView addSubview:backView];
     
-    m_SearchTextField = [[UITextField alloc] initWithFrame:m_SearchView.frame];
-    [m_SearchTextField setPlaceholder:@"🔍"];
+    m_SearchTextField = [[UITextField alloc] initWithFrame:CGRectMake(12, 0, backView.width-24, backView.height)];
+    [m_SearchTextField setFont:DIF_UIFONTOFSIZE(14)];
     [m_SearchTextField setDelegate:self];
     [backView addSubview:m_SearchTextField];
+    
+    NSMutableAttributedString *placeholder = [[NSMutableAttributedString alloc] initWithString:@""];
+    [placeholder FontAttributeNameWithFont:DIF_UIFONTOFSIZE(14) Range:NSMakeRange(0, placeholder.length)];
+    [placeholder ForegroundColorAttributeNamWithColor:DIF_HEXCOLOR(@"cccccc") Range:NSMakeRange(0, placeholder.length)];
+    [placeholder attatchImage:[UIImage imageNamed:@"搜索"]
+                   imageFrame:CGRectMake(0, -(m_SearchTextField.height-18)/2, 18, 18)
+                        Range:NSMakeRange(0, 0)];
+    [m_SearchTextField setAttributedPlaceholder:placeholder];
     
 //    UIButton *cleanBtn = [CommonCommitButton commitButtonWithFrame:CGRectMake(0, 0, DIF_PX(30), DIF_PX(30)) Title:nil TitleColor:nil BackGroundColor:nil];
 //    [cleanBtn setCenterY:m_SearchTextField.centerY];

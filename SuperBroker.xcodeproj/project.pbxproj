@@ -18,6 +18,11 @@
 		8204416720FA4D5200BDB343 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8204416520FA4D5200BDB343 /* UserInfoViewController.xib */; };
 		8204416B20FA56AE00BDB343 /* EditPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204416920FA56AE00BDB343 /* EditPhoneViewController.m */; };
 		8204416C20FA56AE00BDB343 /* EditPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8204416A20FA56AE00BDB343 /* EditPhoneViewController.xib */; };
+		82085D7B20FE2AAC0094B49A /* ShowShareButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82085D7A20FE2AAC0094B49A /* ShowShareButtonView.m */; };
+		82085D7D20FE2ABA0094B49A /* ShowShareButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82085D7C20FE2ABA0094B49A /* ShowShareButtonView.xib */; };
+		82085D8120FE44D00094B49A /* ScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82085D8020FE44D00094B49A /* ScreenViewController.m */; };
+		82085D8620FE44EC0094B49A /* ScreenBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82085D8520FE44EC0094B49A /* ScreenBaseView.m */; };
+		82085D8920FE46AD0094B49A /* ScreehnBaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82085D8820FE46AD0094B49A /* ScreehnBaseViewCell.m */; };
 		8221285820F7BC36008E8FFB /* RootNoticeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285720F7BC36008E8FFB /* RootNoticeDetailModel.m */; };
 		8221285B20F7BCAF008E8FFB /* RootNoticeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285A20F7BCAF008E8FFB /* RootNoticeListModel.m */; };
 		8221285E20F7BD60008E8FFB /* RootMovePictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285D20F7BD60008E8FFB /* RootMovePictureModel.m */; };
@@ -195,6 +200,15 @@
 		8204416820FA56AE00BDB343 /* EditPhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditPhoneViewController.h; sourceTree = "<group>"; };
 		8204416920FA56AE00BDB343 /* EditPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditPhoneViewController.m; sourceTree = "<group>"; };
 		8204416A20FA56AE00BDB343 /* EditPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPhoneViewController.xib; sourceTree = "<group>"; };
+		82085D7920FE2AAC0094B49A /* ShowShareButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowShareButtonView.h; sourceTree = "<group>"; };
+		82085D7A20FE2AAC0094B49A /* ShowShareButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowShareButtonView.m; sourceTree = "<group>"; };
+		82085D7C20FE2ABA0094B49A /* ShowShareButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowShareButtonView.xib; sourceTree = "<group>"; };
+		82085D7F20FE44D00094B49A /* ScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenViewController.h; sourceTree = "<group>"; };
+		82085D8020FE44D00094B49A /* ScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenViewController.m; sourceTree = "<group>"; };
+		82085D8420FE44EC0094B49A /* ScreenBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreenBaseView.h; sourceTree = "<group>"; };
+		82085D8520FE44EC0094B49A /* ScreenBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenBaseView.m; sourceTree = "<group>"; };
+		82085D8720FE46AD0094B49A /* ScreehnBaseViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreehnBaseViewCell.h; sourceTree = "<group>"; };
+		82085D8820FE46AD0094B49A /* ScreehnBaseViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreehnBaseViewCell.m; sourceTree = "<group>"; };
 		8221285620F7BC36008E8FFB /* RootNoticeDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNoticeDetailModel.h; sourceTree = "<group>"; };
 		8221285720F7BC36008E8FFB /* RootNoticeDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootNoticeDetailModel.m; sourceTree = "<group>"; };
 		8221285920F7BCAF008E8FFB /* RootNoticeListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNoticeListModel.h; sourceTree = "<group>"; };
@@ -572,6 +586,35 @@
 			path = UserInformation;
 			sourceTree = "<group>";
 		};
+		82085D7E20FE44A60094B49A /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				82085D8320FE44D80094B49A /* Model */,
+				82085D8220FE44D50094B49A /* View */,
+				82085D7F20FE44D00094B49A /* ScreenViewController.h */,
+				82085D8020FE44D00094B49A /* ScreenViewController.m */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		82085D8220FE44D50094B49A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82085D8420FE44EC0094B49A /* ScreenBaseView.h */,
+				82085D8520FE44EC0094B49A /* ScreenBaseView.m */,
+				82085D8720FE46AD0094B49A /* ScreehnBaseViewCell.h */,
+				82085D8820FE46AD0094B49A /* ScreehnBaseViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82085D8320FE44D80094B49A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8221284B20F78E26008E8FFB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +675,7 @@
 		824BD55D20F631E000924E61 /* Insurance */ = {
 			isa = PBXGroup;
 			children = (
+				82085D7E20FE44A60094B49A /* Screen */,
 				824BD59920F6628000924E61 /* InsuranceAge */,
 				824BD58D20F6614400924E61 /* InsuranceCompany */,
 				824BD58120F659A000924E61 /* InsuranceTypes */,
@@ -690,6 +734,9 @@
 				824BD57620F64DFC00924E61 /* InsuranceDetailViewController.h */,
 				824BD57720F64DFC00924E61 /* InsuranceDetailViewController.m */,
 				824BD57820F64DFC00924E61 /* InsuranceDetailViewController.xib */,
+				82085D7920FE2AAC0094B49A /* ShowShareButtonView.h */,
+				82085D7A20FE2AAC0094B49A /* ShowShareButtonView.m */,
+				82085D7C20FE2ABA0094B49A /* ShowShareButtonView.xib */,
 			);
 			path = InsuranceDetail;
 			sourceTree = "<group>";
@@ -1460,6 +1507,7 @@
 				8204416C20FA56AE00BDB343 /* EditPhoneViewController.xib in Resources */,
 				82C0773220F4E67C0080E37F /* del_btn@2x.png in Resources */,
 				824BD58020F6531700924E61 /* InsuranceCommitViewController.xib in Resources */,
+				82085D7D20FE2ABA0094B49A /* ShowShareButtonView.xib in Resources */,
 				824BD57420F63E0100924E61 /* InsuranceInformationViewController.xib in Resources */,
 				8281B4C120FB482E006691D4 /* AddBankAccountViewController.xib in Resources */,
 				8281B4C720FB80BD006691D4 /* IncomeListViewController.xib in Resources */,
@@ -1530,6 +1578,7 @@
 				8281B4F220FBAF47006691D4 /* PresentEventResponseViewController.m in Sources */,
 				82C0773C20F4E67C0080E37F /* CommonHttpAdapter.m in Sources */,
 				82BBED4120F4FFAD00BAEEBE /* RootBaseView.m in Sources */,
+				82085D8120FE44D00094B49A /* ScreenViewController.m in Sources */,
 				82C0774E20F4E67C0080E37F /* BaseViewController.m in Sources */,
 				82C0772820F4E67C0080E37F /* CommonShowControlPictureCollectionView.m in Sources */,
 				82C0771220F4E67C0080E37F /* UIButton+CircleImage.m in Sources */,
@@ -1554,6 +1603,7 @@
 				8221286520F7BE1D008E8FFB /* ArticleclassifyModel.m in Sources */,
 				8221286B20F7BF91008E8FFB /* InsuranceSpeciesModel.m in Sources */,
 				82731BBF20F4E7B7002EF5FE /* RootViewController.m in Sources */,
+				82085D7B20FE2AAC0094B49A /* ShowShareButtonView.m in Sources */,
 				82C0773420F4E67C0080E37F /* CommonPopListView.m in Sources */,
 				82C0774120F4E67C0080E37F /* CommonVerify.m in Sources */,
 				82C0772220F4E67C0080E37F /* UILabel+CallPhoneExtension.m in Sources */,
@@ -1604,6 +1654,7 @@
 				8281B4B820FB4294006691D4 /* PresentAccountViewCell.m in Sources */,
 				82C0773920F4E67C0080E37F /* CommonHUD.m in Sources */,
 				8281B4FF20FBB6E7006691D4 /* InviteListBaseView.m in Sources */,
+				82085D8920FE46AD0094B49A /* ScreehnBaseViewCell.m in Sources */,
 				82C0774320F4E67C0080E37F /* CommonPictureSelect.m in Sources */,
 				8204415A20FA48E500BDB343 /* BuyMemberSuccessViewController.m in Sources */,
 				8281B4A620FB1916006691D4 /* FeedBackViewController.m in Sources */,
@@ -1634,6 +1685,7 @@
 				82C0771620F4E67C0080E37F /* NSNumber+AppendingString.m in Sources */,
 				8281B4DF20FB96E3006691D4 /* PaymentListBaseView.m in Sources */,
 				824BD5A520F662E100924E61 /* InsuranceAgeViewCell.m in Sources */,
+				82085D8620FE44EC0094B49A /* ScreenBaseView.m in Sources */,
 				824BC71620F8D05A00BF3DD7 /* MyBaseView.m in Sources */,
 				82C0774620F4E67C0080E37F /* CommonSelectOneLineViewController.m in Sources */,
 				82C0774020F4E67C0080E37F /* CommonGetIPAddress.m in Sources */,

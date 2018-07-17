@@ -28,7 +28,7 @@
     [self setBackgroundColor:[UIColor whiteColor]];
     [self setEditable:YES];
     _placeholder = [placeholder copy];
-    [self setText:self.placeholder];
+    [self setText:placeholder];
 }
 
 - (void)setPlaceColor:(UIColor *)placeColor
@@ -38,6 +38,15 @@
     {
         [self setTextColor:self.placeColor];
     }
+}
+
+- (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholder
+{
+    [self setDelegate:self];
+    [self setBackgroundColor:[UIColor whiteColor]];
+    [self setEditable:YES];
+    _attributedPlaceholder = [attributedPlaceholder copy];
+    [self setAttributedPlaceholder:attributedPlaceholder];
 }
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
@@ -66,6 +75,14 @@
             [textView setTextColor:(self.realTextColor?self.realTextColor:[UIColor blackColor])];
         }
     }
+    if (self.attributedPlaceholder && self.attributedPlaceholder.length > 0)
+    {
+        if ([self.attributedPlaceholder.string rangeOfString:textView.text].location != NSNotFound)
+        {
+            [textView setText:nil];
+            [textView setTextColor:(self.realTextColor?self.realTextColor:[UIColor blackColor])];
+        }
+    }
     if (text == nil || text.length == 0)
     {
         if (self.changeBlock)
@@ -89,8 +106,15 @@
 {
     if (textView.text.length == 0)
     {
-        [textView setText:self.placeholder];
-        [textView setTextColor:self.placeColor];
+        if (self.placeholder.length > 0)
+        {
+            [textView setText:self.placeholder];
+            [textView setTextColor:self.placeColor];
+        }
+        if (self.attributedPlaceholder.length > 0)
+        {
+            [textView setAttributedText:self.attributedPlaceholder];
+        }
     }
     if (self.endBlock)
     {

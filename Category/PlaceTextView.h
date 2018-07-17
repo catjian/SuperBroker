@@ -21,6 +21,7 @@ typedef void(^PlaceTViewDidEndEditing)(UITextView *textView);
 @property (nonatomic, copy) PlaceTViewDidEndEditing endBlock;
 
 @property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, copy) NSAttributedString *attributedPlaceholder;
 @property (nonatomic, strong) UIColor *placeColor;
 @property (nonatomic, assign) NSInteger maxLength;  //0 不限长
 @property (nonatomic, strong) UIColor *realTextColor;

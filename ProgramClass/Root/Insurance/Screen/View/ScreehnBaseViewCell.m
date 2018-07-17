@@ -1,14 +1,14 @@
 //
-//  InsuranceTypesViewCell.m
+//  ScreehnBaseViewCell.m
 //  SuperBroker
 //
-//  Created by zhang_jian on 2018/7/11.
+//  Created by zhang_jian on 2018/7/17.
 //  Copyright © 2018年 zhangjian. All rights reserved.
 //
 
-#import "InsuranceTypesViewCell.h"
+#import "ScreehnBaseViewCell.h"
 
-@implementation InsuranceTypesViewCell
+@implementation ScreehnBaseViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

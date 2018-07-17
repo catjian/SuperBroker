@@ -7,6 +7,7 @@
 //
 
 #import "InsuranceDetailViewController.h"
+#import "ShowShareButtonView.h"
 
 @interface InsuranceDetailViewController ()
 
@@ -34,6 +35,9 @@
 
 - (IBAction)shareButtonEvent:(id)sender
 {
+    ShowShareButtonView *shareView = [[ShowShareButtonView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:shareView];
+    [shareView show];
 }
 
 - (IBAction)buyButtonEvent:(id)sender

@@ -145,8 +145,10 @@
     return self;
 }
 
-- (NSMutableAttributedString *)ParagraphStyleAttributeNameWithStyle:(NSParagraphStyle *)style Range:(NSRange)range
+- (NSMutableAttributedString *)ParagraphStyleAttributeNameWithStyle:(NSTextAlignment)textAlignment Range:(NSRange)range
 {
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+    style.alignment = textAlignment;
     [self addAttribute:NSParagraphStyleAttributeName value:style range:range];
     return self;
 }
@@ -157,11 +159,8 @@
     attach.image = image;
     attach.bounds = frame;
     NSAttributedString *imageString = [NSAttributedString attributedStringWithAttachment:attach];
-//    [self appendAttributedString:imageString];
     [self insertAttributedString:imageString atIndex:range.location+range.length];
-    
     return self;
-    
 }
 
 @end

@@ -42,29 +42,28 @@
     [self addSubview:m_ContentView];
     [m_ContentView setDelegate:self];
     [m_ContentView setDataSource:self];
-    [m_ContentView setBackgroundColor:[UIColor lightGrayColor]];
+    [m_ContentView setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
 }
 
 - (void)createBottomButtonsView
 {
     UIView *botView = [[UIView alloc] initWithFrame:CGRectMake(0, self.height-50, self.width, 50)];
-    [botView setBackgroundColor:[UIColor lightGrayColor]];
+    [botView setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
     [self addSubview:botView];
     
+    UIView *lineT = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DIF_SCREEN_WIDTH, 1)];
+    [lineT setBackgroundColor:DIF_HEXCOLOR(@"dedede")];
+    [botView addSubview:lineT];
+    
     UIButton *successBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [successBtn setFrame:CGRectMake(0, 5, 80, 40)];
-    [successBtn setRight:10];
-    [successBtn setTitle:@"确定" forState:UIControlStateNormal];
-    [successBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [successBtn setBackgroundColor:[UIColor blueColor]];
+    [successBtn setFrame:CGRectMake(0, 1, 132, 49)];
+    [successBtn setRight:botView.width];
+    [successBtn setImage:[UIImage imageNamed:@"确定"] forState:UIControlStateNormal];
     [botView addSubview:successBtn];
     
     UIButton *cleanBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [cleanBtn setFrame:CGRectMake(0, 5, 80, 40)];
-    [cleanBtn setRight:successBtn.left-10];
-    [cleanBtn setTitle:@"清空" forState:UIControlStateNormal];
-    [cleanBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [cleanBtn setBackgroundColor:[UIColor whiteColor]];
+    [cleanBtn setFrame:CGRectMake(0, 1, 132, 49)];
+    [cleanBtn setImage:[UIImage imageNamed:@"清空"] forState:UIControlStateNormal];
     [botView addSubview:cleanBtn];
 }
 
@@ -86,7 +85,6 @@
     InsuranceCompanyViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     NSString *contentTitle = m_ContentArr[indexPath.row];
     [cell.titleLab setText:contentTitle];
-    [cell setBackgroundColor:[UIColor whiteColor]];
     return cell;
 }
 
@@ -109,24 +107,35 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    InsuranceCompanyViewCell *cell = (InsuranceCompanyViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    if ([cell.titleLab.textColor isEqual:DIF_HEXCOLOR(@"#333333")])
+    {
+        [cell.titleLab setTextColor:DIF_HEXCOLOR(@"017aff")];
+        [cell.layer setBorderColor:DIF_HEXCOLOR(@"017aff").CGColor];
+    }
+    else
+    {
+        [cell.titleLab setTextColor:DIF_HEXCOLOR(@"#333333")];
+        [cell.layer setBorderColor:DIF_HEXCOLOR(@"dedede").CGColor];
+    }
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat widht = (DIF_SCREEN_WIDTH-4*DIF_PX(30))/3;
-    return CGSizeMake(widht, DIF_PX(30));
+    CGFloat widht = (DIF_SCREEN_WIDTH-4*DIF_PX(12))/3;
+    return CGSizeMake(widht, DIF_PX(31));
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(DIF_PX(0), DIF_PX(30), DIF_PX(0), DIF_PX(30));
+    return UIEdgeInsetsMake(DIF_PX(0), DIF_PX(12), DIF_PX(0), DIF_PX(12));
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return DIF_PX(30);
+    return DIF_PX(12);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
@@ -134,9 +143,10 @@
     return DIF_PX(10);
 }
 
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
-    return CGSizeMake(DIF_SCREEN_WIDTH, DIF_PX(20));
+    return CGSizeMake(DIF_SCREEN_WIDTH, DIF_PX(12));
 }
 
 @end

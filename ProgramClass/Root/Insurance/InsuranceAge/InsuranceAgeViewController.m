@@ -27,8 +27,11 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    m_BaseView = [[InsuranceAgeBaseView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:m_BaseView];
+    if (!m_BaseView)
+    {
+        m_BaseView = [[InsuranceAgeBaseView alloc] initWithFrame:self.view.bounds];
+        [self.view addSubview:m_BaseView];
+    }
 }
 
 @end

@@ -32,7 +32,7 @@
     // Do any additional setup after loading the view from its nib.
     [self setNavTarBarTitle:@"我的邀请"];
     [self setRightItemWithContentName:@"客服-黑"];
-    
+    m_ListModel = [InviteListModel new];
     UIView *topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DIF_SCREEN_WIDTH, 12)];
     [topView setBackgroundColor:DIF_HEXCOLOR(@"f4f4f4")];
     [self.view addSubview:topView];
@@ -51,10 +51,12 @@
 {
     [super viewDidAppear:animated];
     
-    m_ListModel = [InviteListModel new];
-    m_BaseView = [[InviteListBaseView alloc] initWithFrame:CGRectMake(0, 12, self.view.width, self.view.height-12) style:UITableViewStylePlain];
-    m_BaseView.listModel = m_ListModel;
-    [self.view addSubview:m_BaseView];
+    if (!m_BaseView)
+    {
+        m_BaseView = [[InviteListBaseView alloc] initWithFrame:CGRectMake(0, 12, self.view.width, self.view.height-12) style:UITableViewStylePlain];
+        m_BaseView.listModel = m_ListModel;
+        [self.view addSubview:m_BaseView];
+    }
 }
 
 @end
