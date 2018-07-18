@@ -49,6 +49,9 @@
     [self.view endEditing:YES];
 }
 
+- (IBAction)customServerButtonEvent:(id)sender {
+}
+
 - (IBAction)relevanceButtonsEvent:(UIButton *)sender
 {
     [self.myBtn setTitleColor:DIF_HEXCOLOR(@"333333") forState:UIControlStateNormal];
@@ -62,6 +65,11 @@
     
     [sender setTitleColor:DIF_HEXCOLOR(@"017aff") forState:UIControlStateNormal];
     [sender.layer setBorderColor:DIF_HEXCOLOR(@"017aff").CGColor];
+}
+
+- (IBAction)commitOrderButtonEvent:(id)sender
+{
+    [self loadViewController:@"InsuranceOrderCommitViewController"];
 }
 
 @end

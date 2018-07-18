@@ -129,19 +129,6 @@
 
 #pragma mark - UITextField Delegate
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    [m_SearchTextField setPlaceholder:nil];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    if (m_SearchTextField.text.length == 0)
-    {
-        [m_SearchTextField setPlaceholder:@"🔍"];
-    }
-}
-
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     NSString *other = @"➋➌➍➎➏➐➑➒";     //九宫格的输入值

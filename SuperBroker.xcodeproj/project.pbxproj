@@ -23,10 +23,20 @@
 		82085D8120FE44D00094B49A /* ScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82085D8020FE44D00094B49A /* ScreenViewController.m */; };
 		82085D8620FE44EC0094B49A /* ScreenBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82085D8520FE44EC0094B49A /* ScreenBaseView.m */; };
 		82085D8920FE46AD0094B49A /* ScreehnBaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82085D8820FE46AD0094B49A /* ScreehnBaseViewCell.m */; };
+		821C043A20FF788200B79945 /* InsuranceOrderCommitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 821C043820FF788200B79945 /* InsuranceOrderCommitViewController.xib */; };
+		821C043D20FF802800B79945 /* CancelCommitOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C043C20FF802800B79945 /* CancelCommitOrderView.m */; };
+		821C043F20FF804D00B79945 /* CancelCommitOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 821C043E20FF804D00B79945 /* CancelCommitOrderView.xib */; };
+		821C044320FF8D1A00B79945 /* InsuranceOrderWaitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C044120FF8D1A00B79945 /* InsuranceOrderWaitViewController.m */; };
+		821C044420FF8D1A00B79945 /* InsuranceOrderWaitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 821C044220FF8D1A00B79945 /* InsuranceOrderWaitViewController.xib */; };
+		821C044620FF8D5200B79945 /* InsuranceOrderCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C044520FF8D5100B79945 /* InsuranceOrderCommitViewController.m */; };
+		821C044C20FF929600B79945 /* ArticleclassifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C044A20FF929600B79945 /* ArticleclassifyModel.m */; };
+		821C045120FF935100B79945 /* SpecialNewsBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C045020FF935100B79945 /* SpecialNewsBaseView.m */; };
+		821C045420FF9D8E00B79945 /* SpecialNewsViewImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C045320FF9D8E00B79945 /* SpecialNewsViewImageCell.m */; };
+		821C045720FF9D9A00B79945 /* SpecialNewsViewMoreImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C045620FF9D9A00B79945 /* SpecialNewsViewMoreImageCell.m */; };
+		821C045A20FF9DA700B79945 /* SpecialNewsViewTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C045920FF9DA700B79945 /* SpecialNewsViewTextCell.m */; };
 		8221285820F7BC36008E8FFB /* RootNoticeDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285720F7BC36008E8FFB /* RootNoticeDetailModel.m */; };
 		8221285B20F7BCAF008E8FFB /* RootNoticeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285A20F7BCAF008E8FFB /* RootNoticeListModel.m */; };
 		8221285E20F7BD60008E8FFB /* RootMovePictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221285D20F7BD60008E8FFB /* RootMovePictureModel.m */; };
-		8221286520F7BE1D008E8FFB /* ArticleclassifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286420F7BE1D008E8FFB /* ArticleclassifyModel.m */; };
 		8221286820F7BE7A008E8FFB /* InsuranceCompanyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286720F7BE7A008E8FFB /* InsuranceCompanyModel.m */; };
 		8221286B20F7BF91008E8FFB /* InsuranceSpeciesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286A20F7BF91008E8FFB /* InsuranceSpeciesModel.m */; };
 		8221286E20F7C092008E8FFB /* InsuranceProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286D20F7C092008E8FFB /* InsuranceProductModel.m */; };
@@ -209,14 +219,31 @@
 		82085D8520FE44EC0094B49A /* ScreenBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenBaseView.m; sourceTree = "<group>"; };
 		82085D8720FE46AD0094B49A /* ScreehnBaseViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreehnBaseViewCell.h; sourceTree = "<group>"; };
 		82085D8820FE46AD0094B49A /* ScreehnBaseViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreehnBaseViewCell.m; sourceTree = "<group>"; };
+		821C043820FF788200B79945 /* InsuranceOrderCommitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsuranceOrderCommitViewController.xib; sourceTree = "<group>"; };
+		821C043B20FF802800B79945 /* CancelCommitOrderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CancelCommitOrderView.h; sourceTree = "<group>"; };
+		821C043C20FF802800B79945 /* CancelCommitOrderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CancelCommitOrderView.m; sourceTree = "<group>"; };
+		821C043E20FF804D00B79945 /* CancelCommitOrderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CancelCommitOrderView.xib; sourceTree = "<group>"; };
+		821C044020FF8D1A00B79945 /* InsuranceOrderWaitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsuranceOrderWaitViewController.h; sourceTree = "<group>"; };
+		821C044120FF8D1A00B79945 /* InsuranceOrderWaitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsuranceOrderWaitViewController.m; sourceTree = "<group>"; };
+		821C044220FF8D1A00B79945 /* InsuranceOrderWaitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsuranceOrderWaitViewController.xib; sourceTree = "<group>"; };
+		821C044520FF8D5100B79945 /* InsuranceOrderCommitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsuranceOrderCommitViewController.m; sourceTree = "<group>"; };
+		821C044820FF8DC600B79945 /* InsuranceOrderCommitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsuranceOrderCommitViewController.h; sourceTree = "<group>"; };
+		821C044A20FF929600B79945 /* ArticleclassifyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleclassifyModel.m; sourceTree = "<group>"; };
+		821C044B20FF929600B79945 /* ArticleclassifyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleclassifyModel.h; sourceTree = "<group>"; };
+		821C044F20FF935100B79945 /* SpecialNewsBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialNewsBaseView.h; sourceTree = "<group>"; };
+		821C045020FF935100B79945 /* SpecialNewsBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialNewsBaseView.m; sourceTree = "<group>"; };
+		821C045220FF9D8E00B79945 /* SpecialNewsViewImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialNewsViewImageCell.h; sourceTree = "<group>"; };
+		821C045320FF9D8E00B79945 /* SpecialNewsViewImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialNewsViewImageCell.m; sourceTree = "<group>"; };
+		821C045520FF9D9A00B79945 /* SpecialNewsViewMoreImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialNewsViewMoreImageCell.h; sourceTree = "<group>"; };
+		821C045620FF9D9A00B79945 /* SpecialNewsViewMoreImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialNewsViewMoreImageCell.m; sourceTree = "<group>"; };
+		821C045820FF9DA700B79945 /* SpecialNewsViewTextCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialNewsViewTextCell.h; sourceTree = "<group>"; };
+		821C045920FF9DA700B79945 /* SpecialNewsViewTextCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialNewsViewTextCell.m; sourceTree = "<group>"; };
 		8221285620F7BC36008E8FFB /* RootNoticeDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNoticeDetailModel.h; sourceTree = "<group>"; };
 		8221285720F7BC36008E8FFB /* RootNoticeDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootNoticeDetailModel.m; sourceTree = "<group>"; };
 		8221285920F7BCAF008E8FFB /* RootNoticeListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootNoticeListModel.h; sourceTree = "<group>"; };
 		8221285A20F7BCAF008E8FFB /* RootNoticeListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootNoticeListModel.m; sourceTree = "<group>"; };
 		8221285C20F7BD60008E8FFB /* RootMovePictureModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootMovePictureModel.h; sourceTree = "<group>"; };
 		8221285D20F7BD60008E8FFB /* RootMovePictureModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootMovePictureModel.m; sourceTree = "<group>"; };
-		8221286320F7BE1D008E8FFB /* ArticleclassifyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ArticleclassifyModel.h; path = ProgramClass/SpecialNews/Model/ArticleclassifyModel.h; sourceTree = SOURCE_ROOT; };
-		8221286420F7BE1D008E8FFB /* ArticleclassifyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ArticleclassifyModel.m; path = ProgramClass/SpecialNews/Model/ArticleclassifyModel.m; sourceTree = SOURCE_ROOT; };
 		8221286620F7BE7A008E8FFB /* InsuranceCompanyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsuranceCompanyModel.h; sourceTree = "<group>"; };
 		8221286720F7BE7A008E8FFB /* InsuranceCompanyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsuranceCompanyModel.m; sourceTree = "<group>"; };
 		8221286920F7BF91008E8FFB /* InsuranceSpeciesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsuranceSpeciesModel.h; sourceTree = "<group>"; };
@@ -615,6 +642,46 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		821C043520FF785000B79945 /* InsuranceOrderCommit */ = {
+			isa = PBXGroup;
+			children = (
+				821C044820FF8DC600B79945 /* InsuranceOrderCommitViewController.h */,
+				821C044520FF8D5100B79945 /* InsuranceOrderCommitViewController.m */,
+				821C043820FF788200B79945 /* InsuranceOrderCommitViewController.xib */,
+				821C043B20FF802800B79945 /* CancelCommitOrderView.h */,
+				821C043C20FF802800B79945 /* CancelCommitOrderView.m */,
+				821C043E20FF804D00B79945 /* CancelCommitOrderView.xib */,
+				821C044020FF8D1A00B79945 /* InsuranceOrderWaitViewController.h */,
+				821C044120FF8D1A00B79945 /* InsuranceOrderWaitViewController.m */,
+				821C044220FF8D1A00B79945 /* InsuranceOrderWaitViewController.xib */,
+			);
+			path = InsuranceOrderCommit;
+			sourceTree = "<group>";
+		};
+		821C044920FF929600B79945 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				821C044A20FF929600B79945 /* ArticleclassifyModel.m */,
+				821C044B20FF929600B79945 /* ArticleclassifyModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		821C044E20FF933D00B79945 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				821C044F20FF935100B79945 /* SpecialNewsBaseView.h */,
+				821C045020FF935100B79945 /* SpecialNewsBaseView.m */,
+				821C045220FF9D8E00B79945 /* SpecialNewsViewImageCell.h */,
+				821C045320FF9D8E00B79945 /* SpecialNewsViewImageCell.m */,
+				821C045520FF9D9A00B79945 /* SpecialNewsViewMoreImageCell.h */,
+				821C045620FF9D9A00B79945 /* SpecialNewsViewMoreImageCell.m */,
+				821C045820FF9DA700B79945 /* SpecialNewsViewTextCell.h */,
+				821C045920FF9DA700B79945 /* SpecialNewsViewTextCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8221284B20F78E26008E8FFB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -622,16 +689,6 @@
 				82B5462A20F8ED9C00B0F6EE /* MyViewDataModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		8221285F20F7BDCE008E8FFB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8221286320F7BE1D008E8FFB /* ArticleclassifyModel.h */,
-				8221286420F7BE1D008E8FFB /* ArticleclassifyModel.m */,
-			);
-			name = Model;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		8221286F20F7C148008E8FFB /* CarInsurance */ = {
@@ -713,6 +770,7 @@
 		824BD56A20F63D9A00924E61 /* InsuranceInformation */ = {
 			isa = PBXGroup;
 			children = (
+				821C043520FF785000B79945 /* InsuranceOrderCommit */,
 				824BD56C20F63DA900924E61 /* Model */,
 				824BD57020F63E0100924E61 /* InsuranceInformationViewController.h */,
 				824BD57120F63E0100924E61 /* InsuranceInformationViewController.m */,
@@ -919,7 +977,8 @@
 		82731BC220F4EADA002EF5FE /* SpecialNews */ = {
 			isa = PBXGroup;
 			children = (
-				8221285F20F7BDCE008E8FFB /* Model */,
+				821C044E20FF933D00B79945 /* View */,
+				821C044920FF929600B79945 /* Model */,
 				82731BCB20F4EB21002EF5FE /* SpecialNewsViewController.h */,
 				82731BCC20F4EB21002EF5FE /* SpecialNewsViewController.m */,
 			);
@@ -1499,11 +1558,13 @@
 				8257C7B520F4E1DC00FA550D /* LaunchScreen.storyboard in Resources */,
 				82BBED3820F4F7BB00BAEEBE /* RegisterViewController.xib in Resources */,
 				8204416720FA4D5200BDB343 /* UserInfoViewController.xib in Resources */,
+				821C044420FF8D1A00B79945 /* InsuranceOrderWaitViewController.xib in Resources */,
 				8204415520FA439C00BDB343 /* BuyMemeberViewController.xib in Resources */,
 				82BBED3320F4F48F00BAEEBE /* LoginViewController.xib in Resources */,
 				8257C7B220F4E1DC00FA550D /* Assets.xcassets in Resources */,
 				8281B4EE20FBA95F006691D4 /* PresentEventViewController.xib in Resources */,
 				8204415B20FA48E500BDB343 /* BuyMemberSuccessViewController.xib in Resources */,
+				821C043F20FF804D00B79945 /* CancelCommitOrderView.xib in Resources */,
 				8204416C20FA56AE00BDB343 /* EditPhoneViewController.xib in Resources */,
 				82C0773220F4E67C0080E37F /* del_btn@2x.png in Resources */,
 				824BD58020F6531700924E61 /* InsuranceCommitViewController.xib in Resources */,
@@ -1511,6 +1572,7 @@
 				824BD57420F63E0100924E61 /* InsuranceInformationViewController.xib in Resources */,
 				8281B4C120FB482E006691D4 /* AddBankAccountViewController.xib in Resources */,
 				8281B4C720FB80BD006691D4 /* IncomeListViewController.xib in Resources */,
+				821C043A20FF788200B79945 /* InsuranceOrderCommitViewController.xib in Resources */,
 				82C0773A20F4E67C0080E37F /* plane.gif in Resources */,
 				824BC71D20F8D75500BF3DD7 /* SMSLoginViewController.xib in Resources */,
 				8281B4A720FB1916006691D4 /* FeedBackViewController.xib in Resources */,
@@ -1577,6 +1639,7 @@
 			files = (
 				8281B4F220FBAF47006691D4 /* PresentEventResponseViewController.m in Sources */,
 				82C0773C20F4E67C0080E37F /* CommonHttpAdapter.m in Sources */,
+				821C045720FF9D9A00B79945 /* SpecialNewsViewMoreImageCell.m in Sources */,
 				82BBED4120F4FFAD00BAEEBE /* RootBaseView.m in Sources */,
 				82085D8120FE44D00094B49A /* ScreenViewController.m in Sources */,
 				82C0774E20F4E67C0080E37F /* BaseViewController.m in Sources */,
@@ -1600,10 +1663,10 @@
 				82C0774220F4E67C0080E37F /* CommonDate.m in Sources */,
 				82C0774920F4E67C0080E37F /* AJPhotoZoomingScrollView.m in Sources */,
 				82C0773E20F4E67C0080E37F /* NotificationTool.m in Sources */,
-				8221286520F7BE1D008E8FFB /* ArticleclassifyModel.m in Sources */,
 				8221286B20F7BF91008E8FFB /* InsuranceSpeciesModel.m in Sources */,
 				82731BBF20F4E7B7002EF5FE /* RootViewController.m in Sources */,
 				82085D7B20FE2AAC0094B49A /* ShowShareButtonView.m in Sources */,
+				821C045120FF935100B79945 /* SpecialNewsBaseView.m in Sources */,
 				82C0773420F4E67C0080E37F /* CommonPopListView.m in Sources */,
 				82C0774120F4E67C0080E37F /* CommonVerify.m in Sources */,
 				82C0772220F4E67C0080E37F /* UILabel+CallPhoneExtension.m in Sources */,
@@ -1631,6 +1694,7 @@
 				8221285820F7BC36008E8FFB /* RootNoticeDetailModel.m in Sources */,
 				82C0772A20F4E67C0080E37F /* CommonMoreColumnsPickerView.m in Sources */,
 				82C0772720F4E67C0080E37F /* CustomRoundButton.m in Sources */,
+				821C044620FF8D5200B79945 /* InsuranceOrderCommitViewController.m in Sources */,
 				8281B4E820FB9D54006691D4 /* OnlyWebViewController.m in Sources */,
 				82C0771E20F4E67C0080E37F /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				824BD57320F63E0100924E61 /* InsuranceInformationViewController.m in Sources */,
@@ -1639,6 +1703,7 @@
 				8281B4D920FB93CD006691D4 /* PaymentListViewController.m in Sources */,
 				82C0774F20F4E67C0080E37F /* BaseTableView.m in Sources */,
 				82C0770B20F4E67C0080E37F /* NSDictionary+Null.m in Sources */,
+				821C045420FF9D8E00B79945 /* SpecialNewsViewImageCell.m in Sources */,
 				82731BCA20F4EB17002EF5FE /* MessageViewController.m in Sources */,
 				8281B4CE20FB8504006691D4 /* IncomeListBaseView.m in Sources */,
 				82C0772D20F4E67C0080E37F /* CommonContentSubView.m in Sources */,
@@ -1654,6 +1719,7 @@
 				8281B4B820FB4294006691D4 /* PresentAccountViewCell.m in Sources */,
 				82C0773920F4E67C0080E37F /* CommonHUD.m in Sources */,
 				8281B4FF20FBB6E7006691D4 /* InviteListBaseView.m in Sources */,
+				821C044320FF8D1A00B79945 /* InsuranceOrderWaitViewController.m in Sources */,
 				82085D8920FE46AD0094B49A /* ScreehnBaseViewCell.m in Sources */,
 				82C0774320F4E67C0080E37F /* CommonPictureSelect.m in Sources */,
 				8204415A20FA48E500BDB343 /* BuyMemberSuccessViewController.m in Sources */,
@@ -1661,6 +1727,7 @@
 				82C0774520F4E67C0080E37F /* CommonAnimation.m in Sources */,
 				82C0770820F4E67C0080E37F /* UIImage+ConvertBase64.m in Sources */,
 				82C0775120F4E67C0080E37F /* BaseTabBarController.m in Sources */,
+				821C044C20FF929600B79945 /* ArticleclassifyModel.m in Sources */,
 				82C0771320F4E67C0080E37F /* NSObject+Null.m in Sources */,
 				8281B4AB20FB1B51006691D4 /* FeedBackResponseViewController.m in Sources */,
 				82BBED4420F5002400BAEEBE /* RootViewCell.m in Sources */,
@@ -1675,6 +1742,7 @@
 				82C0773D20F4E67C0080E37F /* CommonImage.m in Sources */,
 				8281B4A120FB1655006691D4 /* SetViewController.m in Sources */,
 				82C0770F20F4E67C0080E37F /* NSString+ No2hz.m in Sources */,
+				821C043D20FF802800B79945 /* CancelCommitOrderView.m in Sources */,
 				82C0771C20F4E67C0080E37F /* UIButton+ImageTitleStyle.m in Sources */,
 				82BBED3720F4F7BB00BAEEBE /* RegisterViewController.m in Sources */,
 				82C0772C20F4E67C0080E37F /* CommonPickerView.m in Sources */,
@@ -1699,6 +1767,7 @@
 				8204416020FA4B0800BDB343 /* BuyMemberPayViewController.m in Sources */,
 				82C0770D20F4E67C0080E37F /* NSString+AppendingString.m in Sources */,
 				8204416B20FA56AE00BDB343 /* EditPhoneViewController.m in Sources */,
+				821C045A20FF9DA700B79945 /* SpecialNewsViewTextCell.m in Sources */,
 				8281B50220FBB6F8006691D4 /* InviteListViewCell.m in Sources */,
 				82C0771D20F4E67C0080E37F /* NSString+MD5.m in Sources */,
 				824BD59820F6619E00924E61 /* InsuranceCompanyViewCell.m in Sources */,
