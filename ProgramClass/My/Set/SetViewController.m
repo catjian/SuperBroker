@@ -52,6 +52,11 @@
     [self loadViewController:@"FeedBackViewController"];
 }
 
+- (IBAction)questionButtonEvent:(id)sender
+{
+    [self loadViewController:@"NormaQuestionViewController"];
+}
+
 - (IBAction)logoutButtonEvent:(id)sender
 {
 }

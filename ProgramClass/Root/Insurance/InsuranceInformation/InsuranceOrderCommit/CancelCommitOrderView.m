@@ -16,6 +16,9 @@
 @end
 
 @implementation CancelCommitOrderView
+{
+    UIView *backView;
+}
 
 - (instancetype) initWithFrame:(CGRect)frame
 {
@@ -23,7 +26,7 @@
     if (self)
     {
         NSArray *nibView =  [[NSBundle mainBundle] loadNibNamed:@"CancelCommitOrderView"owner:self options:nil];
-        UIView *backView = [nibView objectAtIndex:0];
+        backView = [nibView objectAtIndex:0];
         backView.frame = frame;
         [self addSubview:backView];
         [self.contentView.layer setCornerRadius:5];
@@ -35,6 +38,7 @@
 - (void)show
 {
     [UIView animateWithDuration:.5 animations:^{
+        [backView setAlpha:1];
         [self.contentView setAlpha:1];
     }];
 }
@@ -42,6 +46,7 @@
 - (void)hide
 {
     [UIView animateWithDuration:.5 animations:^{
+        [backView setAlpha:0];
         [self.contentView setAlpha:0];
     } completion:^(BOOL finished) {
         [self removeFromSuperview];

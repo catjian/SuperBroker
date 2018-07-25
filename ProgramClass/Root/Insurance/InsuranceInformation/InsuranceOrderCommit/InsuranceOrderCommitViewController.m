@@ -38,8 +38,8 @@
 
 - (IBAction)cancelOrderButtonEvent:(id)sender
 {    
-    CancelCommitOrderView *cancelView = [[CancelCommitOrderView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:cancelView];
+    CancelCommitOrderView *cancelView = [[CancelCommitOrderView alloc] initWithFrame:CGRectMake(0, 0, DIF_SCREEN_WIDTH, DIF_SCREEN_HEIGHT)];
+    [DIF_APPDELEGATE.window addSubview:cancelView];
     [cancelView show];
 }
 @end

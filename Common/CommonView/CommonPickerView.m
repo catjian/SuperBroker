@@ -74,7 +74,7 @@
     [sucessBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, 40, 0, 0)];
     [[sucessBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         DIF_StrongSelf
-        [strongSelf.racSignal sendNext:@{@"SuccessButtonEvent":@{strongSelf.titleStr:strongSelf.pickerDatas[strongSelf->m_SelectRow]}}];
+        [strongSelf.racSignal sendNext:@{@"SuccessButtonEvent":@{strongSelf.titleStr?strongSelf.titleStr:@"content":strongSelf.pickerDatas[strongSelf->m_SelectRow]}}];
     }];
     [view addSubview:sucessBtn];
     [sucessBtn mas_makeConstraints:^(MASConstraintMaker *make) {

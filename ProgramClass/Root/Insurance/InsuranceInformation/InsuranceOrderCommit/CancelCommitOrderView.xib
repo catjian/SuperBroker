@@ -16,7 +16,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view alpha="0.0" contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -54,7 +54,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="zkb-75-jry" firstAttribute="centerX" secondItem="taG-UZ-cIX" secondAttribute="centerX" id="3RH-Aw-oBR"/>
                         <constraint firstAttribute="height" constant="176" id="DZC-iH-MbU"/>
@@ -73,13 +73,14 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="taG-UZ-cIX" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="FQA-am-rZS"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="taG-UZ-cIX" secondAttribute="trailing" constant="70" id="gGI-q9-IS6"/>
                 <constraint firstItem="taG-UZ-cIX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="70" id="iUF-BN-hIg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-220" y="55"/>
         </view>
     </objects>
     <resources>

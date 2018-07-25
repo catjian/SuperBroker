@@ -245,6 +245,7 @@
     switch (indexPath.row)
     {
         case 0:
+        case 1:
         {
             if (self.selectBlock)
             {
@@ -253,7 +254,8 @@
         }
             break;
         default:
-            [CommonAlertView showAlertViewOneBtnWithTitle:@"提示" Message:@"敬请期待！"
+            [CommonAlertView showAlertViewOneBtnWithTitle:@"温馨提示"
+                                                  Message:@"功能还未开通\n敬请期待！"
                                               ButtonTitle:nil];
             break;
     }

@@ -46,6 +46,10 @@
             {
                 [strongSelf loadViewController:@"InsuranceViewController" hidesBottomBarWhenPushed:NO];
             }
+            else
+            {
+                [strongSelf loadViewController:@"CarInsuranceViewController" hidesBottomBarWhenPushed:NO];
+            }
         }];
     }
 }

@@ -67,6 +67,7 @@
             switch (index)
             {
                 case 0:
+                    [strongSelf loadViewController:@"MyOrderListViewController" hidesBottomBarWhenPushed:YES];
                     break;
                 case 10:
                     [strongSelf loadViewController:@"UserInfoViewController" hidesBottomBarWhenPushed:YES];

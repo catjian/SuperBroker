@@ -23,6 +23,8 @@
 		82085D8120FE44D00094B49A /* ScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82085D8020FE44D00094B49A /* ScreenViewController.m */; };
 		82085D8620FE44EC0094B49A /* ScreenBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82085D8520FE44EC0094B49A /* ScreenBaseView.m */; };
 		82085D8920FE46AD0094B49A /* ScreehnBaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82085D8820FE46AD0094B49A /* ScreehnBaseViewCell.m */; };
+		820B9B642108AC77006163B7 /* PopTowBtnMessageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 820B9B632108AC77006163B7 /* PopTowBtnMessageAlertView.m */; };
+		820B9B662108AD08006163B7 /* PopTowBtnMessageAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820B9B652108AD08006163B7 /* PopTowBtnMessageAlertView.xib */; };
 		821C043A20FF788200B79945 /* InsuranceOrderCommitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 821C043820FF788200B79945 /* InsuranceOrderCommitViewController.xib */; };
 		821C043D20FF802800B79945 /* CancelCommitOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C043C20FF802800B79945 /* CancelCommitOrderView.m */; };
 		821C043F20FF804D00B79945 /* CancelCommitOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 821C043E20FF804D00B79945 /* CancelCommitOrderView.xib */; };
@@ -41,6 +43,12 @@
 		8221286B20F7BF91008E8FFB /* InsuranceSpeciesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286A20F7BF91008E8FFB /* InsuranceSpeciesModel.m */; };
 		8221286E20F7C092008E8FFB /* InsuranceProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286D20F7C092008E8FFB /* InsuranceProductModel.m */; };
 		8221287320F7C209008E8FFB /* CarInsuranceListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221287220F7C209008E8FFB /* CarInsuranceListModel.m */; };
+		823FF8DF210762EE00E58314 /* CarInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823FF8DE210762EE00E58314 /* CarInsuranceViewController.m */; };
+		823FF8E22107634D00E58314 /* CarInsuranceBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 823FF8E12107634D00E58314 /* CarInsuranceBaseView.m */; };
+		823FF8E52107648100E58314 /* CarInsuranceViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 823FF8E42107648100E58314 /* CarInsuranceViewCell.m */; };
+		823FF8EA2107691800E58314 /* CarInsuranceInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823FF8E82107691800E58314 /* CarInsuranceInfoViewController.m */; };
+		823FF8EB2107691900E58314 /* CarInsuranceInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 823FF8E92107691800E58314 /* CarInsuranceInfoViewController.xib */; };
+		823FF8EE210773F500E58314 /* UIView+CornerSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 823FF8ED210773F500E58314 /* UIView+CornerSquare.m */; };
 		824BC71620F8D05A00BF3DD7 /* MyBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BC71220F8D05900BF3DD7 /* MyBaseView.m */; };
 		824BC71720F8D05A00BF3DD7 /* MyBaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BC71320F8D05900BF3DD7 /* MyBaseViewCell.m */; };
 		824BC71C20F8D75500BF3DD7 /* SMSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BC71A20F8D75500BF3DD7 /* SMSLoginViewController.m */; };
@@ -67,8 +75,19 @@
 		8257C7B220F4E1DC00FA550D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8257C7B120F4E1DC00FA550D /* Assets.xcassets */; };
 		8257C7B520F4E1DC00FA550D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8257C7B320F4E1DC00FA550D /* LaunchScreen.storyboard */; };
 		8257C7B820F4E1DC00FA550D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8257C7B720F4E1DC00FA550D /* main.m */; };
+		825C6F4B2108B75500E6F737 /* CommonMorePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C6F4A2108B75500E6F737 /* CommonMorePickerView.m */; };
+		825C6F522108C2A500E6F737 /* CarInsuranceBusinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C6F502108C2A500E6F737 /* CarInsuranceBusinessViewController.m */; };
+		825C6F532108C2A500E6F737 /* CarInsuranceBusinessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 825C6F512108C2A500E6F737 /* CarInsuranceBusinessViewController.xib */; };
+		825C6F582108C43700E6F737 /* CarInsuranceBusinessBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C6F572108C43700E6F737 /* CarInsuranceBusinessBaseView.m */; };
+		825C6F5B2108C48000E6F737 /* CarInsuranceBusinessViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C6F5A2108C48000E6F737 /* CarInsuranceBusinessViewCell.m */; };
+		825C6F5F2108DD4200E6F737 /* CarInsuranceCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825C6F5D2108DD4200E6F737 /* CarInsuranceCommitViewController.m */; };
+		825C6F602108DD4200E6F737 /* CarInsuranceCommitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 825C6F5E2108DD4200E6F737 /* CarInsuranceCommitViewController.xib */; };
 		8260265F20FD041E00EBBB2B /* RootViewHotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8260265E20FD041E00EBBB2B /* RootViewHotCell.m */; };
 		8260266220FD043300EBBB2B /* RooViewNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8260266120FD043300EBBB2B /* RooViewNewsCell.m */; };
+		82661DAF21061A0C004B8DF5 /* MyOrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82661DAD21061A0C004B8DF5 /* MyOrderListViewController.m */; };
+		82661DB021061A0C004B8DF5 /* MyOrderListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82661DAE21061A0C004B8DF5 /* MyOrderListViewController.xib */; };
+		82661DB321061EC4004B8DF5 /* MyOrderListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82661DB221061EC4004B8DF5 /* MyOrderListView.m */; };
+		82661DB621061ED4004B8DF5 /* MyOrderListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82661DB521061ED4004B8DF5 /* MyOrderListViewCell.m */; };
 		82731BBF20F4E7B7002EF5FE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BBE20F4E7B7002EF5FE /* RootViewController.m */; };
 		82731BC720F4EB10002EF5FE /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BC620F4EB10002EF5FE /* MyViewController.m */; };
 		82731BCA20F4EB17002EF5FE /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82731BC920F4EB17002EF5FE /* MessageViewController.m */; };
@@ -105,6 +124,7 @@
 		8281B4FF20FBB6E7006691D4 /* InviteListBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B4FE20FBB6E7006691D4 /* InviteListBaseView.m */; };
 		8281B50220FBB6F8006691D4 /* InviteListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B50120FBB6F8006691D4 /* InviteListViewCell.m */; };
 		8281B50520FBB7C2006691D4 /* InviteListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8281B50420FBB7C2006691D4 /* InviteListModel.m */; };
+		829C7BEA21060D09008FB683 /* NormaQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 829C7BE921060D09008FB683 /* NormaQuestionViewController.m */; };
 		82B5462B20F8ED9C00B0F6EE /* MyViewDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B5462A20F8ED9C00B0F6EE /* MyViewDataModel.m */; };
 		82BBED3220F4F48F00BAEEBE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED3020F4F48F00BAEEBE /* LoginViewController.m */; };
 		82BBED3320F4F48F00BAEEBE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82BBED3120F4F48F00BAEEBE /* LoginViewController.xib */; };
@@ -219,6 +239,9 @@
 		82085D8520FE44EC0094B49A /* ScreenBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreenBaseView.m; sourceTree = "<group>"; };
 		82085D8720FE46AD0094B49A /* ScreehnBaseViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScreehnBaseViewCell.h; sourceTree = "<group>"; };
 		82085D8820FE46AD0094B49A /* ScreehnBaseViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScreehnBaseViewCell.m; sourceTree = "<group>"; };
+		820B9B622108AC77006163B7 /* PopTowBtnMessageAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopTowBtnMessageAlertView.h; sourceTree = "<group>"; };
+		820B9B632108AC77006163B7 /* PopTowBtnMessageAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopTowBtnMessageAlertView.m; sourceTree = "<group>"; };
+		820B9B652108AD08006163B7 /* PopTowBtnMessageAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopTowBtnMessageAlertView.xib; sourceTree = "<group>"; };
 		821C043820FF788200B79945 /* InsuranceOrderCommitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsuranceOrderCommitViewController.xib; sourceTree = "<group>"; };
 		821C043B20FF802800B79945 /* CancelCommitOrderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CancelCommitOrderView.h; sourceTree = "<group>"; };
 		821C043C20FF802800B79945 /* CancelCommitOrderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CancelCommitOrderView.m; sourceTree = "<group>"; };
@@ -252,6 +275,17 @@
 		8221286D20F7C092008E8FFB /* InsuranceProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsuranceProductModel.m; sourceTree = "<group>"; };
 		8221287120F7C209008E8FFB /* CarInsuranceListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceListModel.h; sourceTree = "<group>"; };
 		8221287220F7C209008E8FFB /* CarInsuranceListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceListModel.m; sourceTree = "<group>"; };
+		823FF8DD210762EE00E58314 /* CarInsuranceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceViewController.h; sourceTree = "<group>"; };
+		823FF8DE210762EE00E58314 /* CarInsuranceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceViewController.m; sourceTree = "<group>"; };
+		823FF8E02107634D00E58314 /* CarInsuranceBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceBaseView.h; sourceTree = "<group>"; };
+		823FF8E12107634D00E58314 /* CarInsuranceBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceBaseView.m; sourceTree = "<group>"; };
+		823FF8E32107648100E58314 /* CarInsuranceViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceViewCell.h; sourceTree = "<group>"; };
+		823FF8E42107648100E58314 /* CarInsuranceViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceViewCell.m; sourceTree = "<group>"; };
+		823FF8E72107691800E58314 /* CarInsuranceInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceInfoViewController.h; sourceTree = "<group>"; };
+		823FF8E82107691800E58314 /* CarInsuranceInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceInfoViewController.m; sourceTree = "<group>"; };
+		823FF8E92107691800E58314 /* CarInsuranceInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarInsuranceInfoViewController.xib; sourceTree = "<group>"; };
+		823FF8EC210773F500E58314 /* UIView+CornerSquare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+CornerSquare.h"; sourceTree = "<group>"; };
+		823FF8ED210773F500E58314 /* UIView+CornerSquare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+CornerSquare.m"; sourceTree = "<group>"; };
 		824BC71220F8D05900BF3DD7 /* MyBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBaseView.m; sourceTree = "<group>"; };
 		824BC71320F8D05900BF3DD7 /* MyBaseViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBaseViewCell.m; sourceTree = "<group>"; };
 		824BC71420F8D05900BF3DD7 /* MyBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBaseView.h; sourceTree = "<group>"; };
@@ -299,10 +333,29 @@
 		8257C7B420F4E1DC00FA550D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8257C7B620F4E1DC00FA550D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8257C7B720F4E1DC00FA550D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		825C6F492108B75400E6F737 /* CommonMorePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonMorePickerView.h; sourceTree = "<group>"; };
+		825C6F4A2108B75500E6F737 /* CommonMorePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonMorePickerView.m; sourceTree = "<group>"; };
+		825C6F4F2108C2A500E6F737 /* CarInsuranceBusinessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceBusinessViewController.h; sourceTree = "<group>"; };
+		825C6F502108C2A500E6F737 /* CarInsuranceBusinessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceBusinessViewController.m; sourceTree = "<group>"; };
+		825C6F512108C2A500E6F737 /* CarInsuranceBusinessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarInsuranceBusinessViewController.xib; sourceTree = "<group>"; };
+		825C6F562108C43700E6F737 /* CarInsuranceBusinessBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceBusinessBaseView.h; sourceTree = "<group>"; };
+		825C6F572108C43700E6F737 /* CarInsuranceBusinessBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceBusinessBaseView.m; sourceTree = "<group>"; };
+		825C6F592108C48000E6F737 /* CarInsuranceBusinessViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceBusinessViewCell.h; sourceTree = "<group>"; };
+		825C6F5A2108C48000E6F737 /* CarInsuranceBusinessViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceBusinessViewCell.m; sourceTree = "<group>"; };
+		825C6F5C2108DD4200E6F737 /* CarInsuranceCommitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceCommitViewController.h; sourceTree = "<group>"; };
+		825C6F5D2108DD4200E6F737 /* CarInsuranceCommitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceCommitViewController.m; sourceTree = "<group>"; };
+		825C6F5E2108DD4200E6F737 /* CarInsuranceCommitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarInsuranceCommitViewController.xib; sourceTree = "<group>"; };
 		8260265D20FD041E00EBBB2B /* RootViewHotCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewHotCell.h; sourceTree = "<group>"; };
 		8260265E20FD041E00EBBB2B /* RootViewHotCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewHotCell.m; sourceTree = "<group>"; };
 		8260266020FD043300EBBB2B /* RooViewNewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RooViewNewsCell.h; sourceTree = "<group>"; };
 		8260266120FD043300EBBB2B /* RooViewNewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RooViewNewsCell.m; sourceTree = "<group>"; };
+		82661DAC21061A0C004B8DF5 /* MyOrderListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyOrderListViewController.h; sourceTree = "<group>"; };
+		82661DAD21061A0C004B8DF5 /* MyOrderListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyOrderListViewController.m; sourceTree = "<group>"; };
+		82661DAE21061A0C004B8DF5 /* MyOrderListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrderListViewController.xib; sourceTree = "<group>"; };
+		82661DB121061EC4004B8DF5 /* MyOrderListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyOrderListView.h; sourceTree = "<group>"; };
+		82661DB221061EC4004B8DF5 /* MyOrderListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyOrderListView.m; sourceTree = "<group>"; };
+		82661DB421061ED4004B8DF5 /* MyOrderListViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyOrderListViewCell.h; sourceTree = "<group>"; };
+		82661DB521061ED4004B8DF5 /* MyOrderListViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyOrderListViewCell.m; sourceTree = "<group>"; };
 		82731BBD20F4E7B7002EF5FE /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		82731BBE20F4E7B7002EF5FE /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		82731BC120F4E7E8002EF5FE /* SuperBrokerPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperBrokerPrefixHeader.pch; sourceTree = "<group>"; };
@@ -368,6 +421,8 @@
 		8281B50120FBB6F8006691D4 /* InviteListViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteListViewCell.m; sourceTree = "<group>"; };
 		8281B50320FBB7C2006691D4 /* InviteListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteListModel.h; sourceTree = "<group>"; };
 		8281B50420FBB7C2006691D4 /* InviteListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteListModel.m; sourceTree = "<group>"; };
+		829C7BE821060D09008FB683 /* NormaQuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NormaQuestionViewController.h; sourceTree = "<group>"; };
+		829C7BE921060D09008FB683 /* NormaQuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NormaQuestionViewController.m; sourceTree = "<group>"; };
 		82B5462920F8ED9C00B0F6EE /* MyViewDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewDataModel.h; sourceTree = "<group>"; };
 		82B5462A20F8ED9C00B0F6EE /* MyViewDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewDataModel.m; sourceTree = "<group>"; };
 		82BBED2F20F4F48F00BAEEBE /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -694,7 +749,11 @@
 		8221286F20F7C148008E8FFB /* CarInsurance */ = {
 			isa = PBXGroup;
 			children = (
+				823FF8E6210768F700E58314 /* CarInsuranceInformation */,
+				823FF8DC210762D300E58314 /* View */,
 				8221287020F7C1D9008E8FFB /* Model */,
+				823FF8DD210762EE00E58314 /* CarInsuranceViewController.h */,
+				823FF8DE210762EE00E58314 /* CarInsuranceViewController.m */,
 			);
 			path = CarInsurance;
 			sourceTree = "<group>";
@@ -706,6 +765,31 @@
 				8221287220F7C209008E8FFB /* CarInsuranceListModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		823FF8DC210762D300E58314 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				823FF8E02107634D00E58314 /* CarInsuranceBaseView.h */,
+				823FF8E12107634D00E58314 /* CarInsuranceBaseView.m */,
+				823FF8E32107648100E58314 /* CarInsuranceViewCell.h */,
+				823FF8E42107648100E58314 /* CarInsuranceViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		823FF8E6210768F700E58314 /* CarInsuranceInformation */ = {
+			isa = PBXGroup;
+			children = (
+				825C6F542108C2AB00E6F737 /* CarInsuranceBusiness */,
+				823FF8E72107691800E58314 /* CarInsuranceInfoViewController.h */,
+				823FF8E82107691800E58314 /* CarInsuranceInfoViewController.m */,
+				823FF8E92107691800E58314 /* CarInsuranceInfoViewController.xib */,
+				825C6F5C2108DD4200E6F737 /* CarInsuranceCommitViewController.h */,
+				825C6F5D2108DD4200E6F737 /* CarInsuranceCommitViewController.m */,
+				825C6F5E2108DD4200E6F737 /* CarInsuranceCommitViewController.xib */,
+			);
+			path = CarInsuranceInformation;
 			sourceTree = "<group>";
 		};
 		824BC71120F8D05900BF3DD7 /* View */ = {
@@ -936,6 +1020,58 @@
 			path = SuperBroker;
 			sourceTree = "<group>";
 		};
+		825C6F542108C2AB00E6F737 /* CarInsuranceBusiness */ = {
+			isa = PBXGroup;
+			children = (
+				825C6F552108C41300E6F737 /* View */,
+				825C6F4F2108C2A500E6F737 /* CarInsuranceBusinessViewController.h */,
+				825C6F502108C2A500E6F737 /* CarInsuranceBusinessViewController.m */,
+				825C6F512108C2A500E6F737 /* CarInsuranceBusinessViewController.xib */,
+			);
+			path = CarInsuranceBusiness;
+			sourceTree = "<group>";
+		};
+		825C6F552108C41300E6F737 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				825C6F562108C43700E6F737 /* CarInsuranceBusinessBaseView.h */,
+				825C6F572108C43700E6F737 /* CarInsuranceBusinessBaseView.m */,
+				825C6F592108C48000E6F737 /* CarInsuranceBusinessViewCell.h */,
+				825C6F5A2108C48000E6F737 /* CarInsuranceBusinessViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82661DA9210619EF004B8DF5 /* MyOrder */ = {
+			isa = PBXGroup;
+			children = (
+				82661DAB210619FA004B8DF5 /* Model */,
+				82661DAA210619F6004B8DF5 /* View */,
+				82661DAC21061A0C004B8DF5 /* MyOrderListViewController.h */,
+				82661DAD21061A0C004B8DF5 /* MyOrderListViewController.m */,
+				82661DAE21061A0C004B8DF5 /* MyOrderListViewController.xib */,
+			);
+			path = MyOrder;
+			sourceTree = "<group>";
+		};
+		82661DAA210619F6004B8DF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82661DB121061EC4004B8DF5 /* MyOrderListView.h */,
+				82661DB221061EC4004B8DF5 /* MyOrderListView.m */,
+				82661DB421061ED4004B8DF5 /* MyOrderListViewCell.h */,
+				82661DB521061ED4004B8DF5 /* MyOrderListViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82661DAB210619FA004B8DF5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		82731BBA20F4E781002EF5FE /* ProgramClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -946,6 +1082,9 @@
 				82731BBB20F4E78F002EF5FE /* Root */,
 				8281B4E620FB9D54006691D4 /* OnlyWebViewController.h */,
 				8281B4E720FB9D54006691D4 /* OnlyWebViewController.m */,
+				820B9B622108AC77006163B7 /* PopTowBtnMessageAlertView.h */,
+				820B9B632108AC77006163B7 /* PopTowBtnMessageAlertView.m */,
+				820B9B652108AD08006163B7 /* PopTowBtnMessageAlertView.xib */,
 			);
 			path = ProgramClass;
 			sourceTree = "<group>";
@@ -997,6 +1136,7 @@
 		82731BC420F4EB05002EF5FE /* My */ = {
 			isa = PBXGroup;
 			children = (
+				82661DA9210619EF004B8DF5 /* MyOrder */,
 				8281B4F720FBB69E006691D4 /* InviteList */,
 				8281B4E920FBA937006691D4 /* PresentEvent */,
 				8281B4C220FB8018006691D4 /* MoneyList */,
@@ -1024,6 +1164,8 @@
 				8281B4A820FB1B51006691D4 /* FeedBackResponseViewController.h */,
 				8281B4A920FB1B51006691D4 /* FeedBackResponseViewController.m */,
 				8281B4AA20FB1B51006691D4 /* FeedBackResponseViewController.xib */,
+				829C7BE821060D09008FB683 /* NormaQuestionViewController.h */,
+				829C7BE921060D09008FB683 /* NormaQuestionViewController.m */,
 			);
 			path = Set;
 			sourceTree = "<group>";
@@ -1308,6 +1450,8 @@
 				82C0767420F4E67B0080E37F /* UIView+SDAutoLayout.m */,
 				82C0769D20F4E67B0080E37F /* UIViewExt.h */,
 				82C0768320F4E67B0080E37F /* UIViewExt.m */,
+				823FF8EC210773F500E58314 /* UIView+CornerSquare.h */,
+				823FF8ED210773F500E58314 /* UIView+CornerSquare.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1337,6 +1481,8 @@
 		82C076AA20F4E67B0080E37F /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
+				82BBED4820F503F100BAEEBE /* CommonADAutoView.h */,
+				82BBED4920F503F100BAEEBE /* CommonADAutoView.m */,
 				82C076B420F4E67B0080E37F /* CommonBottomPopView.h */,
 				82C076CA20F4E67B0080E37F /* CommonBottomPopView.m */,
 				82C076AD20F4E67B0080E37F /* CommonCommitButton.h */,
@@ -1347,6 +1493,8 @@
 				82C076BE20F4E67B0080E37F /* CommonCustomButtonView.m */,
 				82C076C620F4E67B0080E37F /* CommonMoreColumnsPickerView.h */,
 				82C076B220F4E67B0080E37F /* CommonMoreColumnsPickerView.m */,
+				825C6F492108B75400E6F737 /* CommonMorePickerView.h */,
+				825C6F4A2108B75500E6F737 /* CommonMorePickerView.m */,
 				82C076AF20F4E67B0080E37F /* CommonPageControlView.h */,
 				82C076C420F4E67B0080E37F /* CommonPageControlView.m */,
 				82C076C920F4E67B0080E37F /* CommonPickerView.h */,
@@ -1359,6 +1507,8 @@
 				82C076C820F4E67B0080E37F /* CommonPopWarnView.m */,
 				82C076B520F4E67B0080E37F /* CommonRightPopView.h */,
 				82C076CB20F4E67B0080E37F /* CommonRightPopView.m */,
+				8281B4F420FBB083006691D4 /* CommonSheetView.h */,
+				8281B4F520FBB083006691D4 /* CommonSheetView.m */,
 				82C076BB20F4E67B0080E37F /* CommonShowControlPictureCollectionView.h */,
 				82C076AC20F4E67B0080E37F /* CommonShowControlPictureCollectionView.m */,
 				82C076BD20F4E67B0080E37F /* CommonTopShowLineView.h */,
@@ -1366,10 +1516,6 @@
 				82C076BF20F4E67B0080E37F /* CustomNumberKeyboard */,
 				82C076BC20F4E67B0080E37F /* CustomRoundButton.h */,
 				82C076AB20F4E67B0080E37F /* CustomRoundButton.m */,
-				82BBED4820F503F100BAEEBE /* CommonADAutoView.h */,
-				82BBED4920F503F100BAEEBE /* CommonADAutoView.m */,
-				8281B4F420FBB083006691D4 /* CommonSheetView.h */,
-				8281B4F520FBB083006691D4 /* CommonSheetView.m */,
 			);
 			path = CommonView;
 			sourceTree = "<group>";
@@ -1552,8 +1698,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				824BD57A20F64DFC00924E61 /* InsuranceDetailViewController.xib in Resources */,
+				823FF8EB2107691900E58314 /* CarInsuranceInfoViewController.xib in Resources */,
 				82C0773020F4E67C0080E37F /* del_btn@3x.png in Resources */,
 				8204416120FA4B0800BDB343 /* BuyMemberPayViewController.xib in Resources */,
+				82661DB021061A0C004B8DF5 /* MyOrderListViewController.xib in Resources */,
 				8281B4F320FBAF47006691D4 /* PresentEventResponseViewController.xib in Resources */,
 				8257C7B520F4E1DC00FA550D /* LaunchScreen.storyboard in Resources */,
 				82BBED3820F4F7BB00BAEEBE /* RegisterViewController.xib in Resources */,
@@ -1562,12 +1710,14 @@
 				8204415520FA439C00BDB343 /* BuyMemeberViewController.xib in Resources */,
 				82BBED3320F4F48F00BAEEBE /* LoginViewController.xib in Resources */,
 				8257C7B220F4E1DC00FA550D /* Assets.xcassets in Resources */,
+				825C6F602108DD4200E6F737 /* CarInsuranceCommitViewController.xib in Resources */,
 				8281B4EE20FBA95F006691D4 /* PresentEventViewController.xib in Resources */,
 				8204415B20FA48E500BDB343 /* BuyMemberSuccessViewController.xib in Resources */,
 				821C043F20FF804D00B79945 /* CancelCommitOrderView.xib in Resources */,
 				8204416C20FA56AE00BDB343 /* EditPhoneViewController.xib in Resources */,
 				82C0773220F4E67C0080E37F /* del_btn@2x.png in Resources */,
 				824BD58020F6531700924E61 /* InsuranceCommitViewController.xib in Resources */,
+				820B9B662108AD08006163B7 /* PopTowBtnMessageAlertView.xib in Resources */,
 				82085D7D20FE2ABA0094B49A /* ShowShareButtonView.xib in Resources */,
 				824BD57420F63E0100924E61 /* InsuranceInformationViewController.xib in Resources */,
 				8281B4C120FB482E006691D4 /* AddBankAccountViewController.xib in Resources */,
@@ -1576,6 +1726,7 @@
 				82C0773A20F4E67C0080E37F /* plane.gif in Resources */,
 				824BC71D20F8D75500BF3DD7 /* SMSLoginViewController.xib in Resources */,
 				8281B4A720FB1916006691D4 /* FeedBackViewController.xib in Resources */,
+				825C6F532108C2A500E6F737 /* CarInsuranceBusinessViewController.xib in Resources */,
 				8281B4DA20FB93CD006691D4 /* PaymentListViewController.xib in Resources */,
 				82BBED3E20F4FB9A00BAEEBE /* EditPasswordViewController.xib in Resources */,
 				8281B4AC20FB1B51006691D4 /* FeedBackResponseViewController.xib in Resources */,
@@ -1648,10 +1799,12 @@
 				82C0772020F4E67C0080E37F /* NSString+GetWeekDay.m in Sources */,
 				824BC71720F8D05A00BF3DD7 /* MyBaseViewCell.m in Sources */,
 				8260265F20FD041E00EBBB2B /* RootViewHotCell.m in Sources */,
+				825C6F582108C43700E6F737 /* CarInsuranceBusinessBaseView.m in Sources */,
 				82C0773B20F4E67C0080E37F /* CommonTool.m in Sources */,
 				82B5462B20F8ED9C00B0F6EE /* MyViewDataModel.m in Sources */,
 				82BBED3220F4F48F00BAEEBE /* LoginViewController.m in Sources */,
 				824BC71C20F8D75500BF3DD7 /* SMSLoginViewController.m in Sources */,
+				823FF8E52107648100E58314 /* CarInsuranceViewCell.m in Sources */,
 				8281B4C020FB482E006691D4 /* AddBankAccountViewController.m in Sources */,
 				82C0772920F4E67C0080E37F /* CommonTopShowLineView.m in Sources */,
 				824BD56020F6325D00924E61 /* InsuranceViewController.m in Sources */,
@@ -1673,11 +1826,14 @@
 				82731BC720F4EB10002EF5FE /* MyViewController.m in Sources */,
 				8281B4E520FB97CF006691D4 /* PaymentListModel.m in Sources */,
 				82C0773520F4E67C0080E37F /* CommonPopWarnView.m in Sources */,
+				823FF8EE210773F500E58314 /* UIView+CornerSquare.m in Sources */,
+				825C6F5F2108DD4200E6F737 /* CarInsuranceCommitViewController.m in Sources */,
 				82C0774D20F4E67C0080E37F /* BaseTableViewCell.m in Sources */,
 				82C0770E20F4E67C0080E37F /* NSArray+Null.m in Sources */,
 				824BD58420F659B600924E61 /* InsuranceTypesViewController.m in Sources */,
 				82BBED4A20F503F100BAEEBE /* CommonADAutoView.m in Sources */,
 				8221286E20F7C092008E8FFB /* InsuranceProductModel.m in Sources */,
+				82661DB621061ED4004B8DF5 /* MyOrderListViewCell.m in Sources */,
 				824BD56920F6365C00924E61 /* InsuranceViewCellTableViewCell.m in Sources */,
 				8281B4E220FB9704006691D4 /* PaymentListBaseViewCell.m in Sources */,
 				82C0770920F4E67C0080E37F /* UIColor+Hex.m in Sources */,
@@ -1687,10 +1843,12 @@
 				82C0771B20F4E67C0080E37F /* UIImageView+CornerRadius.m in Sources */,
 				82C0773F20F4E67C0080E37F /* RSAEncryptor.m in Sources */,
 				82C0771820F4E67C0080E37F /* NSString+Extension_NSString.m in Sources */,
+				825C6F5B2108C48000E6F737 /* CarInsuranceBusinessViewCell.m in Sources */,
 				824BD5A120F662BD00924E61 /* InsuranceAgeBaseView.m in Sources */,
 				82BBED3D20F4FB9A00BAEEBE /* EditPasswordViewController.m in Sources */,
 				8221286820F7BE7A008E8FFB /* InsuranceCompanyModel.m in Sources */,
 				8281B4F620FBB083006691D4 /* CommonSheetView.m in Sources */,
+				823FF8DF210762EE00E58314 /* CarInsuranceViewController.m in Sources */,
 				8221285820F7BC36008E8FFB /* RootNoticeDetailModel.m in Sources */,
 				82C0772A20F4E67C0080E37F /* CommonMoreColumnsPickerView.m in Sources */,
 				82C0772720F4E67C0080E37F /* CustomRoundButton.m in Sources */,
@@ -1704,6 +1862,7 @@
 				82C0774F20F4E67C0080E37F /* BaseTableView.m in Sources */,
 				82C0770B20F4E67C0080E37F /* NSDictionary+Null.m in Sources */,
 				821C045420FF9D8E00B79945 /* SpecialNewsViewImageCell.m in Sources */,
+				823FF8E22107634D00E58314 /* CarInsuranceBaseView.m in Sources */,
 				82731BCA20F4EB17002EF5FE /* MessageViewController.m in Sources */,
 				8281B4CE20FB8504006691D4 /* IncomeListBaseView.m in Sources */,
 				82C0772D20F4E67C0080E37F /* CommonContentSubView.m in Sources */,
@@ -1723,12 +1882,15 @@
 				82085D8920FE46AD0094B49A /* ScreehnBaseViewCell.m in Sources */,
 				82C0774320F4E67C0080E37F /* CommonPictureSelect.m in Sources */,
 				8204415A20FA48E500BDB343 /* BuyMemberSuccessViewController.m in Sources */,
+				829C7BEA21060D09008FB683 /* NormaQuestionViewController.m in Sources */,
+				82661DAF21061A0C004B8DF5 /* MyOrderListViewController.m in Sources */,
 				8281B4A620FB1916006691D4 /* FeedBackViewController.m in Sources */,
 				82C0774520F4E67C0080E37F /* CommonAnimation.m in Sources */,
 				82C0770820F4E67C0080E37F /* UIImage+ConvertBase64.m in Sources */,
 				82C0775120F4E67C0080E37F /* BaseTabBarController.m in Sources */,
 				821C044C20FF929600B79945 /* ArticleclassifyModel.m in Sources */,
 				82C0771320F4E67C0080E37F /* NSObject+Null.m in Sources */,
+				823FF8EA2107691800E58314 /* CarInsuranceInfoViewController.m in Sources */,
 				8281B4AB20FB1B51006691D4 /* FeedBackResponseViewController.m in Sources */,
 				82BBED4420F5002400BAEEBE /* RootViewCell.m in Sources */,
 				82C0772620F4E67C0080E37F /* CommonMemonyCache.m in Sources */,
@@ -1745,7 +1907,9 @@
 				821C043D20FF802800B79945 /* CancelCommitOrderView.m in Sources */,
 				82C0771C20F4E67C0080E37F /* UIButton+ImageTitleStyle.m in Sources */,
 				82BBED3720F4F7BB00BAEEBE /* RegisterViewController.m in Sources */,
+				82661DB321061EC4004B8DF5 /* MyOrderListView.m in Sources */,
 				82C0772C20F4E67C0080E37F /* CommonPickerView.m in Sources */,
+				825C6F4B2108B75500E6F737 /* CommonMorePickerView.m in Sources */,
 				82C0775020F4E67C0080E37F /* BaseNavigationViewController.m in Sources */,
 				82C0772E20F4E67C0080E37F /* CommonCommitButton.m in Sources */,
 				8281B50520FBB7C2006691D4 /* InviteListModel.m in Sources */,
@@ -1767,7 +1931,9 @@
 				8204416020FA4B0800BDB343 /* BuyMemberPayViewController.m in Sources */,
 				82C0770D20F4E67C0080E37F /* NSString+AppendingString.m in Sources */,
 				8204416B20FA56AE00BDB343 /* EditPhoneViewController.m in Sources */,
+				820B9B642108AC77006163B7 /* PopTowBtnMessageAlertView.m in Sources */,
 				821C045A20FF9DA700B79945 /* SpecialNewsViewTextCell.m in Sources */,
+				825C6F522108C2A500E6F737 /* CarInsuranceBusinessViewController.m in Sources */,
 				8281B50220FBB6F8006691D4 /* InviteListViewCell.m in Sources */,
 				82C0771D20F4E67C0080E37F /* NSString+MD5.m in Sources */,
 				824BD59820F6619E00924E61 /* InsuranceCompanyViewCell.m in Sources */,
