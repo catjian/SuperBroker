@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "CarInsuranceProvince.h"
 
 @interface CarInsuranceInfoViewController : BaseViewController
 

@@ -62,6 +62,28 @@
 - (IBAction)selectCityNumberButtonEvent:(id)sender
 {
     [self.view endEditing:YES];
+    __block CommonBottomPopView *popPickerView = [[CommonBottomPopView alloc] init];
+    [popPickerView setHeight:DIF_PX(270)];
+    __block CommonMorePickerView *pickerView = [[CommonMorePickerView alloc] initWithFrame:CGRectMake(0, 0, popPickerView.width, popPickerView.height)];
+    NSArray *provinceArr = [CarInsuranceProvince getProvinceArray];
+    [pickerView setPickerDatas:@[provinceArr,[CarInsuranceProvince getCityArrWithProvince:provinceArr.firstObject]]];
+    [pickerView setSelectBlock:^(NSInteger component, NSInteger row) {
+        if (component == 0)
+        {
+            NSMutableArray *pickerArr = [NSMutableArray arrayWithArray:pickerView.pickerDatas];
+            [pickerArr replaceObjectAtIndex:1
+                                 withObject:[CarInsuranceProvince getCityArrWithProvince:[pickerArr.firstObject objectAtIndex:row]]];
+            [pickerView setPickerDatas:pickerArr];
+            [pickerView reloadComponent:component+1 SelectRow:0];
+        }
+    }];
+    [popPickerView addSubview:pickerView];
+    [popPickerView showPopView];
+    DIF_WeakSelf(self)
+    [pickerView.racSignal subscribeNext:^(id  _Nullable x) {
+        DIF_StrongSelf
+        [popPickerView hidePopView];
+    }];
 }
 
 - (IBAction)selectRegisterDateButtonEvent:(id)sender

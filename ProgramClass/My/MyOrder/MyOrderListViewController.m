@@ -23,6 +23,7 @@
 @implementation MyOrderListViewController
 {
     MyOrderListView *m_BaseView;
+    NSInteger m_SegmentIndex;
 }
 
 
@@ -49,11 +50,24 @@
     {
         m_BaseView = [[MyOrderListView alloc] initWithFrame:self.contentView.frame];
         [self.view addSubview:m_BaseView];
+        DIF_WeakSelf(self)
+        [m_BaseView setSelectBlock:^(NSIndexPath *indexPath, id model) {
+            DIF_StrongSelf
+            if (strongSelf->m_SegmentIndex == 0)
+            {
+                [strongSelf loadViewController:@"MyOrderDetailViewController"];
+            }
+            else
+            {
+                [strongSelf loadViewController:@"CarOrderDetailViewController"];
+            }
+        }];
     }
 }
 
 - (IBAction)chooseOrderTypeButtonEvent:(UISegmentedControl *)sender
 {
+    m_SegmentIndex = sender.selectedSegmentIndex;
     [m_BaseView showContentViewWithIndex:sender.selectedSegmentIndex];
 }
 

@@ -37,7 +37,9 @@
 
 - (void)createBackView
 {
-    UIImageView *backView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"个人中心背景"]];
+    UIImage *image = [UIImage imageNamed:@"个人中心背景"];
+    UIImageView *backView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, DIF_PX_Scale(image.size.width), DIF_PX_Scale(image.size.height))];
+    [backView setImage:image];
     [backView setBackgroundColor:[UIColor blueColor]];
     [self addSubview:backView];
 }

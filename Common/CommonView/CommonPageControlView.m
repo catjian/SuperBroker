@@ -39,7 +39,7 @@
     for (NSInteger i = 0; i < data.count; i ++)
     {
         UILabel *label = [UILabel new];
-        label.frame = CGRectMake(12+i*30+i*38, 0, 30, self.height);
+        label.frame = CGRectMake(12+i*30+i*38, 0, is_iPhone6P?40:30, self.height);
         label.text = data[i];
         label.tag = i;
         label.font = DIF_DIFONTOFSIZE(14);

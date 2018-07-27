@@ -11,6 +11,8 @@
 
 @interface MyOrderListView : UIView <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, copy) tableViewSelectRowAtIndexPathBlock selectBlock;
+
 - (void)showContentViewWithIndex:(NSInteger)index;
 
 @end

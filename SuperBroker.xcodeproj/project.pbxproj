@@ -25,6 +25,8 @@
 		82085D8920FE46AD0094B49A /* ScreehnBaseViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82085D8820FE46AD0094B49A /* ScreehnBaseViewCell.m */; };
 		820B9B642108AC77006163B7 /* PopTowBtnMessageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 820B9B632108AC77006163B7 /* PopTowBtnMessageAlertView.m */; };
 		820B9B662108AD08006163B7 /* PopTowBtnMessageAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 820B9B652108AD08006163B7 /* PopTowBtnMessageAlertView.xib */; };
+		8214920F210A0C1100CCE249 /* MyOrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8214920C210A0C1000CCE249 /* MyOrderDetailViewController.xib */; };
+		82149210210A0C1100CCE249 /* MyOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8214920E210A0C1100CCE249 /* MyOrderDetailViewController.m */; };
 		821C043A20FF788200B79945 /* InsuranceOrderCommitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 821C043820FF788200B79945 /* InsuranceOrderCommitViewController.xib */; };
 		821C043D20FF802800B79945 /* CancelCommitOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C043C20FF802800B79945 /* CancelCommitOrderView.m */; };
 		821C043F20FF804D00B79945 /* CancelCommitOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 821C043E20FF804D00B79945 /* CancelCommitOrderView.xib */; };
@@ -43,6 +45,15 @@
 		8221286B20F7BF91008E8FFB /* InsuranceSpeciesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286A20F7BF91008E8FFB /* InsuranceSpeciesModel.m */; };
 		8221286E20F7C092008E8FFB /* InsuranceProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221286D20F7C092008E8FFB /* InsuranceProductModel.m */; };
 		8221287320F7C209008E8FFB /* CarInsuranceListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8221287220F7C209008E8FFB /* CarInsuranceListModel.m */; };
+		82229502210B5C3400075C4C /* CarInsuranceProvince.m in Sources */ = {isa = PBXBuildFile; fileRef = 82229501210B5C3400075C4C /* CarInsuranceProvince.m */; };
+		82229507210B627F00075C4C /* CarOrderWaitReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82229505210B627F00075C4C /* CarOrderWaitReviewViewController.m */; };
+		82229508210B627F00075C4C /* CarOrderWaitReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82229506210B627F00075C4C /* CarOrderWaitReviewViewController.xib */; };
+		8222950B210B6B0E00075C4C /* CarOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222950A210B6B0E00075C4C /* CarOrderDetailViewController.m */; };
+		82229510210B6B2F00075C4C /* CarOrderStateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222950F210B6B2F00075C4C /* CarOrderStateView.m */; };
+		82229513210B761B00075C4C /* CarOrderThreeLineContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82229512210B761B00075C4C /* CarOrderThreeLineContentView.m */; };
+		82229516210B7C4E00075C4C /* CarInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82229515210B7C4E00075C4C /* CarInformationView.m */; };
+		82229519210B7F1000075C4C /* CarOrderDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82229518210B7F1000075C4C /* CarOrderDateView.m */; };
+		8222951C210B800500075C4C /* CarOrderCancelButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222951B210B800500075C4C /* CarOrderCancelButtonView.m */; };
 		823FF8DF210762EE00E58314 /* CarInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823FF8DE210762EE00E58314 /* CarInsuranceViewController.m */; };
 		823FF8E22107634D00E58314 /* CarInsuranceBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 823FF8E12107634D00E58314 /* CarInsuranceBaseView.m */; };
 		823FF8E52107648100E58314 /* CarInsuranceViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 823FF8E42107648100E58314 /* CarInsuranceViewCell.m */; };
@@ -242,6 +253,9 @@
 		820B9B622108AC77006163B7 /* PopTowBtnMessageAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopTowBtnMessageAlertView.h; sourceTree = "<group>"; };
 		820B9B632108AC77006163B7 /* PopTowBtnMessageAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopTowBtnMessageAlertView.m; sourceTree = "<group>"; };
 		820B9B652108AD08006163B7 /* PopTowBtnMessageAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopTowBtnMessageAlertView.xib; sourceTree = "<group>"; };
+		8214920C210A0C1000CCE249 /* MyOrderDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyOrderDetailViewController.xib; sourceTree = "<group>"; };
+		8214920D210A0C1000CCE249 /* MyOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderDetailViewController.h; sourceTree = "<group>"; };
+		8214920E210A0C1100CCE249 /* MyOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderDetailViewController.m; sourceTree = "<group>"; };
 		821C043820FF788200B79945 /* InsuranceOrderCommitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsuranceOrderCommitViewController.xib; sourceTree = "<group>"; };
 		821C043B20FF802800B79945 /* CancelCommitOrderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CancelCommitOrderView.h; sourceTree = "<group>"; };
 		821C043C20FF802800B79945 /* CancelCommitOrderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CancelCommitOrderView.m; sourceTree = "<group>"; };
@@ -275,6 +289,24 @@
 		8221286D20F7C092008E8FFB /* InsuranceProductModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsuranceProductModel.m; sourceTree = "<group>"; };
 		8221287120F7C209008E8FFB /* CarInsuranceListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceListModel.h; sourceTree = "<group>"; };
 		8221287220F7C209008E8FFB /* CarInsuranceListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceListModel.m; sourceTree = "<group>"; };
+		82229500210B5C3400075C4C /* CarInsuranceProvince.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceProvince.h; sourceTree = "<group>"; };
+		82229501210B5C3400075C4C /* CarInsuranceProvince.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceProvince.m; sourceTree = "<group>"; };
+		82229504210B627F00075C4C /* CarOrderWaitReviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarOrderWaitReviewViewController.h; sourceTree = "<group>"; };
+		82229505210B627F00075C4C /* CarOrderWaitReviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarOrderWaitReviewViewController.m; sourceTree = "<group>"; };
+		82229506210B627F00075C4C /* CarOrderWaitReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarOrderWaitReviewViewController.xib; sourceTree = "<group>"; };
+		82229509210B6B0E00075C4C /* CarOrderDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarOrderDetailViewController.h; sourceTree = "<group>"; };
+		8222950A210B6B0E00075C4C /* CarOrderDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarOrderDetailViewController.m; sourceTree = "<group>"; };
+		8222950E210B6B2F00075C4C /* CarOrderStateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarOrderStateView.h; sourceTree = "<group>"; };
+		8222950F210B6B2F00075C4C /* CarOrderStateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarOrderStateView.m; sourceTree = "<group>"; };
+		82229511210B761B00075C4C /* CarOrderThreeLineContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarOrderThreeLineContentView.h; sourceTree = "<group>"; };
+		82229512210B761B00075C4C /* CarOrderThreeLineContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarOrderThreeLineContentView.m; sourceTree = "<group>"; };
+		82229514210B7C4E00075C4C /* CarInformationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInformationView.h; sourceTree = "<group>"; };
+		82229515210B7C4E00075C4C /* CarInformationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInformationView.m; sourceTree = "<group>"; };
+		82229517210B7F1000075C4C /* CarOrderDateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarOrderDateView.h; sourceTree = "<group>"; };
+		82229518210B7F1000075C4C /* CarOrderDateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarOrderDateView.m; sourceTree = "<group>"; };
+		8222951A210B800500075C4C /* CarOrderCancelButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarOrderCancelButtonView.h; sourceTree = "<group>"; };
+		8222951B210B800500075C4C /* CarOrderCancelButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarOrderCancelButtonView.m; sourceTree = "<group>"; };
+		8222951D210B821900075C4C /* CarOrderAllHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarOrderAllHeader.h; sourceTree = "<group>"; };
 		823FF8DD210762EE00E58314 /* CarInsuranceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceViewController.h; sourceTree = "<group>"; };
 		823FF8DE210762EE00E58314 /* CarInsuranceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceViewController.m; sourceTree = "<group>"; };
 		823FF8E02107634D00E58314 /* CarInsuranceBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceBaseView.h; sourceTree = "<group>"; };
@@ -697,6 +729,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8214920B210A0B9A00CCE249 /* OrderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8214920D210A0C1000CCE249 /* MyOrderDetailViewController.h */,
+				8214920E210A0C1100CCE249 /* MyOrderDetailViewController.m */,
+				8214920C210A0C1000CCE249 /* MyOrderDetailViewController.xib */,
+			);
+			path = OrderDetail;
+			sourceTree = "<group>";
+		};
 		821C043520FF785000B79945 /* InsuranceOrderCommit */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,6 +809,54 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		822294FF210B5C1900075C4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82229500210B5C3400075C4C /* CarInsuranceProvince.h */,
+				82229501210B5C3400075C4C /* CarInsuranceProvince.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		82229503210B623900075C4C /* CarOrder */ = {
+			isa = PBXGroup;
+			children = (
+				8222950D210B6B1600075C4C /* Model */,
+				8222950C210B6B1200075C4C /* View */,
+				82229504210B627F00075C4C /* CarOrderWaitReviewViewController.h */,
+				82229505210B627F00075C4C /* CarOrderWaitReviewViewController.m */,
+				82229506210B627F00075C4C /* CarOrderWaitReviewViewController.xib */,
+				82229509210B6B0E00075C4C /* CarOrderDetailViewController.h */,
+				8222950A210B6B0E00075C4C /* CarOrderDetailViewController.m */,
+				8222951D210B821900075C4C /* CarOrderAllHeader.h */,
+			);
+			path = CarOrder;
+			sourceTree = "<group>";
+		};
+		8222950C210B6B1200075C4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8222950E210B6B2F00075C4C /* CarOrderStateView.h */,
+				8222950F210B6B2F00075C4C /* CarOrderStateView.m */,
+				82229511210B761B00075C4C /* CarOrderThreeLineContentView.h */,
+				82229512210B761B00075C4C /* CarOrderThreeLineContentView.m */,
+				82229514210B7C4E00075C4C /* CarInformationView.h */,
+				82229515210B7C4E00075C4C /* CarInformationView.m */,
+				82229517210B7F1000075C4C /* CarOrderDateView.h */,
+				82229518210B7F1000075C4C /* CarOrderDateView.m */,
+				8222951A210B800500075C4C /* CarOrderCancelButtonView.h */,
+				8222951B210B800500075C4C /* CarOrderCancelButtonView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8222950D210B6B1600075C4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		823FF8DC210762D300E58314 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -781,6 +871,7 @@
 		823FF8E6210768F700E58314 /* CarInsuranceInformation */ = {
 			isa = PBXGroup;
 			children = (
+				822294FF210B5C1900075C4C /* Model */,
 				825C6F542108C2AB00E6F737 /* CarInsuranceBusiness */,
 				823FF8E72107691800E58314 /* CarInsuranceInfoViewController.h */,
 				823FF8E82107691800E58314 /* CarInsuranceInfoViewController.m */,
@@ -1045,6 +1136,8 @@
 		82661DA9210619EF004B8DF5 /* MyOrder */ = {
 			isa = PBXGroup;
 			children = (
+				82229503210B623900075C4C /* CarOrder */,
+				8214920B210A0B9A00CCE249 /* OrderDetail */,
 				82661DAB210619FA004B8DF5 /* Model */,
 				82661DAA210619F6004B8DF5 /* View */,
 				82661DAC21061A0C004B8DF5 /* MyOrderListViewController.h */,
@@ -1698,6 +1791,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				824BD57A20F64DFC00924E61 /* InsuranceDetailViewController.xib in Resources */,
+				82229508210B627F00075C4C /* CarOrderWaitReviewViewController.xib in Resources */,
 				823FF8EB2107691900E58314 /* CarInsuranceInfoViewController.xib in Resources */,
 				82C0773020F4E67C0080E37F /* del_btn@3x.png in Resources */,
 				8204416120FA4B0800BDB343 /* BuyMemberPayViewController.xib in Resources */,
@@ -1722,6 +1816,7 @@
 				824BD57420F63E0100924E61 /* InsuranceInformationViewController.xib in Resources */,
 				8281B4C120FB482E006691D4 /* AddBankAccountViewController.xib in Resources */,
 				8281B4C720FB80BD006691D4 /* IncomeListViewController.xib in Resources */,
+				8214920F210A0C1100CCE249 /* MyOrderDetailViewController.xib in Resources */,
 				821C043A20FF788200B79945 /* InsuranceOrderCommitViewController.xib in Resources */,
 				82C0773A20F4E67C0080E37F /* plane.gif in Resources */,
 				824BC71D20F8D75500BF3DD7 /* SMSLoginViewController.xib in Resources */,
@@ -1793,6 +1888,7 @@
 				821C045720FF9D9A00B79945 /* SpecialNewsViewMoreImageCell.m in Sources */,
 				82BBED4120F4FFAD00BAEEBE /* RootBaseView.m in Sources */,
 				82085D8120FE44D00094B49A /* ScreenViewController.m in Sources */,
+				82229513210B761B00075C4C /* CarOrderThreeLineContentView.m in Sources */,
 				82C0774E20F4E67C0080E37F /* BaseViewController.m in Sources */,
 				82C0772820F4E67C0080E37F /* CommonShowControlPictureCollectionView.m in Sources */,
 				82C0771220F4E67C0080E37F /* UIButton+CircleImage.m in Sources */,
@@ -1805,6 +1901,7 @@
 				82BBED3220F4F48F00BAEEBE /* LoginViewController.m in Sources */,
 				824BC71C20F8D75500BF3DD7 /* SMSLoginViewController.m in Sources */,
 				823FF8E52107648100E58314 /* CarInsuranceViewCell.m in Sources */,
+				82229507210B627F00075C4C /* CarOrderWaitReviewViewController.m in Sources */,
 				8281B4C020FB482E006691D4 /* AddBankAccountViewController.m in Sources */,
 				82C0772920F4E67C0080E37F /* CommonTopShowLineView.m in Sources */,
 				824BD56020F6325D00924E61 /* InsuranceViewController.m in Sources */,
@@ -1859,6 +1956,7 @@
 				82C0771520F4E67C0080E37F /* NSString+Attributed.m in Sources */,
 				82C0771F20F4E67C0080E37F /* UIView+BackHexColor.m in Sources */,
 				8281B4D920FB93CD006691D4 /* PaymentListViewController.m in Sources */,
+				8222950B210B6B0E00075C4C /* CarOrderDetailViewController.m in Sources */,
 				82C0774F20F4E67C0080E37F /* BaseTableView.m in Sources */,
 				82C0770B20F4E67C0080E37F /* NSDictionary+Null.m in Sources */,
 				821C045420FF9D8E00B79945 /* SpecialNewsViewImageCell.m in Sources */,
@@ -1871,6 +1969,7 @@
 				8281B4B220FB414E006691D4 /* PresentAccountViewController.m in Sources */,
 				8257C7B820F4E1DC00FA550D /* main.m in Sources */,
 				8260266220FD043300EBBB2B /* RooViewNewsCell.m in Sources */,
+				82229516210B7C4E00075C4C /* CarInformationView.m in Sources */,
 				8281B4BB20FB45DF006691D4 /* PresentAccountModel.m in Sources */,
 				8221287320F7C209008E8FFB /* CarInsuranceListModel.m in Sources */,
 				8221285B20F7BCAF008E8FFB /* RootNoticeListModel.m in Sources */,
@@ -1893,6 +1992,7 @@
 				823FF8EA2107691800E58314 /* CarInsuranceInfoViewController.m in Sources */,
 				8281B4AB20FB1B51006691D4 /* FeedBackResponseViewController.m in Sources */,
 				82BBED4420F5002400BAEEBE /* RootViewCell.m in Sources */,
+				82229502210B5C3400075C4C /* CarInsuranceProvince.m in Sources */,
 				82C0772620F4E67C0080E37F /* CommonMemonyCache.m in Sources */,
 				82C0772320F4E67C0080E37F /* NSString+TransformToPinYin.m in Sources */,
 				824BD59E20F662A800924E61 /* InsuranceAgeViewController.m in Sources */,
@@ -1903,8 +2003,10 @@
 				82C0770C20F4E67C0080E37F /* UIImage+Extension.m in Sources */,
 				82C0773D20F4E67C0080E37F /* CommonImage.m in Sources */,
 				8281B4A120FB1655006691D4 /* SetViewController.m in Sources */,
+				8222951C210B800500075C4C /* CarOrderCancelButtonView.m in Sources */,
 				82C0770F20F4E67C0080E37F /* NSString+ No2hz.m in Sources */,
 				821C043D20FF802800B79945 /* CancelCommitOrderView.m in Sources */,
+				82229510210B6B2F00075C4C /* CarOrderStateView.m in Sources */,
 				82C0771C20F4E67C0080E37F /* UIButton+ImageTitleStyle.m in Sources */,
 				82BBED3720F4F7BB00BAEEBE /* RegisterViewController.m in Sources */,
 				82661DB321061EC4004B8DF5 /* MyOrderListView.m in Sources */,
@@ -1914,12 +2016,14 @@
 				82C0772E20F4E67C0080E37F /* CommonCommitButton.m in Sources */,
 				8281B50520FBB7C2006691D4 /* InviteListModel.m in Sources */,
 				82C0771020F4E67C0080E37F /* UIViewExt.m in Sources */,
+				82149210210A0C1100CCE249 /* MyOrderDetailViewController.m in Sources */,
 				82C0771620F4E67C0080E37F /* NSNumber+AppendingString.m in Sources */,
 				8281B4DF20FB96E3006691D4 /* PaymentListBaseView.m in Sources */,
 				824BD5A520F662E100924E61 /* InsuranceAgeViewCell.m in Sources */,
 				82085D8620FE44EC0094B49A /* ScreenBaseView.m in Sources */,
 				824BC71620F8D05A00BF3DD7 /* MyBaseView.m in Sources */,
 				82C0774620F4E67C0080E37F /* CommonSelectOneLineViewController.m in Sources */,
+				82229519210B7F1000075C4C /* CarOrderDateView.m in Sources */,
 				82C0774020F4E67C0080E37F /* CommonGetIPAddress.m in Sources */,
 				82C0774820F4E67C0080E37F /* AJPhotoBrowserViewController.m in Sources */,
 				824BD59520F6618700924E61 /* InsuranceCompanyBaseView.m in Sources */,
@@ -2090,7 +2194,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7B86W5K499;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SuperBroker/SuperBrokerPrefixHeader.pch";
 				INFOPLIST_FILE = SuperBroker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2098,7 +2202,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhangjian.SuperBroker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zj.SuperBroker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2110,7 +2214,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7B86W5K499;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SuperBroker/SuperBrokerPrefixHeader.pch";
 				INFOPLIST_FILE = SuperBroker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2118,7 +2222,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhangjian.SuperBroker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zj.SuperBroker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

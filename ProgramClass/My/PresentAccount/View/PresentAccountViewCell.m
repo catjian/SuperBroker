@@ -21,7 +21,7 @@
     if (self)
     {
         self.cellHeight = 51;
-        m_LeftTitle = [[UILabel alloc] initWithFrame:CGRectMake(DIF_PX(12), 0, DIF_PX(80), self.cellHeight)];
+        m_LeftTitle = [[UILabel alloc] initWithFrame:CGRectMake(DIF_PX(12), 0, DIF_PX(90), self.cellHeight)];
         [m_LeftTitle setTextColor:DIF_HEXCOLOR(@"333333")];
         [m_LeftTitle setFont:DIF_DIFONTOFSIZE(15)];
         [m_LeftTitle setTextAlignment:NSTextAlignmentRight];

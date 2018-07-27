@@ -47,7 +47,7 @@
                                                 <action selector="buyMemeberButtonEvent:" destination="-1" eventType="touchUpInside" id="PZF-cK-lRV"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="初级会员" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGa-fW-LuP">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黄金经纪人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGa-fW-LuP">
                                             <rect key="frame" x="72" y="30" width="231" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="Ino-jq-pPG"/>
@@ -82,8 +82,8 @@
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="S6p-ky-SPn">
                                             <rect key="frame" x="84" y="95" width="207" height="47"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <string key="text">时限：永久有效
-权限：保险，车险订单返利；会员卡销售返利</string>
+                                            <string key="text">时限：自购买之日起十年内有效
+权限：业务权益、经纪人权益</string>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -142,7 +142,7 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="初级会员" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgj-wM-XlN">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="白金经纪人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mgj-wM-XlN">
                                             <rect key="frame" x="72" y="30" width="231" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="J5v-1X-3ro"/>
@@ -165,8 +165,8 @@
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rfM-Vi-gjF">
                                             <rect key="frame" x="84" y="95" width="207" height="47"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <string key="text">时限：永久有效
-权限：保险，车险订单返利；会员卡销售返利；平台订单分佣</string>
+                                            <string key="text">时限：自购买之日起十年内有效
+权限：业务权益、经纪人权益、下级权益</string>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -248,8 +248,8 @@
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5We-BU-yf7">
                                             <rect key="frame" x="84" y="95" width="207" height="47"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <string key="text">时限：永久有效
-权限：保险，车险订单返利；会员卡销售返利；平台订单分佣</string>
+                                            <string key="text">时限：自购买之日起十年内有效
+权限：业务权益、经纪人权益、下级权益</string>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -290,10 +290,20 @@
                         <constraint firstAttribute="bottom" secondItem="KYs-C1-sM0" secondAttribute="bottom" constant="107" id="tbD-Uj-uz2"/>
                     </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6DJ-KI-YmM">
+                    <rect key="frame" x="0.0" y="20" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="bYw-tV-mki"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Zj6-74-ScY" secondAttribute="trailing" id="57g-hf-KBv"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="6DJ-KI-YmM" secondAttribute="trailing" id="6KX-Te-c3u"/>
+                <constraint firstItem="6DJ-KI-YmM" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="CIt-lc-0sc"/>
+                <constraint firstItem="6DJ-KI-YmM" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="L71-H4-azU"/>
                 <constraint firstItem="Zj6-74-ScY" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="kBa-7W-Xoc"/>
                 <constraint firstItem="Zj6-74-ScY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="pHk-16-2E2"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Zj6-74-ScY" secondAttribute="bottom" id="wCf-dG-acL"/>

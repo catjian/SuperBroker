@@ -228,7 +228,7 @@ return bvc;}
 #endif
 
 #ifndef DIF_FONT
-//#define DIF_PX(s)                   (round(((s))*DIF_SCREEN_WIDTH/375))
+#define DIF_PX_Scale(s)             (round(((s))*DIF_SCREEN_WIDTH/375))
 #define DIF_PX(s)                   (s)
 #define DIF_FONT_6(s)               (round(((s)/2.f)))
 #define DIF_FONT(s)                 round((is_iPhone6P?(DIF_FONT_6(s)*1.1):(DIF_FONT_6(s))))

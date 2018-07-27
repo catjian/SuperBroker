@@ -38,6 +38,7 @@
     [self setRightItemWithContentName:@"客服-黑"];
     m_ListModel = [IncomeListModel new];
     m_BaseView = [[IncomeListBaseView alloc] initWithFrame:self.contentBG.bounds style:UITableViewStylePlain];
+    [m_BaseView setWidth:DIF_SCREEN_WIDTH];
     m_BaseView.listModel = m_ListModel;
     [self.contentBG addSubview:m_BaseView];
 }
