@@ -1,18 +1,18 @@
 //
-//  CarOwnerInfoview.m
+//  CarOrderDateStyleTwoView.m
 //  SuperBroker
-//  有三行内容和一个title的view
-//  Created by zhang_jian on 2018/7/27.
+//
+//  Created by zhang_jian on 2018/7/28.
 //  Copyright © 2018年 zhangjian. All rights reserved.
 //
 
-#import "CarOrderThreeLineContentView.h"
+#import "CarOrderDateStyleTwoView.h"
 
-@implementation CarOrderThreeLineContentView
+@implementation CarOrderDateStyleTwoView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-    CGSize size = CGSizeMake(DIF_SCREEN_WIDTH, DIF_PX(12+50+1+73));
+    CGSize size = CGSizeMake(DIF_SCREEN_WIDTH, DIF_PX(12+114));
     frame.size = size;
     self = [super initWithFrame:frame];
     if (self)
@@ -39,7 +39,7 @@
 
 - (UIView *)createTitleViewWithView:(UIView *)topView
 {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, topView.bottom, topView.width, DIF_PX(50))];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, topView.bottom, topView.width, DIF_PX(40))];
     
     UIView *lineV = [[UIView alloc] initWithFrame:CGRectMake(DIF_PX(12), 0, DIF_PX(2), DIF_PX(13))];
     [lineV setBackgroundColor:DIF_HEXCOLOR(@"017AFF")];
@@ -48,7 +48,7 @@
     
     self.titleLab = [[UILabel alloc] initWithFrame:CGRectMake(lineV.right+DIF_PX(5), 0, view.width-DIF_PX(50), view.height)];
     [self.titleLab setFont:DIF_UIFONTOFSIZE(13)];
-    [self.titleLab setTextColor:DIF_HEXCOLOR(@"333333")];
+    [self.titleLab setTextColor:DIF_HEXCOLOR(@"999999")];
     [view addSubview:self.titleLab];
     
     UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, view.height-1, view.width, 1)];
@@ -59,7 +59,7 @@
 
 - (void)createContentViewWithView:(UIView *)topView
 {
-    UIStackView *view = [[UIStackView alloc] initWithFrame:CGRectMake(DIF_PX(20), topView.bottom, self.width-DIF_PX(40), DIF_PX(72))];
+    UIStackView *view = [[UIStackView alloc] initWithFrame:CGRectMake(DIF_PX(20), topView.bottom, self.width-DIF_PX(40), DIF_PX(64))];
     [view setAxis:UILayoutConstraintAxisVertical];
     [view setAlignment:UIStackViewAlignmentFill];
     [view setDistribution:UIStackViewDistributionFillEqually];
@@ -67,15 +67,15 @@
     
     self.contentFriLab = [[UILabel alloc] initWithFrame:CGRectZero];
     [self.contentFriLab setFont:DIF_UIFONTOFSIZE(13)];
-    [self.contentFriLab setTextColor:DIF_HEXCOLOR(@"333333")];
+    [self.contentFriLab setTextColor:DIF_HEXCOLOR(@"999999")];
     [view addArrangedSubview:self.contentFriLab];
     self.contentSecLab = [[UILabel alloc] initWithFrame:CGRectZero];
     [self.contentSecLab setFont:DIF_UIFONTOFSIZE(13)];
-    [self.contentSecLab setTextColor:DIF_HEXCOLOR(@"333333")];
+    [self.contentSecLab setTextColor:DIF_HEXCOLOR(@"999999")];
     [view addArrangedSubview:self.contentSecLab];
     self.contentThrLab = [[UILabel alloc] initWithFrame:CGRectZero];
     [self.contentThrLab setFont:DIF_UIFONTOFSIZE(13)];
-    [self.contentThrLab setTextColor:DIF_HEXCOLOR(@"333333")];
+    [self.contentThrLab setTextColor:DIF_HEXCOLOR(@"999999")];
     [view addArrangedSubview:self.contentThrLab];
     [self addSubview:view];
 }

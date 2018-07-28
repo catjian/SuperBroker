@@ -124,7 +124,6 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系人  1388888888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aab-Pe-17R">
                             <rect key="frame" x="0.0" y="75" width="375" height="15"/>
                             <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="3jo-kC-Trb"/>
                                 <constraint firstAttribute="height" constant="15" id="ZBa-oj-gz8"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>

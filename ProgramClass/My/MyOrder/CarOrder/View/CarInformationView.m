@@ -68,19 +68,19 @@
     [verticalView setSpacing:0];
     [view addSubview:verticalView];
     
-    self.contentFriLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, verticalView.width, DIF_PX(21))];
+    self.contentFriLab = [[UILabel alloc] initWithFrame:CGRectZero];
     [self.contentFriLab setFont:DIF_UIFONTOFSIZE(13)];
     [self.contentFriLab setTextColor:DIF_HEXCOLOR(@"333333")];
     [verticalView addArrangedSubview:self.contentFriLab];
-    self.contentSecLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, verticalView.width, DIF_PX(21))];
+    self.contentSecLab = [[UILabel alloc] initWithFrame:CGRectZero];
     [self.contentSecLab setFont:DIF_UIFONTOFSIZE(13)];
     [self.contentSecLab setTextColor:DIF_HEXCOLOR(@"333333")];
     [verticalView addArrangedSubview:self.contentSecLab];
-    self.contentThrLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, verticalView.width, DIF_PX(21))];
+    self.contentThrLab = [[UILabel alloc] initWithFrame:CGRectZero];
     [self.contentThrLab setFont:DIF_UIFONTOFSIZE(13)];
     [self.contentThrLab setTextColor:DIF_HEXCOLOR(@"333333")];
     [verticalView addArrangedSubview:self.contentThrLab];
-    self.contentFourLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, verticalView.width, DIF_PX(21))];
+    self.contentFourLab = [[UILabel alloc] initWithFrame:CGRectZero];
     [self.contentFourLab setFont:DIF_UIFONTOFSIZE(13)];
     [self.contentFourLab setTextColor:DIF_HEXCOLOR(@"333333")];
     [verticalView addArrangedSubview:self.contentFourLab];
@@ -92,12 +92,12 @@
     [picTitleView setSpacing:39];
     [verticalView addArrangedSubview:picTitleView];
     
-    UILabel *picTitleL = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, verticalView.width, DIF_PX(21))];
+    UILabel *picTitleL = [[UILabel alloc] initWithFrame:CGRectZero];
     [picTitleL setFont:DIF_UIFONTOFSIZE(13)];
     [picTitleL setTextColor:DIF_HEXCOLOR(@"333333")];
     [picTitleL setText:@"身份证："];
     [picTitleView addArrangedSubview:picTitleL];
-    UILabel *picTitleR = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, verticalView.width, DIF_PX(21))];
+    UILabel *picTitleR = [[UILabel alloc] initWithFrame:CGRectZero];
     [picTitleR setFont:DIF_UIFONTOFSIZE(13)];
     [picTitleR setTextColor:DIF_HEXCOLOR(@"333333")];
     [picTitleR setText:@"驾驶证："];
@@ -109,7 +109,7 @@
     [picView setDistribution:UIStackViewDistributionFillEqually];
     [picView setSpacing:39];
     [view addSubview:picView];
-    self.userCardImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 10, picView.height)];
+    self.userCardImage = [[UIImageView alloc] initWithFrame:CGRectZero];
     [picView addArrangedSubview:self.userCardImage];
     self.driverCardImage = [[UIImageView alloc] initWithFrame:CGRectZero];
     [picView addArrangedSubview:self.driverCardImage];

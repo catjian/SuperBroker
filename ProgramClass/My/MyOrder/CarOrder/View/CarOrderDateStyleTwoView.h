@@ -1,5 +1,5 @@
 //
-//  CarOrderDateView.h
+//  CarOrderDateStyleTwoView.h
 //  SuperBroker
 //
 //  Created by zhang_jian on 2018/7/28.
@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CarOrderDateView : UIView
+@interface CarOrderDateStyleTwoView : UIView
 
+@property (nonatomic, strong) UILabel *titleLab;
 @property (nonatomic, strong) UILabel *contentFriLab;
 @property (nonatomic, strong) UILabel *contentSecLab;
 @property (nonatomic, strong) UILabel *contentThrLab;

@@ -6,9 +6,9 @@
 //  Copyright © 2018年 zhangjian. All rights reserved.
 //
 
-#import "CarOrderDateView.h"
+#import "CarOrderDateStyleOneView.h"
 
-@implementation CarOrderDateView
+@implementation CarOrderDateStyleOneView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -35,15 +35,15 @@
         [view setDistribution:UIStackViewDistributionFillEqually];
         [view setSpacing:0];
         
-        self.contentFriLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, view.width, DIF_PX(24))];
+        self.contentFriLab = [[UILabel alloc] initWithFrame:CGRectZero];
         [self.contentFriLab setFont:DIF_UIFONTOFSIZE(13)];
         [self.contentFriLab setTextColor:DIF_HEXCOLOR(@"999999")];
         [view addArrangedSubview:self.contentFriLab];
-        self.contentSecLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, view.width, DIF_PX(24))];
+        self.contentSecLab = [[UILabel alloc] initWithFrame:CGRectZero];
         [self.contentSecLab setFont:DIF_UIFONTOFSIZE(13)];
         [self.contentSecLab setTextColor:DIF_HEXCOLOR(@"999999")];
         [view addArrangedSubview:self.contentSecLab];
-        self.contentThrLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, view.width, DIF_PX(24))];
+        self.contentThrLab = [[UILabel alloc] initWithFrame:CGRectZero];
         [self.contentThrLab setFont:DIF_UIFONTOFSIZE(13)];
         [self.contentThrLab setTextColor:DIF_HEXCOLOR(@"999999")];
         [view addArrangedSubview:self.contentThrLab];

@@ -56,15 +56,34 @@
     [customerView.contentThrLab setText:@"姓名：王五"];
     [scrollView addSubview:customerView];
     
-    CarOrderDateView *dateView = [[CarOrderDateView alloc] initWithFrame:CGRectMake(0, customerView.bottom, 0, 0)];
-    dateView.height -= DIF_PX(24);
+    CarOrderDateStyleOneView *dateView = [[CarOrderDateStyleOneView alloc] initWithFrame:CGRectMake(0, customerView.bottom, 0, 0)];
+//    dateView.height -= DIF_PX(24);
     [dateView.contentFriLab setText:@"订单编号：131312"];
     [dateView.contentSecLab setText:@"订单编号：131312"];
     [dateView.contentThrLab setText:@"订单编号：131312"];
-    [dateView.contentThrLab setAlpha:0];
     [scrollView addSubview:dateView];
     
-    CarOrderCancelButtonView *cancelView = [[CarOrderCancelButtonView alloc] initWithFrame:CGRectMake(0, dateView.bottom, 0, 0)];
+    CarOrderDateStyleTwoView *dateTwoView = [[CarOrderDateStyleTwoView alloc] initWithFrame:CGRectMake(0, dateView.bottom, 0, 0)];
+//    dateTwoView.height -= DIF_PX(24);
+    [dateTwoView.titleLab setText:@"订单编号：131312"];
+    [dateTwoView.contentFriLab setText:@"订单编号：131312"];
+    [dateTwoView.contentSecLab setText:@"订单编号：131312"];
+    [dateTwoView.contentThrLab setText:@"订单编号：131312"];
+    [scrollView addSubview:dateTwoView];
+        
+    __block CarOrderMoneyView *moneyView = [[CarOrderMoneyView alloc] initWithFrame:CGRectMake(0, dateTwoView.bottom, 0, 0)];
+    [moneyView.contentFriLab setText:@"$1200.00元"];
+    [moneyView setSelectBlock:^{
+        [moneyView.contentSecLab setText:@"$200.00元"];
+    }];
+    [scrollView addSubview:moneyView];
+    
+    CarOrderManagerView *managerView = [[CarOrderManagerView alloc] initWithFrame:CGRectMake(0, moneyView.bottom, 0, 0)];
+    [managerView.managerPhone setText:@"联系人  1388888888"];
+    [managerView.managerName setText:@"联系人"];
+    [scrollView addSubview:managerView];
+    
+    CarOrderCancelButtonView *cancelView = [[CarOrderCancelButtonView alloc] initWithFrame:CGRectMake(0, managerView.bottom, 0, 0)];
     [scrollView addSubview:cancelView];
     [scrollView setContentSize:CGSizeMake(DIF_SCREEN_WIDTH, cancelView.bottom+55)];
 }
