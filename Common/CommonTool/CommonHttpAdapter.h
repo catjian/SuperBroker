@@ -40,4 +40,19 @@ typedef void(^CommonHttpResponseProgress)(NSProgress *progress);
 - (void)httpRequestLoginWithParameters:(NSDictionary *)parms
                          ResponseBlock:(CommonHttpResponseBlock)successBlock
                            FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+
+#pragma mark - 获取用户详情
+- (void)httpRequestBrokerinfoWithResponseBlock:(CommonHttpResponseBlock)successBlock
+                                   FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+
+#pragma mark - 查询保险订单列表
+- (void)httpRequestMyOrderInsuranceListWithParameters:(NSDictionary *)parms
+                                        ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                          FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+
+#pragma mark - 查询车险订单列表
+- (void)httpRequestMyOrderCarListWithParameters:(NSDictionary *)parms
+                                  ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                    FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+
 @end

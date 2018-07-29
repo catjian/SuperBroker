@@ -49,6 +49,10 @@
         [m_ContentLab setFont:DIF_UIFONTOFSIZE(13)];
         [m_ContentLab setTextAlignment:NSTextAlignmentRight];
         [self.contentView addSubview:m_ContentLab];
+        
+        UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ARELableTapGestureRecognizer:)];
+        [tapGR setDelegate:self];
+        [self addGestureRecognizer:tapGR];
     }
     return self;
 }
@@ -59,6 +63,23 @@
     [m_TitleLab setText:model[@"title"]];
     [m_AERLab setHidden:![model[@"showAER"] boolValue]];
     [m_ContentLab setText:model[@"content"]];
+}
+
+- (void)ARELableTapGestureRecognizer:(UIGestureRecognizer *)gesture
+{
+    [m_AERLab setHidden:!m_AERLab.hidden];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    UIView *grLab = gestureRecognizer.view;
+    CGPoint point = [touch locationInView:grLab];
+    CGRect labFrame = m_AERLab.frame;
+    if (CGRectContainsPoint(labFrame, point))
+    {
+        return YES;
+    }
+    return NO;
 }
 
 @end

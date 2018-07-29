@@ -14,6 +14,8 @@
 @synthesize servicePort = _servicePort;
 @synthesize serviceName = _serviceName;
 @synthesize pageSize = _pageSize;
+@synthesize accessToken = _accessToken;
+@synthesize refreshToken = _refreshToken;
 
 + (CommonCurrentUser *)sharedInstance
 {    
@@ -216,6 +218,39 @@
 {
     _pageSize = pageSize;
     [[NSUserDefaults standardUserDefaults] setObject:pageSize forKey:@"pageSize"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
+- (NSString *)accessToken
+{
+    if (!_accessToken)
+    {
+        _accessToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"access_token"];
+    }
+    return _accessToken;
+}
+
+- (void)setAccessToken:(NSString *)accessToken
+{
+    _accessToken = accessToken;
+    [[NSUserDefaults standardUserDefaults] setObject:accessToken forKey:@"access_token"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString *)refreshToken
+{
+    if (!_refreshToken)
+    {
+        _refreshToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"refresh_token"];
+    }
+    return _refreshToken;
+}
+
+- (void)setRefreshToken:(NSString *)refreshToken
+{
+    _refreshToken = refreshToken;
+    [[NSUserDefaults standardUserDefaults] setObject:refreshToken forKey:@"refresh_token"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

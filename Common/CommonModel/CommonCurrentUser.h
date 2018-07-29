@@ -24,6 +24,9 @@
 @property (nonatomic, copy) NSString *serviceName;
 @property (nonatomic, copy) NSString *pageSize;
 
+@property (nonatomic, copy) NSString *accessToken;
+@property (nonatomic, copy) NSString *refreshToken;
+
 
 
 + (CommonCurrentUser *)sharedInstance;

@@ -41,12 +41,13 @@ static CommonHttpAdapter *comHttp = nil;
 - (void)initAFNSession
 {
     httpSessionManager = nil;
-    NSString *requsetType = @"https";
-    if (![DIF_CommonCurrentUser.serviceHost isEqualToString:@"www.jlxxxfw.cn"])
-    {
-        requsetType = @"http";
-    }
-    m_BaseUrl = [NSString stringWithFormat:@"%@://%@:%@/%@/",requsetType,DIF_CommonCurrentUser.serviceHost,DIF_CommonCurrentUser.servicePort,DIF_CommonCurrentUser.serviceName];
+//    NSString *requsetType = @"https";
+//    if (![DIF_CommonCurrentUser.serviceHost isEqualToString:@"192.168.100.243:51120"])
+//    {
+//        requsetType = @"http";
+//    }
+//    m_BaseUrl = [NSString stringWithFormat:@"%@://%@:%@/%@/",requsetType,DIF_CommonCurrentUser.serviceHost,DIF_CommonCurrentUser.servicePort,DIF_CommonCurrentUser.serviceName];
+    m_BaseUrl = @"http://192.168.100.243:51120";
     httpSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:m_BaseUrl]];
     [httpSessionManager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
     httpSessionManager.requestSerializer.timeoutInterval = 30;
@@ -54,10 +55,10 @@ static CommonHttpAdapter *comHttp = nil;
     AFJSONResponseSerializer *response = (AFJSONResponseSerializer *)httpSessionManager.responseSerializer;
     httpSessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/xml",@"application/json", @"text/json", @"text/javascript",@"text/html",@"application/x-www-form-urlencoded", nil];
     response.removesKeysWithNullValues = YES;
-    if ([DIF_CommonCurrentUser.serviceHost isEqualToString:@"www.jlxxxfw.cn"])
-    {
-        [self setHttpsCertificate];
-    }
+//    if ([DIF_CommonCurrentUser.serviceHost isEqualToString:@"www.jlxxxfw.cn"])
+//    {
+//        [self setHttpsCertificate];
+//    }
 }
 
 - (void)setBaseUrl
@@ -133,11 +134,26 @@ static CommonHttpAdapter *comHttp = nil;
                                                   failure:(void (^)(NSURLSessionDataTask * _Nullable, NSError * _Nonnull))failure
 {
     NSError *serializationError = nil;
-    NSMutableURLRequest *request =
-    [httpSessionManager.requestSerializer requestWithMethod:model
-                                                  URLString:[[NSURL URLWithString:URLString relativeToURL:httpSessionManager.baseURL] absoluteString]
-                                                 parameters:parameters
-                                                      error:&serializationError];
+    
+    NSMutableURLRequest *request;
+    if ([model isEqualToString:@"GET"])
+    {
+        request =
+        [httpSessionManager.requestSerializer requestWithMethod:model
+                                                      URLString:[[NSURL URLWithString:URLString relativeToURL:httpSessionManager.baseURL] absoluteString]
+                                                     parameters:parameters
+                                                          error:&serializationError];
+
+        
+    }
+    else
+    {
+        request =
+        [[AFJSONRequestSerializer serializer] requestWithMethod:model
+                                                      URLString:[[NSURL URLWithString:URLString relativeToURL:httpSessionManager.baseURL] absoluteString]
+                                                     parameters:parameters
+                                                          error:&serializationError];
+    }
     if (serializationError)
     {
         if (failure)
@@ -152,11 +168,9 @@ static CommonHttpAdapter *comHttp = nil;
         return nil;
     }
     
-    [request setValue:@"ch" forHTTPHeaderField:@"X-Requester"];
     if (self.access_token && self.access_token.length > 0)
     {
-        NSString *token = [@"Bearer " stringByAppendingString:self.access_token];
-        [request setValue:token forHTTPHeaderField:@"X-Authorization"];
+        [request setValue:self.access_token forHTTPHeaderField:@"accessToken"];
     }
     if ([URLString rangeOfString:@"auth/refresh"].location != NSNotFound)
     {
@@ -199,7 +213,7 @@ static CommonHttpAdapter *comHttp = nil;
     return dataTask;
 }
 
-#pragma mark 0- Get请求
+#pragma mark - Get请求
 - (void)HttpGetRequestWithCommand:(NSString *)command
                        parameters:(NSDictionary *)parms
                     ResponseBlock:(CommonHttpResponseBlock)block
@@ -266,7 +280,11 @@ static CommonHttpAdapter *comHttp = nil;
         block?block(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_REQUEST_PARMS_NULL):nil;
         return;
     }
-    DebugLog(@"command = %@",command);
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parms
+                                                       options:NSJSONWritingPrettyPrinted error:nil];
+    // NSData转为NSString
+    NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    DebugLog(@"command = %@\nresponseObject = %@",command,jsonStr);
     NSMutableURLRequest *request =
     [self reWrteCreateHttpRequstWithMethod:@"POST"
                                  URLString:[command stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]
@@ -344,46 +362,32 @@ static CommonHttpAdapter *comHttp = nil;
               }];
 }
 
-#pragma mark - 用户登录
-- (void)httpRequestLoginWithParameters:(NSDictionary *)parms
-                         ResponseBlock:(CommonHttpResponseBlock)successBlock
-                           FailedBlcok:(CommonHttpResponseFailed)failedBlock
+#pragma mark - 刷新accessToken
+
+- (void)refreshAccessTokenWithSuccessBlock:(CommonHttpResponseBlock)block
 {
-    if (!parms)
-    {
-        successBlock?successBlock(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_REQUEST_PARMS_NULL):nil;
-        return;
-    }
-    DIF_WeakSelf(self)
-    [self HttpGetRequestWithCommand:@"loginByMobile.action"
-                          parameters:parms
-                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
-                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
-                              responseModel[@"staffId"])
-                          {
-                              DIF_StrongSelf
-                              NSString *loginUrl = [strongSelf->m_BaseUrl stringByAppendingFormat:@"loginByMobile.action?staff.wcode=%@&staff.password=%@",parms[@"staff.wcode"], parms[@"staff.password"]];
-                              NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:loginUrl]];
-                              NSDictionary *Request = [NSHTTPCookie requestHeaderFieldsWithCookies:cookies];
-                              strongSelf->sessionString = [Request objectForKey:@"Cookie"];
-                              strongSelf->sessionString = [strongSelf->sessionString substringFromIndex:[strongSelf->sessionString rangeOfString:@"JSESSIONID="].length];
-                              //删除
-                              for(NSHTTPCookie*cookie in cookies)
-                              {
-                                  [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie: cookie];                                  
-                              }
-                          }
-                          else
-                          {
-                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
-                          }
-                          if (successBlock)
-                          {
-                              successBlock(type, responseModel);
-                          }
-                      }
-                         FailedBlcok:failedBlock];
+//    [self HttpPostRequestWithCommand:@"auth/refresh"
+//                          parameters:@{@"imei":[DIF_APPDELEGATE readUUIDFromKeyChain]}
+//                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+//                           if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+//                           {
+//                               NSDictionary *reulte = responseModel[@"result"];
+//                               DIF_CommonCurrentUser.accessToken = reulte[@"access_token"];
+//                               DIF_CommonCurrentUser.refreshToken = reulte[@"refresh_token"];
+//                               DIF_CommonHttpAdapter.access_token = DIF_CommonCurrentUser.accessToken;
+//                               DIF_CommonHttpAdapter.refresh_token = DIF_CommonCurrentUser.refreshToken;
+//                               block?block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS, nil):[CommonHUD delayShowHUDWithMessage:@"秘钥已刷新，请重试"];
+//                           }
+//                           else
+//                           {
+//                               [CommonHUD delayShowHUDWithMessage:@"账户过期，请重新登录"];
+//                               DIF_POP_TO_LOGIN
+//                           }
+//                       } FailedBlcok:^(NSError *error) {
+//                           [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+//                       }];
 }
+
 
 #pragma mark - 取得公告附件下载路径
 - (void)httpRequestDownloadFileByMobileWithParameters:(NSDictionary *)parms
@@ -471,5 +475,117 @@ static CommonHttpAdapter *comHttp = nil;
                           }];
     [dataTask resume];
 }
+
+#pragma mark - 用户登录
+- (void)httpRequestLoginWithParameters:(NSDictionary *)parms
+                         ResponseBlock:(CommonHttpResponseBlock)successBlock
+                           FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    if (!parms)
+    {
+        successBlock?successBlock(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_REQUEST_PARMS_NULL):nil;
+        return;
+    }
+    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:51120"]];
+    DIF_WeakSelf(self)
+    [self HttpPostRequestWithCommand:@"/uc/api/brokeruser/login"
+                          parameters:parms
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              DIF_StrongSelf
+                              strongSelf.refresh_token = responseModel[@"data"][@"refreshToken"][@"refreshToken"];
+                              strongSelf.access_token = responseModel[@"data"][@"accessToken"][@"accessToken"];
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                         FailedBlcok:failedBlock];
+}
+
+#pragma mark - 获取用户详情
+- (void)httpRequestBrokerinfoWithResponseBlock:(CommonHttpResponseBlock)successBlock
+                                   FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
+    [self HttpGetRequestWithCommand:@"/api/brokerinfo"
+                         parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+
+
+#pragma mark - 查询保险订单列表
+- (void)httpRequestMyOrderInsuranceListWithResponseBlock:(CommonHttpResponseBlock)successBlock
+                                             FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
+    [self HttpGetRequestWithCommand:@"/api/myorder/insurance/list"
+                         parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+
+#pragma mark - 查询车险订单列表
+- (void)httpRequestMyOrderCarListWithResponseBlock:(CommonHttpResponseBlock)successBlock
+                                       FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
+    [self HttpGetRequestWithCommand:@"/api/myorder/car/list"
+                         parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+
 
 @end

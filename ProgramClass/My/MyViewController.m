@@ -20,6 +20,7 @@
 @implementation MyViewController
 {
     MyBaseView *m_BaseView;
+    BrokerInfoDataModel *m_BrokerInfoModel;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -27,6 +28,7 @@
     [super viewWillAppear:animated];
     DIF_ShowTabBarAnimation(YES);
     [self.navigationController setNavigationBarHidden:YES];
+    [self httpRequestGetBrokerInfo];
 }
 
 - (void)viewDidLoad
@@ -89,6 +91,32 @@
             }
         }];
     }
+}
+
+#pragma mark - http Request
+
+- (void)httpRequestGetBrokerInfo
+{
+    [CommonHUD showHUD];
+    DIF_WeakSelf(self)
+    [DIF_CommonHttpAdapter
+     httpRequestBrokerinfoWithResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+         if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+         {
+             [CommonHUD hideHUD];
+             DIF_StrongSelf
+             NSDictionary *data = responseModel[@"data"];
+             strongSelf->m_BrokerInfoModel = [BrokerInfoDataModel mj_objectWithKeyValues:data];
+             [strongSelf->m_BaseView setBrokerInfoModel:strongSelf->m_BrokerInfoModel];
+         }
+         else
+         {
+             [CommonHUD delayShowHUDWithMessage:responseModel[@""]];
+         }
+        
+    } FailedBlcok:^(NSError *error) {
+        [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+    }];
 }
 
 @end

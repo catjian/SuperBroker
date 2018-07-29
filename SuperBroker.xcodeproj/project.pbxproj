@@ -84,6 +84,17 @@
 		824BD59E20F662A800924E61 /* InsuranceAgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BD59D20F662A800924E61 /* InsuranceAgeViewController.m */; };
 		824BD5A120F662BD00924E61 /* InsuranceAgeBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BD5A020F662BD00924E61 /* InsuranceAgeBaseView.m */; };
 		824BD5A520F662E100924E61 /* InsuranceAgeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 824BD5A420F662E100924E61 /* InsuranceAgeViewCell.m */; };
+		825368E6210D9C72003027F2 /* ImSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825368E0210D9C71003027F2 /* ImSDK.framework */; };
+		825368E7210D9C72003027F2 /* IMCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825368E1210D9C71003027F2 /* IMCore.framework */; };
+		825368EA210D9C72003027F2 /* TLSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825368E4210D9C72003027F2 /* TLSSDK.framework */; };
+		825368ED210D9CA8003027F2 /* IMSDKBugly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825368EC210D9CA8003027F2 /* IMSDKBugly.framework */; };
+		825368EF210D9E2F003027F2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825368EE210D9E2F003027F2 /* CoreTelephony.framework */; };
+		825368F1210D9E39003027F2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825368F0210D9E39003027F2 /* SystemConfiguration.framework */; };
+		825368F3210D9E41003027F2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 825368F2210D9E41003027F2 /* libc++.tbd */; };
+		825368F5210D9E4D003027F2 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 825368F4210D9E4D003027F2 /* libstdc++.6.tbd */; };
+		825368F7210D9E55003027F2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 825368F6210D9E55003027F2 /* libz.tbd */; };
+		825368F9210D9E5D003027F2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 825368F8210D9E5D003027F2 /* libsqlite3.tbd */; };
+		82536901210DA30F003027F2 /* QALSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82536900210DA30F003027F2 /* QALSDK.framework */; };
 		8257C7AA20F4E1DA00FA550D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8257C7A920F4E1DA00FA550D /* AppDelegate.m */; };
 		8257C7B220F4E1DC00FA550D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8257C7B120F4E1DC00FA550D /* Assets.xcassets */; };
 		8257C7B520F4E1DC00FA550D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8257C7B320F4E1DC00FA550D /* LaunchScreen.storyboard */; };
@@ -224,6 +235,7 @@
 		82C0774F20F4E67C0080E37F /* BaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C0770020F4E67C0080E37F /* BaseTableView.m */; };
 		82C0775020F4E67C0080E37F /* BaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C0770320F4E67C0080E37F /* BaseNavigationViewController.m */; };
 		82C0775120F4E67C0080E37F /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C0770420F4E67C0080E37F /* BaseTabBarController.m */; };
+		82C9F85A210D7550008A6601 /* BrokerInfoDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C9F859210D7550008A6601 /* BrokerInfoDataModel.m */; };
 		82F08D69210CB9B900514130 /* CarOrderDateStyleTwoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82F08D68210CB9B900514130 /* CarOrderDateStyleTwoView.m */; };
 /* End PBXBuildFile section */
 
@@ -365,6 +377,20 @@
 		824BD5A020F662BD00924E61 /* InsuranceAgeBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsuranceAgeBaseView.m; sourceTree = "<group>"; };
 		824BD5A320F662E100924E61 /* InsuranceAgeViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InsuranceAgeViewCell.h; sourceTree = "<group>"; };
 		824BD5A420F662E100924E61 /* InsuranceAgeViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InsuranceAgeViewCell.m; sourceTree = "<group>"; };
+		825368E0210D9C71003027F2 /* ImSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ImSDK.framework; sourceTree = "<group>"; };
+		825368E1210D9C71003027F2 /* IMCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMCore.framework; sourceTree = "<group>"; };
+		825368E4210D9C72003027F2 /* TLSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TLSSDK.framework; sourceTree = "<group>"; };
+		825368EC210D9CA8003027F2 /* IMSDKBugly.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IMSDKBugly.framework; sourceTree = "<group>"; };
+		825368EE210D9E2F003027F2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		825368F0210D9E39003027F2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		825368F2210D9E41003027F2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		825368F4210D9E4D003027F2 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		825368F6210D9E55003027F2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		825368F8210D9E5D003027F2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		825368FA210DA237003027F2 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		825368FC210DA257003027F2 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		825368FE210DA26E003027F2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		82536900210DA30F003027F2 /* QALSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QALSDK.framework; sourceTree = "<group>"; };
 		8257C7A520F4E1DA00FA550D /* SuperBroker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperBroker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8257C7A820F4E1DA00FA550D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8257C7A920F4E1DA00FA550D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -629,6 +655,8 @@
 		82C0770420F4E67C0080E37F /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
 		82C0770520F4E67C0080E37F /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		82C0770620F4E67C0080E37F /* BaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableView.h; sourceTree = "<group>"; };
+		82C9F858210D7550008A6601 /* BrokerInfoDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrokerInfoDataModel.h; sourceTree = "<group>"; };
+		82C9F859210D7550008A6601 /* BrokerInfoDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrokerInfoDataModel.m; sourceTree = "<group>"; };
 		82F08D67210CB9B900514130 /* CarOrderDateStyleTwoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarOrderDateStyleTwoView.h; sourceTree = "<group>"; };
 		82F08D68210CB9B900514130 /* CarOrderDateStyleTwoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarOrderDateStyleTwoView.m; sourceTree = "<group>"; };
 		9DC4304B8C64092964146D15 /* libPods-SuperBroker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SuperBroker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -640,7 +668,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82536901210DA30F003027F2 /* QALSDK.framework in Frameworks */,
+				825368F9210D9E5D003027F2 /* libsqlite3.tbd in Frameworks */,
+				825368F7210D9E55003027F2 /* libz.tbd in Frameworks */,
+				825368F5210D9E4D003027F2 /* libstdc++.6.tbd in Frameworks */,
+				825368F3210D9E41003027F2 /* libc++.tbd in Frameworks */,
+				825368F1210D9E39003027F2 /* SystemConfiguration.framework in Frameworks */,
+				825368EF210D9E2F003027F2 /* CoreTelephony.framework in Frameworks */,
 				34745B192016EAE172B49D04 /* libPods-SuperBroker.a in Frameworks */,
+				825368E7210D9C72003027F2 /* IMCore.framework in Frameworks */,
+				825368EA210D9C72003027F2 /* TLSSDK.framework in Frameworks */,
+				825368ED210D9CA8003027F2 /* IMSDKBugly.framework in Frameworks */,
+				825368E6210D9C72003027F2 /* ImSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +689,15 @@
 		3872D50BB238B40C575A8A28 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				825368FE210DA26E003027F2 /* MobileCoreServices.framework */,
+				825368FC210DA257003027F2 /* libstdc++.tbd */,
+				825368FA210DA237003027F2 /* libiconv.tbd */,
+				825368F8210D9E5D003027F2 /* libsqlite3.tbd */,
+				825368F6210D9E55003027F2 /* libz.tbd */,
+				825368F4210D9E4D003027F2 /* libstdc++.6.tbd */,
+				825368F2210D9E41003027F2 /* libc++.tbd */,
+				825368F0210D9E39003027F2 /* SystemConfiguration.framework */,
+				825368EE210D9E2F003027F2 /* CoreTelephony.framework */,
 				9DC4304B8C64092964146D15 /* libPods-SuperBroker.a */,
 			);
 			name = Frameworks;
@@ -793,6 +841,8 @@
 			children = (
 				82B5462920F8ED9C00B0F6EE /* MyViewDataModel.h */,
 				82B5462A20F8ED9C00B0F6EE /* MyViewDataModel.m */,
+				82C9F858210D7550008A6601 /* BrokerInfoDataModel.h */,
+				82C9F859210D7550008A6601 /* BrokerInfoDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1090,9 +1140,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		825368DE210D9C21003027F2 /* IMSDK */ = {
+			isa = PBXGroup;
+			children = (
+				82536900210DA30F003027F2 /* QALSDK.framework */,
+				825368EC210D9CA8003027F2 /* IMSDKBugly.framework */,
+				825368E1210D9C71003027F2 /* IMCore.framework */,
+				825368E0210D9C71003027F2 /* ImSDK.framework */,
+				825368E4210D9C72003027F2 /* TLSSDK.framework */,
+			);
+			path = IMSDK;
+			sourceTree = "<group>";
+		};
 		8257C79C20F4E1DA00FA550D = {
 			isa = PBXGroup;
 			children = (
+				825368DE210D9C21003027F2 /* IMSDK */,
 				82731BBA20F4E781002EF5FE /* ProgramClass */,
 				82C076FA20F4E67B0080E37F /* BaseClass */,
 				82C0766720F4E67B0080E37F /* Category */,
@@ -2024,6 +2087,7 @@
 				82C0770F20F4E67C0080E37F /* NSString+ No2hz.m in Sources */,
 				821C043D20FF802800B79945 /* CancelCommitOrderView.m in Sources */,
 				82229510210B6B2F00075C4C /* CarOrderStateView.m in Sources */,
+				82C9F85A210D7550008A6601 /* BrokerInfoDataModel.m in Sources */,
 				82C0771C20F4E67C0080E37F /* UIButton+ImageTitleStyle.m in Sources */,
 				82F08D69210CB9B900514130 /* CarOrderDateStyleTwoView.m in Sources */,
 				82BBED3720F4F7BB00BAEEBE /* RegisterViewController.m in Sources */,
@@ -2212,15 +2276,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7B86W5K499;
+				DEVELOPMENT_TEAM = XGKJB7XNJR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IMSDK",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SuperBroker/SuperBrokerPrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					DEBUG_MODE,
+				);
 				INFOPLIST_FILE = SuperBroker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zj.SuperBroker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zjtest.SuperBroker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2232,7 +2305,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7B86W5K499;
+				DEVELOPMENT_TEAM = XGKJB7XNJR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IMSDK",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SuperBroker/SuperBrokerPrefixHeader.pch";
 				INFOPLIST_FILE = SuperBroker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -2240,7 +2317,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zj.SuperBroker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zjtest.SuperBroker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

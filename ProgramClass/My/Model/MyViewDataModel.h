@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BrokerInfoDataModel.h"
 
 @interface MyViewDataModel : NSObject
 
-+ (NSArray <NSArray *> *)getDataModel;
++ (NSArray <NSArray *> *)getDataModelWithBrokerInfoDataModel:(BrokerInfoDataModel *)dataModel;
 
 @end

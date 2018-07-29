@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BrokerInfoDataModel.h"
 
 typedef void(^MyBaseViewTopButtonEventBlock)(NSInteger tag);
 
@@ -14,5 +15,6 @@ typedef void(^MyBaseViewTopButtonEventBlock)(NSInteger tag);
 
 @property (nonatomic, copy) tableViewSelectRowAtIndexPathBlock selectBlock;
 @property (nonatomic, copy) MyBaseViewTopButtonEventBlock topBtnBlock;
+@property (nonatomic, strong) BrokerInfoDataModel *brokerInfoModel;
 
 @end

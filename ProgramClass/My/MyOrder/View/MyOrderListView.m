@@ -12,6 +12,7 @@
 {
     UIScrollView *m_BaseView;
     NSMutableArray<BaseTableView *> *m_TableViewArr;
+    NSInteger m_SegmentIndex;
 }
 
 - (instancetype) initWithFrame:(CGRect)frame
@@ -44,19 +45,34 @@
         [tableView setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
         [m_BaseView addSubview:tableView];
         [m_TableViewArr addObject:tableView];
+        tableView.refreshBlock = self.refreshBlock;
+        tableView.loadMoreBlock = self.loadMoreBlock;
     }
 }
 
 - (void)showContentViewWithIndex:(NSInteger)index
 {
+    m_SegmentIndex = index;
     [m_BaseView setContentOffset:CGPointMake(index*m_BaseView.width, 0) animated:YES];
+}
+
+- (void)setInsuranceList:(NSArray *)insuranceList
+{
+    _insuranceList = insuranceList;
+    [m_TableViewArr.firstObject reloadData];
+}
+
+- (void)setCarList:(NSArray *)carList
+{
+    _carList = carList;
+    [m_TableViewArr.lastObject reloadData];
 }
 
 #pragma mark - UITableView Delegate & DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return m_SegmentIndex==0?self.insuranceList.count:self.carList.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,8 +83,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MyOrderListViewCell *cell = [BaseTableViewCell cellClassName:@"MyOrderListViewCell" InTableView:tableView forContenteMode:nil];
-    
+    MyOrderListViewCell *cell = [BaseTableViewCell cellClassName:@"MyOrderListViewCell" InTableView:tableView forContenteMode:nil];    
     [cell.titleLab setText:@"全家出行旅游意外保险"];
     [cell.dateLab setText:[CommonDate getNowDateWithFormate:@"yyyy-MM-dd HH:mm"]];
     [cell.moneyLab setText:@"推广奖励：20-80元"];

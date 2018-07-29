@@ -31,7 +31,15 @@
     [self.window setBackgroundColor:[UIColor whiteColor]];
     
     [self loadWindowRootTabbarViewController];
-    [self performSelector:@selector(loadLoginViewController) withObject:nil afterDelay:.5];
+    if ([[NSUserDefaults standardUserDefaults] integerForKey:DIF_Login_Status] != 1)
+    {
+        [self performSelector:@selector(loadLoginViewController) withObject:nil afterDelay:.5];
+    }
+    else
+    {
+        DIF_CommonHttpAdapter.access_token = DIF_CommonCurrentUser.accessToken;
+        DIF_CommonHttpAdapter.refresh_token = DIF_CommonCurrentUser.refreshToken;
+    }
     
     [self.window makeKeyAndVisible];
     
@@ -100,7 +108,7 @@
 
 - (void)testcreatePropertyCode
 {
-    NSDictionary *json = @{@"createTime":@"123456789",@"id":@"1",@"insuredAmount":@"0",@"isDeductible":@"0",@"produceId":@"1",@"selectList":@[@"0"],@"speciesDesc":@"交强险",@"speciesName":@"交强险",@"speciesTypeId":@"1",@"status":@"1",@"updateTime":@"123456789"};
+    NSDictionary *json = @{ @"endRow":@"0", @"firstPage":@"0", @"hasNextPage":@"false", @"hasPreviousPage":@"false", @"isFirstPage":@"true", @"isLastPage":@"false", @"lastPage":@"0", @"list":@[], @"navigateFirstPage":@"0", @"navigateLastPage":@"0", @"navigatePages":@"8", @"navigatepageNums":@[], @"nextPage":@"0", @"pageNum":@"1", @"pageSize":@"10", @"pages":@"0", @"prePage":@"0", @"size":@"0", @"startRow":@"0", @"total":@"0 "};
     
     [json createPropertyCode];
 }

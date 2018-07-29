@@ -24,6 +24,7 @@
 {
     MyOrderListView *m_BaseView;
     NSInteger m_SegmentIndex;
+    NSString *m_OrderStatus;
 }
 
 
@@ -62,6 +63,28 @@
                 [strongSelf loadViewController:@"CarOrderDetailViewController"];
             }
         }];
+        [m_BaseView setRefreshBlock:^{
+            DIF_StrongSelf
+            if (strongSelf->m_SegmentIndex == 0)
+            {
+                [strongSelf httpRequestMyOrderInsuranceListWithParameters:@{@"orderStatus":strongSelf->m_OrderStatus}];
+            }
+            else
+            {
+                [strongSelf httpRequestMyOrderCarListWithParameters:@{@"orderStatus":strongSelf->m_OrderStatus}];
+            }
+        }];
+        [m_BaseView setLoadMoreBlock:^(NSInteger page) {
+            DIF_StrongSelf
+            if (strongSelf->m_SegmentIndex == 0)
+            {
+                [strongSelf httpRequestMyOrderInsuranceListWithParameters:@{@"orderStatus":strongSelf->m_OrderStatus}];
+            }
+            else
+            {
+                [strongSelf httpRequestMyOrderCarListWithParameters:@{@"orderStatus":strongSelf->m_OrderStatus}];
+            }
+        }];
     }
 }
 
@@ -78,5 +101,46 @@
     [self.waitConfirmBtn setSelected:NO];
     [self.finishBtn setSelected:NO];
     [sender setSelected:YES];
+    if ([sender isEqual:self.allBtn])
+    {
+        m_OrderStatus = @"";
+    }
+    if ([sender isEqual:self.waitPayBtn])
+    {
+        m_OrderStatus = [@(ENUM_MyOrder_Status_WaitPay) stringValue];
+    }
+    if ([sender isEqual:self.waitConfirmBtn])
+    {
+        m_OrderStatus = [@(ENUM_MyOrder_Status_WaitConfirm) stringValue];
+    }
+    if ([sender isEqual:self.finishBtn])
+    {
+        m_OrderStatus = [@(ENUM_MyOrder_Status_Finish) stringValue];
+    }
 }
+
+#pragma mark - Http Request
+
+- (void)httpRequestMyOrderInsuranceListWithParameters:(NSDictionary *)parms
+{
+    [DIF_CommonHttpAdapter
+     httpRequestMyOrderInsuranceListWithParameters:parms
+     ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+        
+    } FailedBlcok:^(NSError *error) {
+        
+    }];
+}
+
+- (void)httpRequestMyOrderCarListWithParameters:(NSDictionary *)parms
+{
+    [DIF_CommonHttpAdapter
+     httpRequestMyOrderCarListWithParameters:parms
+     ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+        
+    } FailedBlcok:^(NSError *error) {
+        
+    }];
+}
+
 @end

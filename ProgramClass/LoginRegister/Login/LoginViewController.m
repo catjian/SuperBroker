@@ -29,6 +29,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.view setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
+    [self.userID setText:@"18888888001"];
+    [self.password setText:@"123456"];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -39,8 +41,36 @@
 #pragma mark - Button Event
 - (IBAction)loginButtonEvent:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+    [CommonHUD showHUDWithMessage:@"登录中..."];
+    DIF_WeakSelf(self)
+    [DIF_CommonHttpAdapter
+     httpRequestLoginWithParameters:@{@"brokerPhone":self.userID.text,
+                                      @"password":self.password.text
+                                      }
+     ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+         if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+         {
+             DIF_StrongSelf
+             [CommonHUD delayShowHUDWithMessage:@"登录成功"];
+             [strongSelf dismissViewControllerAnimated:YES completion:nil];
+             [[NSUserDefaults standardUserDefaults] setObject:strongSelf.userID.text
+                                                       forKey:DIF_Loaction_Save_UserId];
+             [[NSUserDefaults standardUserDefaults] setObject:strongSelf.password.text
+                                                       forKey:DIF_Loaction_Save_Password];
+             [[NSUserDefaults standardUserDefaults] setObject:@(1) forKey:DIF_Login_Status];
+             [[NSUserDefaults standardUserDefaults] synchronize];
+             DIF_CommonCurrentUser.accessToken = DIF_CommonHttpAdapter.access_token;
+             DIF_CommonCurrentUser.refreshToken = DIF_CommonHttpAdapter.refresh_token;
+         }
+         else
+         {
+             [CommonHUD delayShowHUDWithMessage:@"登录失败"];
+         }
+     }
+     FailedBlcok:^(NSError *error) {
+         [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+     }];
+};
 
 - (IBAction)openPasswordSecureButtonEvent:(UIButton *)sender
 {
