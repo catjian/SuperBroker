@@ -56,4 +56,9 @@
     [m_ContentLab setEnabled:![model[@"showRight"] boolValue]];
 }
 
+- (NSString *)contentStr
+{
+    _contentStr = m_ContentLab.text;
+    return _contentStr;
+}
 @end

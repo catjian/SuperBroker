@@ -158,8 +158,9 @@ UIKIT_STATIC_INLINE UIImage *imageWithColor(UIColor *color)
 {
     UIImage *btnImage = [UIImage imageNamed:@"返回箭头-黑"];
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [leftBtn setFrame:CGRectMake(0, 0, btnImage.size.width, btnImage.size.height)];
+    [leftBtn setFrame:CGRectMake(0, 0, btnImage.size.width*3, btnImage.size.height+10)];
     [leftBtn setImage:[btnImage stretchableImageWithLeftCapWidth:2 topCapHeight:2] forState:UIControlStateNormal];
+    [leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, btnImage.size.width)];
     [leftBtn addTarget:self action:@selector(backBarButtonItemAction:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftBtn];
     self.navigationItem.leftBarButtonItem = leftItem;

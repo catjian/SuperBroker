@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTF;
 @property (weak, nonatomic) IBOutlet UITextField *idcardTF;
 @property (weak, nonatomic) IBOutlet UIButton *phoneLab;
+@property (weak, nonatomic) IBOutlet UIButton *sexyBtn;
 
 
 @end
@@ -36,6 +37,19 @@
     [self setRightItemWithContentName:@"完成"];
     [self.nameTF setDelegate:self];
     [self.idcardTF setDelegate:self];
+    [self.nameTF setText:self.brokerInfoModel.brokerName];
+    [self.sexyBtn setTitle:self.brokerInfoModel.gender forState:UIControlStateNormal];
+    //    self.idcardTF setText:brokerInfoModel.
+    [self.phoneLab setTitle:self.brokerInfoModel.brokerPhone forState:UIControlStateNormal];
+}
+
+- (void)setBrokerInfoModel:(BrokerInfoDataModel *)brokerInfoModel
+{
+    _brokerInfoModel = brokerInfoModel;
+    [self.nameTF setText:brokerInfoModel.brokerName];
+    [self.sexyBtn setTitle:brokerInfoModel.gender forState:UIControlStateNormal];
+//    self.idcardTF setText:brokerInfoModel.
+    [self.phoneLab setTitle:brokerInfoModel.brokerPhone forState:UIControlStateNormal];
 }
 
 #pragma mark - Button event
@@ -49,10 +63,12 @@
 }
 
 - (IBAction)chooseSexButtonEvent:(UIButton *)sender
-{    
+{
+    DIF_WeakSelf(self)
     [[CommonSheetView alloc] initWithSheetTitle:@[@"男",@"女",@"取消"]
                                   ResponseBlock:^(NSInteger tag) {
-                                      
+                                      DIF_StrongSelf
+                                      [strongSelf.sexyBtn setTitle:[@[@"男",@"女"] objectAtIndex:tag] forState:UIControlStateNormal];
                                   }];
 }
 

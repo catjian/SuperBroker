@@ -11,4 +11,6 @@
 
 @interface PresentAccountViewCell : BaseTableViewCell
 
+@property (nonatomic, strong) NSString *contentStr;
+
 @end

@@ -25,6 +25,8 @@
     MyOrderListView *m_BaseView;
     NSInteger m_SegmentIndex;
     NSString *m_OrderStatus;
+    MyOrderInsuranceListModel *m_InsuModel;
+    MyOrderCarListModel *m_CarModel;
 }
 
 
@@ -41,6 +43,7 @@
     // Do any additional setup after loading the view from its nib.
     [self setNavTarBarTitle:@"我的订单"];
     [self setRightItemWithContentName:@"客服-黑"];
+    m_OrderStatus = @"";
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -123,23 +126,45 @@
 
 - (void)httpRequestMyOrderInsuranceListWithParameters:(NSDictionary *)parms
 {
+    DIF_WeakSelf(self)
     [DIF_CommonHttpAdapter
      httpRequestMyOrderInsuranceListWithParameters:parms
      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
-        
+         DIF_StrongSelf
+         [strongSelf->m_BaseView endloadEvent];
+         if(type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+         {
+             strongSelf->m_InsuModel = [MyOrderInsuranceListModel mj_objectWithKeyValues:responseModel];
+             [strongSelf->m_BaseView setInsuranceList:strongSelf->m_InsuModel.list];
+         }
+         else
+         {
+             [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+         }
     } FailedBlcok:^(NSError *error) {
-        
+        [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
     }];
 }
 
 - (void)httpRequestMyOrderCarListWithParameters:(NSDictionary *)parms
 {
+    DIF_WeakSelf(self)
     [DIF_CommonHttpAdapter
      httpRequestMyOrderCarListWithParameters:parms
      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
-        
+         DIF_StrongSelf
+         [strongSelf->m_BaseView endloadEvent];
+         if(type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+         {
+             strongSelf->m_CarModel = [MyOrderCarListModel mj_objectWithKeyValues:responseModel];
+             [strongSelf->m_BaseView setCarList:strongSelf->m_CarModel.list];
+         }
+         else
+         {
+             [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+         }
     } FailedBlcok:^(NSError *error) {
-        
+        [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
     }];
 }
 

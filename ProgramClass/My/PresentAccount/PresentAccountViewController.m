@@ -23,6 +23,7 @@
     [super viewWillAppear:animated];
     DIF_HideTabBarAnimation(NO);
     [self.navigationController setNavigationBarHidden:NO];
+    [self httpRequestGetAccount];
 }
 
 - (void)viewDidLoad
@@ -53,6 +54,89 @@
             }
         }];
     }
+}
+
+-(void)rightBarButtonItemAction:(UIButton *)btn
+{
+    PresentAccountViewCell *cell = [m_BaseView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [CommonHUD showHUD];
+    DIF_WeakSelf(self)
+    if ([m_BaseViewModel.getAccountList.firstObject[@"content"] length] == 0)
+    {
+        [DIF_CommonHttpAdapter
+         httpRequestMyAcountAddAlipayWithParameters:@{@"accountNo":cell.contentStr}
+         ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+             if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+             {
+                 [CommonHUD hideHUD];
+                 DIF_StrongSelf
+                 [strongSelf.navigationController popViewControllerAnimated:YES];
+             }
+             else
+             {
+                 [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+             }
+             
+         } FailedBlcok:^(NSError *error) {
+             [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+         }];
+    }
+    else
+    {
+        PresentAccountModel *editModel;
+        for (NSDictionary *dic in m_BaseViewModel.getAccountListNormal)
+        {
+            editModel = [PresentAccountModel mj_objectWithKeyValues:dic];
+            if (editModel.accountType.integerValue == 15)
+            {
+                break;
+            }
+        }
+        [DIF_CommonHttpAdapter
+         httpRequestMyAcountEditAlipayWithParameters:@{@"accountNo":cell.contentStr,
+                                                       @"withdrawalAccountId":editModel.withdrawalAccountId}
+         ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+             if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+             {
+                 [CommonHUD hideHUD];
+                 DIF_StrongSelf
+                 [strongSelf.navigationController popViewControllerAnimated:YES];
+             }
+             else
+             {
+                 [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+             }
+             
+         } FailedBlcok:^(NSError *error) {
+             [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+         }];
+    }
+}
+
+#pragma mark - Http Request
+
+- (void)httpRequestGetAccount
+{
+    [CommonHUD showHUD];
+    DIF_WeakSelf(self)
+    [DIF_CommonHttpAdapter
+     httpRequestMyAllAccountListWithParameters:nil
+     ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+         if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+         {
+             [CommonHUD hideHUD];
+             DIF_StrongSelf
+             [strongSelf->m_BaseViewModel setAccountList:responseModel[@"data"]];
+             [strongSelf->m_BaseView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+         }
+         else
+         {
+             [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+         }
+         
+     } FailedBlcok:^(NSError *error) {
+         [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+    }];
 }
 
 @end

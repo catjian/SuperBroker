@@ -301,7 +301,7 @@ return bvc;}
 #define DIF_Key_Field(s1,s2) [NSString stringWithFormat:@"%@%@-field",s1,s2]
 
 #ifndef DIF_POP_TO_LOGIN
-#define DIF_POP_TO_LOGIN [DIF_APPDELEGATE showLoginVC];
+#define DIF_POP_TO_LOGIN [DIF_APPDELEGATE loadLoginViewController];
 #endif
 
 //是校正过

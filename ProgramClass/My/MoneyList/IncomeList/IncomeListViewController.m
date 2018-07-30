@@ -41,9 +41,46 @@
     [m_BaseView setWidth:DIF_SCREEN_WIDTH];
     m_BaseView.listModel = m_ListModel;
     [self.contentBG addSubview:m_BaseView];
+    DIF_WeakSelf(self)
+    [m_BaseView setRefreshBlock:^{
+        DIF_StrongSelf
+        [strongSelf httpRequestGetWithDrawalListWithPage:1];
+    }];
+    [m_BaseView setLoadMoreBlock:^(NSInteger page) {
+        DIF_StrongSelf
+        [strongSelf httpRequestGetWithDrawalListWithPage:page+1];
+    }];
 }
 
+#pragma mark - Http Request
 
+- (void)httpRequestGetWithDrawalListWithPage:(NSInteger)page
+{
+    [CommonHUD showHUD];
+    DIF_WeakSelf(self)
+    [DIF_CommonHttpAdapter
+     httpRequestWithDrawalListWithParameters:@{@"pageNum":[@(page) stringValue]}
+     ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+         if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+         {
+             [CommonHUD hideHUD];
+             DIF_StrongSelf
+             [strongSelf->m_BaseView endRefresh];
+             strongSelf->m_ListModel = [IncomeListModel mj_objectWithKeyValues:responseModel[@"data"]];
+             strongSelf->m_BaseView.listModel = strongSelf->m_ListModel;
+             [strongSelf->m_BaseView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+             [strongSelf.canUserNum setText:[NSString stringWithFormat:@"%.2f",strongSelf->m_ListModel.income.floatValue]];
+             [strongSelf.allIncomeNum setText:[NSString stringWithFormat:@"%.2f",strongSelf->m_ListModel.incomeAll.floatValue]];
+         }
+         else
+         {
+             [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+         }
+         
+     } FailedBlcok:^(NSError *error) {
+         [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+     }];
+}
 
 
 @end

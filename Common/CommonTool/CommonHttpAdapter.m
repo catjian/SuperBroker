@@ -47,8 +47,8 @@ static CommonHttpAdapter *comHttp = nil;
 //        requsetType = @"http";
 //    }
 //    m_BaseUrl = [NSString stringWithFormat:@"%@://%@:%@/%@/",requsetType,DIF_CommonCurrentUser.serviceHost,DIF_CommonCurrentUser.servicePort,DIF_CommonCurrentUser.serviceName];
-    m_BaseUrl = @"http://192.168.100.243:51120";
-    httpSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:m_BaseUrl]];
+//    m_BaseUrl = @"http://192.168.100.243:51120";
+    httpSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BaseUrl]];
     [httpSessionManager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
     httpSessionManager.requestSerializer.timeoutInterval = 30;
     [httpSessionManager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
@@ -168,14 +168,14 @@ static CommonHttpAdapter *comHttp = nil;
         return nil;
     }
     
-    if (self.access_token && self.access_token.length > 0)
+    
+    if ([URLString rangeOfString:@"uc/api/brokeruser/token/refresh"].location != NSNotFound)
+    {
+        [request setValue:self.refresh_token forHTTPHeaderField:@"refreshToken"];
+    }
+    else if (self.access_token && self.access_token.length > 0)
     {
         [request setValue:self.access_token forHTTPHeaderField:@"accessToken"];
-    }
-    if ([URLString rangeOfString:@"auth/refresh"].location != NSNotFound)
-    {
-        NSString *token = [@"Bearer " stringByAppendingString:self.refresh_token];
-        [request setValue:token forHTTPHeaderField:@"X-Authorization"];
     }
     return request;
 }
@@ -191,14 +191,22 @@ static CommonHttpAdapter *comHttp = nil;
                                         uploadProgress:uploadProgress
                                       downloadProgress:nil
                                      completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
-                                         if (error &&
-                                             (!responseObject ||
-                                              ([responseObject[@"httpStatus"] integerValue] != 401 &&
-                                               [responseObject[@"httpStatus"] integerValue] != 405)))
+                                         NSString * errorDes = error.userInfo[@"NSLocalizedDescription"];
+                                         if (error)
                                          {
-                                             if (failure)
+                                             if ([errorDes rangeOfString:@"401"].location != NSNotFound)
                                              {
-                                                 failure(dataTask, error);
+                                                 if (success)
+                                                 {
+                                                     success(dataTask, responseObject);
+                                                 }
+                                             }
+                                             else
+                                             {
+                                                 if (failure)
+                                                 {
+                                                     failure(dataTask, error);
+                                                 }
                                              }
                                          }
                                          else
@@ -252,7 +260,17 @@ static CommonHttpAdapter *comHttp = nil;
                   DebugLog(@"responseObject = %@",responseObject);
                   if (block)
                   {
-                      block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS,responseObject);
+                      if ([responseObject[@"code"] integerValue] == 604)
+                      {
+//                          [self refreshAccessTokenWithSuccessBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+//                              [self HttpGetRequestWithCommand:command parameters:parms ResponseBlock:block FailedBlcok:failedBlock];
+//                          }];
+                          DIF_POP_TO_LOGIN
+                      }
+                      else
+                      {
+                          block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS,responseObject);
+                      }
                   }
               }
               failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -280,11 +298,11 @@ static CommonHttpAdapter *comHttp = nil;
         block?block(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_REQUEST_PARMS_NULL):nil;
         return;
     }
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parms
-                                                       options:NSJSONWritingPrettyPrinted error:nil];
-    // NSData转为NSString
-    NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    DebugLog(@"command = %@\nresponseObject = %@",command,jsonStr);
+//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parms
+//                                                       options:NSJSONWritingPrettyPrinted error:nil];
+//    // NSData转为NSString
+//    NSString *jsonStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+//    DebugLog(@"command = %@\nresponseObject = %@",command,jsonStr);
     NSMutableURLRequest *request =
     [self reWrteCreateHttpRequstWithMethod:@"POST"
                                  URLString:[command stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]
@@ -303,7 +321,17 @@ static CommonHttpAdapter *comHttp = nil;
                   DebugLog(@"responseObject = %@",responseObject);
                   if (block)
                   {
-                      block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS,responseObject);
+                      if ([responseObject[@"code"] integerValue] == 604)
+                      {
+//                          [self refreshAccessTokenWithSuccessBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+//                              [self HttpGetRequestWithCommand:command parameters:parms ResponseBlock:block FailedBlcok:failedBlock];
+//                          }];
+                          DIF_POP_TO_LOGIN 
+                      }
+                      else
+                      {
+                          block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS,responseObject);
+                      }
                   }
               }
               failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -350,7 +378,17 @@ static CommonHttpAdapter *comHttp = nil;
                   DebugLog(@"responseObject = %@",responseObject);
                   if (block)
                   {
-                      block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS,responseObject);
+                      if ([responseObject[@"code"] integerValue] == 604)
+                      {
+//                          [self refreshAccessTokenWithSuccessBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+//                              [self HttpGetRequestWithCommand:command parameters:parms ResponseBlock:block FailedBlcok:failedBlock];
+//                          }];
+                          DIF_POP_TO_LOGIN
+                      }
+                      else
+                      {
+                          block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS,responseObject);
+                      }
                   }
               }
               failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -366,26 +404,27 @@ static CommonHttpAdapter *comHttp = nil;
 
 - (void)refreshAccessTokenWithSuccessBlock:(CommonHttpResponseBlock)block
 {
-//    [self HttpPostRequestWithCommand:@"auth/refresh"
-//                          parameters:@{@"imei":[DIF_APPDELEGATE readUUIDFromKeyChain]}
-//                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
-//                           if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
-//                           {
-//                               NSDictionary *reulte = responseModel[@"result"];
-//                               DIF_CommonCurrentUser.accessToken = reulte[@"access_token"];
-//                               DIF_CommonCurrentUser.refreshToken = reulte[@"refresh_token"];
-//                               DIF_CommonHttpAdapter.access_token = DIF_CommonCurrentUser.accessToken;
-//                               DIF_CommonHttpAdapter.refresh_token = DIF_CommonCurrentUser.refreshToken;
-//                               block?block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS, nil):[CommonHUD delayShowHUDWithMessage:@"秘钥已刷新，请重试"];
-//                           }
-//                           else
-//                           {
-//                               [CommonHUD delayShowHUDWithMessage:@"账户过期，请重新登录"];
+//    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:51120"]];
+    [self HttpPostRequestWithCommand:@"uc/api/brokeruser/token/refresh"
+                          parameters:nil
+                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                           if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+                           {
+                               NSDictionary *reulte = responseModel[@"result"];
+                               DIF_CommonCurrentUser.accessToken = reulte[@"access_token"];
+                               DIF_CommonCurrentUser.refreshToken = reulte[@"refresh_token"];
+                               DIF_CommonHttpAdapter.access_token = DIF_CommonCurrentUser.accessToken;
+                               DIF_CommonHttpAdapter.refresh_token = DIF_CommonCurrentUser.refreshToken;
+                               block?block(ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS, nil):[CommonHUD delayShowHUDWithMessage:@"秘钥已刷新，请重试"];
+                           }
+                           else
+                           {
+                               [CommonHUD delayShowHUDWithMessage:@"账户过期，请重新登录"];
 //                               DIF_POP_TO_LOGIN
-//                           }
-//                       } FailedBlcok:^(NSError *error) {
-//                           [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
-//                       }];
+                           }
+                       } FailedBlcok:^(NSError *error) {
+                           [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+                       }];
 }
 
 
@@ -486,7 +525,7 @@ static CommonHttpAdapter *comHttp = nil;
         successBlock?successBlock(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_REQUEST_PARMS_NULL):nil;
         return;
     }
-    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:51120"]];
+//    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:51120"]];
     DIF_WeakSelf(self)
     [self HttpPostRequestWithCommand:@"/uc/api/brokeruser/login"
                           parameters:parms
@@ -515,7 +554,7 @@ static CommonHttpAdapter *comHttp = nil;
 - (void)httpRequestBrokerinfoWithResponseBlock:(CommonHttpResponseBlock)successBlock
                                    FailedBlcok:(CommonHttpResponseFailed)failedBlock
 {
-    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
+//    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
     [self HttpGetRequestWithCommand:@"/api/brokerinfo"
                          parameters:nil
                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
@@ -536,14 +575,15 @@ static CommonHttpAdapter *comHttp = nil;
                         FailedBlcok:failedBlock];
 }
 
-
+#pragma mark - 我的订单
 #pragma mark - 查询保险订单列表
-- (void)httpRequestMyOrderInsuranceListWithResponseBlock:(CommonHttpResponseBlock)successBlock
-                                             FailedBlcok:(CommonHttpResponseFailed)failedBlock
+- (void)httpRequestMyOrderInsuranceListWithParameters:(NSDictionary *)parms
+                                        ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                          FailedBlcok:(CommonHttpResponseFailed)failedBlock
 {
-    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
+//    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
     [self HttpGetRequestWithCommand:@"/api/myorder/insurance/list"
-                         parameters:nil
+                         parameters:parms
                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
                           if ([responseModel isKindOfClass:[NSDictionary class]] &&
                               [responseModel[@"code"] integerValue] == 200)
@@ -563,11 +603,39 @@ static CommonHttpAdapter *comHttp = nil;
 }
 
 #pragma mark - 查询车险订单列表
-- (void)httpRequestMyOrderCarListWithResponseBlock:(CommonHttpResponseBlock)successBlock
-                                       FailedBlcok:(CommonHttpResponseFailed)failedBlock
+- (void)httpRequestMyOrderCarListWithParameters:(NSDictionary *)parms
+                                  ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                    FailedBlcok:(CommonHttpResponseFailed)failedBlock
 {
-    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
+//    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
     [self HttpGetRequestWithCommand:@"/api/myorder/car/list"
+                         parameters:parms
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+
+#pragma mark - 我的提现账户
+#pragma mark - 我的全部提现账户列表
+- (void)httpRequestMyAllAccountListWithParameters:(NSDictionary *)parms
+                                    ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                      FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    //    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
+    [self HttpGetRequestWithCommand:@"/api/withdrawalaccount/my/all"
                          parameters:nil
                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
                           if ([responseModel isKindOfClass:[NSDictionary class]] &&
@@ -587,5 +655,107 @@ static CommonHttpAdapter *comHttp = nil;
                         FailedBlcok:failedBlock];
 }
 
+#pragma mark - 添加我的银行卡账户
+- (void)httpRequestMyAcountAddBankCardWithParameters:(NSDictionary *)parms
+                                       ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                         FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    //    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
+    [self HttpPostRequestWithCommand:@"/api/withdrawalaccount/my/bankcard"
+                         parameters:parms
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+
+#pragma mark - 添加我的支付宝账户
+- (void)httpRequestMyAcountAddAlipayWithParameters:(NSDictionary *)parms
+                                     ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                       FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpPostRequestWithCommand:@"/api/withdrawalaccount/my/alipay"
+                          parameters:parms
+                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                           if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                               [responseModel[@"code"] integerValue] == 200)
+                           {
+                               type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                           }
+                           else
+                           {
+                               type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                           }
+                           if (successBlock)
+                           {
+                               successBlock(type, responseModel);
+                           }
+                       }
+                         FailedBlcok:failedBlock];
+}
+
+#pragma mark - 修改支付宝账号
+- (void)httpRequestMyAcountEditAlipayWithParameters:(NSDictionary *)parms
+                                     ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                       FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpPutRequestWithCommand:@"/api/withdrawalaccount/alipay"
+                         parameters:parms
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+
+#pragma mark - 提现申请
+#pragma mark - 提现申请列表
+- (void)httpRequestWithDrawalListWithParameters:(NSDictionary *)parms
+                                  ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                    FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    //    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
+    [self HttpGetRequestWithCommand:@"/api/withdrawal"
+                         parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
 
 @end

@@ -52,4 +52,6 @@
 
 @property (nonatomic, strong) NSString *memberName;
 
+@property (nonatomic, strong) NSString *gender;
+
 @end

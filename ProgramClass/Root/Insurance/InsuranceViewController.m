@@ -79,7 +79,7 @@
 
 - (void)createSearchView
 {
-    CGFloat loseWidth = (is_iPhone5AndEarly?80:(is_iPhone6?90:100));
+    CGFloat loseWidth = (is_iPhone5AndEarly?100:(is_iPhone6?110:120));
     m_SearchView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width-loseWidth, 29)];
     [m_SearchView setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
     

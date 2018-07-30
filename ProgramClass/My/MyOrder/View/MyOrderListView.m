@@ -45,9 +45,21 @@
         [tableView setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
         [m_BaseView addSubview:tableView];
         [m_TableViewArr addObject:tableView];
-        tableView.refreshBlock = self.refreshBlock;
-        tableView.loadMoreBlock = self.loadMoreBlock;
     }
+}
+
+- (void)setRefreshBlock:(tableViewHeaderRefreshBlock)refreshBlock
+{
+    _refreshBlock = refreshBlock;
+    m_TableViewArr.firstObject.refreshBlock = self.refreshBlock;
+    m_TableViewArr.lastObject.refreshBlock = self.refreshBlock;
+}
+
+- (void)setLoadMoreBlock:(tableViewLoadMoreBlock)loadMoreBlock
+{
+    _loadMoreBlock = loadMoreBlock;
+    m_TableViewArr.firstObject.loadMoreBlock = self.loadMoreBlock;
+    m_TableViewArr.lastObject.loadMoreBlock = self.loadMoreBlock;    
 }
 
 - (void)showContentViewWithIndex:(NSInteger)index
@@ -66,6 +78,12 @@
 {
     _carList = carList;
     [m_TableViewArr.lastObject reloadData];
+}
+
+- (void)endloadEvent
+{
+    [m_TableViewArr.firstObject endRefresh];
+    [m_TableViewArr.lastObject endRefresh];
 }
 
 #pragma mark - UITableView Delegate & DataSource

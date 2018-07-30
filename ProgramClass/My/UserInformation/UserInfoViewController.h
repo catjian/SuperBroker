@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "BrokerInfoDataModel.h"
 
 @interface UserInfoViewController : BaseViewController
+
+@property (nonatomic, strong) BrokerInfoDataModel *brokerInfoModel;
 
 @end

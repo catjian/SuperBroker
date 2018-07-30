@@ -55,6 +55,8 @@
 		82229516210B7C4E00075C4C /* CarInformationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82229515210B7C4E00075C4C /* CarInformationView.m */; };
 		82229519210B7F1000075C4C /* CarOrderDateStyleOneView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82229518210B7F1000075C4C /* CarOrderDateStyleOneView.m */; };
 		8222951C210B800500075C4C /* CarOrderCancelButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8222951B210B800500075C4C /* CarOrderCancelButtonView.m */; };
+		8234E919210F4F95002837EB /* MyOrderInsuranceListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8234E918210F4F95002837EB /* MyOrderInsuranceListModel.m */; };
+		8234E91C210F4FA7002837EB /* MyOrderCarListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8234E91B210F4FA7002837EB /* MyOrderCarListModel.m */; };
 		823FF8DF210762EE00E58314 /* CarInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823FF8DE210762EE00E58314 /* CarInsuranceViewController.m */; };
 		823FF8E22107634D00E58314 /* CarInsuranceBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 823FF8E12107634D00E58314 /* CarInsuranceBaseView.m */; };
 		823FF8E52107648100E58314 /* CarInsuranceViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 823FF8E42107648100E58314 /* CarInsuranceViewCell.m */; };
@@ -324,6 +326,10 @@
 		8222951A210B800500075C4C /* CarOrderCancelButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarOrderCancelButtonView.h; sourceTree = "<group>"; };
 		8222951B210B800500075C4C /* CarOrderCancelButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarOrderCancelButtonView.m; sourceTree = "<group>"; };
 		8222951D210B821900075C4C /* CarOrderAllHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarOrderAllHeader.h; sourceTree = "<group>"; };
+		8234E917210F4F95002837EB /* MyOrderInsuranceListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyOrderInsuranceListModel.h; sourceTree = "<group>"; };
+		8234E918210F4F95002837EB /* MyOrderInsuranceListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyOrderInsuranceListModel.m; sourceTree = "<group>"; };
+		8234E91A210F4FA7002837EB /* MyOrderCarListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyOrderCarListModel.h; sourceTree = "<group>"; };
+		8234E91B210F4FA7002837EB /* MyOrderCarListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyOrderCarListModel.m; sourceTree = "<group>"; };
 		823FF8DD210762EE00E58314 /* CarInsuranceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceViewController.h; sourceTree = "<group>"; };
 		823FF8DE210762EE00E58314 /* CarInsuranceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarInsuranceViewController.m; sourceTree = "<group>"; };
 		823FF8E02107634D00E58314 /* CarInsuranceBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarInsuranceBaseView.h; sourceTree = "<group>"; };
@@ -1239,6 +1245,10 @@
 		82661DAB210619FA004B8DF5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8234E917210F4F95002837EB /* MyOrderInsuranceListModel.h */,
+				8234E918210F4F95002837EB /* MyOrderInsuranceListModel.m */,
+				8234E91A210F4FA7002837EB /* MyOrderCarListModel.h */,
+				8234E91B210F4FA7002837EB /* MyOrderCarListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1985,6 +1995,7 @@
 				824BD56020F6325D00924E61 /* InsuranceViewController.m in Sources */,
 				82C0772B20F4E67C0080E37F /* CommonPopShareView.m in Sources */,
 				82C0773820F4E67C0080E37F /* CommonAchieveModelValue.m in Sources */,
+				8234E919210F4F95002837EB /* MyOrderInsuranceListModel.m in Sources */,
 				8204415420FA439C00BDB343 /* BuyMemeberViewController.m in Sources */,
 				82C0770A20F4E67C0080E37F /* UIView+SDAutoLayout.m in Sources */,
 				82C0774B20F4E67C0080E37F /* AJPhotoTapDetectingImageView.m in Sources */,
@@ -2093,6 +2104,7 @@
 				82BBED3720F4F7BB00BAEEBE /* RegisterViewController.m in Sources */,
 				82661DB321061EC4004B8DF5 /* MyOrderListView.m in Sources */,
 				82C0772C20F4E67C0080E37F /* CommonPickerView.m in Sources */,
+				8234E91C210F4FA7002837EB /* MyOrderCarListModel.m in Sources */,
 				825C6F4B2108B75500E6F737 /* CommonMorePickerView.m in Sources */,
 				82C0775020F4E67C0080E37F /* BaseNavigationViewController.m in Sources */,
 				82C0772E20F4E67C0080E37F /* CommonCommitButton.m in Sources */,

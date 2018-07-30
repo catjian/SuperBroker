@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,6 +15,7 @@
                 <outlet property="idcardTF" destination="xh4-DJ-foy" id="VIL-37-kgL"/>
                 <outlet property="nameTF" destination="Y5t-Ix-xAB" id="jgo-I4-ZG4"/>
                 <outlet property="phoneLab" destination="fXE-re-g74" id="FMp-DJ-VCZ"/>
+                <outlet property="sexyBtn" destination="GUa-5m-mwa" id="hVB-pU-btA"/>
                 <outlet property="userIcon" destination="lnq-ch-TAf" id="KGn-ZW-4hu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

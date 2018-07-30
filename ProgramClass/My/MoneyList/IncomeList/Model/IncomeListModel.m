@@ -9,40 +9,44 @@
 #import "IncomeListModel.h"
 
 @implementation IncomeListModel
+{
+    NSDictionary *m_StatusDic;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if(self)
+    {
+        m_StatusDic = @{@"68":@"申请中",@"69":@"处理中",@"70":@"成功",@"71":@"取消",@"21":@"失败"};
+    }
+    return self;
+}
 
 - (NSArray *)getIcomeListData
 {
     NSMutableArray *dataArr = [NSMutableArray array];
-    
-    NSMutableAttributedString *status = [[NSMutableAttributedString alloc] initWithString:@"待审核"];
-    [status ForegroundColorAttributeNamWithColor:DIF_HEXCOLOR(@"ff5000") Range:NSMakeRange(0, status.length)];
-    [dataArr addObject:@{@"icon":@"银联-86x86",
-                         @"name":@"招商银行（5419）",
-                         @"time":@"2018-07-10 14:20",
-                         @"money":@"98.00",
-                         @"status":status}];
-    status = [[NSMutableAttributedString alloc] initWithString:@"成功"];
-    [status ForegroundColorAttributeNamWithColor:DIF_HEXCOLOR(@"017aff") Range:NSMakeRange(0, status.length)];
-    [dataArr addObject:@{@"icon":@"支付宝-86x86",
-                         @"name":@"支付宝账户",
-                         @"time":@"2018-07-10 14:20",
-                         @"money":@"98.00",
-                         @"status":status}];
-    status = [[NSMutableAttributedString alloc] initWithString:@"失败"];
-    [status ForegroundColorAttributeNamWithColor:DIF_HEXCOLOR(@"999999") Range:NSMakeRange(0, status.length)];
-    [dataArr addObject:@{@"icon":@"银联-86x86",
-                         @"name":@"招商银行（5419）",
-                         @"time":@"2018-07-10 14:20",
-                         @"money":@"98.00",
-                         @"status":status}];
-    status = [[NSMutableAttributedString alloc] initWithString:@"待发放"];
-    [status ForegroundColorAttributeNamWithColor:DIF_HEXCOLOR(@"66cc66") Range:NSMakeRange(0, status.length)];
-    [dataArr addObject:@{@"icon":@"银联-86x86",
-                         @"name":@"招商银行（5419）",
-                         @"time":@"2018-07-10 14:20",
-                         @"money":@"98.00",
-                         @"status":status}];
+    IncomePageModel *pageModel = [IncomePageModel mj_objectWithKeyValues:self.page];
+    for (NSDictionary *dic in pageModel.list)
+    {
+        IncomePageBankModel *bankModel = [IncomePageBankModel mj_objectWithKeyValues:dic];
+        NSMutableAttributedString *status = [[NSMutableAttributedString alloc] initWithString:m_StatusDic[bankModel.status]];
+        [status ForegroundColorAttributeNamWithColor:DIF_HEXCOLOR(@"ff5000") Range:NSMakeRange(0, status.length)];
+        [dataArr addObject:@{@"icon":bankModel.accountType.integerValue == 47?@"银联-86x86":@"支付宝-86x86",
+                             @"name":bankModel.accountName?bankModel.accountName:@"",
+                             @"time":bankModel.withdrawalTime?[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:bankModel.withdrawalTime.integerValue/1000] Formate:@"yyyy-MM-dd HH:mm"]:[CommonDate getNowDateWithFormate:@"yyyy-MM-dd HH:mm"],
+                             @"money":bankModel.withdrawalAmount?[NSString stringWithFormat:@"%.2f",bankModel.withdrawalAmount.floatValue]:@"0.00",
+                             @"status":status}];
+    }
     return dataArr;
 }
+
+@end
+
+@implementation IncomePageModel
+
+@end
+
+@implementation IncomePageBankModel
 
 @end

@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSArray *insuranceList;
 @property (nonatomic, strong) NSArray *carList;
 
+- (void)endloadEvent;
 - (void)showContentViewWithIndex:(NSInteger)index;
 
 @end

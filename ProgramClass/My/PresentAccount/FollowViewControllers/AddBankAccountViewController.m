@@ -24,18 +24,43 @@
     [self setRightItemWithContentName:@"完成"];
 }
 
+- (void)rightBarButtonItemAction:(UIButton *)btn
+{
+    [CommonHUD showHUD];
+    DIF_WeakSelf(self)
+    [DIF_CommonHttpAdapter
+     httpRequestMyAcountAddBankCardWithParameters:@{@"accountNo":self.bankIDTF.text,
+                                                    @"bankName":self.selectBankBtn.titleLabel.text}
+     ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+         if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+         {
+             [CommonHUD hideHUD];
+             DIF_StrongSelf
+             [strongSelf.navigationController popViewControllerAnimated:YES];
+         }
+         else
+         {
+             [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+         }
+         
+     } FailedBlcok:^(NSError *error) {
+         [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+    }];
+}
+
 - (IBAction)selectBankButtonEvent:(id)sender
 {
     __block CommonBottomPopView *popPickerView = [[CommonBottomPopView alloc] init];
     [popPickerView setHeight:DIF_PX(270)];
-    CommonPickerView *pickerView = [[CommonPickerView alloc] initWithFrame:CGRectMake(0, 0, popPickerView.width, popPickerView.height)];
+    __block CommonPickerView *pickerView = [[CommonPickerView alloc] initWithFrame:CGRectMake(0, 0, popPickerView.width, popPickerView.height)];
     [pickerView setPickerDatas:@[@"招商银行",@"建设银行",@"工商银行"]];
     [popPickerView addSubview:pickerView];
     [popPickerView showPopView];
     DIF_WeakSelf(self)
-    [pickerView.racSignal subscribeNext:^(id  _Nullable x) {
+    [pickerView.racSignal subscribeNext:^(NSDictionary *x) {
         DIF_StrongSelf
         [popPickerView hidePopView];
+        [strongSelf.selectBankBtn setTitle:x[@"SuccessButtonEvent"][@"content"] forState:UIControlStateNormal];
     }];
 }
 

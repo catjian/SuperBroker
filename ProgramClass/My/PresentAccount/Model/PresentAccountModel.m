@@ -9,13 +9,46 @@
 #import "PresentAccountModel.h"
 
 @implementation PresentAccountModel
+{
+    NSArray *m_AccountList;
+}
+
+- (void)setAccountList:(NSArray *)array
+{
+    m_AccountList = array;
+}
+
+- (NSArray *)getAccountListNormal
+{
+    return m_AccountList;
+}
 
 - (NSArray *)getAccountList
 {
     NSMutableArray *list = [NSMutableArray array];
-    [list addObject:@{@"leftTitle":@"支付宝账户",@"content":@"",@"showRight":@(NO)}];
-    [list addObject:@{@"leftTitle":@"银行卡",@"content":@"",@"showRight":@(YES)}];
-    
+    for(NSDictionary *dic in m_AccountList)
+    {
+        PresentAccountModel *model = [PresentAccountModel mj_objectWithKeyValues:dic];
+        if (model.accountType.integerValue==16)
+        {
+            [list addObject:@{@"leftTitle":@"银行卡",@"content":model.accountNo?model.accountNo:@"",@"showRight":@(YES)}];
+        }
+        else
+        {
+            [list insertObject:@{@"leftTitle":@"支付宝账户",@"content":model.accountNo?model.accountNo:@"",@"showRight":@(NO)}
+                       atIndex:0];
+        }
+    }
+    if (list.count == 0)
+    {
+        [list addObject:@{@"leftTitle":@"支付宝账户",@"content":@"",@"showRight":@(NO)}];
+        [list addObject:@{@"leftTitle":@"银行卡",@"content":@"",@"showRight":@(YES)}];
+    }
+    else if(![list.firstObject[@"leftTitle"] isEqualToString:@"支付宝账户"])
+    {
+        [list insertObject:@{@"leftTitle":@"支付宝账户",@"content":@"",@"showRight":@(NO)}
+                   atIndex:0];
+    }
     
     return list;
 }

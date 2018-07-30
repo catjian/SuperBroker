@@ -10,6 +10,22 @@
 
 @interface PresentAccountModel : NSObject
 
+@property (nonatomic, strong) NSString *bankName;
+
+@property (nonatomic, strong) NSString *brokerId;
+
+@property (nonatomic, strong) NSString *accountNo;
+
+@property (nonatomic, strong) NSString *updateTime;
+
+@property (nonatomic, strong) NSString *withdrawalAccountId;
+
+@property (nonatomic, strong) NSString *accountType;
+
+@property (nonatomic, strong) NSString *createTime;
+
+- (void)setAccountList:(NSArray *)array;
 - (NSArray *)getAccountList;
+- (NSArray *)getAccountListNormal;
 
 @end

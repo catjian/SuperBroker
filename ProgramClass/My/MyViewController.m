@@ -72,7 +72,10 @@
                     [strongSelf loadViewController:@"MyOrderListViewController" hidesBottomBarWhenPushed:YES];
                     break;
                 case 10:
-                    [strongSelf loadViewController:@"UserInfoViewController" hidesBottomBarWhenPushed:YES];
+                {
+                    UserInfoViewController *vc = [strongSelf loadViewController:@"UserInfoViewController" hidesBottomBarWhenPushed:YES];
+                    vc.brokerInfoModel = strongSelf->m_BrokerInfoModel;
+                }
                     break;
                 case 11:
                     [strongSelf loadViewController:@"PresentAccountViewController" hidesBottomBarWhenPushed:YES];
@@ -111,7 +114,7 @@
          }
          else
          {
-             [CommonHUD delayShowHUDWithMessage:responseModel[@""]];
+             [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
          }
         
     } FailedBlcok:^(NSError *error) {

@@ -24,6 +24,8 @@ typedef void(^CommonHttpResponseBlock)(ENUM_COMMONHTTP_RESPONSE_TYPE type, id re
 typedef void(^CommonHttpResponseFailed)(NSError *error);
 typedef void(^CommonHttpResponseProgress)(NSProgress *progress);
 
+static NSString * const BaseUrl = @"https://malixi.51vip.biz:10326/";
+
 
 @interface CommonHttpAdapter : NSObject
 
@@ -45,14 +47,37 @@ typedef void(^CommonHttpResponseProgress)(NSProgress *progress);
 - (void)httpRequestBrokerinfoWithResponseBlock:(CommonHttpResponseBlock)successBlock
                                    FailedBlcok:(CommonHttpResponseFailed)failedBlock;
 
+#pragma mark - 我的订单
 #pragma mark - 查询保险订单列表
 - (void)httpRequestMyOrderInsuranceListWithParameters:(NSDictionary *)parms
                                         ResponseBlock:(CommonHttpResponseBlock)successBlock
                                           FailedBlcok:(CommonHttpResponseFailed)failedBlock;
-
 #pragma mark - 查询车险订单列表
 - (void)httpRequestMyOrderCarListWithParameters:(NSDictionary *)parms
                                   ResponseBlock:(CommonHttpResponseBlock)successBlock
                                     FailedBlcok:(CommonHttpResponseFailed)failedBlock;
 
+#pragma mark - 我的提现账户
+#pragma mark - 我的全部提现账户列表
+- (void)httpRequestMyAllAccountListWithParameters:(NSDictionary *)parms
+                                    ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                      FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+#pragma mark - 添加我的银行卡账户
+- (void)httpRequestMyAcountAddBankCardWithParameters:(NSDictionary *)parms
+                                       ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                         FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+#pragma mark - 添加我的支付宝账户
+- (void)httpRequestMyAcountAddAlipayWithParameters:(NSDictionary *)parms
+                                     ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                       FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+#pragma mark - 修改支付宝账号
+- (void)httpRequestMyAcountEditAlipayWithParameters:(NSDictionary *)parms
+                                      ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                        FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+
+#pragma mark - 提现申请
+#pragma mark - 提现申请列表
+- (void)httpRequestWithDrawalListWithParameters:(NSDictionary *)parms
+                                  ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                    FailedBlcok:(CommonHttpResponseFailed)failedBlock;
 @end

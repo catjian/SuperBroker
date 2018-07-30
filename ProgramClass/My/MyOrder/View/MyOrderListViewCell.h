@@ -7,6 +7,8 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "MyOrderInsuranceListModel.h"
+#import "MyOrderCarListModel.h"
 
 @interface MyOrderListViewCell : BaseTableViewCell
 
