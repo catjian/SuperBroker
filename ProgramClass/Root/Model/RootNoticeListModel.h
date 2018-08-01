@@ -12,9 +12,9 @@
 
 @property (nonatomic, strong) NSString *status;
 
-@property (nonatomic, strong) NSString *noticeId;
+@property (nonatomic, strong) NSString *brokerId;
 
-@property (nonatomic, strong) NSString *isTop;
+@property (nonatomic, strong) NSString *noticeId;
 
 @property (nonatomic, strong) NSString *updateTime;
 
@@ -23,8 +23,6 @@
 @property (nonatomic, strong) NSString *noticeDetail;
 
 @property (nonatomic, strong) NSString *noticeType;
-
-@property (nonatomic, strong) NSString *noticeUrl;
 
 @property (nonatomic, strong) NSString *createTime;
 

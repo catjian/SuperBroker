@@ -18,6 +18,8 @@
 		8204416720FA4D5200BDB343 /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8204416520FA4D5200BDB343 /* UserInfoViewController.xib */; };
 		8204416B20FA56AE00BDB343 /* EditPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204416920FA56AE00BDB343 /* EditPhoneViewController.m */; };
 		8204416C20FA56AE00BDB343 /* EditPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8204416A20FA56AE00BDB343 /* EditPhoneViewController.xib */; };
+		820443962112007900BBDD8C /* RootRecommnedArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 820443952112007900BBDD8C /* RootRecommnedArticleModel.m */; };
+		82044399211200C000BBDD8C /* RootRecommendInsuranceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82044398211200C000BBDD8C /* RootRecommendInsuranceModel.m */; };
 		82080CC4210CBE6A003ABF45 /* CarOrderMoneyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82080CC3210CBE6A003ABF45 /* CarOrderMoneyView.m */; };
 		82085D7B20FE2AAC0094B49A /* ShowShareButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82085D7A20FE2AAC0094B49A /* ShowShareButtonView.m */; };
 		82085D7D20FE2ABA0094B49A /* ShowShareButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82085D7C20FE2ABA0094B49A /* ShowShareButtonView.xib */; };
@@ -156,8 +158,8 @@
 		82BBED3320F4F48F00BAEEBE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82BBED3120F4F48F00BAEEBE /* LoginViewController.xib */; };
 		82BBED3720F4F7BB00BAEEBE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED3520F4F7BB00BAEEBE /* RegisterViewController.m */; };
 		82BBED3820F4F7BB00BAEEBE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82BBED3620F4F7BB00BAEEBE /* RegisterViewController.xib */; };
-		82BBED3D20F4FB9A00BAEEBE /* EditPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED3B20F4FB9A00BAEEBE /* EditPasswordViewController.m */; };
-		82BBED3E20F4FB9A00BAEEBE /* EditPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82BBED3C20F4FB9A00BAEEBE /* EditPasswordViewController.xib */; };
+		82BBED3D20F4FB9A00BAEEBE /* ModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED3B20F4FB9A00BAEEBE /* ModifyPasswordViewController.m */; };
+		82BBED3E20F4FB9A00BAEEBE /* ModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82BBED3C20F4FB9A00BAEEBE /* ModifyPasswordViewController.xib */; };
 		82BBED4120F4FFAD00BAEEBE /* RootBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED4020F4FFAD00BAEEBE /* RootBaseView.m */; };
 		82BBED4420F5002400BAEEBE /* RootViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED4320F5002400BAEEBE /* RootViewCell.m */; };
 		82BBED4720F501D500BAEEBE /* BaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 82BBED4620F501D500BAEEBE /* BaseCollectionView.m */; };
@@ -258,6 +260,10 @@
 		8204416820FA56AE00BDB343 /* EditPhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditPhoneViewController.h; sourceTree = "<group>"; };
 		8204416920FA56AE00BDB343 /* EditPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditPhoneViewController.m; sourceTree = "<group>"; };
 		8204416A20FA56AE00BDB343 /* EditPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPhoneViewController.xib; sourceTree = "<group>"; };
+		820443942112007900BBDD8C /* RootRecommnedArticleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootRecommnedArticleModel.h; sourceTree = "<group>"; };
+		820443952112007900BBDD8C /* RootRecommnedArticleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootRecommnedArticleModel.m; sourceTree = "<group>"; };
+		82044397211200C000BBDD8C /* RootRecommendInsuranceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootRecommendInsuranceModel.h; sourceTree = "<group>"; };
+		82044398211200C000BBDD8C /* RootRecommendInsuranceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootRecommendInsuranceModel.m; sourceTree = "<group>"; };
 		82080CC2210CBE6A003ABF45 /* CarOrderMoneyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarOrderMoneyView.h; sourceTree = "<group>"; };
 		82080CC3210CBE6A003ABF45 /* CarOrderMoneyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarOrderMoneyView.m; sourceTree = "<group>"; };
 		82085D7920FE2AAC0094B49A /* ShowShareButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowShareButtonView.h; sourceTree = "<group>"; };
@@ -502,9 +508,9 @@
 		82BBED3420F4F7BB00BAEEBE /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		82BBED3520F4F7BB00BAEEBE /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		82BBED3620F4F7BB00BAEEBE /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
-		82BBED3A20F4FB9A00BAEEBE /* EditPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditPasswordViewController.h; sourceTree = "<group>"; };
-		82BBED3B20F4FB9A00BAEEBE /* EditPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditPasswordViewController.m; sourceTree = "<group>"; };
-		82BBED3C20F4FB9A00BAEEBE /* EditPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPasswordViewController.xib; sourceTree = "<group>"; };
+		82BBED3A20F4FB9A00BAEEBE /* ModifyPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifyPasswordViewController.h; sourceTree = "<group>"; };
+		82BBED3B20F4FB9A00BAEEBE /* ModifyPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModifyPasswordViewController.m; sourceTree = "<group>"; };
+		82BBED3C20F4FB9A00BAEEBE /* ModifyPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModifyPasswordViewController.xib; sourceTree = "<group>"; };
 		82BBED3F20F4FFAD00BAEEBE /* RootBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootBaseView.h; sourceTree = "<group>"; };
 		82BBED4020F4FFAD00BAEEBE /* RootBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootBaseView.m; sourceTree = "<group>"; };
 		82BBED4220F5002400BAEEBE /* RootViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewCell.h; sourceTree = "<group>"; };
@@ -1534,6 +1540,10 @@
 				8221285A20F7BCAF008E8FFB /* RootNoticeListModel.m */,
 				8221285C20F7BD60008E8FFB /* RootMovePictureModel.h */,
 				8221285D20F7BD60008E8FFB /* RootMovePictureModel.m */,
+				820443942112007900BBDD8C /* RootRecommnedArticleModel.h */,
+				820443952112007900BBDD8C /* RootRecommnedArticleModel.m */,
+				82044397211200C000BBDD8C /* RootRecommendInsuranceModel.h */,
+				82044398211200C000BBDD8C /* RootRecommendInsuranceModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1561,9 +1571,9 @@
 		82BBED3920F4FB8100BAEEBE /* EditPassword */ = {
 			isa = PBXGroup;
 			children = (
-				82BBED3A20F4FB9A00BAEEBE /* EditPasswordViewController.h */,
-				82BBED3B20F4FB9A00BAEEBE /* EditPasswordViewController.m */,
-				82BBED3C20F4FB9A00BAEEBE /* EditPasswordViewController.xib */,
+				82BBED3A20F4FB9A00BAEEBE /* ModifyPasswordViewController.h */,
+				82BBED3B20F4FB9A00BAEEBE /* ModifyPasswordViewController.m */,
+				82BBED3C20F4FB9A00BAEEBE /* ModifyPasswordViewController.xib */,
 			);
 			path = EditPassword;
 			sourceTree = "<group>";
@@ -1911,7 +1921,7 @@
 				8281B4A720FB1916006691D4 /* FeedBackViewController.xib in Resources */,
 				825C6F532108C2A500E6F737 /* CarInsuranceBusinessViewController.xib in Resources */,
 				8281B4DA20FB93CD006691D4 /* PaymentListViewController.xib in Resources */,
-				82BBED3E20F4FB9A00BAEEBE /* EditPasswordViewController.xib in Resources */,
+				82BBED3E20F4FB9A00BAEEBE /* ModifyPasswordViewController.xib in Resources */,
 				8281B4AC20FB1B51006691D4 /* FeedBackResponseViewController.xib in Resources */,
 				8281B4A220FB1655006691D4 /* SetViewController.xib in Resources */,
 			);
@@ -2012,11 +2022,13 @@
 				82731BC720F4EB10002EF5FE /* MyViewController.m in Sources */,
 				8281B4E520FB97CF006691D4 /* PaymentListModel.m in Sources */,
 				82C0773520F4E67C0080E37F /* CommonPopWarnView.m in Sources */,
+				82044399211200C000BBDD8C /* RootRecommendInsuranceModel.m in Sources */,
 				823FF8EE210773F500E58314 /* UIView+CornerSquare.m in Sources */,
 				825C6F5F2108DD4200E6F737 /* CarInsuranceCommitViewController.m in Sources */,
 				82C0774D20F4E67C0080E37F /* BaseTableViewCell.m in Sources */,
 				82C0770E20F4E67C0080E37F /* NSArray+Null.m in Sources */,
 				824BD58420F659B600924E61 /* InsuranceTypesViewController.m in Sources */,
+				820443962112007900BBDD8C /* RootRecommnedArticleModel.m in Sources */,
 				82BBED4A20F503F100BAEEBE /* CommonADAutoView.m in Sources */,
 				8221286E20F7C092008E8FFB /* InsuranceProductModel.m in Sources */,
 				82661DB621061ED4004B8DF5 /* MyOrderListViewCell.m in Sources */,
@@ -2031,7 +2043,7 @@
 				82C0771820F4E67C0080E37F /* NSString+Extension_NSString.m in Sources */,
 				825C6F5B2108C48000E6F737 /* CarInsuranceBusinessViewCell.m in Sources */,
 				824BD5A120F662BD00924E61 /* InsuranceAgeBaseView.m in Sources */,
-				82BBED3D20F4FB9A00BAEEBE /* EditPasswordViewController.m in Sources */,
+				82BBED3D20F4FB9A00BAEEBE /* ModifyPasswordViewController.m in Sources */,
 				8221286820F7BE7A008E8FFB /* InsuranceCompanyModel.m in Sources */,
 				8281B4F620FBB083006691D4 /* CommonSheetView.m in Sources */,
 				823FF8DF210762EE00E58314 /* CarInsuranceViewController.m in Sources */,

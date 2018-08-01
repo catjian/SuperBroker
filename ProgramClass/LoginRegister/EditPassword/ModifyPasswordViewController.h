@@ -1,5 +1,5 @@
 //
-//  EditPasswordViewController.h
+//  ModifyPasswordViewController.h
 //  SuperBroker
 //
 //  Created by zhang_jian on 2018/7/10.
@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface EditPasswordViewController : BaseViewController
+@interface ModifyPasswordViewController : BaseViewController
 
 @end

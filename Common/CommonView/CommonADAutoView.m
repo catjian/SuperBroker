@@ -21,6 +21,7 @@
     if (self)
     {
         m_BaseView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.width, self.height)];
+        [m_BaseView setPagingEnabled:YES];
         [self addSubview:m_BaseView];
         m_PageCon = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.height-40, self.width, 30)];
         [self addSubview:m_PageCon];
@@ -46,7 +47,7 @@
     for(int i = 0; i < self.picArr.count; i++)
     {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i*self.width, 0, self.width, self.height)];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:self.picArr[i]] placeholderImage:nil];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:self.picArr[i]] placeholderImage:[UIImage imageNamed:@"保险"]];
         [m_BaseView addSubview:imageView];
     }
     [m_BaseView setContentSize:CGSizeMake(self.width*self.picArr.count, self.height)];
@@ -62,14 +63,14 @@
     if (nowPage >= self.picArr.count)
     {
         [m_PageCon setCurrentPage:0];
-        [m_BaseView setContentOffset:CGPointMake(0, 0)];
+        [m_BaseView setContentOffset:CGPointMake(0, 0) animated:YES];
     }
     else
     {
         [m_PageCon setCurrentPage:nowPage];
-        [m_BaseView setContentOffset:CGPointMake(nowPage*self.width, 0)];
+        [m_BaseView setContentOffset:CGPointMake(nowPage*self.width, 0) animated:YES];
     }
-    [self performSelector:@selector(autoChangePage) withObject:nil afterDelay:2];
+    [self performSelector:@selector(autoChangePage) withObject:nil afterDelay:3];
 }
 
 @end

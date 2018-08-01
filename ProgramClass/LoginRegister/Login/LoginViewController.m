@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 
-@interface LoginViewController ()
+@interface LoginViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *userID;
 @property (weak, nonatomic) IBOutlet UITextField *password;
@@ -31,6 +31,8 @@
     [self.view setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
     [self.userID setText:@"18888888001"];
     [self.password setText:@"123456"];
+    [self.userID setDelegate:self];
+    [self.password setDelegate:self];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -41,12 +43,23 @@
 #pragma mark - Button Event
 - (IBAction)loginButtonEvent:(id)sender
 {
+    if (![CommonVerify isMobileNumber:self.userID.text])
+    {
+        [self.view makeToast:@"请输入手机号码"
+                    duration:2 position:CSToastPositionCenter];
+        return;
+    }
+    if (self.password.text.length < 6)
+    {
+        [self.view makeToast:@"请设置6~18位数的密码"
+                    duration:2 position:CSToastPositionCenter];
+        return;
+    }
     [CommonHUD showHUDWithMessage:@"登录中..."];
     DIF_WeakSelf(self)
     [DIF_CommonHttpAdapter
      httpRequestLoginWithParameters:@{@"brokerPhone":self.userID.text,
-                                      @"password":self.password.text
-                                      }
+                                      @"password":self.password.text}
      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
          if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
          {
@@ -85,12 +98,34 @@
 
 - (IBAction)gotoForgetPasswordButtonEvent:(id)sender
 {
-    [self loadViewController:@"EditPasswordViewController"];
+    [self loadViewController:@"ModifyPasswordViewController"];
 }
 
 - (IBAction)gotoVerifyCodeLoginButtonEvent:(id)sender
 {
     [self loadViewController:@"SMSLoginViewController"];
+}
+
+#pragma mark - TextFieldDelegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (!string || string.isNull)
+    {
+        return YES;
+    }
+    if (textField.text.length == 0 && [string isEqualToString:@" "])
+    {
+        return NO;
+    }
+    if ([textField isEqual:self.userID] && textField.text.length + string.length > 11)
+    {
+        return NO;
+    }
+    if ([textField isEqual:self.password] && textField.text.length + string.length > 18)
+    {
+        return NO;
+    }
+    return YES;
 }
 
 @end

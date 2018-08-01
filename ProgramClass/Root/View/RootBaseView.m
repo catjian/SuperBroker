@@ -78,6 +78,29 @@
     [m_ContentView setDataSource:self];
 }
 
+- (void)setArticleListArr:(NSArray *)articleListArr
+{
+    _articleListArr = articleListArr;
+    [m_ContentView reloadData];
+}
+
+- (void)setInsuranceListArr:(NSArray *)insuranceListArr
+{
+    _insuranceListArr = insuranceListArr;
+    [m_ContentView reloadData];
+}
+
+- (void)setNoticeListArr:(NSArray *)noticeListArr
+{
+    _noticeListArr = noticeListArr;
+}
+
+- (void)setMovePictures:(NSArray *)movePictures
+{
+    _movePictures = movePictures;
+    [m_ContentView reloadData];
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -92,9 +115,9 @@
         case 0:
             return m_ContentArr.count;
         case 1:
-            return 4;
+            return self.insuranceListArr.count;
         default:
-            return 5;
+            return self.articleListArr.count;
     }
 }
 
@@ -117,11 +140,11 @@
             [m_ContentView registerClass:[RootViewHotCell class] forCellWithReuseIdentifier:@"RootViewHotCell_CELLIDENTIFIER"];
             static NSString *cellIdentifier = @"RootViewHotCell_CELLIDENTIFIER";
             RootViewHotCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-            NSString *contentTitle = m_ContentArr[indexPath.row];
-            [cell.imageView setImage:[UIImage imageNamed:contentTitle]];
-            [cell.titleLab setText:@"全家出行旅游意外保险"];
-            [cell.detailLab setText:@"优质产品，性价比高"];
-            [cell.moneyLab setText:@"推广奖励：20-80元"];
+            RootRecommendInsuranceModel *model = [RootRecommendInsuranceModel mj_objectWithKeyValues:self.insuranceListArr[indexPath.row]];
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.titlePictureUrl] placeholderImage:nil];
+            [cell.titleLab setText:model.prodName];
+            [cell.detailLab setText:model.details];
+            [cell.moneyLab setText:[NSString stringWithFormat:@"推广奖励：%@-%@元",model.rewardMin, model.rewardMax]];
             return cell;
         }
         default:
@@ -129,12 +152,12 @@
             [m_ContentView registerClass:[RooViewNewsCell class] forCellWithReuseIdentifier:@"RooViewNewsCell_CELLIDENTIFIER"];
             static NSString *cellIdentifier = @"RooViewNewsCell_CELLIDENTIFIER";
             RooViewNewsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-            NSString *contentTitle = m_ContentArr[indexPath.row];
-            [cell.imageView setImage:[UIImage imageNamed:contentTitle]];
-            [cell.titleLab setText:contentTitle];
-            [cell.detailLab setText:@"不限社保用药"];
-            [cell.companyLab setText:@"中国人保财险"];
-            [cell.readNumLab setText:@"99999阅读"];
+            RootRecommnedArticleModel *model = [RootRecommnedArticleModel mj_objectWithKeyValues:self.articleListArr[indexPath.row]];
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:model.imgUrl] placeholderImage:nil];
+            [cell.titleLab setText:model.title];
+            [cell.detailLab setText:model.summary];
+            [cell.companyLab setText:model.author];
+            [cell.readNumLab setText:[NSString stringWithFormat:@"%@阅读",model.hits]];
             return cell;
         }
     }
@@ -169,8 +192,20 @@
                     [adView setBackgroundColor:DIF_HEXCOLOR(@"017aff")];
                     [reusableview addSubview:adView];
                 }
+                NSMutableArray *picArr = [NSMutableArray array];
+                for (NSDictionary *dic in self.movePictures)
+                {
+                    RootMovePictureModel *model = [RootMovePictureModel mj_objectWithKeyValues:dic];
+                    [picArr addObject:model.pictureUrl];
+                }
+                adView.picArr = picArr;
                 [m_NoticeView removeFromSuperview];
                 [reusableview addSubview:[self createNoticeView]];
+                if(self.noticeListArr.count > 0)
+                {
+                    RootNoticeListModel *model = [RootNoticeListModel mj_objectWithKeyValues:self.noticeListArr.firstObject];
+                    [m_NoticeLab setText:model.noticeTitle];
+                }
             }
                 break;
             default:
@@ -178,7 +213,7 @@
                 UIView *titleView;
                 if ([reusableview viewWithTag:1000])
                 {
-                    [m_NoticeView removeFromSuperview];
+//                    [m_NoticeView removeFromSuperview];
                     [[reusableview viewWithTag:1000] removeFromSuperview];
                 }
                 if ([reusableview viewWithTag:1000+(indexPath.section==1?2:1)])
@@ -225,6 +260,7 @@
                     [btn setTitleColor:DIF_HEXCOLOR(@"999999") forState:UIControlStateNormal];
                     [btn.titleLabel setFont:DIF_UIFONTOFSIZE(15)];
                     [btn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+                    [btn addTarget:self action:@selector(headerViewMoreButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
                     [contentView addSubview:btn];
                     
                     UIView *lineB = [[UIView alloc] initWithFrame:CGRectMake(0, titleView.height-1, titleView.width, 1)];
@@ -236,6 +272,22 @@
         }
     }
     return reusableview;
+}
+
+- (void)headerViewMoreButtonEvent:(UIButton *)btn
+{
+    UIView *titleView = btn.superview.superview;
+    if (titleView.tag - 1000 == 2)
+    {
+        [DIF_TabBar setSelectedIndex:1];
+    }
+    if (titleView.tag -1000 == 1)
+    {
+        if (self.selectBlock)
+        {
+            self.selectBlock([NSIndexPath indexPathForRow:0 inSection:0], nil);
+        }
+    }
 }
 
 #pragma mark - UICollecrtionViewDelegate

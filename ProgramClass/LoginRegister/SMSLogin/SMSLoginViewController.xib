@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -92,13 +92,13 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvf-Dt-R23">
-                    <rect key="frame" x="94" y="396.5" width="187" height="30"/>
+                    <rect key="frame" x="90" y="396.5" width="195" height="30"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrb-cv-Kqa">
-                            <rect key="frame" x="0.0" y="-0.5" width="67" height="30"/>
+                            <rect key="frame" x="0.0" y="-0.5" width="75" height="30"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sN9-KS-lG9">
-                                    <rect key="frame" x="0.0" y="0.0" width="67" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <state key="normal" title="密码登录">
                                         <color key="titleColor" red="0.0039215686269999999" green="0.4823529412" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -117,7 +117,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2n-do-1AC">
-                            <rect key="frame" x="67" y="0.0" width="120" height="30"/>
+                            <rect key="frame" x="75" y="0.0" width="120" height="30"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMy-th-eZb">
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
@@ -189,9 +189,9 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="GPh-xn-8bo" secondAttribute="trailing" constant="40" id="MLI-Ti-gJ8"/>
                 <constraint firstItem="uY1-PR-x1y" firstAttribute="leading" secondItem="w6Z-8n-O7u" secondAttribute="trailing" constant="10" id="MrT-uo-8sZ"/>
                 <constraint firstItem="uY1-PR-x1y" firstAttribute="centerY" secondItem="w6Z-8n-O7u" secondAttribute="centerY" id="ShD-6W-NiE"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Rvf-Dt-R23" secondAttribute="trailing" constant="94" id="UOm-3L-7Wv"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Rvf-Dt-R23" secondAttribute="trailing" constant="90" id="UOm-3L-7Wv"/>
                 <constraint firstItem="QdN-0E-vgK" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="52" id="VZu-zM-N1r"/>
-                <constraint firstItem="Rvf-Dt-R23" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="94" id="Wg2-lF-5pn"/>
+                <constraint firstItem="Rvf-Dt-R23" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="90" id="Wg2-lF-5pn"/>
                 <constraint firstItem="w6Z-8n-O7u" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="40" id="WjO-Sk-86n"/>
                 <constraint firstItem="6xd-Gf-bR3" firstAttribute="top" secondItem="bY0-Ld-Jp6" secondAttribute="bottom" constant="52" id="XDc-yp-4wd"/>
                 <constraint firstItem="gRy-hE-bFV" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="40" id="XI3-xp-7bg"/>

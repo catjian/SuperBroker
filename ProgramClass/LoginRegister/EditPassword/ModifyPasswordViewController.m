@@ -1,31 +1,29 @@
 //
-//  RegisterViewController.m
+//  ModifyPasswordViewController.m
 //  SuperBroker
 //
 //  Created by zhang_jian on 2018/7/10.
 //  Copyright © 2018年 zhangjian. All rights reserved.
 //
 
-#import "RegisterViewController.h"
+#import "ModifyPasswordViewController.h"
 
-@interface RegisterViewController () <UITextFieldDelegate>
+@interface ModifyPasswordViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *verifyCodeTF;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTF;
-@property (weak, nonatomic) IBOutlet UITextField *inviteCodeTF;
-@property (weak, nonatomic) IBOutlet UIButton *openSecureBtn;
-@property (weak, nonatomic) IBOutlet UIImageView *isRead;
-@property (weak, nonatomic) IBOutlet UIButton *registerBtn;
 
 @end
 
-@implementation RegisterViewController
+@implementation ModifyPasswordViewController
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES];
+    [self.navigationController setNavigationBarHidden:NO];
+    [self.phoneTF setDelegate:self];
+    [self.passwordTF setDelegate:self];
 }
 
 - (void)viewDidLoad
@@ -33,8 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.view setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
-    [self.phoneTF setDelegate:self];
-    [self.passwordTF setDelegate:self];
+    [self setNavTarBarTitle:@"修改密码"];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
@@ -53,21 +50,15 @@
         return;
     }
     [DIF_CommonHttpAdapter
-     httpRequestRegistrySmsCodeWithParameters:@{@"brokerPhone":self.phoneTF.text}
+     httpRequestPasswordResetSmsCodeWithParameters:@{@"brokerPhone":self.phoneTF.text}
      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
          [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
      } FailedBlcok:^(NSError *error) {
          [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
-    }];
+     }];
 }
 
-- (IBAction)openPasswordSecureButtonEvent:(UIButton *)sender
-{
-    sender.selected = !sender.selected;
-    [self.passwordTF setSecureTextEntry:sender.selected];
-}
-
-- (IBAction)registerButtonEvent:(id)sender
+- (IBAction)editPasswordButtonEvent:(id)sender
 {
     if (![CommonVerify isMobileNumber:self.phoneTF.text])
     {
@@ -87,18 +78,17 @@
                     duration:2 position:CSToastPositionCenter];
         return;
     }
-    [CommonHUD showHUDWithMessage:@"注册中..."];
+    [CommonHUD showHUDWithMessage:@"设置密码中..."];
     NSMutableDictionary *parmas = [NSMutableDictionary dictionary];
     [parmas setObject:self.phoneTF.text forKey:@"brokerPhone"];
     [parmas setObject:self.verifyCodeTF.text forKey:@"verifyCode"];
-    [parmas setObject:self.passwordTF.text forKey:@"password"];
-    [parmas setObject:self.inviteCodeTF.text forKey:@"parentInviteCode"];
+    [parmas setObject:self.passwordTF.text forKey:@"newPassword"];
     [DIF_CommonHttpAdapter
-     httpRequestRegistryWithParameters:parmas
+     httpRequestPasswordResetWithParameters:parmas
      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
          if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
          {
-             [CommonHUD delayShowHUDWithMessage:@"注册成功"];
+             [CommonHUD delayShowHUDWithMessage:@"设置密码成功"];
              [self.navigationController popToRootViewControllerAnimated:YES];
          }
          else
@@ -110,15 +100,10 @@
      }];
 }
 
-- (IBAction)gotoLoginButtonEvent:(id)sender
+- (IBAction)openPasswordSecureButtonEvent:(UIButton *)sender
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
-
-- (IBAction)readButtonEvent:(UIButton *)sender
-{
-    self.registerBtn.selected = !self.registerBtn.selected;
-    [self.isRead setImage:[UIImage imageNamed:(self.registerBtn.selected?@"已阅":@"未阅")]];
+    sender.selected = !sender.selected;
+    [self.passwordTF setSecureTextEntry:sender.selected];
 }
 
 #pragma mark - TextFieldDelegate

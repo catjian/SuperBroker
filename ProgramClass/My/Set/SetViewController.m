@@ -32,7 +32,7 @@
 
 - (IBAction)editPasswordButtonEvent:(id)sender
 {
-    [self loadViewController:@"EditPasswordViewController"];
+    [self loadViewController:@"ModifyPasswordViewController"];
 }
 
 - (IBAction)readRegisterFileButtonEvent:(id)sender
@@ -59,6 +59,27 @@
 
 - (IBAction)logoutButtonEvent:(id)sender
 {
+    [DIF_CommonHttpAdapter
+     httpRequestLogoutResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+         if(type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+         {
+             [[NSUserDefaults standardUserDefaults] removeObjectForKey:DIF_Loaction_Save_UserId];
+             [[NSUserDefaults standardUserDefaults] removeObjectForKey:DIF_Loaction_Save_Password];
+             [[NSUserDefaults standardUserDefaults] setObject:@(0) forKey:DIF_Login_Status];
+             [[NSUserDefaults standardUserDefaults] synchronize];
+             DIF_CommonHttpAdapter.refresh_token = nil;
+             DIF_CommonHttpAdapter.access_token = nil;
+             DIF_CommonCurrentUser.accessToken = DIF_CommonHttpAdapter.access_token;
+             DIF_CommonCurrentUser.refreshToken = DIF_CommonHttpAdapter.refresh_token;
+             [DIF_APPDELEGATE loadLoginViewController];
+         }
+         else
+         {
+             [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+         }
+     } FailedBlcok:^(NSError *error) {
+         [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+     }];
 }
 
 @end

@@ -10,9 +10,16 @@
 #import "RootViewCell.h"
 #import "RootViewHotCell.h"
 #import "RooViewNewsCell.h"
+#import "RootNoticeDetailModel.h"
+#import "RootMovePictureModel.h"
+#import "RootNoticeListModel.h"
 
 @interface RootBaseView : UIView
 
 @property (nonatomic, copy) tableViewSelectRowAtIndexPathBlock selectBlock;
+@property (nonatomic, strong) NSArray *articleListArr;
+@property (nonatomic, strong) NSArray *insuranceListArr;
+@property (nonatomic, strong) NSArray *movePictures;
+@property (nonatomic, strong) NSArray *noticeListArr;
 
 @end

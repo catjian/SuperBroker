@@ -522,46 +522,11 @@ static CommonHttpAdapter *comHttp = nil;
     [dataTask resume];
 }
 
-#pragma mark - 用户登录
-- (void)httpRequestLoginWithParameters:(NSDictionary *)parms
-                         ResponseBlock:(CommonHttpResponseBlock)successBlock
-                           FailedBlcok:(CommonHttpResponseFailed)failedBlock
-{
-    if (!parms)
-    {
-        successBlock?successBlock(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_REQUEST_PARMS_NULL):nil;
-        return;
-    }
-//    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:51120"]];
-    DIF_WeakSelf(self)
-    [self HttpPostRequestWithCommand:@"/uc/api/brokeruser/login"
-                          parameters:parms
-                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
-                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
-                              [responseModel[@"code"] integerValue] == 200)
-                          {
-                              DIF_StrongSelf
-                              strongSelf.refresh_token = responseModel[@"data"][@"refreshToken"][@"refreshToken"];
-                              strongSelf.access_token = responseModel[@"data"][@"accessToken"][@"accessToken"];
-                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
-                          }
-                          else
-                          {
-                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
-                          }
-                          if (successBlock)
-                          {
-                              successBlock(type, responseModel);
-                          }
-                      }
-                         FailedBlcok:failedBlock];
-}
-
+#pragma mark - 个人中心
 #pragma mark - 获取用户详情
 - (void)httpRequestBrokerinfoWithResponseBlock:(CommonHttpResponseBlock)successBlock
                                    FailedBlcok:(CommonHttpResponseFailed)failedBlock
 {
-//    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
     [self HttpGetRequestWithCommand:@"/api/brokerinfo"
                          parameters:nil
                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
@@ -580,6 +545,54 @@ static CommonHttpAdapter *comHttp = nil;
                           }
                       }
                         FailedBlcok:failedBlock];
+}
+#pragma mark - 修改个人信息
+- (void)httpRequestModifyBrokerinfoWithParameters:(NSDictionary *)parms
+                                    ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                      FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpPostRequestWithCommand:@"/api/brokerinfo"
+                          parameters:parms
+                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                           if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                               [responseModel[@"code"] integerValue] == 200)
+                           {
+                               type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                           }
+                           else
+                           {
+                               type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                           }
+                           if (successBlock)
+                           {
+                               successBlock(type, responseModel);
+                           }
+                       }
+                         FailedBlcok:failedBlock];
+}
+#pragma mark - 修改手机号码
+- (void)httpRequestBrokerinfoPhoneWithParameters:(NSDictionary *)parms
+                                   ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                     FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpPostRequestWithCommand:@"/api/brokerinfo/phone"
+                          parameters:parms
+                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                           if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                               [responseModel[@"code"] integerValue] == 200)
+                           {
+                               type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                           }
+                           else
+                           {
+                               type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                           }
+                           if (successBlock)
+                           {
+                               successBlock(type, responseModel);
+                           }
+                       }
+                         FailedBlcok:failedBlock];
 }
 
 #pragma mark - 我的订单
@@ -608,7 +621,6 @@ static CommonHttpAdapter *comHttp = nil;
                       }
                         FailedBlcok:failedBlock];
 }
-
 #pragma mark - 查询车险订单列表
 - (void)httpRequestMyOrderCarListWithParameters:(NSDictionary *)parms
                                   ResponseBlock:(CommonHttpResponseBlock)successBlock
@@ -661,7 +673,6 @@ static CommonHttpAdapter *comHttp = nil;
                       }
                         FailedBlcok:failedBlock];
 }
-
 #pragma mark - 添加我的银行卡账户
 - (void)httpRequestMyAcountAddBankCardWithParameters:(NSDictionary *)parms
                                        ResponseBlock:(CommonHttpResponseBlock)successBlock
@@ -687,7 +698,6 @@ static CommonHttpAdapter *comHttp = nil;
                       }
                         FailedBlcok:failedBlock];
 }
-
 #pragma mark - 修改银行卡账户
 - (void)httpRequestMyAcountEditBankCardWithParameters:(NSDictionary *)parms
                                         ResponseBlock:(CommonHttpResponseBlock)successBlock
@@ -712,7 +722,6 @@ static CommonHttpAdapter *comHttp = nil;
                       }
                         FailedBlcok:failedBlock];
 }
-
 #pragma mark - 添加我的支付宝账户
 - (void)httpRequestMyAcountAddAlipayWithParameters:(NSDictionary *)parms
                                      ResponseBlock:(CommonHttpResponseBlock)successBlock
@@ -737,7 +746,6 @@ static CommonHttpAdapter *comHttp = nil;
                        }
                          FailedBlcok:failedBlock];
 }
-
 #pragma mark - 修改支付宝账号
 - (void)httpRequestMyAcountEditAlipayWithParameters:(NSDictionary *)parms
                                      ResponseBlock:(CommonHttpResponseBlock)successBlock
@@ -841,7 +849,6 @@ static CommonHttpAdapter *comHttp = nil;
                       }
                         FailedBlcok:failedBlock];
 }
-
 #pragma mark - 专题列表
 - (void)httpRequestArticleListWithParameters:(NSDictionary *)parms
                                ResponseBlock:(CommonHttpResponseBlock)successBlock
@@ -867,5 +874,380 @@ static CommonHttpAdapter *comHttp = nil;
                       }
                         FailedBlcok:failedBlock];
 }
+#pragma mark - 专题详情/常见问题详情
+- (void)httpRequestArticleDetailWithParameters:(NSDictionary *)parms
+                               ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                 FailedBlcok:(CommonHttpResponseFailed)failedBlock
 
+{
+    [self HttpGetRequestWithCommand:@"/api/article"
+                         parameters:parms
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+
+#pragma mark - 首页
+#pragma mark - 通知公告列表
+- (void)httpRequestIndexnNoticeResponseBlock:(CommonHttpResponseBlock)successBlock
+                                 FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpGetRequestWithCommand:@"/api/indexnotice"
+                         parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+
+#pragma mark - 公告详情
+- (void)httpRequestNoticeDetailWithParameters:(NSDictionary *)parms
+                                ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                  FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpGetRequestWithCommand:@"/api/notice"
+                         parameters:parms
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+#pragma mark - 轮播图列表
+- (void)httpRequestMovePictureResponseBlock:(CommonHttpResponseBlock)successBlock
+                                FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpGetRequestWithCommand:@"/api/movepicture"
+                         parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+#pragma mark - 注册时获取验证码
+- (void)httpRequestRegistrySmsCodeWithParameters:(NSDictionary *)parms
+                                   ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                     FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    NSString *command = @"/api/brokeruser/registry/smscode";
+    command = [command stringByAppendingFormat:@"/{%@}", parms[@"brokerPhone"]];
+    [self HttpGetRequestWithCommand:command
+                         parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+#pragma mark - 注册提交
+- (void)httpRequestRegistryWithParameters:(NSDictionary *)parms
+                            ResponseBlock:(CommonHttpResponseBlock)successBlock
+                              FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+{
+    [self HttpPostRequestWithCommand:@"/api/brokeruser/registry"
+                          parameters:parms
+                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                           if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                               [responseModel[@"code"] integerValue] == 200)
+                           {
+                               type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                           }
+                           else
+                           {
+                               type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                           }
+                           if (successBlock)
+                           {
+                               successBlock(type, responseModel);
+                           }
+                       }
+                         FailedBlcok:failedBlock];
+}
+#pragma mark - 登录时获取验证码
+- (void)httpRequestSmsLoginSmsCodeWithParameters:(NSDictionary *)parms
+                                   ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                     FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    NSString *command = @"/api/brokeruser/smslogin/smscode";
+    command = [command stringByAppendingFormat:@"/{%@}", parms[@"brokerPhone"]];
+    [self HttpGetRequestWithCommand:command
+                         parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+#pragma mark - 短信验证码登录
+- (void)httpRequestSmsLoginWithParameters:(NSDictionary *)parms
+                            ResponseBlock:(CommonHttpResponseBlock)successBlock
+                              FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpPostRequestWithCommand:@"/api/brokeruser/smslogin"
+                         parameters:parms
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+#pragma mark - 通过密码登录
+- (void)httpRequestLoginWithParameters:(NSDictionary *)parms
+                         ResponseBlock:(CommonHttpResponseBlock)successBlock
+                           FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    if (!parms)
+    {
+        successBlock?successBlock(ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE,DIF_HTTP_REQUEST_PARMS_NULL):nil;
+        return;
+    }
+    //    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:51120"]];
+    DIF_WeakSelf(self)
+    [self HttpPostRequestWithCommand:@"/uc/api/brokeruser/login"
+                          parameters:parms
+                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                           if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                               [responseModel[@"code"] integerValue] == 200)
+                           {
+                               DIF_StrongSelf
+                               strongSelf.refresh_token = responseModel[@"data"][@"refreshToken"][@"refreshToken"];
+                               strongSelf.access_token = responseModel[@"data"][@"accessToken"][@"accessToken"];
+                               type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                           }
+                           else
+                           {
+                               type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                           }
+                           if (successBlock)
+                           {
+                               successBlock(type, responseModel);
+                           }
+                       }
+                         FailedBlcok:failedBlock];
+}
+#pragma mark - 登出
+- (void)httpRequestLogoutResponseBlock:(CommonHttpResponseBlock)successBlock
+                           FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpGetRequestWithCommand:@"/api/brokeruser/logout"
+                         parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+#pragma mark - 修改密码
+- (void)httpRequestModifyPasswordWithParameters:(NSDictionary *)parms
+                                  ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                    FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpPostRequestWithCommand:@"/api/brokeruser/password/modify"
+                         parameters:parms
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+#pragma mark - 首页专题推荐
+- (void)httpRequestRecommendArticleResponseBlock:(CommonHttpResponseBlock)successBlock
+                                     FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpGetRequestWithCommand:@"/api/recommend/article"
+                         parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+#pragma mark - 首页保险产品推荐
+- (void)httpRequestRecommendInsuranceResponseBlock:(CommonHttpResponseBlock)successBlock
+                                       FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpGetRequestWithCommand:@"/api/recommend/insuranceproduct"
+                         parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+#pragma mark - 忘记密码--发送验证码
+- (void)httpRequestPasswordResetSmsCodeWithParameters:(NSDictionary *)parms
+                                        ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                          FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    NSString *command = @"/api/password/reset/smscode";
+    command = [command stringByAppendingFormat:@"/{%@}", parms[@"brokerPhone"]];
+    [self HttpGetRequestWithCommand:command
+                         parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+#pragma mark - 忘记密码--重置密码
+- (void)httpRequestPasswordResetWithParameters:(NSDictionary *)parms
+                                 ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                   FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    NSString *command = @"/api/password/reset";
+    [self HttpPostRequestWithCommand:command
+                          parameters:parms
+                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                           if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                               [responseModel[@"code"] integerValue] == 200)
+                           {
+                               type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                           }
+                           else
+                           {
+                               type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                           }
+                           if (successBlock)
+                           {
+                               successBlock(type, responseModel);
+                           }
+                       }
+                         FailedBlcok:failedBlock];
+}
 @end

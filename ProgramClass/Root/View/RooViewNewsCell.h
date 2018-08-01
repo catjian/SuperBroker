@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RootRecommnedArticleModel.h"
 
 @interface RooViewNewsCell : UICollectionViewCell
 

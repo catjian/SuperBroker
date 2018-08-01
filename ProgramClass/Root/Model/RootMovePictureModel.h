@@ -16,9 +16,9 @@
 
 @property (nonatomic, strong) NSString *status;
 
-@property (nonatomic, strong) NSString *isTop;
-
 @property (nonatomic, strong) NSString *updateTime;
+
+@property (nonatomic, strong) NSString *orderNum;
 
 @property (nonatomic, strong) NSString *pictureUrl;
 
