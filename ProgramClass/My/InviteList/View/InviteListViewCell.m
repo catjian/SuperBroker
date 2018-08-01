@@ -56,7 +56,8 @@
 
 - (void)loadData:(NSDictionary *)model
 {
-    [m_LeftIcon setImage:[UIImage imageNamed:model[@"icon"]]];
+    [m_LeftIcon sd_setImageWithURL:[NSURL URLWithString:model[@"icon"]]
+                  placeholderImage:[UIImage imageNamed:@"头像"]];
     [m_NameLab setText:model[@"name"]];
     [m_TimeLab setText:model[@"time"]];
     [m_StateLab setAttributedText:model[@"status"]];

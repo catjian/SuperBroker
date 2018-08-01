@@ -18,6 +18,9 @@
     SpecialNewsBaseView *m_BaseView;
     UIView *m_SearchView;
     UITextField *m_SearchTextField;
+    NSArray *m_Articleclassify;
+    ArticleListModel *m_listModel;
+    ArticleclassifyModel *m_NowPageModel;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -34,6 +37,7 @@
     [self.navigationItem setLeftBarButtonItem:nil];
     [self createSearchView];
     [self.navigationItem setTitleView:m_SearchView];
+    [self httpRequestArticleclassify];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -43,6 +47,29 @@
     {
         m_BaseView = [[SpecialNewsBaseView alloc] initWithFrame:self.view.bounds];
         [self.view addSubview:m_BaseView];
+        DIF_WeakSelf(self)
+        [m_BaseView setPageSelectBlock:^(NSInteger page) {
+            DIF_StrongSelf
+            strongSelf->m_NowPageModel = [ArticleclassifyModel mj_objectWithKeyValues:strongSelf->m_Articleclassify[page]];
+        }];
+        [m_BaseView setRefreshBlock:^{
+            DIF_StrongSelf
+            if (strongSelf->m_Articleclassify.count > 0)
+            {
+                [strongSelf httpRequestWithClassifyId:strongSelf->m_NowPageModel.classifyId
+                                        SearchContent:strongSelf->m_SearchTextField.text
+                                           PageNumber:1];
+            }
+        }];
+        [m_BaseView setLoadMoreBlock:^(NSInteger page) {
+            DIF_StrongSelf
+            if (strongSelf->m_Articleclassify.count > 0)
+            {
+                [strongSelf httpRequestWithClassifyId:strongSelf->m_NowPageModel.classifyId
+                                        SearchContent:strongSelf->m_SearchTextField.text
+                                           PageNumber:page+1];
+            }
+        }];
     }
 }
 
@@ -112,6 +139,62 @@
         return NO;
     }
     return YES;
+}
+
+#pragma mark - http Request
+
+- (void)httpRequestArticleclassify
+{
+    DIF_WeakSelf(self)
+    [DIF_CommonHttpAdapter
+     httpRequestArticleclassifyResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+         DIF_StrongSelf
+         if(type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+         {
+             strongSelf->m_Articleclassify = responseModel[@"data"];
+             [strongSelf->m_BaseView setClassifyArr:responseModel[@"data"]];
+             strongSelf->m_NowPageModel = [ArticleclassifyModel mj_objectWithKeyValues:strongSelf->m_Articleclassify[0]];
+         }
+         else
+         {
+             [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+         }
+     } FailedBlcok:^(NSError *error) {
+         [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+     }];
+}
+
+- (void)httpRequestWithClassifyId:(NSString *)classifyId
+                    SearchContent:(NSString *)title
+                       PageNumber:(NSInteger)pageNum
+{
+    DIF_WeakSelf(self)
+    [DIF_CommonHttpAdapter
+     httpRequestArticleListWithParameters:@{@"classifyId":classifyId,@"title":title,@"pageNum":[@(pageNum) stringValue]}
+     ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+         DIF_StrongSelf
+         [strongSelf->m_BaseView endloadEvent];
+         if(type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+         {
+             strongSelf->m_listModel = [ArticleListModel mj_objectWithKeyValues:responseModel[@"data"]];
+             if (pageNum == 1)
+             {
+                 [strongSelf->m_BaseView setListModel:@[strongSelf->m_listModel]];
+             }
+             else
+             {
+                 NSMutableArray *listModelArr = [NSMutableArray arrayWithArray:strongSelf->m_BaseView.listModel];
+                 [listModelArr addObject:strongSelf->m_listModel];
+                 [strongSelf->m_BaseView setListModel:listModelArr];
+             }
+         }
+         else
+         {
+             [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+         }
+     } FailedBlcok:^(NSError *error) {
+         [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+    }];
 }
 
 @end

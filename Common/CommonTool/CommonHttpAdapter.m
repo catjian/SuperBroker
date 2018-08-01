@@ -201,6 +201,13 @@ static CommonHttpAdapter *comHttp = nil;
                                                      success(dataTask, responseObject);
                                                  }
                                              }
+                                             else if ([responseObject count] == 2 && responseObject[@"code"])
+                                             {
+                                                 if (success)
+                                                 {
+                                                     success(dataTask, responseObject);
+                                                 }
+                                             }
                                              else
                                              {
                                                  if (failure)
@@ -636,7 +643,7 @@ static CommonHttpAdapter *comHttp = nil;
 {
     //    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
     [self HttpGetRequestWithCommand:@"/api/withdrawalaccount/my/all"
-                         parameters:nil
+                         parameters:parms
                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
                           if ([responseModel isKindOfClass:[NSDictionary class]] &&
                               [responseModel[@"code"] integerValue] == 200)
@@ -662,6 +669,31 @@ static CommonHttpAdapter *comHttp = nil;
 {
     //    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
     [self HttpPostRequestWithCommand:@"/api/withdrawalaccount/my/bankcard"
+                         parameters:parms
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+
+#pragma mark - 修改银行卡账户
+- (void)httpRequestMyAcountEditBankCardWithParameters:(NSDictionary *)parms
+                                        ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                          FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpPutRequestWithCommand:@"/api/withdrawalaccount/bankcard"
                          parameters:parms
                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
                           if ([responseModel isKindOfClass:[NSDictionary class]] &&
@@ -739,7 +771,85 @@ static CommonHttpAdapter *comHttp = nil;
 {
     //    [httpSessionManager setBaseURL:[NSURL URLWithString:@"http://192.168.100.243:40002"]];
     [self HttpGetRequestWithCommand:@"/api/withdrawal"
+                         parameters:parms
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+
+#pragma mark - 我的邀请
+#pragma mark - 我的邀请
+- (void)httpRequestInviteListWithParameters:(NSDictionary *)parms
+                              ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                FailedBlcok:(CommonHttpResponseFailed)failedBlock
+{
+    [self HttpGetRequestWithCommand:@"/api/invite"
+                         parameters:parms
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+
+#pragma mark - 专题
+#pragma mark - 专题分类
+- (void)httpRequestArticleclassifyResponseBlock:(CommonHttpResponseBlock)successBlock
+                                    FailedBlcok:(CommonHttpResponseFailed)failedBlock
+
+{
+    [self HttpGetRequestWithCommand:@"/api/articleclassify"
                          parameters:nil
+                      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+                          if ([responseModel isKindOfClass:[NSDictionary class]] &&
+                              [responseModel[@"code"] integerValue] == 200)
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS;
+                          }
+                          else
+                          {
+                              type = ENUM_COMMONHTTP_RESPONSE_TYPE_FAULSE;
+                          }
+                          if (successBlock)
+                          {
+                              successBlock(type, responseModel);
+                          }
+                      }
+                        FailedBlcok:failedBlock];
+}
+
+#pragma mark - 专题列表
+- (void)httpRequestArticleListWithParameters:(NSDictionary *)parms
+                               ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                 FailedBlcok:(CommonHttpResponseFailed)failedBlock
+
+{
+    [self HttpGetRequestWithCommand:@"/api/article"
+                         parameters:parms
                       ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
                           if ([responseModel isKindOfClass:[NSDictionary class]] &&
                               [responseModel[@"code"] integerValue] == 200)

@@ -11,3 +11,11 @@
 @implementation ArticleclassifyModel
 
 @end
+
+@implementation ArticleListModel
+
+@end
+
+@implementation ArticleListDetailModel
+
+@end

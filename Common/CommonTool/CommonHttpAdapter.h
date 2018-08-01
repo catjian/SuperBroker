@@ -66,6 +66,10 @@ static NSString * const BaseUrl = @"https://malixi.51vip.biz:10326/";
 - (void)httpRequestMyAcountAddBankCardWithParameters:(NSDictionary *)parms
                                        ResponseBlock:(CommonHttpResponseBlock)successBlock
                                          FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+#pragma mark - 修改银行卡账户
+- (void)httpRequestMyAcountEditBankCardWithParameters:(NSDictionary *)parms
+                                        ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                          FailedBlcok:(CommonHttpResponseFailed)failedBlock;
 #pragma mark - 添加我的支付宝账户
 - (void)httpRequestMyAcountAddAlipayWithParameters:(NSDictionary *)parms
                                      ResponseBlock:(CommonHttpResponseBlock)successBlock
@@ -80,4 +84,19 @@ static NSString * const BaseUrl = @"https://malixi.51vip.biz:10326/";
 - (void)httpRequestWithDrawalListWithParameters:(NSDictionary *)parms
                                   ResponseBlock:(CommonHttpResponseBlock)successBlock
                                     FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+
+#pragma mark - 我的邀请
+#pragma mark - 我的邀请
+- (void)httpRequestInviteListWithParameters:(NSDictionary *)parms
+                              ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+
+#pragma mark - 专题
+#pragma mark - 专题分类
+- (void)httpRequestArticleclassifyResponseBlock:(CommonHttpResponseBlock)successBlock
+                                    FailedBlcok:(CommonHttpResponseFailed)failedBlock;
+#pragma mark - 专题列表
+- (void)httpRequestArticleListWithParameters:(NSDictionary *)parms
+                               ResponseBlock:(CommonHttpResponseBlock)successBlock
+                                 FailedBlcok:(CommonHttpResponseFailed)failedBlock;
 @end

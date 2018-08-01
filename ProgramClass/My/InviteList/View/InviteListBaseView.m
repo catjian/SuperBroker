@@ -49,6 +49,12 @@
     return m_BGView;
 }
 
+- (void)setListModel:(InviteListModel *)listModel
+{
+    _listModel = listModel;
+    [self reloadData];
+}
+
 #pragma mark - UITableView Delegate & DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

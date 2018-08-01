@@ -36,10 +36,17 @@
 
 - (void)createItemWithData:(NSArray<NSString *> *)data
 {
+    CGFloat allWidth = 12;
     for (NSInteger i = 0; i < data.count; i ++)
     {
+        CGRect attrsRect = [data[i] boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, 9999)
+                                                 options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                              attributes:@{NSFontAttributeName : DIF_DIFONTOFSIZE(14)}
+                                                 context:nil];
         UILabel *label = [UILabel new];
-        label.frame = CGRectMake(12+i*30+i*38, 0, is_iPhone6P?40:30, self.height);
+        CGFloat width = is_iPhone6P?40:30;
+        width = (attrsRect.size.width > width?attrsRect.size.width:width);
+        label.frame = CGRectMake(allWidth, 0, width, self.height);
         label.text = data[i];
         label.tag = i;
         label.font = DIF_DIFONTOFSIZE(14);
@@ -63,10 +70,11 @@
         label.userInteractionEnabled = YES;
         [label addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(labelAction:)]];
         [m_scrollView addSubview:label];
+        allWidth += width+30;
     }
-    if ((data.count*30+data.count*38) > DIF_SCREEN_WIDTH)
+    if (allWidth > DIF_SCREEN_WIDTH)
     {
-        [m_scrollView setContentSize:CGSizeMake(data.count*27+data.count*38, m_scrollView.height)];
+        [m_scrollView setContentSize:CGSizeMake(allWidth, m_scrollView.height)];
     }
 }
 

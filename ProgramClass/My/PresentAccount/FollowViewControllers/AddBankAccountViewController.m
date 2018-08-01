@@ -22,30 +22,57 @@
     // Do any additional setup after loading the view from its nib.    
     [self setNavTarBarTitle:@"提现账户"];
     [self setRightItemWithContentName:@"完成"];
+    [self.selectBankBtn setTitle:self.accountModel.bankName forState:UIControlStateNormal];
+    [self.bankIDTF setText:self.accountModel.accountNo];
 }
 
 - (void)rightBarButtonItemAction:(UIButton *)btn
 {
     [CommonHUD showHUD];
     DIF_WeakSelf(self)
-    [DIF_CommonHttpAdapter
-     httpRequestMyAcountAddBankCardWithParameters:@{@"accountNo":self.bankIDTF.text,
-                                                    @"bankName":self.selectBankBtn.titleLabel.text}
-     ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
-         if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
-         {
-             [CommonHUD hideHUD];
-             DIF_StrongSelf
-             [strongSelf.navigationController popViewControllerAnimated:YES];
-         }
-         else
-         {
-             [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
-         }
-         
-     } FailedBlcok:^(NSError *error) {
-         [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
-    }];
+    if (!self.accountModel)
+    {
+        [DIF_CommonHttpAdapter
+         httpRequestMyAcountAddBankCardWithParameters:@{@"accountNo":self.bankIDTF.text,
+                                                        @"bankName":self.selectBankBtn.titleLabel.text}
+         ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+             if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+             {
+                 [CommonHUD hideHUD];
+                 DIF_StrongSelf
+                 [strongSelf.navigationController popViewControllerAnimated:YES];
+             }
+             else
+             {
+                 [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+             }
+             
+         } FailedBlcok:^(NSError *error) {
+             [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+         }];
+    }
+    else
+    {
+        [DIF_CommonHttpAdapter
+         httpRequestMyAcountEditBankCardWithParameters:@{@"accountNo":self.bankIDTF.text,
+                                                         @"bankName":self.selectBankBtn.titleLabel.text,
+                                                         @"withdrawalAccountId":self.accountModel.withdrawalAccountId}
+         ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+             if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+             {
+                 [CommonHUD hideHUD];
+                 DIF_StrongSelf
+                 [strongSelf.navigationController popViewControllerAnimated:YES];
+             }
+             else
+             {
+                 [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+             }
+             
+         } FailedBlcok:^(NSError *error) {
+             [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+         }];
+    }
 }
 
 - (IBAction)selectBankButtonEvent:(id)sender

@@ -16,6 +16,8 @@
     if (self)
     {
         self.cellHeight = 145;
+        self.showLine = YES;
+        self.showLineWidht = DIF_SCREEN_WIDTH;
         
         self.title = [[UILabel alloc] initWithFrame:CGRectMake(12, 15, DIF_SCREEN_WIDTH-24, 35)];
         [self.title setTextColor:DIF_HEXCOLOR(@"333333")];
@@ -32,13 +34,20 @@
         [self.contentView addSubview:self.detail];
         
         self.company = [[UILabel alloc] initWithFrame:CGRectMake(12, self.detail.bottom+20, DIF_SCREEN_WIDTH-24, 15)];
-        [self.company setTextColor:DIF_HEXCOLOR(@"333333")];
-        [self.company setFont:DIF_UIFONTOFSIZE(15)];
+        [self.company setTextColor:DIF_HEXCOLOR(@"999999")];
+        [self.company setFont:DIF_UIFONTOFSIZE(10)];
         [self.company setNumberOfLines:0];
         [self.company setLineBreakMode:NSLineBreakByCharWrapping];
-        [self.contentView addSubview:self.title];
+        [self.contentView addSubview:self.company];
     }
     return self;
+}
+
+- (void)loadData:(ArticleListDetailModel *)model
+{
+    [self.title setText:model.title];
+    [self.detail setText:model.summary];
+    [self.company setText:[NSString stringWithFormat:@"%@   %@阅读",model.author, model.hits]];
 }
 
 @end

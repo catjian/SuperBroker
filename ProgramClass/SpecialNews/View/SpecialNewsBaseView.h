@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SpecialNewsViewImageCell.h"
+#import "SpecialNewsViewMoreImageCell.h"
+#import "SpecialNewsViewTextCell.h"
 
-@interface SpecialNewsBaseView : UIView
+@interface SpecialNewsBaseView : UIView <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, copy) CommonPageControlViewSelectBlock pageSelectBlock;
+@property (nonatomic, copy) tableViewSelectRowAtIndexPathBlock selectBlock;
+@property (nonatomic, copy) tableViewHeaderRefreshBlock refreshBlock;
+@property (nonatomic, copy) tableViewLoadMoreBlock loadMoreBlock;
+
+@property (nonatomic, strong) NSArray *classifyArr;
+@property (nonatomic, strong) NSArray *listModel;
+
+- (void)endloadEvent;
 
 @end

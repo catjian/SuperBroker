@@ -26,15 +26,18 @@
 - (NSArray *)getAccountList
 {
     NSMutableArray *list = [NSMutableArray array];
+    BOOL isHadBank = NO, isHadAlipay = NO;
     for(NSDictionary *dic in m_AccountList)
     {
         PresentAccountModel *model = [PresentAccountModel mj_objectWithKeyValues:dic];
-        if (model.accountType.integerValue==16)
+        if (model.accountType.integerValue==16 && !isHadBank)
         {
+            isHadBank = YES;
             [list addObject:@{@"leftTitle":@"银行卡",@"content":model.accountNo?model.accountNo:@"",@"showRight":@(YES)}];
         }
-        else
+        if (model.accountType.integerValue==15 && !isHadAlipay)
         {
+            isHadAlipay = YES;
             [list insertObject:@{@"leftTitle":@"支付宝账户",@"content":model.accountNo?model.accountNo:@"",@"showRight":@(NO)}
                        atIndex:0];
         }

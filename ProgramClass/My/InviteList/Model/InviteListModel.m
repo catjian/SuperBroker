@@ -14,39 +14,26 @@
 {
     NSMutableArray *dataArr = [NSMutableArray array];
     
-    NSMutableAttributedString *status = [[NSMutableAttributedString alloc] initWithString:@"高级会员"];
-    [status attatchImage:[UIImage imageNamed:@"高级会员"]
-              imageFrame:CGRectMake(7, -2, 13, 13)
-                   Range:NSMakeRange(0, status.length)];
-    [dataArr addObject:@{@"icon":@"银联-86x86",
-                         @"name":@"招商银行",
-                         @"time":@"2018-07-10 14:20",
-                         @"status":status}];
-    status = [[NSMutableAttributedString alloc] initWithString:@"高级会员"];
-    [status attatchImage:[UIImage imageNamed:@"高级会员"]
-              imageFrame:CGRectMake(7, -2, 13, 13)
-                   Range:NSMakeRange(0, status.length)];
-    [dataArr addObject:@{@"icon":@"支付宝-86x86",
-                         @"name":@"支付宝账户",
-                         @"time":@"2018-07-10 14:20",
-                         @"status":status}];
-    status = [[NSMutableAttributedString alloc] initWithString:@"初级会员"];
-    [status attatchImage:[UIImage imageNamed:@"初级会员"]
-              imageFrame:CGRectMake(7, -2, 13, 13)
-                   Range:NSMakeRange(0, status.length)];
-    [dataArr addObject:@{@"icon":@"银联-86x86",
-                         @"name":@"招商银行",
-                         @"time":@"2018-07-10 14:20",
-                         @"status":status}];
-    status = [[NSMutableAttributedString alloc] initWithString:@"初级会员"];
-    [status attatchImage:[UIImage imageNamed:@"初级会员"]
-              imageFrame:CGRectMake(7, -2, 13, 13)
-                   Range:NSMakeRange(0, status.length)];
-    [dataArr addObject:@{@"icon":@"银联-86x86",
-                         @"name":@"招商银行",
-                         @"time":@"2018-07-10 14:20",
-                         @"status":status}];
+    NSArray *levelNames = @[@"高级会员", @"中级会员", @"初级会员"];
+    for (NSDictionary *dic in self.list)
+    {
+        InviteDetailModel *model = [InviteDetailModel mj_objectWithKeyValues:dic];
+        NSString *level = levelNames[model.payType.integerValue-6];
+        NSMutableAttributedString *status = [[NSMutableAttributedString alloc] initWithString:level];
+        [status attatchImage:[UIImage imageNamed:level]
+                  imageFrame:CGRectMake(7, -2, 13, 13)
+                       Range:NSMakeRange(0, status.length)];
+        [dataArr addObject:@{@"icon":model.brokerPictureUrl,
+                             @"name":model.brokerName?model.brokerName:@"",
+                             @"time":model.createTime?model.createTime:[CommonDate getNowDateWithFormate:@"yyyy-MM-dd"],
+                             @"status":status}];
+    }
     return dataArr;
 }
 
 @end
+
+@implementation InviteDetailModel
+
+@end
+

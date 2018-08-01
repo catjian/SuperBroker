@@ -7,6 +7,7 @@
 //
 
 #import "BaseTableViewCell.h"
+#import "ArticleclassifyModel.h"
 
 @interface SpecialNewsViewImageCell : BaseTableViewCell
 

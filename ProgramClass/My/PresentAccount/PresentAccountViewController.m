@@ -7,6 +7,7 @@
 //
 
 #import "PresentAccountViewController.h"
+#import "AddBankAccountViewController.h"
 
 @interface PresentAccountViewController ()
 
@@ -50,7 +51,17 @@
             DIF_StrongSelf
             if (indexPath.row == 1)
             {
-                [strongSelf loadViewController:@"AddBankAccountViewController"];
+                AddBankAccountViewController *vc = [strongSelf loadViewController:@"AddBankAccountViewController"];
+                PresentAccountViewCell *cell = [strongSelf->m_BaseView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+                for(NSDictionary *dic in strongSelf->m_BaseViewModel.getAccountListNormal)
+                {
+                    PresentAccountModel *model = [PresentAccountModel mj_objectWithKeyValues:dic];
+                    if ([model.accountNo isEqualToString:cell.contentStr])
+                    {
+                        vc.accountModel = model;
+                        break;
+                    }
+                }
             }
         }];
     }

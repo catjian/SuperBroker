@@ -56,7 +56,42 @@
         m_BaseView = [[InviteListBaseView alloc] initWithFrame:CGRectMake(0, 12, self.view.width, self.view.height-12) style:UITableViewStylePlain];
         m_BaseView.listModel = m_ListModel;
         [self.view addSubview:m_BaseView];
+        DIF_WeakSelf(self);
+        [m_BaseView setRefreshBlock:^{
+            DIF_StrongSelf
+            [strongSelf httpRequestGetInviteListWithPageNumber:1];
+        }];
+        [m_BaseView setLoadMoreBlock:^(NSInteger page) {
+            DIF_StrongSelf
+            [strongSelf httpRequestGetInviteListWithPageNumber:page+1];
+        }];
     }
+}
+
+#pragma mark - Http Request
+
+- (void)httpRequestGetInviteListWithPageNumber:(NSInteger)pageNum
+{
+    
+    DIF_WeakSelf(self);
+    [DIF_CommonHttpAdapter
+     httpRequestInviteListWithParameters:@{@"pageNum":[@(pageNum) stringValue]}
+     ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+         DIF_StrongSelf
+         [strongSelf->m_BaseView endRefresh];
+         if(type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+         {
+             strongSelf->m_ListModel = [InviteListModel mj_objectWithKeyValues:responseModel[@"data"]];
+             [strongSelf->m_BaseView setListModel:strongSelf->m_ListModel];
+         }
+         else
+         {
+             [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+         }
+     } FailedBlcok:^(NSError *error) {
+         [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+     }];
+    
 }
 
 @end

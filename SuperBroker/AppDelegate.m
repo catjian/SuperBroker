@@ -23,7 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [UMConfigure setLogEnabled:NO];//此处在初始化函数前面是为了打印初始化的日志
+//    [UMConfigure setLogEnabled:NO];//此处在初始化函数前面是为了打印初始化的日志
 //    [MobClick setCrashReportEnabled:YES];
 //    [UMConfigure initWithAppkey:@"5b44b282a40fa3138b000155" channel:@"App Store"];
     

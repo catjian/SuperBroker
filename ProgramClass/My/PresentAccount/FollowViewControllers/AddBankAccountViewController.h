@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "PresentAccountModel.h"
 
 @interface AddBankAccountViewController : BaseViewController
+
+@property (nonatomic, strong) PresentAccountModel *accountModel;
 
 @end
