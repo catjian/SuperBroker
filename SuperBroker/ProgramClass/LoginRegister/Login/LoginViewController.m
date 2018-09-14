@@ -30,9 +30,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.view setBackgroundColor:DIF_HEXCOLOR(@"ffffff")];
-    [self.userID setText:@"13657202472"];//15607185136 13657202472 18502761623 13376819810
-    [self.password setText:@"123456"];
-//    [self.userID setText:[[NSUserDefaults standardUserDefaults] stringForKey:DIF_Loaction_Save_UserId]];
+//    [self.userID setText:@"13657202472"];//15607185136 13657202472 18502761623 13376819810
+//    [self.password setText:@"123456"];
+    [self.userID setText:[[NSUserDefaults standardUserDefaults] stringForKey:DIF_Loaction_Save_UserId]];
     [self.userID setDelegate:self];
     [self.password setDelegate:self];
 }
