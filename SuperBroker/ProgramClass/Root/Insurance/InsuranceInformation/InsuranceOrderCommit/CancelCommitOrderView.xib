@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CancelCommitOrderView">
+            <connections>
+                <outlet property="contentView" destination="taG-UZ-cIX" id="eiE-Fw-dn0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view alpha="0.0" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taG-UZ-cIX">
+                    <rect key="frame" x="70" y="256" width="235" height="176"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="取消订单-1" translatesAutoresizingMaskIntoConstraints="NO" id="zkb-75-jry">
+                            <rect key="frame" x="84" y="45" width="67" height="67"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="67" id="PpU-ZR-4Uq"/>
+                                <constraint firstAttribute="width" constant="67" id="UYn-Jw-rTi"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="取消订单" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfz-Ak-WkB">
+                            <rect key="frame" x="0.0" y="19" width="235" height="13"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdD-SP-iVR">
+                            <rect key="frame" x="124" y="125" width="99" height="32"/>
+                            <state key="normal" image="再想想"/>
+                            <connections>
+                                <action selector="cancelButtonEvent:" destination="-1" eventType="touchUpInside" id="u3s-1s-6HE"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlv-Fc-Cq8">
+                            <rect key="frame" x="12" y="125" width="100" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="B8P-oU-ew1"/>
+                            </constraints>
+                            <state key="normal" image="确认"/>
+                            <connections>
+                                <action selector="successButtonEvent:" destination="-1" eventType="touchUpInside" id="51l-gc-yDq"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="zkb-75-jry" firstAttribute="centerX" secondItem="taG-UZ-cIX" secondAttribute="centerX" id="3RH-Aw-oBR"/>
+                        <constraint firstAttribute="height" constant="176" id="DZC-iH-MbU"/>
+                        <constraint firstItem="wfz-Ak-WkB" firstAttribute="top" secondItem="taG-UZ-cIX" secondAttribute="top" constant="19" id="K73-YA-Z9N"/>
+                        <constraint firstItem="zkb-75-jry" firstAttribute="top" secondItem="taG-UZ-cIX" secondAttribute="top" constant="45" id="T2D-K2-fyN"/>
+                        <constraint firstItem="xlv-Fc-Cq8" firstAttribute="top" secondItem="zkb-75-jry" secondAttribute="bottom" constant="13" id="U8V-bo-7dd"/>
+                        <constraint firstAttribute="trailing" secondItem="wfz-Ak-WkB" secondAttribute="trailing" id="c1w-fq-uGI"/>
+                        <constraint firstAttribute="trailing" secondItem="XdD-SP-iVR" secondAttribute="trailing" constant="12" id="glr-sV-DwM"/>
+                        <constraint firstItem="XdD-SP-iVR" firstAttribute="top" secondItem="xlv-Fc-Cq8" secondAttribute="top" id="l62-Md-nfy"/>
+                        <constraint firstItem="xlv-Fc-Cq8" firstAttribute="leading" secondItem="taG-UZ-cIX" secondAttribute="leading" constant="12" id="nDj-yw-z5Z"/>
+                        <constraint firstItem="zkb-75-jry" firstAttribute="top" secondItem="wfz-Ak-WkB" secondAttribute="bottom" constant="13" id="pYi-IO-rxK"/>
+                        <constraint firstItem="XdD-SP-iVR" firstAttribute="bottom" secondItem="xlv-Fc-Cq8" secondAttribute="bottom" id="rcw-Hq-t1d"/>
+                        <constraint firstItem="wfz-Ak-WkB" firstAttribute="leading" secondItem="taG-UZ-cIX" secondAttribute="leading" id="sWL-bB-EjY"/>
+                        <constraint firstAttribute="bottom" secondItem="xlv-Fc-Cq8" secondAttribute="bottom" constant="19" id="spP-3H-Zew"/>
+                        <constraint firstItem="XdD-SP-iVR" firstAttribute="leading" secondItem="xlv-Fc-Cq8" secondAttribute="trailing" constant="12" id="uzc-F6-kPN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="taG-UZ-cIX" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="FQA-am-rZS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="taG-UZ-cIX" secondAttribute="trailing" constant="70" id="gGI-q9-IS6"/>
+                <constraint firstItem="taG-UZ-cIX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="70" id="iUF-BN-hIg"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-220" y="55"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="再想想" width="100" height="32"/>
+        <image name="取消订单-1" width="67" height="67"/>
+        <image name="确认" width="100" height="32"/>
+    </resources>
+</document>

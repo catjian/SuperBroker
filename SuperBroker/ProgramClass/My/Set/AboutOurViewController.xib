@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutOurViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="关于我们贴图" translatesAutoresizingMaskIntoConstraints="NO" id="nja-fi-aNe">
+                    <rect key="frame" x="49" y="53" width="277" height="236"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="236" id="5IC-zF-26H"/>
+                        <constraint firstAttribute="width" constant="277" id="X7V-gs-7hx"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3Y-s5-Wrs">
+                    <rect key="frame" x="49" y="319" width="277" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="GdA-tw-zHp"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="易普惠">
+                            <attributes>
+                                <color key="NSColor" red="0.0039215686274509803" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="15" name="SimHei"/>
+                                <font key="NSOriginalFont" size="15" name="SimHei"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="是一款利用移动互联网，为普通用户提供保单资讯行业性产品贴心建议的专业信息服务app">
+                            <attributes>
+                                <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="15" name="SimHei"/>
+                                <font key="NSOriginalFont" size="15" name="SimHei"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="。">
+                            <attributes>
+                                <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="14" name="SimHei"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVi-JT-1dq">
+                    <rect key="frame" x="49" y="409" width="277" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="zLp-MU-51h"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="联系电话：">
+                            <attributes>
+                                <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="15" name="SimHei"/>
+                                <font key="NSOriginalFont" size="15" name="SimHei"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="027 8823 5850">
+                            <attributes>
+                                <color key="NSColor" red="0.0039215686274509803" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="15" name="SimHei"/>
+                                <font key="NSOriginalFont" size="15" name="SimHei"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="武汉韵溪峰信息咨询有限公司版权所有" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdF-qi-NTG">
+                    <rect key="frame" x="10" y="623" width="355" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="3gb-Nl-nrh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="WVi-JT-1dq" firstAttribute="leading" secondItem="c3Y-s5-Wrs" secondAttribute="leading" id="50W-Kx-6ms"/>
+                <constraint firstItem="WVi-JT-1dq" firstAttribute="top" secondItem="c3Y-s5-Wrs" secondAttribute="bottom" constant="30" id="94W-q2-Dqd"/>
+                <constraint firstItem="c3Y-s5-Wrs" firstAttribute="leading" secondItem="nja-fi-aNe" secondAttribute="leading" id="EHo-V6-eda"/>
+                <constraint firstItem="WVi-JT-1dq" firstAttribute="trailing" secondItem="c3Y-s5-Wrs" secondAttribute="trailing" id="Ibz-Qg-74D"/>
+                <constraint firstItem="c3Y-s5-Wrs" firstAttribute="trailing" secondItem="nja-fi-aNe" secondAttribute="trailing" id="POP-4J-SCh"/>
+                <constraint firstItem="c3Y-s5-Wrs" firstAttribute="top" secondItem="nja-fi-aNe" secondAttribute="bottom" constant="30" id="bMf-1Y-tlj"/>
+                <constraint firstItem="KdF-qi-NTG" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="dri-yg-nSr"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="KdF-qi-NTG" secondAttribute="trailing" constant="10" id="ea6-gF-Koc"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="KdF-qi-NTG" secondAttribute="bottom" constant="23" id="k3m-BG-umC"/>
+                <constraint firstItem="nja-fi-aNe" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="kHp-Fz-LHH"/>
+                <constraint firstItem="nja-fi-aNe" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="33" id="l2y-WN-JeM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="关于我们贴图" width="277" height="236"/>
+    </resources>
+</document>
