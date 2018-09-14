@@ -53,7 +53,7 @@
         [self httpRequestMyBrokerAmount];
     }
     [self.window makeKeyAndVisible];
-//    [self performSelector:@selector(httpRequestCheckVersion) withObject:nil afterDelay:1];
+    [self performSelector:@selector(httpRequestCheckVersion) withObject:nil afterDelay:1];
     
 //    [[IQKeyboardManager sharedManager] setToolbarDoneBarButtonItemText:@"完成"];
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
@@ -310,12 +310,10 @@
 
 - (void)httpRequestCheckVersion
 {
-    
     [CommonHUD showHUD];
     DIF_WeakSelf(self)
     [DIF_CommonHttpAdapter
-     httpRequestCheckVersionWithParameters:@{@"versionCode":
-                                                 [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]}
+     httpRequestCheckVersionWithParameters:@{@"versionCode": [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]}
      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
          if (type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
          {
