@@ -248,7 +248,7 @@ static CommonHttpAdapter *comHttp = nil;
     {
         command = [command stringByAppendingFormat:@"?%@",[self parametersToString:parms]];
     }
-    DebugLog(@"command = %@",command);
+//    DebugLog(@"command = %@",command);
     NSMutableURLRequest *request =
     [self reWrteCreateHttpRequstWithMethod:@"GET"
                                  URLString:[command stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]
@@ -264,7 +264,7 @@ static CommonHttpAdapter *comHttp = nil;
     [self httpRequest:request
              progress:nil
               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                  DebugLog(@"responseObject = %@",responseObject);
+//                  DebugLog(@"responseObject = %@",responseObject);
                   if (block)
                   {
                       if ([responseObject[@"code"] integerValue] == 604)
@@ -330,7 +330,7 @@ static CommonHttpAdapter *comHttp = nil;
     [self httpRequest:request
              progress:nil
               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                  DebugLog(@"responseObject = %@",responseObject);
+//                  DebugLog(@"responseObject = %@",responseObject);
                   if (block)
                   {
                       if ([responseObject[@"code"] integerValue] == 604)
@@ -392,7 +392,7 @@ static CommonHttpAdapter *comHttp = nil;
     [self httpRequest:request
              progress:nil
               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                  DebugLog(@"responseObject = %@",responseObject);
+//                  DebugLog(@"responseObject = %@",responseObject);
                   if (block)
                   {
                       if ([responseObject[@"code"] integerValue] == 604)

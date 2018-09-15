@@ -45,7 +45,10 @@ typedef NS_ENUM(NSUInteger, ENUM_MyOrder_Car_Status) {
 - (NSDictionary *)serviceKeyValue;
 
 //分享网页
-- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType URLString:(NSString *)string;
+- (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
+                         URLString:(NSString *)string
+                             title:(NSString *)title
+                             descr:(NSString *)descr;
 
 - (void)httpRequestIMUserSig;
 

@@ -30,7 +30,7 @@
     // Override point for customization after application launch.
     [UMConfigure setLogEnabled:NO];//此处在初始化函数前面是为了打印初始化的日志
     [MobClick setCrashReportEnabled:YES];
-    [UMConfigure initWithAppkey:@"5b5eb685b27b0a4a24000112" channel:@"App Store"];
+    [UMConfigure initWithAppkey:@"5b44b282a40fa3138b000155" channel:@"App Store"];
     
     // U-Share 平台设置
     [self configUSharePlatforms];
@@ -222,14 +222,16 @@
 
 - (void)shareWebPageToPlatformType:(UMSocialPlatformType)platformType
                          URLString:(NSString *)string
+                             title:(NSString *)title
+                             descr:(NSString *)descr
 {
     //创建分享消息对象
     UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
     
     //创建网页内容对象
     UMShareWebpageObject *shareObject = [UMShareWebpageObject
-                                         shareObjectWithTitle:@"@我，这是我的独门签单秘籍，开单宝典送给努力前行的你"
-                                         descr:@"您的好友在易普惠分享一起开单大吉，邀您开单送大礼！"
+                                         shareObjectWithTitle:title?title:@"@我，这是我的独门签单秘籍，开单宝典送给努力前行的你"
+                                         descr:descr?descr:@"您的好友在易普惠分享一起开单大吉，邀您开单送大礼！"
                                          thumImage:[UIImage imageNamed:@"AppIcon"]];
     //设置网页地址
     shareObject.webpageUrl =string;

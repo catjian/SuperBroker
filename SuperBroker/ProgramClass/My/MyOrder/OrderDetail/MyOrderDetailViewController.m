@@ -92,32 +92,35 @@
         MyOrderInsuranceDetailOrderLogsModel *logsModel = [MyOrderInsuranceDetailOrderLogsModel mj_objectWithKeyValues:dic];
         if ([logsModel.orderStatus isEqualToString:m_DetailModel.orderStatus])
         {
-//            if (m_DetailModel.orderStatus.integerValue == 11)
-//            {
-//                [self.insState setText:[NSString stringWithFormat:@"报价：%.2f元",m_DetailModel.orderAmount.floatValue]];
-//                [self.insState setText:[NSString stringWithFormat:@"报价：%@元",m_DetailModel.orderAmount]];
-//            }
-//            else
-            {
-                [self.insState setText:logsModel.orderStatusName];
-            }
+            [self.insState setText:logsModel.orderStatusName];
+            [self.insState setTextColor:DIF_HEXCOLOR(DIF_StateTypeColor[logsModel.orderStatusName])];
         }
-        if ([logsModel.statusTimeName isEqualToString:@"创建时间"])
+        if ([logsModel.orderStatus isEqualToString:@"11"])
         {
-            [self.createDateLab setText:[NSString stringWithFormat:@"%@：%@",logsModel.statusTimeName,[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
-                                                         Formate:@"yyyy-MM-dd"]]];
+            [self.createDateLab setText:[NSString stringWithFormat:@"创建时间：%@",
+                                           [CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
+                                                            Formate:nil]]];
+//            [self.createDateLab setText:[NSString stringWithFormat:@"%@：%@",logsModel.statusTimeName,[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
+//                                                                                                                      Formate:nil]]];
         }
-        if ([logsModel.statusTimeName isEqualToString:@"付款时间"])
+        if ([logsModel.orderStatus isEqualToString:@"13"])
         {
-            [self.payDateLab setText:[NSString stringWithFormat:@"%@：%@",logsModel.statusTimeName,[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
-                                                         Formate:@"yyyy-MM-dd"]]];
+            [self.payDateLab setText:[NSString stringWithFormat:@"付款时间：%@",
+                                           [CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
+                                                            Formate:nil]]];
+//            [self.payDateLab setText:[NSString stringWithFormat:@"%@：%@",logsModel.statusTimeName,[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
+//                                                                                                                   Formate:nil]]];
         }
-        if ([logsModel.statusTimeName isEqualToString:@"结算时间"])
+        if ([logsModel.orderStatus isEqualToString:@"15"])
         {
-            [self.endOrderDateLab setText:[NSString stringWithFormat:@"%@：%@",logsModel.statusTimeName,[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
-                                                         Formate:@"yyyy-MM-dd"]]];
+            [self.endOrderDateLab setText:[NSString stringWithFormat:@"结算时间：%@",
+                                           [CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
+                                                            Formate:nil]]];
+//            [self.endOrderDateLab setText:[NSString stringWithFormat:@"%@：%@",logsModel.statusTimeName,[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
+//                                                                                                                        Formate:nil]]];
         }
-    } ;
+        
+    }
     MyOrderInsuranceDetailInsuredInfoModel *insuredInfoModel = [MyOrderInsuranceDetailInsuredInfoModel mj_objectWithKeyValues:m_DetailModel.insuredInfo];
     MyOrderInsuranceDetailManagerInfoModel *managerInfoModel = [MyOrderInsuranceDetailManagerInfoModel mj_objectWithKeyValues:m_DetailModel.managerInfo];
     [self.generalizeAmountLab setText:[NSString stringWithFormat:@"推广奖励%@元", m_DetailModel.generalizeAmount]];

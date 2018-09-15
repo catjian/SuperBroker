@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
+typedef void(^SetViewControllerLogoutBlock)(void);
+
 @interface SetViewController : BaseViewController
+
+@property (nonatomic, copy) SetViewControllerLogoutBlock loblock;
 
 @end

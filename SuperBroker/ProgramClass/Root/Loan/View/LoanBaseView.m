@@ -15,6 +15,7 @@
     BOOL m_isSelectType;
     BOOL m_isSelectCom;
     BOOL m_isSelectAge;
+    BOOL m_isSelectScreen;
 }
 
 - (instancetype) initWithFrame:(CGRect)frame
@@ -26,6 +27,7 @@
         m_isSelectType = NO;
         m_isSelectCom = NO;
         m_isSelectAge = NO;
+        m_isSelectScreen = NO;
         [self createTopView];
         UIView *line1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DIF_SCREEN_WIDTH, 1)];
         [line1 setBackgroundColor:DIF_HEXCOLOR(@"dedede")];
@@ -64,6 +66,7 @@
     [titles addObject:title];
     title = [[NSMutableAttributedString alloc] initWithString:@"借贷期限"];
     [title FontAttributeNameWithFont:DIF_UIFONTOFSIZE(14) Range:NSMakeRange(0, title.length)];
+    [title ForegroundColorAttributeNamWithColor:DIF_HEXCOLOR(!m_isSelectScreen?@"333333":@"017aff") Range:NSMakeRange(0, title.length)];
     [title attatchImage:[UIImage imageNamed:@"筛选"]
              imageFrame:CGRectMake(5, -2, 15, 15)
                   Range:NSMakeRange(0, title.length)];
@@ -102,8 +105,11 @@
         case 1:
             m_isSelectCom = !m_isSelectCom;
             break;
-        default:
+        case 2:
             m_isSelectAge = !m_isSelectAge;
+            break;
+        default:
+            m_isSelectScreen = !m_isSelectScreen;
             break;
     }
     NSArray *titles = [self topTitlesArray];
@@ -194,11 +200,12 @@
     [m_TableView.mj_header beginRefreshing];
 }
 
-- (void)uploadTopButtonStatusWithType:(BOOL)typeOn Comp:(BOOL)comON Age:(BOOL)ageOn
+- (void)uploadTopButtonStatusWithType:(BOOL)typeOn Comp:(BOOL)comON Age:(BOOL)ageOn Screen:(BOOL)screenOn
 {
     m_isSelectType = typeOn;
     m_isSelectCom = comON;
     m_isSelectAge = ageOn;
+    m_isSelectScreen = screenOn;
     NSArray *titles = [self topTitlesArray];
     for (NSInteger i = 0; i < titles.count; i ++)
     {

@@ -51,8 +51,18 @@
     }
     else
     {
-        [stateView.stateLab setText:[[DIF_APPDELEGATE serviceKeyValue] objectForKey:m_DetailModel.orderStatus]];
+        for (NSDictionary *dic in m_DetailModel.orderLogs)
+        {
+            MyOrderCarOrderLogsModel *logsModel = [MyOrderCarOrderLogsModel mj_objectWithKeyValues:dic];
+            if ([logsModel.orderStatus isEqualToString:m_DetailModel.orderStatus])
+            {
+                [stateView.stateLab setText:logsModel.orderStatusName];
+                [stateView.stateLab setTextColor:DIF_HEXCOLOR(DIF_StateTypeColor[logsModel.orderStatusName])];
+                break;
+            }
+        }
     }
+//    [stateView.stateLab setText:[[DIF_APPDELEGATE serviceKeyValue] objectForKey:m_DetailModel.orderStatus]];
     [stateView.moneyLab setText:[NSString stringWithFormat:@"推广奖励%@元",m_DetailModel.generalizeAmount]];
     [stateView.companyIcon sd_setImageWithURL:[NSURL URLWithString:m_DetailModel.productUrl]];
     [stateView.companyName setText:m_DetailModel.productName];
@@ -91,8 +101,9 @@
     [ownerView.titleLab setText:@"车主信息"];
     [ownerView.contentFriLab setText:[NSString stringWithFormat:@"姓名：%@", carInsuredInfoModel.carOwnerName]];
     [ownerView.contentSecLab setText:[NSString stringWithFormat:@"身份证号：%@", carInsuredInfoModel.carOwnerCertificate]];
-    [ownerView.contentThrLab setText:[NSString stringWithFormat:@"联系方式：%@", carInsuredInfoModel.insuredPhone]];
+//    [ownerView.contentThrLab setText:[NSString stringWithFormat:@"联系方式：%@", carInsuredInfoModel.insuredPhone]];
     [m_ScrollView addSubview:ownerView];
+    ownerView.height -= 24;
     
     CarInformationView *carInfoView = [[CarInformationView alloc] initWithFrame:CGRectMake(0, ownerView.bottom, 0, 0)];
     [carInfoView.titleLab setText:@"车辆信息"];
@@ -109,12 +120,13 @@
     [customerView.titleLab setText:@"投保人信息"];
     [customerView.contentFriLab setText:[NSString stringWithFormat:@"姓名：%@", carInsuredInfoModel.insuredName]];
     [customerView.contentSecLab setHidden:YES];
-    [customerView.contentSecLab setText:[NSString stringWithFormat:@"身份证号：%@", carInsuredInfoModel.carOwnerCertificate]];
+//    [customerView.contentSecLab setText:[NSString stringWithFormat:@"身份证号：%@", carInsuredInfoModel.carOwnerCertificate]];
     [customerView.contentThrLab setText:[NSString stringWithFormat:@"联系方式：%@", carInsuredInfoModel.insuredPhone]];
     [m_ScrollView addSubview:customerView];
     
     if (m_DetailModel.orderStatus.integerValue == 18 ||
         m_DetailModel.orderStatus.integerValue == 14 ||
+        m_DetailModel.orderStatus.integerValue == 13 ||
         m_DetailModel.orderStatus.integerValue == 17 ||
         m_DetailModel.orderStatus.integerValue == 15 ||
         m_DetailModel.orderStatus.integerValue == 16)
@@ -123,20 +135,20 @@
         //    dateTwoView.height -= DIF_PX(24);
         [dateTwoView.titleLab setText:[NSString stringWithFormat:@"订单编号：%@",m_DetailModel.orderCode]];
         [dateTwoView.contentFriLab setText:[NSString stringWithFormat:@"创建时间：%@",[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:carInsuredInfoModel.carRegisterTime.integerValue/1000]
-                                                                                                  Formate:@"yyyy-MM-dd"]]];
+                                                                                                  Formate:nil]]];
         [dateTwoView.contentSecLab setText:[NSString stringWithFormat:@"付款时间：%@",[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:carInsuredInfoModel.carRegisterTime.integerValue/1000]
-                                                                                                  Formate:@"yyyy-MM-dd"]]];
+                                                                                                  Formate:nil]]];
         if (m_DetailModel.orderStatus.integerValue == 18 ||
             m_DetailModel.orderStatus.integerValue == 17)
         {
             [dateTwoView.contentSecLab setText:[NSString stringWithFormat:@"取消时间：%@",[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:carInsuredInfoModel.carRegisterTime.integerValue/1000]
-                                                                                                      Formate:@"yyyy-MM-dd"]]];
+                                                                                                      Formate:nil]]];
         }
         if (m_DetailModel.orderStatus.integerValue == 15 ||
             m_DetailModel.orderStatus.integerValue == 16)
         {
             [dateTwoView.contentThrLab setText:[NSString stringWithFormat:@"结算时间：%@",[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:carInsuredInfoModel.carRegisterTime.integerValue/1000]
-                                                                                                      Formate:@"yyyy-MM-dd"]]];
+                                                                                                      Formate:nil]]];
         }
         [m_ScrollView addSubview:dateTwoView];
         return dateTwoView;
@@ -147,7 +159,7 @@
         //    dateView.height -= DIF_PX(24);
         [dateView.contentFriLab setText:[NSString stringWithFormat:@"订单编号：%@",m_DetailModel.orderCode]];
         [dateView.contentSecLab setText:[NSString stringWithFormat:@"创建时间：%@",[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:carInsuredInfoModel.carRegisterTime.integerValue/1000]
-                                                                                               Formate:@"yyyy-MM-dd"]]];
+                                                                                               Formate:nil]]];
 //        [dateView.contentThrLab setText:[NSString stringWithFormat:@"创建时间：%@",[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:carInsuredInfoModel.carRegisterTime.integerValue/1000]
 //                                                                                               Formate:@"yyyy-MM-dd"]]];
         [m_ScrollView addSubview:dateView];
@@ -267,11 +279,15 @@
     __block NSString *preCommissionAmount = @"0";
     __block CarOrderMoneyView *moneyView = [[CarOrderMoneyView alloc] initWithFrame:CGRectMake(0, commonView.bottom, 0, 0)];
     [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥ %.2f元",m_DetailModel.orderAmount.floatValue]];
-    [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥ %@元",m_DetailModel.orderAmount]];
     if (DIF_APPDELEGATE.brokerInfoModel.brokerType.integerValue != 10)
     {
-        [m_ScrollView addSubview:moneyView];
+        [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥ %@元",m_DetailModel.orderAmount]];
     }
+    else
+    {
+        [moneyView hideSecondLab];
+    }
+    [m_ScrollView addSubview:moneyView];
     DIF_WeakSelf(self)
     [moneyView setSelectBlock:^{
         DIF_StrongSelf
@@ -288,12 +304,13 @@
                 preCommissionAmount = money;
                 [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%.2f元",money.floatValue]];
                 [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%@元",money]];
+                [moneyView.contentSecLab setTextColor:DIF_HEXCOLOR(@"ff5000")];
             }
         }];
     }];
     
     
-    CarOrderMoneyButtonView *btnView = [[CarOrderMoneyButtonView alloc] initWithFrame:CGRectMake(0, DIF_APPDELEGATE.brokerInfoModel.brokerType.integerValue != 10?moneyView.bottom:commonView.bottom, 0, 0)];
+    CarOrderMoneyButtonView *btnView = [[CarOrderMoneyButtonView alloc] initWithFrame:CGRectMake(0, moneyView.bottom, 0, 0)];
     NSString *moneyStr = [NSString stringWithFormat:@"￥%.2f",m_DetailModel.orderAmount.floatValue];
     moneyStr = [NSString stringWithFormat:@"￥%@",m_DetailModel.orderAmount];
     NSMutableAttributedString *attMoneyStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"合计： %@元",moneyStr]];
@@ -346,14 +363,21 @@
     CarOrderMoneyView *moneyView = [[CarOrderMoneyView alloc] initWithFrame:CGRectMake(0, managerView.bottom, 0, 0)];
     [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.orderAmount.floatValue]];
     [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.orderAmount]];
-    [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.preCommissionAmount.floatValue]];
-    if ([m_DetailModel.preCommissionAmount isEqualToString:@"0"])
+    if (DIF_APPDELEGATE.brokerInfoModel.brokerType.integerValue != 10)
     {
-        [moneyView.contentSecLab setText:@"未使用消费券"];
+        [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.preCommissionAmount.floatValue]];
+        if ([m_DetailModel.preCommissionAmount isEqualToString:@"0"])
+        {
+            [moneyView.contentSecLab setText:@"未使用消费券"];
+        }
+        else
+        {
+            [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.preCommissionAmount]];
+        }
     }
     else
     {
-        [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.preCommissionAmount]];
+        [moneyView hideSecondLab];
     }
     [m_ScrollView addSubview:moneyView];
     
@@ -382,14 +406,21 @@
     CarOrderMoneyView *moneyView = [[CarOrderMoneyView alloc] initWithFrame:CGRectMake(0, managerView.bottom, 0, 0)];
     [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.orderAmount.floatValue]];
     [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.orderAmount]];
-    [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.preCommissionAmount.floatValue]];
-    if ([m_DetailModel.preCommissionAmount isEqualToString:@"0"])
+    if (DIF_APPDELEGATE.brokerInfoModel.brokerType.integerValue != 10)
     {
-        [moneyView.contentSecLab setText:@"未使用消费券"];
+        [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.preCommissionAmount.floatValue]];
+        if ([m_DetailModel.preCommissionAmount isEqualToString:@"0"])
+        {
+            [moneyView.contentSecLab setText:@"未使用消费券"];
+        }
+        else
+        {
+            [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.preCommissionAmount]];
+        }
     }
     else
     {
-        [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.preCommissionAmount]];
+        [moneyView hideSecondLab];
     }
     [m_ScrollView addSubview:moneyView];
     
@@ -410,6 +441,31 @@
 - (void)createCancelOrderView
 {
     UIView *commonView = [self createCommonView];
+    
+    if (m_DetailModel.orderAmount.length > 0)
+    {
+        CarOrderMoneyView *moneyView = [[CarOrderMoneyView alloc] initWithFrame:CGRectMake(0, commonView.bottom, 0, 0)];
+        [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.orderAmount.floatValue]];
+        [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.orderAmount]];
+        if (m_DetailModel.preCommissionAmount.length > 0)
+        {
+            [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.preCommissionAmount.floatValue]];
+            if ([m_DetailModel.preCommissionAmount isEqualToString:@"0"])
+            {
+                [moneyView.contentSecLab setText:@"未使用消费券"];
+            }
+            else
+            {
+                [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.preCommissionAmount]];
+            }
+        }
+        else
+        {
+            [moneyView.contentSecLab setHidden:YES];
+        }
+        [m_ScrollView addSubview:moneyView];
+        commonView = moneyView;
+    }
     
     CarOrderCancelButtonView *cancelView = [[CarOrderCancelButtonView alloc] initWithFrame:CGRectMake(0, commonView.bottom, 0, 0)];
     [cancelView.titleLab setText:@"取消的订单，经后台审核后将退还未使用的消费券。"];
@@ -436,19 +492,32 @@
     CarOrderMoneyView *moneyView = [[CarOrderMoneyView alloc] initWithFrame:CGRectMake(0, managerView.bottom, 0, 0)];
     [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.orderAmount.floatValue]];
     [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.orderAmount]];
-    [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.preCommissionAmount.floatValue]];
-    if ([m_DetailModel.preCommissionAmount isEqualToString:@"0"])
+    if (DIF_APPDELEGATE.brokerInfoModel.brokerType.integerValue != 10)
     {
-        [moneyView.contentSecLab setText:@"未使用消费券"];
+        [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.preCommissionAmount.floatValue]];
+        if ([m_DetailModel.preCommissionAmount isEqualToString:@"0"])
+        {
+            [moneyView.contentSecLab setText:@"未使用消费券"];
+        }
+        else
+        {
+            [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.preCommissionAmount]];
+        }
     }
     else
     {
-        [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.preCommissionAmount]];
+        [moneyView hideSecondLab];
     }
     [m_ScrollView addSubview:moneyView];
     
     CarOrderMoneyButtonView *btnView = [[CarOrderMoneyButtonView alloc] initWithFrame:CGRectMake(0, moneyView.bottom, 0, 0)];
     [btnView.moneyLab setTextAlignment:NSTextAlignmentRight];
+    NSString *moneyStr = [NSString stringWithFormat:@"￥%.2f",m_DetailModel.orderAmount.floatValue];
+    moneyStr = [NSString stringWithFormat:@"￥%@",m_DetailModel.orderAmount];
+    NSMutableAttributedString *attMoneyStr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"合计： %@元",moneyStr]];
+    [attMoneyStr FontAttributeNameWithFont:DIF_UIFONTOFSIZE(16) Range:[attMoneyStr.string rangeOfString:moneyStr]];
+    [attMoneyStr ForegroundColorAttributeNamWithColor:DIF_HEXCOLOR(@"017aff") Range:[attMoneyStr.string rangeOfString:moneyStr]];
+    [btnView.moneyLab setAttributedText:attMoneyStr];
     [btnView setShowButton:NO];
     [m_ScrollView addSubview:btnView];
     [m_ScrollView setContentSize:CGSizeMake(DIF_SCREEN_WIDTH, btnView.bottom)];
@@ -459,22 +528,35 @@
 {
     UIView *commonView = [self createCommonView];
     
-    CarOrderMoneyView *moneyView = [[CarOrderMoneyView alloc] initWithFrame:CGRectMake(0, commonView.bottom, 0, 0)];
-    [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.orderAmount.floatValue]];
-    [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.orderAmount]];
-    [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.preCommissionAmount.floatValue]];
-    if ([m_DetailModel.preCommissionAmount isEqualToString:@"0"])
-    {
-        [moneyView.contentSecLab setText:@"未使用消费券"];
-    }
-    else
-    {
-        [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.preCommissionAmount]];
-    }
-    [m_ScrollView addSubview:moneyView];
     
-    CarOrderCancelButtonView *cancelView = [[CarOrderCancelButtonView alloc] initWithFrame:CGRectMake(0, moneyView.bottom, 0, 0)];
+    if (m_DetailModel.orderAmount.length > 0)
+    {
+        CarOrderMoneyView *moneyView = [[CarOrderMoneyView alloc] initWithFrame:CGRectMake(0, commonView.bottom, 0, 0)];
+        [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.orderAmount.floatValue]];
+        [moneyView.contentFriLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.orderAmount]];
+        if (m_DetailModel.preCommissionAmount.length > 0)
+        {
+            [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%.2f元",m_DetailModel.preCommissionAmount.floatValue]];
+            if ([m_DetailModel.preCommissionAmount isEqualToString:@"0"])
+            {
+                [moneyView.contentSecLab setText:@"未使用消费券"];
+            }
+            else
+            {
+                [moneyView.contentSecLab setText:[NSString stringWithFormat:@"￥%@元",m_DetailModel.preCommissionAmount]];
+            }
+        }
+        else
+        {
+            [moneyView.contentSecLab setHidden:YES];
+        }
+        [m_ScrollView addSubview:moneyView];
+        commonView = moneyView;
+    }
+    
+    CarOrderCancelButtonView *cancelView = [[CarOrderCancelButtonView alloc] initWithFrame:CGRectMake(0, commonView.bottom, 0, 0)];
     [cancelView.titleLab setText:@"取消的订单，经后台审核后将退还未使用的消费券。"];
+    [cancelView.cancelBtn setHidden:YES];
     [m_ScrollView addSubview:cancelView];
     [m_ScrollView setContentSize:CGSizeMake(DIF_SCREEN_WIDTH, cancelView.bottom+55)];
 }

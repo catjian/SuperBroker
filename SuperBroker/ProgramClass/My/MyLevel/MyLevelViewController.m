@@ -9,7 +9,7 @@
 #import "MyLevelViewController.h"
 #import "MyLevelDataModel.h"
 
-@interface MyLevelViewController ()
+@interface MyLevelViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *topBackImage;
 @property (weak, nonatomic) IBOutlet UILabel *memberNameLab;
@@ -50,6 +50,8 @@
 {
     [super viewWillAppear:animated];
     DIF_HideTabBarAnimation(NO);
+    [self setNavBarBackGroundColor:@"000000"];
+    [self setStatusBarBackgroundColor:DIF_HEXCOLOR(@"000000")];
     [self.navigationController setNavigationBarHidden:NO];
     [self preferredStatusBarStyle];
     [UIApplication sharedApplication].statusBarStyle=UIStatusBarStyleLightContent;
@@ -92,6 +94,11 @@
 {
     [super viewDidAppear:animated];
     [self httpRequestMemberLeverMyLevel];
+}
+
+- (void)rightBarButtonItemAction:(UIButton *)btn
+{
+    [self loadViewController:@"CustomerServerViewController" hidesBottomBarWhenPushed:YES];
 }
 
 #pragma mark - Http Request
@@ -186,6 +193,7 @@
                                                                       context:nil];
         int num = ceil(attrsRect.size.width/strongSelf.businessContentView.width);
         [strongSelf.businessContentView setHeight:30*num];
+        [strongSelf.businessContentView setDelegate:self];
         [strongSelf.businessContentView loadHTMLString:strongSelf->m_levelModel.businessBenefit baseURL:nil];
         [strongSelf.businessLine setTop:strongSelf.businessView.height-1];
         
@@ -195,6 +203,7 @@
                                                              context:nil];
         num = ceil(attrsRect.size.width/self.brokerContentView.width);
         [strongSelf.brokerContentView setHeight:33*num];
+        [strongSelf.brokerContentView setDelegate:self];
         [strongSelf.brokerContentView loadHTMLString:strongSelf->m_levelModel.brokerBenefit baseURL:nil];
         [strongSelf.brokerLine setTop:strongSelf.brokerView.height-1];
 
@@ -204,10 +213,20 @@
                                                              context:nil];
         num = ceil(attrsRect.size.width/strongSelf.juniorContent.width);
         [strongSelf.juniorContent setHeight:30*num];
+        [strongSelf.juniorContent setDelegate:self];
         [strongSelf.juniorContent loadHTMLString:strongSelf->m_levelModel.juniorBenefit baseURL:nil];
         [strongSelf.juniorLine setTop:strongSelf.juniorView.height-1];
     });
     
+}
+
+- (void)webViewDidFinishLoad:(UIWebView*)webView
+{
+    //重写contentSize,防止左右滑动
+    CGSize size = webView.scrollView.contentSize;
+    size.width= webView.scrollView.frame.size.width;
+    size.height= webView.scrollView.frame.size.height;
+    webView.scrollView.contentSize= size;
 }
 
 @end

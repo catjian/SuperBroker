@@ -165,6 +165,13 @@
                                 <action selector="successPayMoneyButtonEvent:" destination="-1" eventType="touchUpInside" id="LFf-Ar-cnY"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vld-s9-a4I">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                            <color key="backgroundColor" red="0.87058823529411766" green="0.87058823529411766" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="HPY-L2-k8b"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -186,6 +193,7 @@
                         <constraint firstItem="vvJ-Sh-zgl" firstAttribute="top" secondItem="SMO-1L-fDw" secondAttribute="bottom" constant="15" id="MXh-xW-8A0"/>
                         <constraint firstAttribute="trailing" secondItem="vvJ-Sh-zgl" secondAttribute="trailing" constant="72" id="MbI-tg-fFj"/>
                         <constraint firstItem="Zcj-ym-e39" firstAttribute="top" secondItem="O7X-ye-QJ1" secondAttribute="bottom" constant="57" id="N7C-EM-Qns"/>
+                        <constraint firstItem="vld-s9-a4I" firstAttribute="top" secondItem="uVg-tz-a1O" secondAttribute="top" id="T0o-jE-uzs"/>
                         <constraint firstItem="6LT-uJ-J5t" firstAttribute="top" secondItem="flX-Km-gok" secondAttribute="bottom" id="Way-VJ-82N"/>
                         <constraint firstItem="6LT-uJ-J5t" firstAttribute="leading" secondItem="vvJ-Sh-zgl" secondAttribute="leading" constant="12" id="Wjk-FC-2Cu"/>
                         <constraint firstItem="vvJ-Sh-zgl" firstAttribute="leading" secondItem="uVg-tz-a1O" secondAttribute="leading" constant="72" id="X92-j4-kZY"/>
@@ -193,6 +201,7 @@
                         <constraint firstItem="40V-EW-NYk" firstAttribute="top" secondItem="efs-tY-aeh" secondAttribute="top" id="Z1a-Xo-hrw"/>
                         <constraint firstItem="40V-EW-NYk" firstAttribute="bottom" secondItem="efs-tY-aeh" secondAttribute="bottom" id="ai0-7s-waQ"/>
                         <constraint firstItem="mRT-DG-agE" firstAttribute="leading" secondItem="uVg-tz-a1O" secondAttribute="leading" constant="41" id="b85-Bl-tXw"/>
+                        <constraint firstAttribute="trailing" secondItem="vld-s9-a4I" secondAttribute="trailing" id="e34-PD-ziA"/>
                         <constraint firstItem="Zcj-ym-e39" firstAttribute="centerX" secondItem="uVg-tz-a1O" secondAttribute="centerX" id="e9n-vp-cuh"/>
                         <constraint firstItem="oNa-rg-spP" firstAttribute="bottom" secondItem="mRT-DG-agE" secondAttribute="bottom" id="eUW-Jl-c7R"/>
                         <constraint firstItem="pbP-QK-KnR" firstAttribute="centerX" secondItem="vvJ-Sh-zgl" secondAttribute="centerX" id="hyx-Z5-gjO"/>
@@ -208,6 +217,7 @@
                         <constraint firstItem="O7X-ye-QJ1" firstAttribute="leading" secondItem="uVg-tz-a1O" secondAttribute="leading" id="wd4-qF-trr"/>
                         <constraint firstAttribute="trailing" secondItem="O7X-ye-QJ1" secondAttribute="trailing" id="x6Y-fr-rlR"/>
                         <constraint firstItem="vvJ-Sh-zgl" firstAttribute="trailing" secondItem="6LT-uJ-J5t" secondAttribute="trailing" constant="12" id="xYs-eZ-ztC"/>
+                        <constraint firstItem="vld-s9-a4I" firstAttribute="leading" secondItem="uVg-tz-a1O" secondAttribute="leading" id="y6P-HL-ylU"/>
                     </constraints>
                 </view>
             </subviews>

@@ -177,14 +177,15 @@
             NSMutableArray *muArr = [NSMutableArray array];
             for (NSDictionary *dic in loanSpeciesList)
             {
-                for (NSString *title in imageTitles)
-                {
-                    if ([dic[@"speciesName"] rangeOfString:title].location != NSNotFound )
-                    {
-                        [muArr addObject:@[dic[@"speciesName"],title]];
-                        break;
-                    }
-                }
+//                for (NSString *title in imageTitles)
+//                {
+//                    if ([dic[@"speciesName"] rangeOfString:title].location != NSNotFound )
+//                    {
+//                        [muArr addObject:@[dic[@"speciesName"],title]];
+//                        break;
+//                    }
+//                }
+                [muArr addObject:@[dic[@"speciesName"],dic[@"speciesUrl"]]];
             }
             _loanSpeciesList = muArr;
             
@@ -247,7 +248,8 @@
             RootViewSecondFloorCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
             NSArray *contentTitle = self.loanSpeciesList[indexPath.row];
             [cell.titleLab setText:contentTitle.firstObject];
-            [cell.imageView setImage:[UIImage imageNamed:contentTitle.lastObject]];
+//            [cell.imageView setImage:[UIImage imageNamed:contentTitle.lastObject]];
+            [cell.imageView sd_setImageWithURL:[NSURL URLWithString:contentTitle.lastObject] placeholderImage:nil];
             [cell.charLab setHidden:YES];
             return cell;
         }

@@ -85,7 +85,8 @@
     }
     [m_BaseView uploadTopButtonStatusWithType:(m_parmsSpeciesId.length>0)
                                          Comp:(m_parmsLoanCredit.length>0)
-                                          Age:(m_parmsDealLimit.length >0)];
+                                          Age:(m_parmsDealLimit.length >0)
+                                       Screen:(m_parmsLoanLimit.length >0)];
 }
 
 - (void)setSpeciesId:(NSString *)speciesId

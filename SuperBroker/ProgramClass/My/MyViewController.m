@@ -15,6 +15,7 @@
 #import "PresentEventViewController.h"
 #import "MyIncomeListViewController.h"
 #import "ShowShareButtonView.h"
+#import "SetViewController.h"
 
 @interface MyViewController ()
 
@@ -184,7 +185,12 @@
                     [strongSelf loadViewController:@"InviteListViewController" hidesBottomBarWhenPushed:YES];
                     break;
                 case 20:
-                    [strongSelf loadViewController:@"SetViewController" hidesBottomBarWhenPushed:YES];
+                {
+                    SetViewController *vc = [strongSelf loadViewController:@"SetViewController" hidesBottomBarWhenPushed:YES];
+                    [vc setLoblock:^{
+                        [strongSelf->m_BaseView setBrokerInfoModel:nil];
+                    }];
+                }
                     break;
                 default:
                 {

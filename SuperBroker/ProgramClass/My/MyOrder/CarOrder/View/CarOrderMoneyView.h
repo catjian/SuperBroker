@@ -16,4 +16,6 @@ typedef void(^CarOrderMoneyViewSelectBlock)(void);
 @property (nonatomic, strong) UILabel *contentFriLab;
 @property (nonatomic, strong) UILabel *contentSecLab;
 
+- (void)hideSecondLab;
+
 @end

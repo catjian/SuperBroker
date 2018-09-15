@@ -40,6 +40,8 @@
     ShowShareButtonView *shareView = [[ShowShareButtonView alloc] initWithFrame:self.view.bounds];
 //    shareView.shareContent = [NSString stringWithFormat:@"%@?prodId=%@&brokerId=%@&type=1", self.detailModel.shareUrl,self.detailModel.productId,self.detailModel.speciesId];
     shareView.shareContent = self.listDetailModel.shareUrl;
+    shareView.title = self.listDetailModel.productName;
+    shareView.descr = self.listDetailModel.summary;
     [self.view addSubview:shareView];
     [shareView show];
 }

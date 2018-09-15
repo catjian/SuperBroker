@@ -21,6 +21,6 @@
 @property (nonatomic, strong) NSArray *loanProModelArr;
 
 - (void)refreshTableView;
-- (void)uploadTopButtonStatusWithType:(BOOL)typeOn Comp:(BOOL)comON Age:(BOOL)ageOn;
+- (void)uploadTopButtonStatusWithType:(BOOL)typeOn Comp:(BOOL)comON Age:(BOOL)ageOn Screen:(BOOL)screenOn;
 
 @end

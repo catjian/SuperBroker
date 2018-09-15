@@ -74,7 +74,13 @@
                                       {
                                           return ;
                                       }
+                                      if (self.loblock)
+                                      {
+                                          self.loblock();
+                                      }
                                       [DIF_TIMManagerObject logoutEvent];
+                                      DIF_APPDELEGATE.mybrokeramount = nil;
+                                      DIF_APPDELEGATE.brokerInfoModel = nil;
                                       [DIF_CommonHttpAdapter
                                        httpRequestLogoutResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
                                            if(type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)

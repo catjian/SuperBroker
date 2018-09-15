@@ -62,7 +62,7 @@
     [CommonHUD showHUD];
     NSMutableDictionary *parms = [NSMutableDictionary dictionaryWithDictionary:@{@"brokerName":self.nameTF.text,
                                                                                  @"brokerIdentityCard":self.idcardTF.text,
-                                                                                 @"gender":self.sexyBtn.titleLabel.text}];
+                                                                                 @"gender":self.sexyBtn.titleLabel.text.length>0?self.sexyBtn.titleLabel.text:@""}];
     NSString *picUrl = [DIF_CommonHttpAdapter httpRequestUploadImageFile:self.userIcon.image ResponseBlock:nil FailedBlcok:nil];
     if (picUrl)
     {

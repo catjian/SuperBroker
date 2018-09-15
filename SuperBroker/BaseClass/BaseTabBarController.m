@@ -22,6 +22,7 @@ const CGFloat tabbar_Hegith = 50;
     UIView *m_BaseView;
     UIButton *m_SelectBtn;
     BOOL m_IsHidden;
+    NSDate *m_oldDate;
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,10 +41,20 @@ const CGFloat tabbar_Hegith = 50;
     if (self)
     {
         m_IsHidden = NO;
+        m_oldDate = [NSDate date];
         self.viewControllers = [viewControllers mutableCopy];
+        
+        m_BaseView = [[UIView alloc] initWithFrame:[self BaseViewFrame]];
+        [m_BaseView setBackgroundColor:[UIColor colorWithPatternImage:DIF_IMAGE_HEXCOLOR(@"#ffffff")]];
+        [self.view addSubview:m_BaseView];
+        
+        UIView *headerLine = [UIView new];
+        headerLine.sd_layout.topSpaceToView(m_BaseView,0).heightIs(1).widthIs(m_BaseView.width);
+        [headerLine setBackgroundColor:[UIColor colorWithPatternImage:DIF_IMAGE_HEXCOLOR(@"#e8e8e8")]];
+        [m_BaseView addSubview:headerLine];
         [self initViewContent];
         
-        [self setDelegate:self];
+//        [self setDelegate:self];
         
         [self addObserver:self forKeyPath:@"selectedIndex" options:NSKeyValueObservingOptionNew context:nil];
         
@@ -55,15 +66,6 @@ const CGFloat tabbar_Hegith = 50;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    m_BaseView = [[UIView alloc] initWithFrame:[self BaseViewFrame]];
-    [m_BaseView setBackgroundColor:[UIColor colorWithPatternImage:DIF_IMAGE_HEXCOLOR(@"#ffffff")]];
-    [self.view addSubview:m_BaseView];
-    
-    UIView *headerLine = [UIView new];
-    headerLine.sd_layout.topSpaceToView(m_BaseView,0).heightIs(1).widthIs(m_BaseView.width);
-    [headerLine setBackgroundColor:[UIColor colorWithPatternImage:DIF_IMAGE_HEXCOLOR(@"#e8e8e8")]];
-    [m_BaseView addSubview:headerLine];
 }
 
 - (CGFloat)getTabBarHeight
@@ -89,38 +91,57 @@ const CGFloat tabbar_Hegith = 50;
 
 - (void)initViewContent
 {
-    __block NSArray *btnImages = @[@"首页",@"专题",@"消息", @"我的"];
+    for (NSUInteger idx = 0; idx < self.viewControllers.count; idx++)
+    {
+        [self createButtonWithIndex:idx];
+    }
+}
+
+- (void)createButtonWithIndex:(NSInteger)idx
+{
+    __block NSArray *btnImages = @[@"我的",@"首页",@"专题",@"消息"];
     CGFloat offset_Width = m_BaseView.width/self.viewControllers.count;
-    DIF_WeakSelf(self)
-    [self.viewControllers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        DIF_StrongSelf
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setFrame:CGRectMake(idx*(offset_Width+0), 0, offset_Width, tabbar_Hegith)];
-        [btn setTag:idx+100];
-        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-选中",btnImages[idx]]]
-             forState:UIControlStateSelected];
-        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-选中",btnImages[idx]]]
-             forState:UIControlStateHighlighted];
-        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-未选中",btnImages[idx]]] forState:UIControlStateNormal];
-        [btn setSelected:NO];
-        [btn addTarget:self action:@selector(SelectButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [btn setTitle:btnImages[idx] forState:UIControlStateNormal];
-        [btn.titleLabel setFont:DIF_DIFONTOFSIZE(11)];
-        [btn setTitleColor:[CommonTool colorWithHexString:@"#A9A9A9" Alpha:1] forState:UIControlStateNormal];
-        [btn setTitleColor:[CommonTool colorWithHexString:@"#2D7AFF" Alpha:1] forState:UIControlStateHighlighted];
-        [btn setTitleColor:[CommonTool colorWithHexString:@"#2D7AFF" Alpha:1] forState:UIControlStateSelected];
-        [btn setButtonImageTitleStyle:ENUM_ButtonImageTitleStyleTop padding:3];
-        [strongSelf->m_BaseView addSubview:btn];
-    }];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(idx*(offset_Width+0), 0, offset_Width, tabbar_Hegith)];
+    [btn setTag:idx+100];
+    [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-选中",btnImages[idx]]]
+         forState:UIControlStateSelected];
+    [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-选中",btnImages[idx]]]
+         forState:UIControlStateHighlighted];
+    [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@-未选中",btnImages[idx]]] forState:UIControlStateNormal];
+    [btn setSelected:NO];
+    [btn addTarget:self action:@selector(SelectButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:btnImages[idx] forState:UIControlStateNormal];
+    [btn.titleLabel setFont:DIF_DIFONTOFSIZE(11)];
+    [btn setTitleColor:[CommonTool colorWithHexString:@"#A9A9A9" Alpha:1] forState:UIControlStateNormal];
+    [btn setTitleColor:[CommonTool colorWithHexString:@"#2D7AFF" Alpha:1] forState:UIControlStateHighlighted];
+    [btn setTitleColor:[CommonTool colorWithHexString:@"#2D7AFF" Alpha:1] forState:UIControlStateSelected];
+    [btn setButtonImageTitleStyle:ENUM_ButtonImageTitleStyleTop padding:3];
+    [m_BaseView addSubview:btn];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPoint = [touch locationInView:self.view];
+    
+    NSLog(@"touchPoint.y = %f", touchPoint.y);
 }
 
 - (void)SelectButtonAction:(UIButton *)btn
 {
-    self.selectedIndex = btn.tag-100;
-    if (self.selectedIndex == 0)
+    NSDate *nowDate = [NSDate date];
+    NSTimeInterval timeSpace = nowDate.timeIntervalSince1970 - m_oldDate.timeIntervalSince1970;
+    m_oldDate = [NSDate date];
+    NSLog(@"timeSpace = %f", timeSpace);
+    if (timeSpace > 0.05)
     {
-        BaseNavigationViewController *nv1 = self.viewControllers[0];
-        [nv1 popToRootViewControllerAnimated:YES];
+        self.selectedIndex = btn.tag-100;
+        if (self.selectedIndex == 0)
+        {
+            BaseNavigationViewController *nv1 = self.viewControllers[0];
+            [nv1 popToRootViewControllerAnimated:YES];
+        }
     }
 }
 

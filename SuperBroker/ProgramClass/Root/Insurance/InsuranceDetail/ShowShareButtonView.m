@@ -60,18 +60,24 @@
 - (IBAction)sinaButtonEvent:(id)sender
 {
     [DIF_APPDELEGATE shareWebPageToPlatformType:UMSocialPlatformType_Sina
-                                      URLString:self.shareContent];
+                                      URLString:self.shareContent
+                                          title:self.title
+                                          descr:self.descr];
 }
 
 - (IBAction)wechatButtonEvent:(id)sender
 {
     [DIF_APPDELEGATE shareWebPageToPlatformType:UMSocialPlatformType_WechatSession
-                                      URLString:self.shareContent];
+                                      URLString:self.shareContent
+                                          title:self.title
+                                          descr:self.descr];
 }
 
 - (IBAction)QQButtonEvent:(id)sender {
     [DIF_APPDELEGATE shareWebPageToPlatformType:UMSocialPlatformType_QQ
-                                      URLString:self.shareContent];
+                                      URLString:self.shareContent
+                                          title:self.title
+                                          descr:self.descr];
 }
 
 - (IBAction)cancelButtonEvent:(id)sender

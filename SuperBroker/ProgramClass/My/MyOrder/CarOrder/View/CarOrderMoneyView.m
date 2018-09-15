@@ -9,6 +9,9 @@
 #import "CarOrderMoneyView.h"
 
 @implementation CarOrderMoneyView
+{
+    UIView *m_secLineView;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -72,8 +75,9 @@
     
     self.contentSecLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.width-DIF_PX(60), DIF_PX(40))];
     [self.contentSecLab setFont:DIF_UIFONTOFSIZE(13)];
-    [self.contentSecLab setTextColor:DIF_HEXCOLOR(@"ff5000")];
     [self.contentSecLab setTextAlignment:NSTextAlignmentRight];
+    [self.contentSecLab setText:@"可使用消费券"];
+    [self.contentSecLab setTextColor:DIF_HEXCOLOR(@"999999")];
     [view addSubview:self.contentSecLab];
     
     UIImageView *right = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"右括号"]];
@@ -87,7 +91,8 @@
     [btn addTarget:self action:@selector(selectButtonEvent:) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn];
     
-    return view;
+    m_secLineView = view;
+    return m_secLineView;
 }
 
 - (void)selectButtonEvent:(UIButton *)btn
@@ -96,5 +101,11 @@
     {
         self.selectBlock();
     }
+}
+
+- (void)hideSecondLab
+{
+    [m_secLineView setHidden:YES];
+    self.height -= DIF_PX(82/2);
 }
 @end

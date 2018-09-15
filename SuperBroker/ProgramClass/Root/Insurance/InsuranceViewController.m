@@ -161,7 +161,8 @@
     }
     [m_BaseView uploadTopButtonStatusWithType:(m_parmsSpeciesId.length>0)
                                          Comp:(m_parmsCompId.length>0)
-                                          Age:(m_parmsAge.length >0)];
+                                          Age:(m_parmsAge.length >0)
+                                       Screen:(m_parmsOrderType.length >0 || m_parmsConsumptionType.length > 0)];
 }
 
 - (void)rightBarButtonItemAction:(UIButton *)btn

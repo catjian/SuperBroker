@@ -11,6 +11,8 @@
 @interface ShowShareButtonView : UIView
 
 @property (nonatomic, copy) NSString *shareContent;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *descr;
 
 - (void)show;
 

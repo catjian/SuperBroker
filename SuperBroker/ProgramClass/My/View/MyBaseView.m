@@ -264,7 +264,7 @@
     
     m_CustomCoupon = [[UILabel alloc] initWithFrame:CGRectMake(0, m_CustomIcon.bottom+DIF_PX(20), DIF_PX(140), DIF_PX(14))];
     [m_CustomCoupon setText:[NSString stringWithFormat:@"%.2f", self.brokerInfoModel.vouchers.floatValue]];//@"88.00"];
-    [m_CustomCoupon setText:[NSString stringWithFormat:@"%@", self.brokerInfoModel.vouchers]];//@"88.00"];
+    [m_CustomCoupon setText:[NSString stringWithFormat:@"%@", self.brokerInfoModel.vouchers?self.brokerInfoModel.vouchers:@""]];//@"88.00"];
     [m_CustomCoupon setTextColor:DIF_HEXCOLOR(@"333333")];
     [m_CustomCoupon setFont:DIF_UIFONTOFSIZE(18)];
     [m_CustomCoupon setTextAlignment:NSTextAlignmentCenter];
@@ -293,7 +293,7 @@
     
     m_CustomIncome = [[UILabel alloc] initWithFrame:CGRectMake(lineH.right, m_CustomCoupon.top, withdraw.left-lineH.right-DIF_PX(10), m_CustomCoupon.height)];
     [m_CustomIncome setText:[NSString stringWithFormat:@"%.2f 元", self.brokerInfoModel.income.floatValue]];//@"230.00 元"];
-    [m_CustomIncome setText:[NSString stringWithFormat:@"%@ 元", self.brokerInfoModel.income]];//@"230.00 元"];
+    [m_CustomIncome setText:[NSString stringWithFormat:@"%@ 元", self.brokerInfoModel.income?self.brokerInfoModel.income:@""]];//@"230.00 元"];
     [m_CustomIncome setTextColor:DIF_HEXCOLOR(@"333333")];
     [m_CustomIncome setFont:DIF_UIFONTOFSIZE(18)];
     [m_CustomIncome setTextAlignment:NSTextAlignmentCenter];
