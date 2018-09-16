@@ -140,6 +140,11 @@ const CGFloat btnBackView_height = 160;
     [self hide];
 }
 
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self hide];
+}
+
 - (BOOL)isCameraAvailable
 {
     return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];

@@ -60,7 +60,7 @@
                         <constraint firstAttribute="height" constant="25" id="vUI-G7-woa"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RhO-0t-asL">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RhO-0t-asL">
                     <rect key="frame" x="75" y="204" width="260" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -244,13 +244,13 @@
                 <constraint firstAttribute="trailing" secondItem="ITL-CD-qHU" secondAttribute="trailing" constant="69" id="tO1-le-wAf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="-508" y="16"/>
+            <point key="canvasLocation" x="-797" y="5"/>
         </view>
     </objects>
     <resources>
         <image name="密码" width="25" height="25"/>
         <image name="手机" width="25" height="25"/>
-        <image name="易保金服logo" width="83" height="83"/>
+        <image name="易保金服logo" width="512" height="512"/>
         <image name="登录" width="293" height="45"/>
         <image name="睁眼" width="25" height="25"/>
         <image name="闭眼睛" width="25" height="25"/>

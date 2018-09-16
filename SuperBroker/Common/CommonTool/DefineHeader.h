@@ -236,7 +236,7 @@ return bvc;}
 #define DIF_DIFONTOFSIZE(s)         [UIFont systemFontOfSize:DIF_FONT(((s)*2))]
 #endif
 
-#define DIF_StateTypeColor @{@"待审核":@"ff5000",@"已关闭":@"333333",@"已取消":@"999999",@"已完成":@"017aff",@"待确认":@"ff5000",@"待报价":@"ff5000",@"已报价":@"ff5000",@"待付款":@"ff5000",}
+#define DIF_StateTypeColor @{@"待审核":@"ff5000",@"已关闭":@"333333",@"已取消":@"999999",@"已完成":@"017aff",@"待确认":@"ff5000",@"待报价":@"ff5000",@"已报价":@"ff5000",@"待付款":@"ff5000"}
 
 #define DIF_BaseFont_Size 28
 

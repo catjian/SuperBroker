@@ -336,6 +336,9 @@
 
 - (void)httpRequestInsuranceProductDetailWithListModel:(InsuranceProductDetailModel *)model
 {
+//    InsuranceDetailViewController *vc = [self loadViewController:@"InsuranceDetailViewController" hidesBottomBarWhenPushed:YES];
+//    vc.productModel = model;
+    
     [CommonHUD showHUD];
     DIF_WeakSelf(self)
     [DIF_CommonHttpAdapter

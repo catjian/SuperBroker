@@ -57,7 +57,7 @@
     }
     if (self.password.text.length < 6)
     {
-        [self.view makeToast:@"请设置6~18位数的密码"
+        [self.view makeToast:@"用户名或密码错误"
                     duration:2 position:CSToastPositionCenter];
         return;
     }

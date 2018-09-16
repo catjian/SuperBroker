@@ -24,4 +24,6 @@
 
 @property (nonatomic, strong) NSString *productUrl;
 
+@property (nonatomic, strong) NSString *orderStatusName;
+
 @end

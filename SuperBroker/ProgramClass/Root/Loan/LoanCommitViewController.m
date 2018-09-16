@@ -38,7 +38,7 @@
     [self.promotionRewardsLab setText:[NSString stringWithFormat:@"推广奖励：%@元",self.orderModel.generalizeAmount]];;
     [self.moneyLab setText:[NSString stringWithFormat:@"期待金额：%@元",self.orderModel.expectAmount]];;
     [self.customNameLab setText:[NSString stringWithFormat:@"贷款人：%@",self.orderModel.borrowerName]];
-//    [self.insuranceStateLab setText:self.detailModel.orderStatus];
+    [self.loanStateLab setText:self.orderModel.orderStatusName];
 }
 
 - (void)backBarButtonItemAction:(UIButton *)btn

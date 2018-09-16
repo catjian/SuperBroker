@@ -58,7 +58,7 @@
                         <action selector="SMSLoginButtonEvent:" destination="-1" eventType="touchUpInside" id="BWO-b6-MYO"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uY1-PR-x1y">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uY1-PR-x1y">
                     <rect key="frame" x="75" y="207.5" width="260" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -66,7 +66,7 @@
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6xd-Gf-bR3">
                     <rect key="frame" x="40" y="295.5" width="295" height="1"/>
@@ -213,7 +213,7 @@
     </objects>
     <resources>
         <image name="手机" width="25" height="25"/>
-        <image name="易保金服logo" width="83" height="83"/>
+        <image name="易保金服logo" width="512" height="512"/>
         <image name="登录" width="293" height="45"/>
         <image name="验证码" width="25" height="25"/>
     </resources>

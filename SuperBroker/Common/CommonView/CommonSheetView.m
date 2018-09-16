@@ -97,4 +97,9 @@
     [self hide];
 }
 
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self hide];
+}
+
 @end

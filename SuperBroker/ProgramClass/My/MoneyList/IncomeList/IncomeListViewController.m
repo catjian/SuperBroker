@@ -37,24 +37,34 @@
     [self setNavTarBarTitle:@"我的提现"];
     [self setRightItemWithContentName:@"客服-黑"];
     m_ListModel = [NSMutableArray array];
-    [self.canUserNum setText:[NSString stringWithFormat:@"%.2f", [DIF_APPDELEGATE.mybrokeramount[@"income"] floatValue]]];
-    [self.canUserNum setText:[NSString stringWithFormat:@"%@", [DIF_APPDELEGATE.mybrokeramount[@"income"] stringValue]]];
-    [self.allIncomeNum setText:[NSString stringWithFormat:@"%.2f", [DIF_APPDELEGATE.mybrokeramount[@"incomeAll"] floatValue]]];
-    [self.allIncomeNum setText:[NSString stringWithFormat:@"%@", [DIF_APPDELEGATE.mybrokeramount[@"incomeAll"] stringValue]]];
+    NSString *income =  [DIF_APPDELEGATE.mybrokeramount[@"incomeAll"] stringValue];
+    income = income?income:@"0";
+    [self.canUserNum setText:[NSString stringWithFormat:@"%@",income]];
+    NSString *incomeAll =  [DIF_APPDELEGATE.mybrokeramount[@"incomeAll"] stringValue];
+    incomeAll = incomeAll?incomeAll:@"0";
+    [self.allIncomeNum setText:[NSString stringWithFormat:@"%@", incomeAll]];
 
-    m_BaseView = [[IncomeListBaseView alloc] initWithFrame:self.contentBG.bounds style:UITableViewStylePlain];
-    [m_BaseView setWidth:DIF_SCREEN_WIDTH];
-    m_BaseView.listModel = m_ListModel;
-    [self.contentBG addSubview:m_BaseView];
-    DIF_WeakSelf(self)
-    [m_BaseView setRefreshBlock:^{
-        DIF_StrongSelf
-        [strongSelf httpRequestGetWithDrawalListWithPage:1];
-    }];
-    [m_BaseView setLoadMoreBlock:^(NSInteger page) {
-        DIF_StrongSelf
-        [strongSelf httpRequestGetWithDrawalListWithPage:page+1];
-    }];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (!m_BaseView)
+    {        
+        m_BaseView = [[IncomeListBaseView alloc] initWithFrame:self.contentBG.bounds style:UITableViewStylePlain];
+        [m_BaseView setWidth:DIF_SCREEN_WIDTH];
+        m_BaseView.listModel = m_ListModel;
+        [self.contentBG addSubview:m_BaseView];
+        DIF_WeakSelf(self)
+        [m_BaseView setRefreshBlock:^{
+            DIF_StrongSelf
+            [strongSelf httpRequestGetWithDrawalListWithPage:1];
+        }];
+        [m_BaseView setLoadMoreBlock:^(NSInteger page) {
+            DIF_StrongSelf
+            [strongSelf httpRequestGetWithDrawalListWithPage:page+1];
+        }];
+    }
 }
 
 - (void)rightBarButtonItemAction:(UIButton *)btn

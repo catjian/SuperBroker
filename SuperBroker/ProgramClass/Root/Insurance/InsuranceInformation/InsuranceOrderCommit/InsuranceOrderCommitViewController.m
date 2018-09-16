@@ -92,8 +92,8 @@
     [self.insuredPhoneLab setText:[NSString stringWithFormat:@"联系方式：%@",insuredInfoModel.insuredPhone]];
     [self.insuredEmailLab setText:[NSString stringWithFormat:@"邮箱：%@",insuredInfoModel.insuredEmail?insuredInfoModel.insuredEmail:@""]];
     [self.orderNumLab setText:[NSString stringWithFormat:@"订单编号：%@",m_DetailModel.orderCode]];
-    [self.createDateLab setText:[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
-                                                 Formate:@"yyyy-MM-dd HH:mm"]];
+    [self.createDateLab setText:[NSString stringWithFormat:@"创建时间：%@",[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
+                                                 Formate:@"yyyy-MM-dd HH:mm"]]];
 }
 
 #pragma mark - HttpRequest

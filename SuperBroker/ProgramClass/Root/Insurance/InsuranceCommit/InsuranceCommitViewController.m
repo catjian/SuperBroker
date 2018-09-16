@@ -33,7 +33,7 @@
     [self.dateLab setText:[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:self.detailModel.createTime.integerValue/1000]
                                            Formate:@"yyyy-MM-dd HH:mm"]];
     [self.promotionRewardsLab setText:[NSString stringWithFormat:@"推广奖励：%@元",self.detailModel.promotionRewards]];
-    [self.insuranceStateLab setText:self.detailModel.orderStatus];
+    [self.insuranceStateLab setText:self.detailModel.orderStatusName];
 }
 
 - (void)backBarButtonItemAction:(UIButton *)btn

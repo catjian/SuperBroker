@@ -84,7 +84,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nS8-8I-Zpz">
                             <rect key="frame" x="0.0" y="103" width="295" height="1"/>
@@ -272,7 +272,7 @@
     <resources>
         <image name="密码" width="25" height="25"/>
         <image name="手机" width="25" height="25"/>
-        <image name="易保金服logo" width="83" height="83"/>
+        <image name="易保金服logo" width="512" height="512"/>
         <image name="未阅" width="13" height="13"/>
         <image name="注册" width="293" height="45"/>
         <image name="注册-未选中" width="293" height="45"/>

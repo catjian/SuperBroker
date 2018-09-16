@@ -232,7 +232,7 @@
     UMShareWebpageObject *shareObject = [UMShareWebpageObject
                                          shareObjectWithTitle:title?title:@"@我，这是我的独门签单秘籍，开单宝典送给努力前行的你"
                                          descr:descr?descr:@"您的好友在易普惠分享一起开单大吉，邀您开单送大礼！"
-                                         thumImage:[UIImage imageNamed:@"AppIcon"]];
+                                         thumImage:[UIImage imageNamed:@"易保金服logoShare"]];
     //设置网页地址
     shareObject.webpageUrl =string;
     

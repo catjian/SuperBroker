@@ -59,10 +59,13 @@
         [self.contentBG setTop:self.line3View.bottom];
     }
     
-    [self.canUserNum setText:[NSString stringWithFormat:@"%.2f", [DIF_APPDELEGATE.mybrokeramount[@"income"] floatValue]]];
-    [self.canUserNum setText:[NSString stringWithFormat:@"%@", [DIF_APPDELEGATE.mybrokeramount[@"income"] stringValue]]];
-    [self.allIncomeNum setText:[NSString stringWithFormat:@"%.2f", [DIF_APPDELEGATE.mybrokeramount[@"incomeAll"] floatValue]]];
-    [self.allIncomeNum setText:[NSString stringWithFormat:@"%@", [DIF_APPDELEGATE.mybrokeramount[@"incomeAll"] stringValue]]];
+    NSString *income =  [DIF_APPDELEGATE.mybrokeramount[@"income"] stringValue];
+    income = income?income:@"0";
+    [self.canUserNum setText:[NSString stringWithFormat:@"%@", income]];
+    
+    NSString *incomeAll =  [DIF_APPDELEGATE.mybrokeramount[@"incomeAll"] stringValue];
+    incomeAll = incomeAll?incomeAll:@"0";
+    [self.allIncomeNum setText:[NSString stringWithFormat:@"%@", incomeAll]];
     
     m_ListModel = [NSMutableArray array];
     m_BaseView = [[MyIncomeListBaseView alloc] initWithFrame:self.contentBG.bounds style:UITableViewStylePlain];
@@ -98,10 +101,13 @@
     }
     else
     {
-        [self.canUserNum setText:[NSString stringWithFormat:@"%.2f", [DIF_APPDELEGATE.mybrokeramount[@"income"] floatValue]]];
-        [self.canUserNum setText:[NSString stringWithFormat:@"%@", [DIF_APPDELEGATE.mybrokeramount[@"income"] stringValue]]];
-        [self.allIncomeNum setText:[NSString stringWithFormat:@"%.2f", [DIF_APPDELEGATE.mybrokeramount[@"incomeAll"] floatValue]]];
-        [self.allIncomeNum setText:[NSString stringWithFormat:@"%@", [DIF_APPDELEGATE.mybrokeramount[@"incomeAll"] stringValue]]];
+        NSString *income =  [DIF_APPDELEGATE.mybrokeramount[@"income"] stringValue];
+        income = income?income:@"0";
+        [self.canUserNum setText:[NSString stringWithFormat:@"%@", income]];
+        
+        NSString *incomeAll =  [DIF_APPDELEGATE.mybrokeramount[@"incomeAll"] stringValue];
+        incomeAll = incomeAll?incomeAll:@"0";
+        [self.allIncomeNum setText:[NSString stringWithFormat:@"%@", incomeAll]];
     }
 }
 

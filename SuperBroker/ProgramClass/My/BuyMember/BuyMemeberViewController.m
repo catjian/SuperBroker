@@ -226,6 +226,7 @@
     if (!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 15, 231, 127)];
         [imageView setBackgroundColor:DIF_HEXCOLOR(nil)];

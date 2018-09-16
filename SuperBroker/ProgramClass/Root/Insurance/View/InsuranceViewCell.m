@@ -32,8 +32,8 @@
         [m_leftImage.layer setBorderColor:DIF_HEXCOLOR(@"dedede").CGColor];
         [self.contentView addSubview:m_leftImage];
         [self createCenterView];
-        m_rightTitle = [[UILabel alloc] initWithFrame:CGRectMake(0, DIF_PX(12), DIF_PX(80), DIF_PX(30))];
-        [m_rightTitle setRight:DIF_SCREEN_WIDTH-DIF_PX(12)];
+        m_rightTitle = [[UILabel alloc] initWithFrame:CGRectMake(m_topTitle.right, DIF_PX(12), DIF_SCREEN_WIDTH-m_topTitle.right-DIF_PX(5), DIF_PX(30))];
+//        [m_rightTitle setRight:DIF_SCREEN_WIDTH-DIF_PX(12)];
         [m_rightTitle setTextColor:DIF_HEXCOLOR(@"ff5000")];
         [m_rightTitle setFont:DIF_UIFONTOFSIZE(22)];
         [m_rightTitle setTextAlignment:NSTextAlignmentRight];

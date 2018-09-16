@@ -77,4 +77,6 @@
 
 @property (nonatomic, strong) NSString *sysId;
 
+@property (nonatomic, strong) NSString *createDate;
+
 @end

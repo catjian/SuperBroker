@@ -31,7 +31,10 @@
     {
         IncomePageBankModel *bankModel = [IncomePageBankModel mj_objectWithKeyValues:dic];
         NSMutableAttributedString *status = [[NSMutableAttributedString alloc] initWithString:m_StatusDic[bankModel.status]];
-        [status ForegroundColorAttributeNamWithColor:DIF_HEXCOLOR(@"ff5000") Range:NSMakeRange(0, status.length)];
+        NSDictionary *colorDIc =
+        @{@"申请中":@"ff5000",@"处理中":@"ff5000",@"成功":@"017aff",@"已取消":@"999999",@"失败":@"000000"};
+        [status ForegroundColorAttributeNamWithColor:DIF_HEXCOLOR(colorDIc[m_StatusDic[bankModel.status]])
+                                               Range:NSMakeRange(0, status.length)];
         [dataArr addObject:@{@"icon":bankModel.accountType.integerValue == 40?@"银联-86x86":@"支付宝-86x86",
                              @"name":bankModel.accountName?bankModel.accountName:@"",
                              @"time":bankModel.withdrawalTime?[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:bankModel.withdrawalTime.integerValue/1000] Formate:@"yyyy-MM-dd HH:mm"]:[CommonDate getNowDateWithFormate:@"yyyy-MM-dd HH:mm"],

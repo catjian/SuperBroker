@@ -143,8 +143,16 @@ static CommonHttpAdapter *comHttp = nil;
                                                       URLString:[[NSURL URLWithString:URLString relativeToURL:httpSessionManager.baseURL] absoluteString]
                                                      parameters:parameters
                                                           error:&serializationError];
-
-        
+    }
+    else if ([URLString rangeOfString:@"myperformance/member"].location != NSNotFound ||
+             [URLString rangeOfString:@"myperformance/safe"].location != NSNotFound ||
+             [URLString rangeOfString:@"myperformance/credit"].location != NSNotFound)
+    {
+        request =
+        [httpSessionManager.requestSerializer requestWithMethod:model
+                                                      URLString:[[NSURL URLWithString:URLString relativeToURL:httpSessionManager.baseURL] absoluteString]
+                                                     parameters:parameters
+                                                          error:&serializationError];
     }
     else
     {
@@ -264,7 +272,7 @@ static CommonHttpAdapter *comHttp = nil;
     [self httpRequest:request
              progress:nil
               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//                  DebugLog(@"responseObject = %@",responseObject);
+                  DebugLog(@"responseObject = %@",responseObject);
                   if (block)
                   {
                       if ([responseObject[@"code"] integerValue] == 604)
@@ -330,7 +338,7 @@ static CommonHttpAdapter *comHttp = nil;
     [self httpRequest:request
              progress:nil
               success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//                  DebugLog(@"responseObject = %@",responseObject);
+                  DebugLog(@"responseObject = %@",responseObject);
                   if (block)
                   {
                       if ([responseObject[@"code"] integerValue] == 604)

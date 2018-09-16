@@ -30,7 +30,7 @@
 //    [contentMoney2 FontAttributeNameWithFont:DIF_DIFONTOFSIZE(13) Range:NSMakeRange(0, contentMoney2.length)];
 //    [contentMoney2 ForegroundColorAttributeNamWithColor:DIF_HEXCOLOR(@"999999") Range:NSMakeRange(0, contentMoney2.length)];
     NSMutableAttributedString *contentMoney3 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@元起",self.premium]];
-    [contentMoney3 FontAttributeNameWithFont:DIF_DIFONTOFSIZE(22) Range:NSMakeRange(0, contentMoney3.length-2)];
+    [contentMoney3 FontAttributeNameWithFont:DIF_DIFONTOFSIZE(19) Range:NSMakeRange(0, contentMoney3.length-2)];
     [contentMoney3 FontAttributeNameWithFont:DIF_DIFONTOFSIZE(10) Range:NSMakeRange(contentMoney3.length-2, 2)];
     return @{@"icon":self.titlePictureUrl,
              @"contentTitle":contentTitle,

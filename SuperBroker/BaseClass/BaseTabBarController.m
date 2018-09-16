@@ -99,7 +99,7 @@ const CGFloat tabbar_Hegith = 50;
 
 - (void)createButtonWithIndex:(NSInteger)idx
 {
-    __block NSArray *btnImages = @[@"我的",@"首页",@"专题",@"消息"];
+    __block NSArray *btnImages = @[@"首页",@"专题",@"消息",@"我的"];
     CGFloat offset_Width = m_BaseView.width/self.viewControllers.count;
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setFrame:CGRectMake(idx*(offset_Width+0), 0, offset_Width, tabbar_Hegith)];

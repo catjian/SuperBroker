@@ -26,7 +26,7 @@
         m_LeftIcon = [[UIImageView alloc] initWithFrame:CGRectMake(12, 12, 43, 43)];
         [self.contentView addSubview:m_LeftIcon];
         
-        m_NameLab = [[UILabel alloc] initWithFrame:CGRectMake(m_LeftIcon.right+12, m_LeftIcon.top, DIF_SCREEN_WIDTH/5*3, 13)];
+        m_NameLab = [[UILabel alloc] initWithFrame:CGRectMake(m_LeftIcon.right+12, m_LeftIcon.top, DIF_SCREEN_WIDTH/7*3, 13)];
         [m_NameLab setFont:DIF_UIFONTOFSIZE(13)];
         [m_NameLab setTextColor:DIF_HEXCOLOR(@"333333")];
         [self.contentView addSubview:m_NameLab];
@@ -40,7 +40,7 @@
         m_MoneyLab = [UILabel new];
         [m_MoneyLab setFont:DIF_UIFONTOFSIZE(18)];
         [m_MoneyLab setTextColor:DIF_HEXCOLOR(@"333333")];
-        [m_MoneyLab setTextAlignment:NSTextAlignmentCenter];
+        [m_MoneyLab setTextAlignment:NSTextAlignmentRight];
         [self.contentView addSubview:m_MoneyLab];
         [m_MoneyLab mas_makeConstraints:^(MASConstraintMaker *make) {
             DIF_StrongSelf
@@ -52,7 +52,7 @@
         
         m_StateLab = [UILabel new];
         [m_StateLab setFont:DIF_UIFONTOFSIZE(11)];
-        [m_StateLab setTextAlignment:NSTextAlignmentCenter];
+        [m_StateLab setTextAlignment:NSTextAlignmentRight];
         [self.contentView addSubview:m_StateLab];
         [m_StateLab mas_makeConstraints:^(MASConstraintMaker *make) {
             DIF_StrongSelf

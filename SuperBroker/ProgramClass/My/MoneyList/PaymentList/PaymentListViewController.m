@@ -40,10 +40,12 @@
     m_BaseView = [[PaymentListBaseView alloc] initWithFrame:self.contentBG.bounds style:UITableViewStylePlain];
     [m_BaseView setWidth:DIF_SCREEN_WIDTH];
     [self.contentBG addSubview:m_BaseView];
-    [self.canUseNum setText:[NSString stringWithFormat:@"%.2f", [DIF_APPDELEGATE.mybrokeramount[@"vouchers"] floatValue]]];
-    [self.canUseNum setText:[NSString stringWithFormat:@"%@", [DIF_APPDELEGATE.mybrokeramount[@"vouchers"] stringValue]]];
-    [self.allHadNum setText:[NSString stringWithFormat:@"%.2f", [DIF_APPDELEGATE.mybrokeramount[@"vouchersAll"] floatValue]]];
-    [self.allHadNum setText:[NSString stringWithFormat:@"%@", [DIF_APPDELEGATE.mybrokeramount[@"vouchersAll"] stringValue]]];
+    NSString *vouchers =  [DIF_APPDELEGATE.mybrokeramount[@"vouchers"] stringValue];
+    vouchers = vouchers?vouchers:@"0";
+    [self.canUseNum setText:[NSString stringWithFormat:@"%@", vouchers]];
+    NSString *vouchersAll =  [DIF_APPDELEGATE.mybrokeramount[@"vouchersAll"] stringValue];
+    vouchersAll = vouchersAll?vouchersAll:@"0";
+    [self.allHadNum setText:[NSString stringWithFormat:@"%@", vouchersAll]];
     DIF_WeakSelf(self)
     [m_BaseView setRefreshBlock:^{
         DIF_StrongSelf

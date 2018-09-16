@@ -64,7 +64,7 @@
     [m_ProductNameLab setText:model.productName];
     [m_customMoneyLab setText:model.orderTypeName];
     [m_customNameLab setText:[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:model.createDate.integerValue/1000]
-                                              Formate:@"yyyy-MM-dd HH:mm"]];
+                                              Formate:@"yyyy-MM-dd"]];
     [m_MoneyLab setText:[model.insuranceMoney stringByAppendingString:@"元"]];
 }
 

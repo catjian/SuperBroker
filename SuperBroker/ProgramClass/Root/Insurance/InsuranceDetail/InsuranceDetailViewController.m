@@ -42,12 +42,18 @@
 @end
 
 @implementation InsuranceDetailViewController
+{
+    BOOL m_IsPush;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self setNavTarBarTitle:self.detailModel.prodName];
+//    self.detailModel = nil;
+    [self setNavTarBarTitle:self.productModel.prodName];
+    m_IsPush = NO;
+//    [self httpRequestInsuranceProductDetailWithListModel:self.productModel];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -152,7 +158,7 @@
 //    shareView.shareContent = [NSString stringWithFormat:@"%@?prodId=%@&brokerId=%@&type=1", self.detailModel.shareDomain,self.detailModel.prodId,self.detailModel.brokerId];
     shareView.shareContent = self.productModel.shareUrl;
     shareView.title = self.productModel.prodName;
-    shareView.descr = self.productModel.summary;
+    shareView.descr = self.detailModel.summary;
     [self.view addSubview:shareView];
     [shareView show];
 }
@@ -163,9 +169,44 @@
     {
         [self.view makeToast:@"普通经纪人无权购买车险/保险" duration:2 position:CSToastPositionCenter];
         return;
-    }        
-    InsuranceInformationViewController *vc = [self loadViewController:@"InsuranceInformationViewController" hidesBottomBarWhenPushed:YES];
-    vc.detailModel = self.detailModel;
+    }
+    m_IsPush = YES;
+    if (self.detailModel)
+    {
+        InsuranceInformationViewController *vc = [self loadViewController:@"InsuranceInformationViewController" hidesBottomBarWhenPushed:YES];
+        vc.detailModel = self.detailModel;
+    }
+    else
+    {
+        [self httpRequestInsuranceProductDetailWithListModel:self.productModel];
+    }
+}
+
+- (void)httpRequestInsuranceProductDetailWithListModel:(InsuranceProductDetailModel *)model
+{
+    [CommonHUD showHUD];
+    DIF_WeakSelf(self)
+    [DIF_CommonHttpAdapter
+     httpRequestInsuranceProductDetailWithParameters:@{@"prodId":model.prodId}
+     ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
+         DIF_StrongSelf
+         if(type == ENUM_COMMONHTTP_RESPONSE_TYPE_SUCCESS)
+         {
+             [CommonHUD hideHUD];
+             if (strongSelf->m_IsPush)
+             {
+                 InsuranceInformationViewController *vc = [strongSelf loadViewController:@"InsuranceInformationViewController" hidesBottomBarWhenPushed:YES];
+                 strongSelf.detailModel = [InsuranceProductDetailModel mj_objectWithKeyValues:responseModel[@"data"]];
+                 vc.detailModel = strongSelf.detailModel;
+             }
+         }
+         else
+         {
+             [CommonHUD delayShowHUDWithMessage:responseModel[@"message"]];
+         }
+     } FailedBlcok:^(NSError *error) {
+         [CommonHUD delayShowHUDWithMessage:DIF_Request_NET_ERROR];
+     }];
 }
 
 @end
