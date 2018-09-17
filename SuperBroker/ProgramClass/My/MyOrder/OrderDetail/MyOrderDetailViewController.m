@@ -98,7 +98,7 @@
         if ([logsModel.orderStatus isEqualToString:@"11"])
         {
             [self.createDateLab setText:[NSString stringWithFormat:@"创建时间：%@",
-                                           [CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
+                                           [CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:logsModel.createTime.integerValue/1000]
                                                             Formate:nil]]];
 //            [self.createDateLab setText:[NSString stringWithFormat:@"%@：%@",logsModel.statusTimeName,[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
 //                                                                                                                      Formate:nil]]];
@@ -106,7 +106,7 @@
         if ([logsModel.orderStatus isEqualToString:@"13"])
         {
             [self.payDateLab setText:[NSString stringWithFormat:@"付款时间：%@",
-                                           [CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
+                                           [CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:logsModel.createTime.integerValue/1000]
                                                             Formate:nil]]];
 //            [self.payDateLab setText:[NSString stringWithFormat:@"%@：%@",logsModel.statusTimeName,[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
 //                                                                                                                   Formate:nil]]];
@@ -114,7 +114,7 @@
         if ([logsModel.orderStatus isEqualToString:@"15"])
         {
             [self.endOrderDateLab setText:[NSString stringWithFormat:@"结算时间：%@",
-                                           [CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
+                                           [CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:logsModel.createTime.integerValue/1000]
                                                             Formate:nil]]];
 //            [self.endOrderDateLab setText:[NSString stringWithFormat:@"%@：%@",logsModel.statusTimeName,[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:m_DetailModel.createTime.integerValue/1000]
 //                                                                                                                        Formate:nil]]];

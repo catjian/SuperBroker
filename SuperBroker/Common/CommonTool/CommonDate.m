@@ -99,4 +99,12 @@
     return firstWeekday - 1;
 }
 
+//转换从Java过来的时间戳
++ (NSDate *)dateConversionFromJavaTimeInterval:(NSInteger)timeInterval
+{
+    NSTimeInterval conTimeInt = timeInterval/1000;
+    NSDate *dateInt = [NSDate dateWithTimeIntervalSince1970:conTimeInt];
+    return dateInt;
+}
+
 @end

@@ -55,6 +55,7 @@
         }];
         [m_BaseView setPageSelectBlock:^(NSInteger page) {
             DIF_StrongSelf
+            [strongSelf->m_SearchView endEditing:YES];
             strongSelf->m_NowPageModel = [ArticleclassifyModel mj_objectWithKeyValues:strongSelf->m_Articleclassify[page]];
         }];
         [m_BaseView setRefreshBlock:^{
@@ -154,6 +155,15 @@
     {
         return NO;
     }
+    return YES;
+}
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField
+{
+    [m_SearchTextField resignFirstResponder];
+    [self httpRequestWithClassifyId:m_NowPageModel.classifyId
+                      SearchContent:@""
+                         PageNumber:1];
     return YES;
 }
 

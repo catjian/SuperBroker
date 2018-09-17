@@ -119,7 +119,7 @@
 {    
     DIF_WeakSelf(self);
     [DIF_CommonHttpAdapter
-     httpRequestMyloanListWithParameters:@{@"orderStatus":m_OrderStatus, @"pageNum":[@(pageNum) stringValue],@"pageSize":@"10"}
+     httpRequestMyloanListWithParameters:@{@"orderStatus":m_OrderStatus?m_OrderStatus:@"", @"pageNum":[@(pageNum) stringValue],@"pageSize":@"10"}
      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {
          DIF_StrongSelf
          [strongSelf->m_BaseView endRefresh];

@@ -33,6 +33,11 @@
 - (void)rightBarButtonItemAction:(UIButton *)btn
 {
     [self.view endEditing:YES];
+    if (self.selectBankBtn.titleLabel.text.length <= 0)
+    {
+        [self.view makeToast:@"请选择银行" duration:2 position:CSToastPositionCenter];
+        return;
+    }
     if (![CommonVerify isBankCardId:self.bankIDTF.text])
     {
         [self.view makeToast:@"请输入正确的银行卡号" duration:2 position:CSToastPositionCenter];

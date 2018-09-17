@@ -22,4 +22,7 @@
 
 + (NSInteger)firstWeekdayInThisMonth:(NSDate *)date;
 
+//转换从Java过来的时间戳
++ (NSDate *)dateConversionFromJavaTimeInterval:(NSInteger)timeInterval;
+
 @end

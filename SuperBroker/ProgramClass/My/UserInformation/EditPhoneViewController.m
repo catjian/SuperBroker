@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *verifyTF;
+@property (weak, nonatomic) IBOutlet UITextField *oldPhoneTF;
 
 @end
 
@@ -46,6 +47,12 @@
                     duration:2 position:CSToastPositionCenter];
         return;
     }
+    if ([self.phoneTF.text isEqualToString:self.oldPhoneTF.text])
+    {
+        [self.view makeToast:@"新手机号码不能与旧手机号码一致"
+                    duration:2 position:CSToastPositionCenter];
+        return;
+    }
     [CommonHUD showHUD];
     [DIF_CommonHttpAdapter
      httpRequestBrokerinfoSmsCodeWithParameters:@{@"brokerPhone":self.phoneTF.text}
@@ -67,9 +74,21 @@
 - (IBAction)commitEditPhoneButtonEvent:(id)sender
 {
     [self.view endEditing:YES];
+    if (![CommonVerify isMobileNumber:self.oldPhoneTF.text])
+    {
+        [self.view makeToast:@"请输入旧手机号码"
+                    duration:2 position:CSToastPositionCenter];
+        return;
+    }
     if (![CommonVerify isMobileNumber:self.phoneTF.text])
     {
         [self.view makeToast:@"请输入新手机号码"
+                    duration:2 position:CSToastPositionCenter];
+        return;
+    }
+    if ([self.phoneTF.text isEqualToString:self.oldPhoneTF.text])
+    {
+        [self.view makeToast:@"新手机号码不能与旧手机号码一致"
                     duration:2 position:CSToastPositionCenter];
         return;
     }
@@ -82,7 +101,7 @@
     [CommonHUD showHUD];
     DIF_WeakSelf(self)
     [DIF_CommonHttpAdapter
-     httpRequestBrokerinfoPhoneWithParameters:@{@"brokerPhone":[[NSUserDefaults standardUserDefaults] stringForKey:DIF_Loaction_Save_UserId],
+     httpRequestBrokerinfoPhoneWithParameters:@{@"brokerPhone":self.oldPhoneTF.text,//[[NSUserDefaults standardUserDefaults] stringForKey:DIF_Loaction_Save_UserId],
                                                 @"newBrokerPhone":self.phoneTF.text,
                                                 @"code":self.verifyTF.text}
      ResponseBlock:^(ENUM_COMMONHTTP_RESPONSE_TYPE type, id responseModel) {

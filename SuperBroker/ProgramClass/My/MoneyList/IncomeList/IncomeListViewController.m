@@ -37,7 +37,7 @@
     [self setNavTarBarTitle:@"我的提现"];
     [self setRightItemWithContentName:@"客服-黑"];
     m_ListModel = [NSMutableArray array];
-    NSString *income =  [DIF_APPDELEGATE.mybrokeramount[@"incomeAll"] stringValue];
+    NSString *income =  [DIF_APPDELEGATE.mybrokeramount[@"income"] stringValue];
     income = income?income:@"0";
     [self.canUserNum setText:[NSString stringWithFormat:@"%@",income]];
     NSString *incomeAll =  [DIF_APPDELEGATE.mybrokeramount[@"incomeAll"] stringValue];

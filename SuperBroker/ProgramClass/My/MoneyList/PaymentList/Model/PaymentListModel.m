@@ -45,8 +45,8 @@
         [money ForegroundColorAttributeNamWithColor:[pageModel.directionName isEqualToString:@"收入"]? DIF_HEXCOLOR(@"ff5000"):DIF_HEXCOLOR(@"333333")
                                               Range:NSMakeRange(0, money.length)];
         [dataArr addObject:@{@"name":pageModel.orderTypeName,
-//                             @"time":[CommonDate dateToString:[NSDate dateWithTimeIntervalSinceNow:pageModel.createTime.integerValue/1000] Formate:@"yyyy-MM-dd HH:mm"],
-                             @"time":pageModel.createDate?pageModel.createDate:@"",
+                             @"time":[CommonDate dateToString:[NSDate dateWithTimeIntervalSince1970:pageModel.createTime.integerValue/1000] Formate:@"yyyy-MM-dd HH:mm"],
+//                             @"time":pageModel.createDate?pageModel.createDate:@"",
                              @"money":money}];
 
     }

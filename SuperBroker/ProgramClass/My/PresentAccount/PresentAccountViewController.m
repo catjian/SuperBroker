@@ -56,7 +56,7 @@
                 for(NSDictionary *dic in strongSelf->m_BaseViewModel.getAccountListNormal)
                 {
                     PresentAccountModel *model = [PresentAccountModel mj_objectWithKeyValues:dic];
-                    if ([model.accountNo isEqualToString:cell.contentStr])
+                    if (model.accountType.integerValue == 40)
                     {
                         vc.accountModel = model;
                         break;
@@ -70,6 +70,11 @@
 -(void)rightBarButtonItemAction:(UIButton *)btn
 {
     PresentAccountViewCell *cell = [m_BaseView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    if (cell.contentStr.length <= 0)
+    {
+        [self.view makeToast:@"请输入支付宝账号" duration:2 position:CSToastPositionCenter];
+        return;
+    }
     [CommonHUD showHUD];
     DIF_WeakSelf(self)
     if ([m_BaseViewModel.getAccountList.firstObject[@"content"] length] == 0)
@@ -98,7 +103,7 @@
         for (NSDictionary *dic in m_BaseViewModel.getAccountListNormal)
         {
             editModel = [PresentAccountModel mj_objectWithKeyValues:dic];
-            if (editModel.accountType.integerValue == 15)
+            if (editModel.accountType.integerValue == 41)
             {
                 break;
             }

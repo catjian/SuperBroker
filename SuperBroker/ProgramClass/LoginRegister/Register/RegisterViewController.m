@@ -127,6 +127,12 @@
                     duration:2 position:CSToastPositionCenter];
         return;
     }
+    if (self.inviteCodeTF.text.length < 1)
+    {
+        [self.view makeToast:@"请输入邀请码"
+                    duration:2 position:CSToastPositionCenter];
+        return;
+    }
     [CommonHUD showHUDWithMessage:@"注册中..."];
     NSMutableDictionary *parmas = [NSMutableDictionary dictionary];
     [parmas setObject:self.phoneTF.text forKey:@"brokerPhone"];
